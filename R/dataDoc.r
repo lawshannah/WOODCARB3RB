@@ -3,7 +3,9 @@
 #' @aliases hair1958
 #' @docType data
 #' @description Production, imports, exports, and new supply of lumber in US between 1799 and 1958
-#' @format A data frame with 58 observations on 23 variables
+#' @format A data frame with 58 observations on 23 variables (units are in Million Board feet except for percentages):
+#' \itemize{
+#' \item \code{Prod.Tot} (Production Total)
 #' @source USFS Estimations and Bureau of Census Data
 #' @keywords hair1958
 "hair1958"

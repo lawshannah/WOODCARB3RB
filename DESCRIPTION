@@ -1,0 +1,13 @@
+Package: WOODCARB3R
+Type: Package
+Title: WOODCARB3R
+Version: 0.1.0
+Authors@R: c(person("Ben", "Jones", email = "jonesb@appstate.edu", role = c("aut", "cre")),
+             person("Sami", "Hlebak", email = "hlebaksm@appstate.edu", role = c("aut")))
+Description: Calculations for wood products
+License: GPL-2
+LazyData: TRUE
+Suggests: knitr,
+      rmarkdown,
+      testthat
+VignetteBuilder: knitr

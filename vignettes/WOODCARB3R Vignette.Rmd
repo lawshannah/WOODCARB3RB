@@ -1,0 +1,90 @@
+---
+title: "WOODCARB3R Vignette"
+author: "Ben Jones"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{WOODCARB3R Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This package calculates estimates of the U.S. HWP contribution to annual greenhouse gas removals in the agriculture, forestry, land use, and land use change sector. The calculations are implemented from the WOODCARBII model. 
+
+Final estimates can be calculated from several approaches, each using a slightly different method. Different approaches and the calculations can be found below. 
+
+
+###Terms and Notation 
+
+
+**Variable 1A**: $\Delta C_{IU\:DC}$ annual change in carbon stored in HWP in products in use where wood came from domestic consumption of products in the United States including imports, $Mg$ $C$ $yr^{-1}$.  
+
+<br/>
+
+**Variable 1B**: $\Delta C_{SWDS\:DC}$ annual change in carbon stored in HWP in products in SWDS (solid waste disposal sites) where wood came from domestic consumption of products in the U.S. including imports, $Mg$ $C$ $yr^{-1}$.  
+
+<br/>
+
+**Variable 2A**: $\Delta C_{IU\:DH}$ annual change in carbon stored in HWP in products in use where products came from domestic harvest in the U.S., $Mg$ $C$ $yr^{-1}$.  
+
+<br/>
+
+**Variable 2B**: $\Delta C_{SWDS\:DH}$ annual change in carbon stored in HWP in products in SWDS where products used wood from domestic harvest in the U.S., $Mg$ $C$ $yr^{-1}$.  
+
+<br/>
+
+Note:
+
+$$\Delta C_{DC} \: = \: \Delta C_{IU\:DC} \: \Delta C_{SWDS\:DC}$$  
+
+$$\Delta C_{DH} \: = \: \Delta C_{IU\:DH} \: \Delta C_{SWDS\:DH}$$   
+
+These variables are estimates of annual changes in stock of HWP carbon. 
+
+The HWP Variables 3, 4, and 5 are estimates of annual product imports and exports, as well as annual harvest for products. They are not pools of carbon.
+
+###Estimating Variables 1A and 2A
+
+#####Annual change in C in products IU
+
+$$C_{IU \: T_{i \: j}}(t) \: = e^{-k_{T_j}*(t-1900)}*Inflow_{T_i}*F_{T_{i \: j}} \: \: \boldsymbol{[1]}$$ 
+
+$$C_{IU}(t) \: = \: \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C_{IU \: T_{i \: j}}(t) \: \: \boldsymbol{[2]}$$  
+
+Estimate the change in carbon in products IU as:
+
+$$\Delta C_{IU}(t) \: = \: C_{IU}(t) - C_{IU}(t-1) \: \: \boldsymbol{[3]}$$
+
+Where:  
+
+<br/>
+
+  $t$ is the year for which annual change in HWP carbon stock is being estimated  
+    
+
+  $Inflow_{T_i}$ is the annual amount of carbon in primary product $\textit{i}$ that goes into products in use in year $\textit{T}$. Inflows are for years $T  =  1900$ to current year, $\textit{t}$. Inflow is subdivided into several primary products ($i  =  1 \: to \: n$), $Mg$ $yr^{-1}$. Inflow excludes an estimated loss/ discard as solidwood products are placed in end uses (McKeever 2004)  
+    
+
+  $T$ is the year when products initially go into the "products in use" pool 
+    
+
+  $i$ is the primary wood or paper product, $\textit{i}$ = 1 to $\textit{n}$ (defined below)
+    
+
+  $j$ is the end use for products, $j = 1$ to $m$ (defined below)
+  
+
+  $F_{T_{i\:j}}$ is the fraction of primary product $\textit{i}$ inflow in year $\textit{T}$ that goes into end use $\textit{j}$
+  
+  $k_{T_j}$ is the annual rate at which the products placed in end use $\textit{j}$ in year $\textit{T}$ go out of use. This is the annual rate at which the product is discarded from use. Discarded material may be recycled (including, for example, paper or chipping for mulch), burned, composted, or sent to SWDS. The rate may differ depending on the year products are placed in use, but is constant for the life of products placed in use in a particular year.
+  
+Note that: 
+
+$$k_{T_j}=\frac{ln(2)}{HL_{T_j}}$$
+  
+  
+
+
+
+
+

@@ -35,7 +35,48 @@ colnames(hair1963) <- c("Dom.Prod.Tot", "ApparentConsumption", "IndRW.Dom.Prod",
 use_data(hair1963, overwrite = TRUE)
 
 hair1963t20 <- read.xlsx("./data/CopyOfData/hair1963t20.xlsx",1,header=FALSE)
+colnames(hair1963t20) <- c("Imports.Tot", "Imports.Softwoods",
+                           "Imports.Hardwoods.Tot", "Imports.Hardwoods.Birch", "Imports.Hardwoods.Other",
+                           "Exports.Tot", "Exports.Softwoods", "Exports.Hardwoods")
 use_data(hair1963t20, overwrite = TRUE)
 
 hair1963t21 <- read.xlsx("./data/CopyOfData/hair1963t21.xlsx",1,header=FALSE)
+colnames(hair1963t21) <- c("Imports.Tot", "Imports.BirchMaple", "Imports.Other",
+                           "Exports.Tot", "Exports.Fancy,face,figured,special",
+                           "Exports.UtilityCommercialContainer")
 use_data(hair1963t21, overwrite = TRUE)
+
+howard28 <- read.xlsx("./data/CopyOfData/howard28.xlsx",1,header=FALSE)
+colnames(howard28) <- c("Prod.Tot", "Prod.SW","Prod.HW",
+                        "Imports.Tot", "Imports.SW", "Imports.HW",
+                        "Exports.Tot", "Exports.SW", "Exports.HW",
+                        "Consump.Tot", "Consump.SW", "Consump.HW",
+                        "PCConsump.Tot", "PCConsump.SW", "PCConsump.HW")
+use_data(howard28, overwrite = TRUE)
+
+howard37 <- read.xlsx("./data/CopyOfData/howard37.xlsx",1,header=FALSE)
+colnames(howard37) <- c("Prod.Tot", "Prod.SW","Prod.HW",
+                        "Imports.Tot", "Imports.SW", "Imports.HW",
+                        "Exports.Tot", "Exports.SW", "Exports.HW",
+                        "Consump.Tot", "Consump.SW", "Consump.HW",
+                        "PCConsump.Tot", "PCConsump.SW", "PCConsump.HW")
+use_data(howard37, overwrite = TRUE)
+
+howard38 <- read.xlsx("./data/CopyOfData/howard38.xlsx",1,header=FALSE)
+colnames(howard38) <- c("Prod.Tot", "Prod.SWPlywood","Prod.OSP",
+                        "Imports.Tot", "Imports.SWPlywood", "Imports.OSP",
+                        "Exports.Tot", "Exports.SWPlywood", "Exports.OSP",
+                        "Consump.Tot", "Consump.SWPlywood", "Consump.OSP")
+usedata(howard38, overwrite = TRUE)
+
+howard46 <- read.xlsx("./data/CopyOfData/howard46.xlsx",1,header=FALSE)
+colnames(howard46) <- c("Prod.PaperBoard",
+                        "Consump.Tot", "Consump.WoodPulp", "Consump.RecPaper", "Consump.Other",
+                        "Consump.PerTonPaperBoardProduced.Tot","Consump.PerTonPaperBoardProduced.WoodPulp", "Consump.PerTonPaperBoardProduced.RecPaper", "Consump.PerTonPaperBoardProduced.Other",
+                        "RagsOther.RecPaperUtiRatePerc",
+                        "RagsOther.Prod.Estimated", "RagsOther.Imports.Estimated", "RagsOther.Imports.Estimated")
+
+
+
+
+

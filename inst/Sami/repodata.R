@@ -6,7 +6,6 @@ library(xlsx)
 ####Up to fracnonstrpanels
 
 
-
 ########## MUST FINISH
 fracnonstrpanels <- read.xlsx("./data/CopyOfData/fracnonstrpanels.xlsx", 1,
                               header = FALSE, colIndex = 2:20)
@@ -87,13 +86,40 @@ usaFiberPulp <- read.xlsx("./data/CopyOfData/usaFiberPulpCG.xlsx",1,header=FALSE
 colnames(usaFiberPulp)<-c("Prod.Quantity","Imports.Quantity","Exports.Quantity")
 use_data(usaFiberPulp, overwrite = TRUE)
 
+howard55<-read.xlsx("./data/CopyOfData/howard55.xlsx",1,header=FALSE)
+colnames(howard55)<-c("Production","Imports","Exports","Total","PerCapita")
+use_data(howard55, overwrite=TRUE)
+
+howard56<-read.xlsx("./data/CopyOfData/howard56.xlsx",1,header=FALSE)
+colnames(howard56)<-c("Production","Imports","Exports","Total","PerCapita")
+use_data(howard56, overwrite=TRUE)
+
+howard6a<-read.xlsx("./data/CopyOfData/howard6a.xlsx",1,header=FALSE)
+colnames(howard6a)<-c("AllProduction.Prod","AllProduct.Consump",
+                      "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
+                      "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
+                      "Indu.RW.PlyandVen.Prod","Indu.RW.PlyamdVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
+                      "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
+                      "Indu.RW.OtherIndustrial.ProdAndConsump",
+                      "Indu.RW.Logs.Imports","Indu.RW.Logs.Exports",
+                      "Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports",
+                      "FuelWood.ProdAndConsumption","UnNamed1","UnNamed2","UnNamed3","UnNamed4","UnNamed5",
+                      "UnNamed6","UnNamed7","UnNamed8","UnNamed9","UnNamed10")
+use_data(howard6a, overwrite=TRUE)
 
 
-
-
-
-
-
+howard7a<-read.xlsx("./data/CopyOfData/howard7a.xlsx",1,header=FALSE)
+colnames(howard7a)<-c("AllProduction.Prod","AllProduct.Consump",
+                      "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
+                      "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
+                      "Indu.RW.PlyandVen.Prod","Indu.RW.PlyamdVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
+                      "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
+                      "Indu.RW.OtherIndustrial.ProdAndConsump",
+                      "Indu.RW.Logs.Imports","Indu.RW.Logs.Exports",
+                      "Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports",
+                      "FuelWood.ProdAndConsumption","UnNamed1","UnNamed2","UnNamed3","UnNamed4","UnNamed5",
+                      "UnNamed6","UnNamed7")
+use_data(howard7a, overwrite=TRUE)
 
 
 

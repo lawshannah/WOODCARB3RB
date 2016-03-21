@@ -122,6 +122,76 @@ colnames(howard7a)<-c("AllProduction.Prod","AllProduct.Consump",
 use_data(howard7a, overwrite=TRUE)
 
 
+ulrich52<-read.xlsx("./data/CopyOfData/ulrich52.xlsx",1,header=FALSE)
+colnames(ulrich52)<-c("Prod.tot","Prod.Part.Board","Prod.Med.Fiberboard",
+                      "Imports","Exports","Consump.Tot","Consump.PerCapita")
+use_data(ulrich52, overwrite=TRUE)
+
+ulrich53<-read.xlsx("./data/CopyOfData/ulrich53.xlsx",1,header=FALSE)
+colnames(ulrich53)<-c("InsulatingBoard.Prod","InsulatingBoard.Import",
+                      "InsulatingBoard.Exports",
+                      "InsulatingBoard.Consump.Tot",
+                      "InsulatingBoard.Consump.PerCapita")
+use_data(ulrich53, overwrite=TRUE)
+
+ulrich54<-read.xlsx("./data/CopyOfData/ulrich54.xlsx",1,header=FALSE)
+colnames(ulrich54)<-c("HardBoard.Prod","HardBoard.Import",
+                      "HardBoard.Exports",
+                      "HardBoard.Consump.Tot",
+                      "HardBoard.Consump.PerCapita")
+use_data(ulrich54, overwrite=TRUE)
+
+UlrichTable6<-read.xlsx("./data/CopyOfData/UlrichTable6.xlsx",1,header=FALSE)
+colnames(UlrichTable6)<-c("AllProduction.Prod","AllProduct.Consump",
+                          "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
+                          "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
+                          "Indu.RW.PlyandVen.Prod","Indu.RW.PlyamdVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
+                          "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
+                          "Indu.RW.OtherIndustrial.ProdAndConsump",
+
+                          "Indu.RW.Logs.Imports","Indu.RW.Logs.Exports",
+                          "FuelWood.ProdAndConsumption","UnNamed1")
+use_data(UlrichTable6, overwrite=TRUE)
+fracsawnwood<-read.xlsx("./data/CopyOfData/fracsawnwood.xlsx",1,header=FALSE)
+colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
+                          "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
+                          "New.Nonres.tot",
+                          "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
+                          "Manu.Tot",
+                          "Shipping.Tot","Other.Uses.Tot","Uses.Indust.Prod","Export.Tot")
+use_data(fracsawnwood, overwrite=TRUE)
+
+
+fracnonstrpanels <- read.xlsx("./data/CopyOfData/fracnonstrpanels.xlsx", 1,
+                              header = FALSE, colIndex = 2:20)
+colnames(fracnonstrpanels)<-c("Years","House.SingFam","House.Multifam","House.MobHom","House.Tot",
+                              "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
+                              "New.Nonres.tot",
+                              "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
+                              "Manu.Tot",
+                              "Shipping.Tot","Other.Uses.Tot")
+use_data(fracnonstrpanels, overwrite = TRUE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

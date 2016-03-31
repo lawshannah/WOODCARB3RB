@@ -1,12 +1,12 @@
 ---
-title: "WOODCARB3R Vignette"
+title: "WOODCARB3RVignette"
 author: "Ben Jones"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{WOODCARB3R Vignette}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{Vignette Title} 
+  %\VignetteEngine{knitr::rmarkdown} 
+  \VignetteEncoding{UTF-8}
 ---
 
 This package calculates estimates of the U.S. HWP contribution to annual greenhouse gas removals in the agriculture, forestry, land use, and land use change sector. The calculations are implemented from the WOODCARBII model. 
@@ -81,6 +81,16 @@ Where:
 Note that: 
 
 $$k_{T_j}=\frac{ln(2)}{HL_{T_j}}$$
+
+Where ${HL_{T_j}}$ is the half-life in years for products placed in end use $j$ in year $T$. The half-life is the number of years it takes for half of the intial inflow amount to be discarded. 
+
+$C(t)$ is the total carbon held in products in use, Mg. 
+
+$\Delta C(t)$ is annual cahnce in carbon in products in use between the end of year $t - 1$ and the end of year $t$, Mg $yr^{-1}$
+
+Primary products categories (labeled i) include three for solidwood products (lumber, structural panels and nonstructural panels) and one for all of paper and paperboard products. Lumber includes both hardwood and softwood lumber. Structural panels include softwood plywood and OSB. Nonstructural panels include hardwood plywood, particleboard, MDF, hardboard, and insulation board.
+
+
   
   
 

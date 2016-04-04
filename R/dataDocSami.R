@@ -163,8 +163,39 @@
 "howard7a"
 
 
+#' @name ulrich52
+#' @title ulrich52
+#' @docType data
+#' @description Insulating board production, imports, exports, and consumption, 1965-1999.
+#' @format A data frame with 56 observations of  5 variables. (all units in thousand tons except when specified otherwise):
+#' \itemize{
+#' \item \code{Prod.tot} ()
+#' \item \code{Prod.Part.Board}()
+#' \item \code{Prod.Med.Fiberboard}()
+#' \item \code{Imports}()
+#' \item \code{Exports}()
+#' \item \code{Consump.Tot}()
+#' \item \code{Consump.PerCapita}()
+#' }
+#' @source USFS Estimations and Bureau of Census Data
+#' @keywords ulrich52
+"ulrich52"
 
-
+#' @name ulrich53
+#' @title ulrich53
+#' @docType data
+#' @description Insulating board production, imports, exports, and consumption, 1965-1999.
+#' @format A data frame with 56 observations of  5 variables. (all units in thousand tons except when specified otherwise):
+#' \itemize{
+#' \item \code{InsulatingBoard.Prod} ()
+#' \item \code{InsulatingBoard.Import}()
+#' \item \code{InsulatingBoard.Exports}()
+#' \item \code{InsulatingBoard.Consump.Tot}()
+#' \item \code{InsulatingBoard.Consump.PerCapita}()
+#' }
+#' @source USFS Estimations and Bureau of Census Data
+#' @keywords ulrich53
+"ulrich53"
 
 
 

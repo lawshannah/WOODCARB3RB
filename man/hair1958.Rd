@@ -3,31 +3,33 @@
 \docType{data}
 \name{hair1958}
 \alias{hair1958}
-\title{hair1958}
-\format{A data frame with 58 observations on 23 variables (units are in Million Board feet except for percentages):
+\title{Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958}
+\format{A data frame with 58 observations on 23 variables
+
 \itemize{
-\item \code{Prod.Tot} (Production Total, numeric vector, in Million Board Ft)
-\item \code{Prod.SW} (Production of Softwoods, numeric vector, in Million Board Ft)
-\item \code{Prod.HW} (Production of Hardwoods, numeric vector, in Million Board Ft)
-\item Imports.Tot. Total Imports, numeric vector, in Million Board ft
-\item Imports.SW. Imports for softwoods, in Mil. Board Ft.
-\item Imports.HW.
-\item Imports.Mixed.
-\item Imports.Mixed.PercOfTot.
-\item Imports.SW.PerOfTot.
-\item Imports.HW.PercOfTot.
-\item Imports.Estimated.SW.
-\item Imports.Estimated.HW.
-\item Exports.Tot.
-\item Exports.SW.
-\item Exports.HW.
-\item Exports.Mixed.
-\item Exports.Mixed.PercOfTot.
-\item Exports.SW.PercOfTot.
-\item Exports.HW.PercOfTot.
-\item Exports.Estimated.SW.
-\item Exports.Estimated HW.
-\item NewSupply.
+\item \strong{Prod.Tot} Production Total
+\item \strong{Prod.SW} Production of Softwoods
+\item \strong{Prod.HW} Production of Hardwoods
+\item \strong{Imports.Tot} Total Imports
+\item \strong{Imports.SW} Imports for Softwood
+\item \strong{Imports.HW} Imports for Hardwoods
+\item \strong{Imports.Mixed} Imports for Mixed Woods
+\item \strong{Imports.Mixed.PercOfTot} Mixed Woods Percent of Total Imports
+\item \strong{Imports.SW.PerOfTot} Softwoods Percent of Total Imports
+\item \strong{Imports.HW.PercOfTot} Hardwoods Percent of Total Imports
+\item \strong{Imports.Estimated.SW} Estimated Softwood Imports
+\item \strong{Imports.Estimated.HW} Estimated Hardwood Imports
+\item \strong{Exports.Tot} Total Exports
+\item \strong{Exports.SW} Softwood Exports
+\item \strong{Exports.HW} Hardwood Exports
+\item \strong{Exports.Mixed} Mixed Woods Exports
+\item \strong{Exports.Mixed.PercOfTot} Mixed Woods Percent of Total Exports
+\item \strong{Exports.SW.PercOfTot} Softwoods Percent of Total Exports
+\item \strong{Exports.HW.PercOfTot} Hardwoods Percent of Total Exports
+\item \strong{Exports.Estimated.SW} Estimated Softwood Exports
+\item \strong{Exports.Estimated HW} Estimated Hardwood Exports
+\item \strong{NewSupply} New Supply
+\item \strong{PerCapita} Per Capita Use, in Board ft.
 }}
 \source{
 USFS Estimations and Bureau of Census Data
@@ -36,7 +38,8 @@ USFS Estimations and Bureau of Census Data
 hair1958
 }
 \description{
-Production, imports, exports, and new supply of lumber in US between 1799 and 1958
+Dataset containing statistics for timber products.
+All units are in Million Board Ft, unless otherwise specified. All vectors are numeric.
 }
 \keyword{hair1958}
 

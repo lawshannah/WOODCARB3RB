@@ -94,7 +94,7 @@ use_data(howard49, overwrite = TRUE)
 
 howard5 <- read.xlsx("./data/CopyOfData/howard5.xlsx",1,header=FALSE)
 colnames(howard5) <- c("AllProducts.Prod", "AllProducts.Consump",
-                       "Tot.Prod", "Tot.Imports", "Tot.Exports", "Tot.Consump",
+                       "Prod.Tot", "Imports.Tot", "Exports.Tot", "Consump.Tot",
                        "Lumber.Prod", "Lumber.Imports", "Lumber.Exports", "Lumber.Consump",
                        "PlywoodVeneer.Prod", "PlywoodVeneer.Imports", "PlywoodVeneer.Exports", "PlywoodVeneer.Consump",
                        "Pulpwood.Prod", "Pulpwood.Imports", "Pulpwood.Exports", "Pulpwood.Consump",
@@ -126,17 +126,17 @@ colnames(ulrich36) <- c("Prod.Tot", "Prod.SW", "Prod.HW",
                         "PerCapitaConsump.Tot", "PerCapitaConsump.SW", "PerCapitaConsump.HW")
 use_data(ulrich36, overwrite = TRUE)
 
-ulrich4 <- read.xlsx(".data/CopyOfData/ulrich4.xlsx",1,header=FALSE)
+ulrich4 <- read.xlsx("./data/CopyOfData/ulrich4.xlsx",1,header=FALSE)
 colnames(ulrich4) <- c("AllProducts.Prod", "AllProducts.Consump",
                        "Tot.Prod", "Tot.Imports", "Tot.Exports", "Tot.Consump",
                        "Lumber.Prod", "Lumber.Imports", "Lumber.Exports", "Lumber.Consump",
                        "PlywoodVeneer.Prod", "PlywoodVeneer.Imports", "PlywoodVeneer.Exports", "PlywoodVeneer.Consump",
                        "PulpProducts.Prod", "PulpProducts.Imports", "PulpProducts.Exports", "PulpProducts.Consump",
-                       "OtherIndProducts.ProdandConsumption", "Logs.Imports", "Logs.Exports", "PulpwoodChip.Exports",
+                       "OtherIndProducts.ProdandConsump", "Logs.Imports", "Logs.Exports", "PulpwoodChip.Exports",
                        "Fuelwood.ProdandConsump", "LogChipExports.PercofProduction")
 use_data(ulrich4, overwrite = TRUE)
 
-ulrich5 <- read.xlsx(".data/CopyOfData/ulrich5.xlsx",1,header=FALSE)
+ulrich5 <- read.xlsx("./data/CopyOfData/ulrich5.xlsx",1,header=FALSE)
 colnames(ulrich5) <- c("AllProducts.Prod", "AllProducts.Consump",
                        "Tot.Prod", "Tot.Imports", "Tot.Exports", "Tot.Consump",
                        "Lumber.Prod", "Lumber.Imports", "Lumber.Exports", "Lumber.Consump",

@@ -3,7 +3,7 @@
 \docType{data}
 \name{hair1963}
 \alias{hair1963}
-\title{hair1963}
+\title{Estimated production, net imports, and apparent consumption of timber products in the US, 1900-1962}
 \format{A data frame with 85 observations on 38 variables}
 \source{
 US Department of Commerce and Agriculture and USFS Estimations
@@ -12,12 +12,57 @@ US Department of Commerce and Agriculture and USFS Estimations
 hair1963
 }
 \description{
-Estimated production, net imports, and apparent consumption of timber products in the US, 1900-1962
-
+Dataset containing estimated statistics for timber products. All vectors are numeric.
+Most data is for products in the Industrial Roundwood Class. Each column except the first two and the last one
+are in this category.
+}
+\details{
 \itemize{
-\item Dom.Prod.Tot.
-\item ApparentConsumption.
-\item Dom.Prod.
+\item \strong{Dom.Prod.Tot} Total Domestic Production
+\item \strong{ApparentConsumption} Apparent Consumption
+\item \strong{Dom.Prod} Domestic Production, Total Ind RW
+\item \strong{Imports} Net Imports, Total Ind RW
+\item \strong{Prod.SW} Softwood Production, Total Ind RW
+\item \strong{Prod.HW} Hardwood Production , Total Ind RW
+\item \strong{LogChipImports.SW} Softwood Log and Chip Imports, Total Ind RW
+\item \strong{LogChipExports.SW} Softwood Log and Chip Exports, Total Ind RW
+\item \strong{LogChipImports.HW} Hardwood Log and Chip Imports, Total Ind RW
+\item \strong{LogChipExports.HW} Hardwood Log and Chip Exports, Total Ind RW
+\item \strong{SW.PctOfProd} Softwoods as Percent of Production, Total Ind RW
+\item \strong{Exports.SW.PctOfProd} Softwood Exports as Percent of Production, Total Ind RW
+\item \strong{Exports.HW.PctOfProd} Hardwood Exports as Percent of Production, Total Ind RW
+\item \strong{Imports.SW.PctOfConsump} Softwood Imports as Percent of Production, Total Ind RW
+\item \strong{Imports.HW.PctOfConsump} Hardwood Imports as Percent of Production, Total Ind RW
+\item \strong{SW.Lumber.PctOfTotLumbProd} Softwood Lumber as Percent of Total Lumber Production, Total Ind RW
+\item \strong{DV.Exports.Log.PctOfProd} Dollar Value of Log Exports as Percent of Production, Total Ind RW
+\item \strong{DV.Imports.Log.PctOfConsump} Dollar Value of Log Imports as Percent of Consumption, Total Ind RW
+\item \strong{Estimated.Imports} Estimated Imports, Total Ind RW
+\item \strong{Estimated.Exports} Estimated Exports, Total Ind RW
+\item \strong{Adj.Imports} Adjusted Imports, Total Ind RW
+\item \strong{Adj.Exports} Adjust Exports, Total Ind RW
+\item \strong{Estimated.Imports(tons)} Estimated Imports in tons, Total Ind RW
+\item \strong{Estimated.Exports(tons)} Estimated Exports in tons, Total Ind RW
+\item \strong{Adj.Imports(tons)} Adjusted Imports in tons, Total Ind RW
+\item \strong{Adj.Exports(tons)} Adjust Exports in tons, Total Ind RW
+\item \strong{ApparentConsumption.Total} Apparent Conusmption, Total Ind RW.
+Columns may not add to total because of rounding.
+\item \strong{SawLogs.Dom.Prod} Domestic Production of Saw Logs
+\item \strong{SawLogs.NetImports} Net Imports of Saw Logs.
+Net imports of lumber converted to cubic feet roundwood.  Small quantities of imported saw logs (roundwood form) are included under domestic production.
+\item \strong{SawLogs.ApparentConsumption} Apparent Consumption of Saw Logs.
+Columns may not add to total because of rounding.
+Includes changes in stocks beginning in 1935.
+\item \strong{VeneerLogs.Dom.Prod} Domestic Production of Veneer Logs
+\item \strong{VeneerLogs.NetImports} Net Imports of Veneer Logs.
+Net imports of veneer logs represent the equivalent net imports of veneer and plywood converted to board feet log scale, and then to cubic feet round-wood.
+The small volume of veneer logs imported (roundwood form) is included under domestic production.
+\item \strong{VeneerLogs.ApparentConsumption} Apparent Consumption of Veneer Logs.
+Columns may not add to total because of rounding.
+\item \strong{PulpWood.Dom.Prod} Domestic Production of Pulpwood
+\item \strong{PulpWood.NetImports} Net Imports of Pulpwood
+\item \strong{PulpWood.ApparentConsumption} Apparent Consumption of Pulpwood
+\item \strong{Other.ApparentConsumption} Apparent Consumption of Other Products
+\item \strong{FuelWood.ApparentConsumption} Apparent Consumption of Fuelwood
 }
 }
 \keyword{hair1963}

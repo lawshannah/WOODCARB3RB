@@ -35,9 +35,9 @@ Final estimates can be calculated from several approaches, each using a slightly
 
 Note:
 
-$$\Delta C_{DC} \: = \: \Delta C_{IU\:DC} \: \Delta C_{SWDS\:DC}$$  
+$$\Delta C_{DC} \: = \: \Delta C_{IU\:DC} + \Delta C_{SWDS\:DC}$$  
 
-$$\Delta C_{DH} \: = \: \Delta C_{IU\:DH} \: \Delta C_{SWDS\:DH}$$   
+$$\Delta C_{DH} \: = \: \Delta C_{IU\:DH} + \Delta C_{SWDS\:DH}$$   
 
 These variables are estimates of annual changes in stock of HWP carbon. 
 
@@ -48,6 +48,8 @@ The HWP Variables 3, 4, and 5 are estimates of annual product imports and export
 #####Annual change in C in products IU
 
 $$C_{IU \: T_{i \: j}}(t) \: = e^{-k_{T_j}*(t-1900)}*Inflow_{T_i}*F_{T_{i \: j}} \: \: \boldsymbol{[1]}$$ 
+
+
 
 $$C_{IU}(t) \: = \: \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C_{IU \: T_{i \: j}}(t) \: \: \boldsymbol{[2]}$$  
 
@@ -86,13 +88,17 @@ Where ${HL_{T_j}}$ is the half-life in years for products placed in end use $j$ 
 
 $C(t)$ is the total carbon held in products in use, Mg. 
 
-$\Delta C(t)$ is annual cahnce in carbon in products in use between the end of year $t - 1$ and the end of year $t$, Mg $yr^{-1}$
+$\Delta C(t)$ is annual change in carbon in products in use between the end of year $t - 1$ and the end of year $t$, Mg $yr^{-1}$
+
+<br/>
 
 Primary products categories (labeled i) include three for solidwood products (lumber, structural panels and nonstructural panels) and one for all of paper and paperboard products. Lumber includes both hardwood and softwood lumber. Structural panels include softwood plywood and OSB. Nonstructural panels include hardwood plywood, particleboard, MDF, hardboard, and insulation board.
 
+<br/>
 
-  
-  
+End-use categories (labeled j) include four for solidwood products (single-family housing, multifamily housing, resi dential upkeep and improvement, and other uses) and one for all paper and paperboard uses. Other solidwood uses includes mobile homes, nonresidential construction, rail ties, rail cars, household furniture, commercial furniture, other manufacturing, shipping, and miscellaneous other.
+
+
 
 
 

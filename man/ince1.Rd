@@ -3,6 +3,7 @@
 \docType{data}
 \name{ince1}
 \alias{ince1}
+<<<<<<< HEAD
 \title{ince1}
 \format{A data frame with 151 observations of  25 variables:(units are in Million feet squared 3/8in.):
 \itemize{
@@ -39,12 +40,43 @@ Pulp, paper, and paperboard production data are from AF&PA, formerly API (Statis
 Miscellaneous wood product production data through 1988 were obtained from U.S. Timber Production, Trade, Consumption, and Price Statistics reports (USDA Forest Service).  Miscellaneous wood product production for 1996 based on timber product output tables in (draft) 1997 RPA Inventory Data Tables; intervening and subsequent data are extrapolated.
 Insulating board production data are derived using earlier data from Commerce Department MA26A reports (in square feet of product output) to convert tonnage reported in AF&PA and earlier API reports (Statistics of Paper, Paperboard & Woodpulp).
 Fuelwood estimates are shown for comparison only and are not included in industrial wood products.  Fuelwood data are Forest Service estimates (Skog and others, FPL).
+=======
+\title{U.S. Annual industrial wood product in conventional units of measure.
+ :(units are in Million feet squared 3/8in.):}
+\format{A data frame with 151 observations of  25 variables
+\itemize{
+\item \strong{SW.Ply} (Softwood Plywood units: million ft^2, 3/8 in)
+\item \strong{OSB.Wafer.board} (OSB/ Wafer board units: million ft^2, 3/8 in)
+\item \strong{Lam.Ven.Lumb}(Laminated Veneer lumber units: million ft^3)
+\item \strong{HW.Ply.Ven}(Hardwood, Plywood and veneer units: million ft^2, 3/8 in)
+\item \strong{SW.Lumb}(Softwood lumber units: million bd. ft.)
+\item \strong{HW.Lumb}(Hardwood lumber units: million bd. ft.)
+\item \strong{Lumb.Pallet.Plant}(Lumber made at Pallet plants units: million bd. ft.)
+\item \strong{PartBoard.Prod}(Particalboard production units: million ft^2, 3/4 in.)
+\item \strong{Hardboard.Prod}(Hardboard production units: million ft^2, 1/8 in.)
+\item \strong{MDF.Pro}(MDF production units: million ft^2, 3/4 in.)
+\item \strong{Pulp.Paper.Board}(Pulp, paper and board production units: Thousand tons)
+\item \strong{Other.Products}(Other industrial products units: million ft^3)
+\item \strong{InsulatingBoard}(Insulating board units: million ft^2, 1/2 in.)
+\item \strong{Fuelwood}(Fuelwood units: million ft^3)
+\item \strong{FuelwoodT}(Fuelwood units: Thousand short tons)
+\item \strong{Log.Chip.Exports}(Log and Chip exports units: Thousand short tons)
+\item \strong{"RW.Dom.Prod}(Roundwood Equivalent of Domestic Product Ouptut units: Thousand short tons)
+\item \strong{Estimated.Tot.Dom.Timber}(Estimated Total Domestic Timber Harvest units: Thousand short tons)
+}}
+\source{
+Sources listed on the excel spread from the National Forest Services
+>>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 }
 \usage{
 ince1
 }
 \description{
 U.S. Annual industrial wood product in conventional units of measure.
+<<<<<<< HEAD
+=======
+ :(units are in Million feet squared 3/8in.):
+>>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 }
 \keyword{ince1}
 

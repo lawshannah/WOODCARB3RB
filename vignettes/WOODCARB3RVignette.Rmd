@@ -31,6 +31,7 @@ Final estimates can be calculated from several approaches, each using a slightly
 
 **Variable 2B**: $\Delta C_{SWDS\:DH}$ annual change in carbon stored in HWP in products in SWDS where products used wood from domestic harvest in the U.S., $Mg$ $C$ $yr^{-1}$.  
 
+
 <br/>
 
 Note:

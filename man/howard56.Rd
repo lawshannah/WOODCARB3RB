@@ -3,7 +3,11 @@
 \docType{data}
 \name{howard56}
 \alias{howard56}
+<<<<<<< HEAD
 \title{howard56}
+=======
+\title{Hardboard production, imports, exports and consumption, 1965-1999.}
+>>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 \format{A data frame with 56 observations on 5 variables. (all units are in million square feet except when specified otherwise)
 \itemize{
 \item \code{Production} (Production)

@@ -13,7 +13,7 @@
 \item \code{InsulatingBoard.Consump.PerCapita}(Insulating Board consumption per capita (square feet))
 }}
 \source{
-USFS Estimations and Bureau of Census Data
+U.S. Department of Commerce, Bureau of the Census
 }
 \usage{
 ulrich53

@@ -3,11 +3,7 @@
 \docType{data}
 \name{howard7a}
 \alias{howard7a}
-<<<<<<< HEAD
-\title{howard7a}
-=======
 \title{Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.}
->>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 \format{A data frame with 56 observations on 31 variables. (all units are in million cubic feet except when specified otherwise)
 \itemize{
 \item \code{AllProduction.Prod} (All products production)
@@ -20,41 +16,25 @@
 \item \code{Indu.RW.Lum.Imports}(Industrial roundwood uses lumber imports)
 \item \code{Indu.RW.Lum.Exports}(Industrial roundwood uses lumber exports)
 \item \code{Indu.RW.Lum.Consump}(Industrial roundwood uses lumber consumption)
-<<<<<<< HEAD
-\itme \code{Indu.RW.PlyandVen.Prod}(Industrial roundwood uses plywood and veneer production)
-=======
 \item \code{Indu.RW.PlyandVen.Prod}(Industrial roundwood uses plywood and veneer production)
->>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 \item \code{Indu.RW.PlyamdVen.Imports}(Industrial roundwood uses plywood and veneer imports)
 \item \code{Indu.RW.PlyandVen.Exports}(Industrial roundwood uses plywood and veneer exports)
 \item \code{Indu.RW.PlyandVen.Consump}(Industrial roundwood uses plywood and veneer consumption)
 \item \code{Indu.RW.Pulp.Prod}(Industrial roundwood uses pulp-based products production)
 \item \code{Indu.RW.Pulp.Imports}(Industrial roundwood uses pulp-based products imports)
 \item \code{Indu.RW.Pulp.Exports}(Industrial roundwood uses pulp-based products exports)
-<<<<<<< HEAD
-\itme \code{Indu.RW.Pulp.Consump}(Industrial roundwood uses pulp-based products consumption)
-=======
 \item \code{Indu.RW.Pulp.Consump}(Industrial roundwood uses pulp-based products consumption)
->>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 \item \code{Indu.RW.OtherIndustrial.ProdAndConsump}(Other industrial product production and consumption)
 \item \code{Indu.RW.Logs.Imports}(Industrial roundwood uses log imports)
 \item \code{Indu.RW.Logs.Exports}(Industrial roundwood uses log exports)
 \item \code{Indu.RW.Pulp.Imports}(Industrial roundwood uses pulpwood chip imports)
 \item \code{Indu.RW.Pulp.Exports}(Industrial roundwood uses pulpwood chip exports)
 \item \code{FuelWood.ProdAndConsumption}(Fuelwood production and consumption)
-<<<<<<< HEAD
-\itme \code{UnNamed1}
-\item \code{UnNamed2}
-\item \code{UnNamed3}
-\item \code{UnNamed4}
-\itme \code{UnNamed5}
-=======
 \item \code{UnNamed1}
 \item \code{UnNamed2}
 \item \code{UnNamed3}
 \item \code{UnNamed4}
 \item \code{UnNamed5}
->>>>>>> df233b2552fb46877191075f1355aaabb2a6bca8
 \item \code{UnNamed6}
 }}
 \source{

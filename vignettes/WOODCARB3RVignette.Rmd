@@ -1,5 +1,5 @@
 ---
-title: "WOODCARB3RVignette"
+title: "WOODCARB3R Vignette"
 author: "Ben Jones"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

@@ -66,16 +66,13 @@ Where:
 
   $Inflow_{T_i}$ is the annual amount of carbon in primary product $\textit{i}$ that goes into products in use in year $\textit{T}$. Inflows are for years $T  =  1900$ to current year, $\textit{t}$. Inflow is subdivided into several primary products ($i  =  1 \: to \: n$), $Mg$ $yr^{-1}$. Inflow excludes an estimated loss/ discard as solidwood products are placed in end uses (McKeever 2004)  
     
-
   $T$ is the year when products initially go into the "products in use" pool 
     
-
   $i$ is the primary wood or paper product, $\textit{i}$ = 1 to $\textit{n}$ (defined below)
     
 
   $j$ is the end use for products, $j = 1$ to $m$ (defined below)
   
-
   $F_{T_{i\:j}}$ is the fraction of primary product $\textit{i}$ inflow in year $\textit{T}$ that goes into end use $\textit{j}$
   
   $k_{T_j}$ is the annual rate at which the products placed in end use $\textit{j}$ in year $\textit{T}$ go out of use. This is the annual rate at which the product is discarded from use. Discarded material may be recycled (including, for example, paper or chipping for mulch), burned, composted, or sent to SWDS. The rate may differ depending on the year products are placed in use, but is constant for the life of products placed in use in a particular year.
@@ -97,6 +94,18 @@ Primary products categories (labeled i) include three for solidwood products (lu
 <br/>
 
 End-use categories (labeled j) include four for solidwood products (single-family housing, multifamily housing, resi dential upkeep and improvement, and other uses) and one for all paper and paperboard uses. Other solidwood uses includes mobile homes, nonresidential construction, rail ties, rail cars, household furniture, commercial furniture, other manufacturing, shipping, and miscellaneous other.
+
+For solidwood products: 
+
+$$Inflow_{T i} = P_{T  i} \:x \: \left[\frac{(SL_p - SL_{IM} + SL_{EX})}{SL_p}\right] \: \: \boldsymbol{[4]}$$
+
+For paper and paperboard products:
+
+$$Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
+     \: \:\:\: \boldsymbol{[5]}$$
+    $$\times[\frac{(PW_p - PW_{IM} + PW_{EX})}{PW_p}] +EX_{rec\:fiber\:pulp} + EX_{rec\:paper} + EX_{woodpulp}$$
+
+Where:
 
 
 

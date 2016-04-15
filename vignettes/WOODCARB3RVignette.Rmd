@@ -2,6 +2,7 @@
 title: "WOODCARB3R Vignette"
 author: "Ben Jones"
 date: "`r Sys.Date()`"
+bibliography: carb2.bib
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette Title} 
@@ -9,7 +10,7 @@ vignette: >
   \VignetteEncoding{UTF-8}
 ---
 
-This package calculates estimates of the U.S. HWP contribution to annual greenhouse gas removals in the agriculture, forestry, land use, and land use change sector. The calculations are implemented from the WOODCARBII model. 
+This package calculates estimates of the U.S. HWP contribution to annual greenhouse gas removals in the agriculture, forestry, land use, and land use change sector. The calculations are based on WOODCARB II as described in @skog_sequestration_2008. 
 
 Final estimates can be calculated from several approaches, each using a slightly different method. Different approaches and the calculations can be found below. 
 
@@ -108,7 +109,7 @@ $$Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
 
 Where:
 
-
+# References
 
 
 

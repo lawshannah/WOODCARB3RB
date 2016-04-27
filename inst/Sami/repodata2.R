@@ -4,8 +4,6 @@ library(repmis)
 library(xlsx)
 
 ####Up to fracnonstrpanels
-
-
 ########## MUST FINISH
 fracnonstrpanels <- read.xlsx("./data/CopyOfData/fracnonstrpanels.xlsx", 1,
                               header = FALSE, colIndex = 2:20)

@@ -109,6 +109,8 @@ $$Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
 
 Where:
 
+##talk about formulas, a5 sum up different approaches.  
+
 # References
 
 

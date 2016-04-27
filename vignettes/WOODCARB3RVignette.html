@@ -12,9 +12,9 @@
 
 <meta name="author" content="Ben Jones" />
 
-<meta name="date" content="2016-04-04" />
+<meta name="date" content="2016-04-25" />
 
-<title>WOODCARB3RVignette</title>
+<title>WOODCARB3R Vignette</title>
 
 
 
@@ -30,13 +30,13 @@
 
 
 
-<h1 class="title">WOODCARB3RVignette</h1>
+<h1 class="title toc-ignore">WOODCARB3R Vignette</h1>
 <h4 class="author"><em>Ben Jones</em></h4>
-<h4 class="date"><em>2016-04-04</em></h4>
+<h4 class="date"><em>2016-04-25</em></h4>
 
 
 
-<p>This package calculates estimates of the U.S. HWP contribution to annual greenhouse gas removals in the agriculture, forestry, land use, and land use change sector. The calculations are implemented from the WOODCARBII model.</p>
+<p>This package calculates estimates of the U.S. HWP contribution to annual greenhouse gas removals in the agriculture, forestry, land use, and land use change sector. The calculations are based on WOODCARB II as described in <span class="citation">Skog (2008)</span>.</p>
 <p>Final estimates can be calculated from several approaches, each using a slightly different method. Different approaches and the calculations can be found below.</p>
 <div id="terms-and-notation" class="section level3">
 <h3>Terms and Notation</h3>
@@ -80,6 +80,16 @@
 <p>Primary products categories (labeled i) include three for solidwood products (lumber, structural panels and nonstructural panels) and one for all of paper and paperboard products. Lumber includes both hardwood and softwood lumber. Structural panels include softwood plywood and OSB. Nonstructural panels include hardwood plywood, particleboard, MDF, hardboard, and insulation board.</p>
 <p><br /></p>
 <p>End-use categories (labeled j) include four for solidwood products (single-family housing, multifamily housing, resi dential upkeep and improvement, and other uses) and one for all paper and paperboard uses. Other solidwood uses includes mobile homes, nonresidential construction, rail ties, rail cars, household furniture, commercial furniture, other manufacturing, shipping, and miscellaneous other.</p>
+<p>For solidwood products:</p>
+<p><span class="math">\[Inflow_{T i} = P_{T  i} \:x \: \left[\frac{(SL_p - SL_{IM} + SL_{EX})}{SL_p}\right] \: \: \boldsymbol{[4]}\]</span></p>
+<p>For paper and paperboard products:</p>
+<p><span class="math">\[Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
+     \: \:\:\: \boldsymbol{[5]}\]</span> <span class="math">\[\times[\frac{(PW_p - PW_{IM} + PW_{EX})}{PW_p}] +EX_{rec\:fiber\:pulp} + EX_{rec\:paper} + EX_{woodpulp}\]</span></p>
+<p>Where:</p>
+<div class="references">
+<h1>References</h1>
+<p>Skog, Kenneth E. ; 2008. <em>Sequestration of Carbon in Harvested Wood Products for the United States</em>. <a href="http://www.treesearch.fs.fed.us/pubs/31171" class="uri">http://www.treesearch.fs.fed.us/pubs/31171</a>.</p>
+</div>
 </div>
 </div>
 

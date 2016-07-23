@@ -110,13 +110,13 @@ use_data(howard56, overwrite=TRUE)
 
 howard6a<-read.xlsx("./data/CopyOfData/howard6a.xlsx",1,header=FALSE)
 colnames(howard6a)<-c("AllProduction.Prod","AllProduct.Consump",
-                      "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
-                      "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
-                      "Indu.RW.PlyandVen.Prod","Indu.RW.PlyamdVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
-                      "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
-                      "Indu.RW.OtherIndustrial.ProdAndConsump",
-                      "Indu.RW.Logs.Imports","Indu.RW.Logs.Exports",
-                      "Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports",
+                      "Ind.RW.Tot.Prod","Ind.RW.Tot.Imports","Ind.RW.Tot.Exports","Ind.RW.Tot.Consump",
+                      "Ind.RW.Lum.Prod","Ind.RW.Lum.Imports","Ind.RW.Lum.Exports","Ind.RW.Lum.Consump",
+                      "Ind.RW.PlyandVen.Prod","Ind.RW.PlyamdVen.Imports","Ind.RW.PlyandVen.Exports","Ind.RW.PlyandVen.Consump",
+                      "Ind.RW.Pulp.Prod","Ind.RW.Pulp.Imports","Ind.RW.Pulp.Exports","Ind.RW.Pulp.Consump",
+                      "Ind.RW.OtherIndustrial.ProdAndConsump",
+                      "Ind.RW.Logs.Imports","Ind.RW.Logs.Exports",
+                      "Ind.RW.Pulp.Imports","Ind.RW.Pulp.Exports",
                       "FuelWood.ProdAndConsumption","UnNamed1","UnNamed2","UnNamed3","UnNamed4","UnNamed5",
                       "UnNamed6","UnNamed7","UnNamed8","UnNamed9","UnNamed10")
 use_data(howard6a, overwrite=TRUE)
@@ -159,7 +159,7 @@ UlrichTable6<-read.xlsx("./data/CopyOfData/UlrichTable6.xlsx",1,header=FALSE)
 colnames(UlrichTable6)<-c("AllProduction.Prod","AllProduct.Consump",
                           "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
                           "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
-                          "Indu.RW.PlyandVen.Prod","Indu.RW.PlyamdVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
+                          "Indu.RW.PlyandVen.Prod","Indu.RW.PlyandVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
                           "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
                           "Indu.RW.OtherIndustrial.ProdAndConsump",
 

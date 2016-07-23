@@ -495,3 +495,63 @@
 #' Based on data published by the U.S. Departments of Commerce and Agriculture.
 #' Data for 1900-49 in The demand and price situation for forest products 1964, table 2 (31),
 "ulrich5"
+
+################################
+#' Production, imports, exports and consumption of insulating board, 1950-1987
+#' Also includes historical production and exports data from 1925-1950.
+#'
+#' Dataset contains statistics for insulating board.
+#' All units are in million square ft unless otherwise specified. All vectors are numeric.
+#'
+#' \itemize{
+#' \item \strong{HardBoard.Prod} HardBoard Production
+#' \item \strong{HardBoard.Import} HardBoard Imports
+#' \item \strong{HardBoard.Exports} HardBoard Exports
+#' \item \strong{HardBoard.Consump.Tot} Total HardBoard Consumption
+#' \item \strong{HardBoard.Consump.PerCapita} HardBoard Consumption Per Capita
+#' }
+#'
+#' @format A data frame with 72 observations of 5 variables
+#' @source
+#' U.S. Department of Commerce, Bureau of the Census (48,51, 52);
+#' American Paper Institute (3, 4); American Hardboard Association.
+#' Data from Ince,2000, Industrial Wood Productivity in the United States, 1900-1998.
+#'
+"ulrich54"
+
+################################
+#' Production, imports, exports, and consumption of hardwood timber products, by major product, 1950-87
+#'
+#' Dataset containing statistics for hardwood timber products.
+#' All units are in million cubic ft.
+#'
+#' \itemize{
+#' \item \strong{AllProduction.Prod} Total production of all products
+#' \item \strong{AllProduct.Consump} Total consumption of all products
+#' \item \strong{Indu.RW.Tot.Prod} Total production of all industrial roundwood products
+#' \item \strong{Indu.RW.Tot.Imports} Total imports of all industrial roundwood products
+#' \item \strong{Indu.RW.Tot.Exports} Total exports of all industrial roundwood products
+#' \item \strong{Indu.RW.Tot.Consump} Total consumption of all industrial roundwood products
+#' \item \strong{Indu.RW.Lum.Prod} Production of lumber products
+#' \item \strong{Indu.RW.Lum.Imports} Imports of lumber products
+#' \item \strong{Indu.RW.Lum.Exports} Exports of lumber products
+#' \item \strong{Indu.RW.Lum.Consump} Consumption of lumber products
+#' \item \strong{Indu.RW.PlyandVen.Prod} Production of plywood and veneer products
+#' \item \strong{Indu.RW.PlyandVen.Imports} Imports of plywood and veneer products
+#' \item \strong{Indu.RW.PlyandVen.Exports} Exports of plywood and veneer products
+#' \item \strong{Indu.RW.PlyandVen.Consump} Consumption of plywood and veneer products
+#' \item \strong{Indu.RW.Pulp.Prod} Production of pulp products
+#' \item \strong{Indu.RW.Pulp.Imports} Imports of pulp products
+#' \item \strong{Indu.RW.Pulp.Exports} Exports of pulp products
+#' \item \strong{Indu.RW.Pulp.Consump} Consumption of pulp products
+#' \item \strong{Indu.RW.OtherIndustrial.ProdAndConsump} Production and consumption of Other industrial roundwood products
+#' \item \strong{Indu.RW.Logs.Imports} Imports of logs
+#' \item \strong{Indu.RW.Logs.Exports} Exports of logs
+#' \item \strong{FuelWood.ProdAndConsumption} Production and Consumption of Fuelwood
+#' \item \strong{UnNamed1} Unnamed
+#' }
+#'
+#' @format A data frame with 48 observations of 22 variables.
+#' @source  Based on data published by the U.S. Departments of Commerce and Agriculture.
+#'
+"UlrichTable6"

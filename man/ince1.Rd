@@ -23,7 +23,7 @@
 \item \strong{Fuelwood}(Fuelwood units: million ft^3)
 \item \strong{FuelwoodT}(Fuelwood units: Thousand short tons)
 \item \strong{Log.Chip.Exports}(Log and Chip exports units: Thousand short tons)
-\item \strong{"RW.Dom.Prod}(Roundwood Equivalent of Domestic Product Ouptut units: Thousand short tons)
+\item \strong{RW.Dom.Prod}(Roundwood Equivalent of Domestic Product Output units: Thousand short tons)
 \item \strong{Estimated.Tot.Dom.Timber}(Estimated Total Domestic Timber Harvest units: Thousand short tons)
 }}
 \source{

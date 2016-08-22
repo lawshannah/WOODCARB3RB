@@ -3,7 +3,7 @@
 \docType{data}
 \name{ulrich53}
 \alias{ulrich53}
-\title{lnsulating board1 production, imports, exports, and consumption, 1950-87}
+\title{Insulating board production, imports, exports, and consumption, 1950-87}
 \format{A data frame with 63 observations of  6 variables. (all units in millions square feet except when specified otherwise):
 \itemize{
 \item \code{InsulatingBoard.Prod} (Insulating Board Production)
@@ -19,7 +19,7 @@ U.S. Department of Commerce, Bureau of the Census
 ulrich53
 }
 \description{
-lnsulating board1 production, imports, exports, and consumption, 1950-87
+Insulating board production, imports, exports, and consumption, 1950-87
 }
 \keyword{ulrich53}
 

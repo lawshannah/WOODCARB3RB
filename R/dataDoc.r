@@ -556,7 +556,7 @@
 #' @format A data frame with 48 observations of 22 variables.
 #' @source  Based on data published by the U.S. Departments of Commerce and Agriculture.
 #'
-"UlrichTable6"
+"ulrich6"
 
 #########################################
 #' U.S. Paper & Paperboard, Production, Imports, Exports, Apparent Consumption, 1900 - 2050
@@ -703,8 +703,8 @@
 #' \item \code{UnNamed6}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
-#' @keywords howard7a
-"howard7a"
+#' @keywords howard7
+"howard7"
 
 
 
@@ -738,7 +738,31 @@
 "ulrich53"
 
 
-
+#' Half Lives
+#'
+#' Half lives for different end uses.
+#'
+#' @format A data frame with 151 observations of 13 variables.
+#' \itemize{
+#' \item \strong{HL.House.SF} Single Family Homes
+#' \item \strong{HL.House.MultF} Multi Family Homes
+#' \item \strong{HL.House.MobHome} Mobile Homes
+#' \item \strong{ResUpKeep.Tot} Total Residential Upkeep and Improvement
+#' \item \strong{NonRes.construc.allRR} All Railroads
+#' \item \strong{NonRes.construc.RR.ties} Railroad Ties
+#' \item \strong{NonRes.construc.Railcar} Railcar Repair
+#' \item \strong{Manuf.House.Furn} Household Furniture
+#' \item \strong{Manuf.Comm.Furn} Commercial Furniture
+#' \item \strong{Manuf.other} Manufacturing - Other Products
+#' \item \strong{ship.tot} Shipping
+#' \item \strong{Other.tot} Other Uses
+#' \item \strong{other.industrial.tot} Uses For Other Industrial Products
+#' }
+#'
+#' @source USFS data
+#' @keywords halfLives
+#'
+"halfLives"
 
 
 

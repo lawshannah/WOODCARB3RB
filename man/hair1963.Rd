@@ -4,19 +4,8 @@
 \name{hair1963}
 \alias{hair1963}
 \title{Estimated production, net imports, and apparent consumption of timber products in the US, 1900-1962}
-\format{A data frame with 85 observations on 38 variables}
-\source{
-US Department of Commerce and Agriculture and USFS Estimations
-}
-\usage{
-hair1963
-}
-\description{
-Dataset containing estimated statistics for timber products. All vectors are numeric.
-Most data is for products in the Industrial Roundwood Class. Each column except the first two and the last one
-are in this category.
-}
-\details{
+\format{A data frame with 85 observations on 38 variables
+
 \itemize{
 \item \strong{Dom.Prod.Tot} Total Domestic Production
 \item \strong{ApparentConsumption} Apparent Consumption
@@ -63,7 +52,17 @@ Columns may not add to total because of rounding.
 \item \strong{PulpWood.ApparentConsumption} Apparent Consumption of Pulpwood
 \item \strong{Other.ApparentConsumption} Apparent Consumption of Other Products
 \item \strong{FuelWood.ApparentConsumption} Apparent Consumption of Fuelwood
+}}
+\source{
+US Department of Commerce and Agriculture and USFS Estimations
 }
+\usage{
+hair1963
+}
+\description{
+Dataset containing estimated statistics for timber products. All vectors are numeric.
+Most data is for products in the Industrial Roundwood Class. Each column except the first two and the last one
+are in this category.
 }
 \keyword{hair1963}
 

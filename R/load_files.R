@@ -49,7 +49,7 @@ u5 <- function(y,c){
 #rownames(UlrichTable6) <- 1950:1987
 u6 <- function(y,c){
 
-  return(UlrichTable6[y-1949,c])
+  return(ulrich6[y-1949,c])
 
 }
 ###################

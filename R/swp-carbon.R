@@ -8,16 +8,17 @@ enduses <- c("SingleFam", "MultiFam", "MobileHomes",
              "HouseFurniture", "CommercialFurniture", "OtherManufacturing",
              "Total Manufacturing", "Shipping", "OtherUses", "OtherIndustrial",
              "Exports")
-totalEUs <- c(4,9,13, 17) ##total end uses to not count in carbon totals
+totalEUs <- c(4,9,13) ##total end uses to not count in carbon totals
 primaryclasses <- c("Sawnwood",
-
                     "StructuralPanels",
                     "NonStructuralPanels",
                     "OtherIndustrial")
 minyr <- 1900
 maxyr <- 2020
 yrs <- minyr:maxyr
-#' Title
+#' Intermediate Calculations used for variables 1 and 2, calculated for all years
+#'
+#' Columns in SWPcalcdata that are used to calculate production and stock change approach.
 #'
 #' @return Data frame of Roundwood and solidwood production, imports and exports
 #' @export
@@ -59,6 +60,24 @@ calculateswp <- function(){
       return((h28(y,1)*1000*(((h28(y,2)/h28(y,1))*InceF5)+((h28(y,3)/h28(y,1))*InceG5)))*1000)
     }
   })
+  swpcalcdata$`Sawnwood Imports` <- sapply(yrs, function(y){
+    if(y > 1899 && y < 1918){
+      return(h8(y,4)*InceF5*1000)
+    }
+    if(y>1917 && y < 1950){
+      return((((h8(y,5)+h8(y,7))*InceF5)+(h8(y,6)*InceG5))*1000)
+    }
+    if(y > 1949 && y < 1965){
+      return(((u29(y,5)*1000*InceF5)+(u29(y,6)*InceG5*1000))*1000)
+    }
+    if(y>1964 && y< 2021){
+      return(((h28(y,5)*1000*InceF5)+(h28(y,6)*InceG5*1000))*1000)
+    }
+    # if(y>2020 && y< 2051){
+    #   return(((i1(y,4)*InceF5)+(i1(y,5)*InceG5))*1000)
+    # }
+  })
+
   swpcalcdata$`Sawnwood Exports` <- sapply(yrs, function(y){
     if(y < 1911){
       return(h8(y,13) * InceF5 * 1000)
@@ -80,24 +99,14 @@ calculateswp <- function(){
 
     if(y < 1965){
       #u5$j, u5$o...u6$j, u6$o
-      return(1000*((u5(y,7)+u5(y,11))*InceV5+(u6(y,8)+u6(y,12))*InceW5))
+      return(1000*((u5(y,7)+u5(y,11))*InceV5+(u6(y,7)+u6(y,11))*InceW5))
     } #J,O.. Lumber Production + plywood/veneer production, for HW and SW
     if (y < 2021){
       return(1000*((h6(y,7)+h6(y,11))*InceV5+(h7(y,7)+h7(y,11))*InceW5))
     }
   })
-  ##if unique values in dfs
-  rndcon <- function(dfs,...){
-    #columns to look for in dfs
 
-    #look for columns and save values
-
-    #if not unique, choose one
-
-    #do calculation
-  }
-
-  swpcalcdata$`Log Exports` <- sapply(yrs, function(y){
+  swpcalcdata$`Log Exports (tons)` <- sapply(yrs, function(y){
     if(y < 1965){
       return((h3(y,8)*InceV5+h3(y,10)*InceW5)*1000)
     }
@@ -105,13 +114,13 @@ calculateswp <- function(){
       return((h6(y,21)*InceV5+h7(y,21)*InceW5)*1000)
     }
   })
-  swpcalcdata$`Imported logs for lumber and panels` <- sapply(yrs, function(y){
+  swpcalcdata$`Imported logs for lumber and panels (1000 tons)` <- sapply(yrs, function(y){
     if(y<1950){
       return(0)
     }
     if (y < 1965){
       #u5$Y, u6$z
-      return(1000*(u5(y,20)*InceV5+u6(y,21)*InceW5))
+      return(1000*(u5(y,20)*InceV5+u6(y,20)*InceW5))
     }
     if(y < 2021){
       return(1000*(h6(y,20)*InceV5+h7(y,20)*InceW5))
@@ -133,6 +142,24 @@ calculateswp <- function(){
       return(((h37(y,2)*InceB5)+(h38(y,3)*InceC5))*1000)
     }
   })
+  swpcalcdata$SP.Imports <- sapply(yrs,function(y){
+    if (y>1889 &&y<1950){
+      return(0)
+    }
+    if(y>1949 && y<1965){
+      return((u36(y,5)*InceB5)*1000)
+    }
+    if (y>1964 && y<1980){
+      return((h37(y,5)*InceB5)*1000)
+    }
+    if (y>1979 && y<2021){
+      return(((h37(y,5)*InceB5)+(h38(y,6)*InceC5))*1000)
+    }
+    # if(y>2020 && y<2051){
+    #   return(((inc1(y,1)*InceB5)+(inc1(y,2)*InceC5))*1000)
+    # }
+  })
+
   swpcalcdata$SP.Exports <- sapply(yrs, function(y){
     if(y < 1927){
       return(0)
@@ -161,6 +188,30 @@ calculateswp <- function(){
       return(((h37(y,3)*InceE5)+(h53(y,2)*InceI5)+(h56(y,1)*InceJ5)+(h53(y,3)*InceK5)+h55(y,1)*InceQ5)*1000)
     }
   })
+  swpcalcdata$NSP.Imports <- sapply(yrs, function(y){
+    if(y>1889 && y<1927){
+      return(0)
+    }
+    if(y>1926 && y<1935){
+      return(((h3t21(y,1)/1000)*InceR5)*1000)
+    }
+    if(y>1934 && y<1950){
+      return((((h3t20(y,3)*InceE5)+(h3t21(y,1)*InceR5))/1000)*1000)
+    }
+    if(y>1949 && y<1954){
+      return(u36(y,6)*InceE5*1000)
+    }
+    if(y>1953 && y<1963){
+      return(((u36(y,6)*InceE5)+(u54(y,2)*InceJ5)+(u53(y,2)*InceO5))*1000)
+    }
+    if(y>1962 && y< 1965){
+      return(((u36(y,6)*InceE5)+(u52(y,4)*InceI5)+(u54(y,2)*InceJ5)+(u53(y,2)*InceO5))*1000)
+    }
+    if(y>1964&& y<2021){
+      return(((h37(y,6)*InceE5)+(h53(y,4)*InceI5)+(h56(y,2)*InceJ5)+(h55(y,2)*InceQ5))*1000)
+    }
+  })
+
   swpcalcdata$NSP.Exports <- sapply(yrs, function(y){##lNSP
     if (y<1916){
       return(0)
@@ -186,9 +237,23 @@ calculateswp <- function(){
   })
   ######################
   swpcalcdata$`Other Products Production Special` <- swpcalcdata$`Other Products Production` - (1-a5)*swpcalcdata$`Other Products Exports`
-  swpcalcdata$`Sawnwood Prod Special` <- (swpcalcdata$`Sawnwood Production` - (1-a5) * swpcalcdata$`Sawnwood Exports`) * ((swpcalcdata$`Roundwood consumed for lumber and panels`+swpcalcdata$`Log Exports`*a5-swpcalcdata$`Imported logs for lumber and panels`*PRP62)/swpcalcdata$`Roundwood consumed for lumber and panels`)
-  swpcalcdata$`SP Prod Special` <- (swpcalcdata$SP.Production-(1-a5)*swpcalcdata$SP.Exports)*((swpcalcdata$`Roundwood consumed for lumber and panels`+a5*swpcalcdata$`Log Exports`-swpcalcdata$`Imported logs for lumber and panels`*PRP62)/swpcalcdata$`Roundwood consumed for lumber and panels`)
-  swpcalcdata$`NSP Prod Special` <- (swpcalcdata$NSP.Production-(1-a5)*swpcalcdata$NSP.Exports)*((swpcalcdata$`Roundwood consumed for lumber and panels`+a5*swpcalcdata$`Log Exports`-swpcalcdata$`Imported logs for lumber and panels`*PRP62)/swpcalcdata$`Roundwood consumed for lumber and panels`)
+  swpcalcdata$`Sawnwood Prod Special` <- (swpcalcdata$`Sawnwood Production` - (1-a5) * swpcalcdata$`Sawnwood Exports`) * ((swpcalcdata$`Roundwood consumed for lumber and panels`+swpcalcdata$`Log Exports (tons)`*a5-swpcalcdata$`Imported logs for lumber and panels (1000 tons)`*PRP62)/swpcalcdata$`Roundwood consumed for lumber and panels`)
+  swpcalcdata$`SP Prod Special` <- (swpcalcdata$SP.Production-(1-a5)*swpcalcdata$SP.Exports)*((swpcalcdata$`Roundwood consumed for lumber and panels`+a5*swpcalcdata$`Log Exports (tons)`-swpcalcdata$`Imported logs for lumber and panels (1000 tons)`*PRP62)/swpcalcdata$`Roundwood consumed for lumber and panels`)
+  swpcalcdata$`NSP Prod Special` <- (swpcalcdata$NSP.Production-(1-a5)*swpcalcdata$NSP.Exports)*((swpcalcdata$`Roundwood consumed for lumber and panels`+a5*swpcalcdata$`Log Exports (tons)`-swpcalcdata$`Imported logs for lumber and panels (1000 tons)`*PRP62)/swpcalcdata$`Roundwood consumed for lumber and panels`)
+
+  #these used for variable 1a
+  swpcalcdata$`Sawnwood Consumption` <- swpcalcdata$`Sawnwood Production` +
+                                        swpcalcdata$`Sawnwood Imports` -
+                                        swpcalcdata$`Sawnwood Exports`
+
+  swpcalcdata$SP.Consumption <- swpcalcdata$SP.Production +
+                                swpcalcdata$SP.Imports -
+                                swpcalcdata$SP.Exports
+
+  swpcalcdata$NSP.Consumption <- swpcalcdata$NSP.Production +
+                                 swpcalcdata$NSP.Imports -
+                                 swpcalcdata$NSP.Exports
+
   swpcalcdata
 
 }
@@ -200,14 +265,31 @@ calculateswp <- function(){
 #' @export
 #'
 #' @examples calcplacediu()
-calcplacediu <- function(){
+calcplacediu <- function(Years = 1900:2020, approach = c("Stock Change",
+                                                         "Production"),
+                         total = TRUE){
+  approachtype <- match.arg(approach)
   swpcalcdata <- calculateswp()
-  placeIU <- data.frame(Years = yrs)
-  for(i in 1:15){ ##use testthat to check these values with spreadsheet.
-    placeIU[,i+1]  <- swpcalcdata[["Sawnwood Prod Special"]] * fracsawnwood[1:121,i] + swpcalcdata[["SP Prod Special"]] * fracstrpanels[1:121,i] + swpcalcdata[["NSP Prod Special"]] * fracnonstrpanels[1:121,i]
+  placeIU <- data.frame(Years = Years)
+
+  if(approachtype == "Production"){
+    placeIU[,2:16] <- swpcalcdata[["Sawnwood Prod Special"]][Years-(minyr-1)] * fracsawnwood[Years-(minyr-1),-16] +
+      swpcalcdata[["SP Prod Special"]][Years-(minyr-1)] * fracstrpanels[Years-(minyr-1),-16] +
+      swpcalcdata[["NSP Prod Special"]][Years-(minyr-1)] * fracnonstrpanels[Years-(minyr-1),-16]
   }
-  placeIU$V17 <- swpcalcdata$`Other Products Production Special`
-  placeIU
+  else if(approachtype == "Stock Change"){
+    placeIU[,2:16] <- swpcalcdata[["Sawnwood Consumption"]][Years-(minyr-1)] * fracsawnwood[Years-(minyr-1),-16] +
+      swpcalcdata[["SP.Consumption"]][Years-(minyr-1)] * fracstrpanels[Years-(minyr-1),-16] +
+      swpcalcdata[["NSP.Consumption"]][Years-(minyr-1)] * fracnonstrpanels[Years-(minyr-1),-16]
+  }
+
+placeIU$V17 <- swpcalcdata$`Other Products Production Special`[Years-(minyr-1)]
+  if(total == FALSE){
+    placeIU
+  }
+  else{
+    apply(placeIU[,-c(1,5,10,14)], 1, sum)
+  }
 }
 
 

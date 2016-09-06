@@ -231,7 +231,7 @@ apiFiber <- function(y,c){
 #apiTotalWoodPulp <- read.xlsx("./Data/apiTotalWoodPulp.xlsx",1,header=FALSE)
 #rownames(apiTotalWoodPulp) <- c(1869,1879,1889,1899:1972)
 apiTotal <- function(y,c){
-  return(apiTotalWoodPulp[y-1894,c])
+  return(apiTotalWoodPulp[y-1895,c])
 }
 #usaFiberPulp <- read.xlsx("./Data/usaFiberPulpCG.xlsx",1,header=FALSE)
 #rownames(usaFiberPulp) <- 1998:2013

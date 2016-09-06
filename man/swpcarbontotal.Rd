@@ -2,15 +2,20 @@
 % Please edit documentation in R/totalcarbon.R
 \name{swpcarbontotal}
 \alias{swpcarbontotal}
-\title{Title}
+\title{swpcarbontotal}
 \usage{
-swpcarbontotal(Yrs = 1990:2015, distribution = c("exp", "k=2",
-  "chisquared"))
+swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"),
+  THETA, K, onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
+  "Stock Change"), halflives = halfLives)
 }
 \arguments{
+\item{Yrs}{years to calculate carbon totals for}
+
+\item{distribution}{type of decay distribution}
+
 \item{K}{}
 }
 \description{
-Title
+Calculates carbon per end use and total carbon in solidwood products.
 }
 

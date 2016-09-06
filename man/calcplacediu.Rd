@@ -4,7 +4,8 @@
 \alias{calcplacediu}
 \title{Title}
 \usage{
-calcplacediu()
+calcplacediu(Years = 1900:2020, approach = c("Stock Change", "Production"),
+  total = TRUE)
 }
 \value{
 a data frame of carbon placed in use for various end uses

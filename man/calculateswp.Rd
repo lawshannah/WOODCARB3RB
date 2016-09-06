@@ -2,7 +2,7 @@
 % Please edit documentation in R/swp-carbon.R
 \name{calculateswp}
 \alias{calculateswp}
-\title{Title}
+\title{Intermediate Calculations used for variables 1 and 2, calculated for all years}
 \usage{
 calculateswp()
 }
@@ -10,7 +10,7 @@ calculateswp()
 Data frame of Roundwood and solidwood production, imports and exports
 }
 \description{
-Title
+Columns in SWPcalcdata that are used to calculate production and stock change approach.
 }
 \examples{
 calculateswp()

@@ -2,7 +2,7 @@
 % Please edit documentation in R/totalcarbon.R
 \name{swpcarbontotal}
 \alias{swpcarbontotal}
-\title{swpcarbontotal}
+\title{Calculates total carbon left in Yrs}
 \usage{
 swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"),
   THETA, K, onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
@@ -13,9 +13,18 @@ swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"),
 
 \item{distribution}{type of decay distribution}
 
-\item{K}{}
+\item{THETA}{optional value for other decay (will update with decay array next)}
+
+\item{K}{optional value for other decay (will update with decay array next)}
+}
+\value{
+returns either only total for all end uses or total by enduses with option of lumberpre1900
 }
 \description{
 Calculates carbon per end use and total carbon in solidwood products.
+}
+\examples{
+swpcarbontotal(onlytotal=FALSE)
+swpcarbontotal(1950:1975, approach = "Stock Change")
 }
 

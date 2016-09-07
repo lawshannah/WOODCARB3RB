@@ -2,11 +2,17 @@
 % Please edit documentation in R/papercarbon.R
 \name{calcUSAproduction}
 \alias{calcUSAproduction}
-\title{Title}
+\title{Calculates paper statistics}
 \usage{
 calcUSAproduction()
 }
+\value{
+a data frame with necessary intermediate calculations
+}
 \description{
-Title
+Calculates paper statistics
+}
+\examples{
+calcUSAproduction()
 }
 

@@ -1,21 +1,3 @@
-library(DT)
-a5 <- 1##Switch to include exports, for production or use of wood
-#####Var 2PRODUCTION APPROACH, SOLID WOOD PRODUCTS CALCULATIONS
-
-enduses <- c("SingleFam", "MultiFam", "MobileHomes",
-             "TotalHomes", "ResidentialUpkeep", "AllRailroads",
-             "Railroadties", "RailcairRepair", "TotalnonResidential",
-             "HouseFurniture", "CommercialFurniture", "OtherManufacturing",
-             "Total Manufacturing", "Shipping", "OtherUses", "OtherIndustrial",
-             "Exports")
-totalEUs <- c(4,9,13) ##total end uses to not count in carbon totals
-primaryclasses <- c("Sawnwood",
-                    "StructuralPanels",
-                    "NonStructuralPanels",
-                    "OtherIndustrial")
-minyr <- 1900
-maxyr <- 2020
-yrs <- minyr:maxyr
 #' Intermediate Calculations used for variables 1 and 2, calculated for all years
 #'
 #' Columns in SWPcalcdata that are used to calculate production and stock change approach.
@@ -23,7 +5,8 @@ yrs <- minyr:maxyr
 #' @return Data frame of Roundwood and solidwood production, imports and exports
 #' @export
 #'
-#' @examples calculateswp()
+#' @examples
+#' calculateswp()
 calculateswp <- function(){
   swpcalcdata <- data.frame(Years = yrs)
   yrs <- swpcalcdata$Years
@@ -264,7 +247,8 @@ calculateswp <- function(){
 #' @return a data frame of carbon placed in use for various end uses
 #' @export
 #'
-#' @examples calcplacediu()
+#' @examples
+#' calcplacediu()
 calcplacediu <- function(Years = 1900:2020, approach = c("Stock Change",
                                                          "Production"),
                          total = TRUE){

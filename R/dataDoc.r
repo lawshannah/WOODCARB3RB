@@ -664,8 +664,8 @@
 #' \item \code{UnNamed10}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
-#' @keywords howard6a
-"howard6a"
+#' @keywords howard6
+"howard6"
 
 
 #' Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.

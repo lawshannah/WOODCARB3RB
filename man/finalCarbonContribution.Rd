@@ -23,8 +23,8 @@ Calculate final carbon contribution to AFOLU.
 }
 \examples{
 finalCarbonContribution()
-finalCarbonContribution(Years = 2000:202 approach = "Stock Change")
-finalCarbonContribution(Years = 2000:202 approach = "Production",
+finalCarbonContribution(approach = "Stock Change")
+finalCarbonContribution(approach = "Production",
                          decaytype ="Exponential")
 }
 

@@ -1,80 +1,10 @@
-#########PRODUCTION APPROACH, PAPER PRODUCTS
-####################
-####
-#' Title
+#' Calculates paper statistics
 #'
-#' Carbon stock change for paper production year y in Tg C/yr
-#' @param y year for stock change
-#'
-#' @return Stock change in carbon from paper
-#'
-#'
-#' @examples
-Var2_C_PAPER_STOCKCHANGE <- function(y){
-  USA <- calcUSAproduction()
-  var2papertab <- numeric(121)
-  for(year in 1900:2020){ #Total carbon in paper for year y in Tg C/yr
-    if(year == 1900){
-      var2papertab[year-1899] <- exp(-log(2)/PRP10)*USA$`Production Approach-C Input from Paper Products(Calc BU)`[year-(minyr-1)]
-    }
-    else{
-      var2papertab[year-1899] <- exp(-log(2)/PRP10)*(USA$`Production Approach-C Input from Paper Products(Calc BU)`[year-(minyr-1)]+
-                                                    var2papertab[year-1900])
-    }
-  }
-  Var2_totalC_PAPER <- function(year){
-    exp(-log(2)/PRP10)*(USA$`Production Approach-C Input from Paper Products(Calc BU)`[year-(minyr-1)]+
-                          var2papertab[year-1900])
-  }
-  if (y == 1900){
-    return(0)
-  }
-  else{
-    return(Var2_totalC_PAPER(y) - Var2_totalC_PAPER(y-1))
-  }
-
-
-}
-
-#' Title
-#'
-#' @param y
-#'
-#' @return
-#'
-#'
-#' @examples
-Var1_C_PAPER_STOCKCHANGE <- function(y){
-  USA <- calcUSAproduction()
-  var1papertab <- numeric(121)
-  for(year in 1900:2020){ #Total carbon in paper for year y in Tg C/yr
-    if(year == 1900){
-      var1papertab[year-1899] <- exp(-log(2)/PRP10)*USA$CarbonInputFlowPaperStockChange[year-(minyr-1)]
-    }
-    else{
-      var1papertab[year-1899] <- exp(-log(2)/PRP10)*(USA$CarbonInputFlowPaperStockChange[year-(minyr-1)]+
-                                                       var1papertab[year-1900])
-    }
-  }
-  Var1_totalC_PAPER <- function(year){
-    exp(-log(2)/PRP10)*(USA$CarbonInputFlowPaperStockChange[year-(minyr-1)]+
-                          var1papertab[year-1900])
-  }
-  if (y == 1900){
-    return(0)
-  }
-  else{
-    return(Var1_totalC_PAPER(y) - Var1_totalC_PAPER(y-1))
-  }
-}
-
-######
-#' Title
-#'
-#' @return
+#' @return a data frame with necessary intermediate calculations
 #' @export
 #'
 #' @examples
+#' calcUSAproduction()
 calcUSAproduction <- function(){
   yrs <- 1900:2020
   minyr <- 1900
@@ -147,20 +77,20 @@ calcUSAproduction <- function(){
   })
 
 
-    USA$`Other Fibre Pulp Production` <- sapply(yrs, function(y){
-      if (y < 1965){
-        return(USA$`apiTotalWP_L`[y-(minyr-1)])
-      }
-      if (y > 1964 && y < 2014){
-        return(h46(y,5)*(h46(y,1)/h46(y,2))*1000)
-      }
-      if (y > 2013 && y < 2021){
-        return(h46(2007,5)*(h46(2007,1)/h46(2007,2))*1000)#uses 2007 value
-      }
-      if (y > 2020){
-        return(h46(2002,5)*(h46(2002,1)/h46(2002,2))*1000)#uses value from 2002
-      }
-    })
+  USA$`Other Fibre Pulp Production` <- sapply(yrs, function(y){
+    if (y < 1965){
+      return(USA$`apiTotalWP_L`[y-(minyr-1)])
+    }
+    if (y > 1964 && y < 2014){
+      return(h46(y,5)*(h46(y,1)/h46(y,2))*1000)
+    }
+    if (y > 2013 && y < 2021){
+      return(h46(2007,5)*(h46(2007,1)/h46(2007,2))*1000)#uses 2007 value
+    }
+    if (y > 2020){
+      return(h46(2002,5)*(h46(2002,1)/h46(2002,2))*1000)#uses value from 2002
+    }
+  })
 
 
 
@@ -264,8 +194,8 @@ calcUSAproduction <- function(){
   USA$`Paper+Paperbaord Imports` <- IncePaper[yrs-(1899-1),2]*1000*InceL5
 
   USA$`Paper+Paperboard Consumption` <- USA$`Paper+Paperboard Production` +
-            USA$`Paper+Paperbaord Imports`-
-            USA$`Paper+Paperboard Exports`
+    USA$`Paper+Paperbaord Imports`-
+    USA$`Paper+Paperboard Exports`
 
 
   USA$`Percent of Wood Pulp For Paper`<- ((USA$`Pulp for Paper Production`+USA$`Pulp for Paper Imports`-
@@ -283,8 +213,8 @@ calcUSAproduction <- function(){
 
   USA$`Nonwood Fiber Percent of Total Pulp Consumption` <-
     (USA$`Other Fibre Pulp Production`+USA$`Other Fibre Pulp Imports`
-            -USA$`Other Fibre Pulp Exports`)/(USA$`Pulp for Paper Production`
-                                                                +USA$`Pulp for Paper Imports`-USA$`Pulp for Paper Exports`)
+     -USA$`Other Fibre Pulp Exports`)/(USA$`Pulp for Paper Production`
+                                       +USA$`Pulp for Paper Imports`-USA$`Pulp for Paper Exports`)
 
   USA$`Imported Woodpulp as a Percent of Total WoodPulp Consumption` <-
     USA$`Wood Pulp for Paper Imports`/(USA$`Wood Pulp for Paper Production` +
@@ -296,10 +226,10 @@ calcUSAproduction <- function(){
                                                                              (1-USA$`Nonwood Fiber Percent of Total Pulp Consumption`*PRP62)*
                                                                              (1-USA$`Imported Woodpulp as a Percent of Total WoodPulp Consumption`*PRP62)*
                                                                              ((USA$`Total Roundwood Consumed For Paper`-
-                                                                                USA$`Imported Pulpwood Chips`+USA$`Chip Exports (tons)`/1000)/
+                                                                                 USA$`Imported Pulpwood Chips`+USA$`Chip Exports (tons)`/1000)/
                                                                                 USA$`Total Roundwood Consumed For Paper`)+
-    (USA$`Recovered Fibre Pulp Exports`+USA$`Recovered Paper Exports`+
-       USA$`Pulp for Paper Exports`)*a5)
+                                                                             (USA$`Recovered Fibre Pulp Exports`+USA$`Recovered Paper Exports`+
+                                                                                USA$`Pulp for Paper Exports`)*a5)
 
   USA
 }

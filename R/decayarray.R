@@ -150,4 +150,4 @@ calculatedecay <- function() {
 # legend("bottomleft", c("exp", "k=2", "chi^2"),
 #        col = c("red", "blue", "green"),
 #        lwd = 3)
-warnings()
+

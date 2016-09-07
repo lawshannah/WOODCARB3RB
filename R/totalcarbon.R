@@ -1,60 +1,18 @@
-#' Carbon Stock Change of Solidwood Products
-#'
-#' @param year the year to calculate stock change for
-#' @param distribution the decay distribution to be used in the calculation
-#'
-#' @return Stock changes for years
-#'
-#'
-#' @examples
-Var2_C_SWP_STOCKCHANGE <- function(years,
-                                   decaydistribution = c("Exponential",
-                                                         "Gamma")){
-  decay <- match.arg(decaydistribution)
-  c <- numeric(length(years))
-  for(i in years){
-    c[i-(min(years)-1)] <- (swpcarbontotal(Yrs = i, distribution = decay) -
-                              swpcarbontotal(Yrs = (i-1), distribution = decay)) * PRO17
-  }
-  return(c)
-}
-
-#' Title
-#'
-#' @param year
-#' @param decaydistribution
-#'
-#' @return
-#'
-#'
-#' @examples
-Var1_C_SWP_STOCKCHANGE <- function(years,
-                                   decaydistribution = c("Exponential",
-                                                          "Gamma")){
-  decay <- match.arg(decaydistribution)
-  c <- numeric(length(years))
-  for(year in years){
-    c[year-(min(years)-1)] <- (swpcarbontotal(Yrs = year, distribution = decay, approach = "Stock Change") -
-                              swpcarbontotal(Yrs = (year-1), distribution = decay,
-                                             approach = "Stock Change")) * PRO17
-  }
-  return(c)
-}
-
-
-#' swpcarbontotal
+#' Calculates total carbon left in Yrs
 #'
 #' Calculates carbon per end use and total carbon in solidwood products.
 #'
 #' @param Yrs years to calculate carbon totals for
 #' @param distribution type of decay distribution
-#' @param THETA
-#' @param K
+#' @param THETA optional value for other decay (will update with decay array next)
+#' @param K optional value for other decay (will update with decay array next)
 #'
-#' @return
+#' @return returns either only total for all end uses or total by enduses with option of lumberpre1900
 #' @export
 #'
 #' @examples
+#' swpcarbontotal(onlytotal=FALSE)
+#' swpcarbontotal(1950:1975, approach = "Stock Change")
 swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"), THETA, K,
                            onlytotal=TRUE, lumberpre = TRUE, approach = c("Production",
                                                                           "Stock Change"),
@@ -63,10 +21,12 @@ swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "Gam
   approachtype <- match.arg(approach)
   placeIU <- calcplacediu(total = FALSE, approach = approachtype)
 
+  #if(type == "Gamma")
+
   g <- function(x){ ##gamma functionf
     ((x^(THETA - 1)) * (exp(-x/K))) / (gamma(THETA) * (K^THETA))
   }
-minyr <- 1900
+  minyr <- 1900
   Var2_totalC_SWP <- data.frame(Years = Yrs)
   totalEUs <- c(4,9,13) ##these are totals
 

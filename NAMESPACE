@@ -2,6 +2,7 @@
 
 export(calcUSAproduction)
 export(calcplacediu)
+export(calculatedecay)
 export(calculatedumpcarbonproduction)
 export(calculatedumpcarbonstockchange)
 export(calculateswp)

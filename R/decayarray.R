@@ -1,15 +1,25 @@
 ##creating blank four-dimensional array to fill
 ##look-up array:
-##1. Decay Type (1 = exponential, 2 = k=2, 3 = chi-squared)
-##2. End Use (1 = Single Family Housing, 2 = Multifamily Housing, 3 = Mobile Homes, 4 = Residential Upkeep and Improvement, 5 = All Construction Excluding Railroads, 6 = Railroad Ties, 7 = Railcar Repair, 8 = Household Furniture, 9 = Commercial Furniture, 10 = Other Manufacturing, 11 = Shipping, 12 = Other Uses, 13 = Uses for Other Industrial Products)
-##3. Year Put in Use (1 = 1900)
-##4. Year (1 = 1900)
-##Example: decay_array[1, 3, 51, 101] will produce percentage carbon left after exponential decay of mobile homes built in 1950 at year 2000
-##Example: decay_array[1, 3, 51, ] will produce a vector of percentage carbon left after exponential decay of mobile homes built in 1950 for years 1950 - end year
-##Example: decay_array[1, 3, , 101] will produce a vector of percentage carbon left after exponential decay of mobile homes built from 1900 to 2000 in the year 2000
 
+#' Calculates
+#'
+#' 1. Decay Type (1 = exponential, 2 = k=2, 3 = chi-squared)
+#' 2. End Use (1 = Single Family Housing, 2 = Multifamily Housing, 3 = Mobile Homes, 4 = Residential Upkeep and Improvement, 5 = All Construction Excluding Railroads, 6 = Railroad Ties, 7 = Railcar Repair, 8 = Household Furniture, 9 = Commercial Furniture, 10 = Other Manufacturing, 11 = Shipping, 12 = Other Uses, 13 = Uses for Other Industrial Products)
+#' 3. Year Put in Use (1 = 1900)
+#' 4. Year (1 = 1900)
+#' Example: decay_array[1, 3, 51, 101] will produce percentage carbon left after exponential decay of mobile homes built in 1950 at year 2000
+#' Example: decay_array[1, 3, 51, ] will produce a vector of percentage carbon left after exponential decay of mobile homes built in 1950 for years 1950 - end year
+#' Example: decay_array[1, 3, , 101] will produce a vector of percentage carbon left after exponential decay of mobile homes built from 1900 to 2000 in the year 2000
 
-calculatedecay <- function() {
+#' @return four dimensional array
+#' @export
+#'
+#' @examples
+#' calculatedecay()
+calculatedecay <- function(){
+
+    halfLives <- halfLives[, !(colnames(halfLives) %in% totalEUs)]
+
   decays <- 4
   enduses <- 13
   years <- 151
@@ -58,66 +68,66 @@ calculatedecay <- function() {
   ##chi-squared
   ##ALGORITHM IS VERY APPROXIMATE AND SPECIFIC TO THIS DATA
   ##ideas: use a solve package, solve in another external program, improve this algorithm/investigate how the integral is functioning
-  for (i in 1:years)
-  {
-    g <- function(x) {((x^(k-1))*(exp(1)^(-x/h)))/(gamma(k)*(h^k))}
-    h <- 2
-    for (j in 1:enduses)
-    {
-      k <- 1
-      decayval <- 1
-      if (halfLives[i,j] >= 100) #finding k given each half life
-      {
-        while(abs(decayval - 0.5) > 0.001)
-        {
-          m <- decayval * 1.6
-          k <- k * m
-          decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
-        }
-      }
-      else if (halfLives[i,j] >= 72)
-      {
-        while(abs(decayval - 0.5) > 0.001)
-        {
-          m <- decayval * 1.65
-          k <- k * m
-          decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
-        }
-      }
-      else if (halfLives[i,j] >= 50)
-      {
-        while(abs(decayval - 0.5) > 0.001)
-        {
-          m <- decayval * 1.555
-          k <- k * m
-          decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
-        }
-      }
-      else if (halfLives[i,j] >= 24)
-      {
-        while(abs(decayval - 0.5) > 0.001)
-        {
-          m <- decayval * 2.05
-          k <- k * m
-          decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
-        }
-      }
-      else
-      {
-        while(abs(decayval - 0.5) > 0.001)
-        {
-          m <- decayval * 2.5
-          k <- k * m
-          decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
-        }
-      }
-      for (l in 1:(years - i + 1))
-      {
-        decay <- integrate(g, lower=0, upper=l)$value
-        decay_array[3, j, i, (i + l - 1)] <- 1 - decay
-      }
-    }
-  }
+  # for (i in 1:years)
+  # {
+  #   g <- function(x) {((x^(k-1))*(exp(1)^(-x/h)))/(gamma(k)*(h^k))}
+  #   h <- 2
+  #   for (j in 1:enduses)
+  #   {
+  #     k <- 1
+  #     decayval <- 1
+  #     if (halfLives[i,j] >= 100) #finding k given each half life
+  #     {
+  #       while(abs(decayval - 0.5) > 0.001)
+  #       {
+  #         m <- decayval * 1.6
+  #         k <- k * m
+  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #       }
+  #     }
+  #     else if (halfLives[i,j] >= 72)
+  #     {
+  #       while(abs(decayval - 0.5) > 0.001)
+  #       {
+  #         m <- decayval * 1.65
+  #         k <- k * m
+  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #       }
+  #     }
+  #     else if (halfLives[i,j] >= 50)
+  #     {
+  #       while(abs(decayval - 0.5) > 0.001)
+  #       {
+  #         m <- decayval * 1.555
+  #         k <- k * m
+  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #       }
+  #     }
+  #     else if (halfLives[i,j] >= 24)
+  #     {
+  #       while(abs(decayval - 0.5) > 0.001)
+  #       {
+  #         m <- decayval * 2.05
+  #         k <- k * m
+  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #       }
+  #     }
+  #     else
+  #     {
+  #       while(abs(decayval - 0.5) > 0.001)
+  #       {
+  #         m <- decayval * 2.5
+  #         k <- k * m
+  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #       }
+  #     }
+  #     for (l in 1:(years - i + 1))
+  #     {
+  #       decay <- integrate(g, lower=0, upper=l)$value
+  #       decay_array[3, j, i, (i + l - 1)] <- 1 - decay
+  #     }
+  #   }
+  # }
 }
 
 # ##example and plots

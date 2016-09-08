@@ -26,7 +26,7 @@ swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "Gam
   g <- function(x){ ##gamma functionf
     ((x^(THETA - 1)) * (exp(-x/K))) / (gamma(THETA) * (K^THETA))
   }
-  minyr <- 1900
+
   Var2_totalC_SWP <- data.frame(Years = Yrs)
   totalEUs <- c(4,9,13) ##these are totals
 

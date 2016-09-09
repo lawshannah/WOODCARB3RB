@@ -3,10 +3,11 @@ output:
   html_document: 
     keep_md: yes
 ---
+
 # WOODCARB3R
-Ben Jones
-Sami Hlebak 
-2016-02-01  
+
+Authors: Ben Jones, Sami Hlebak, others here 
+ 
 
 ## WOODCARB3R Version 0.1.1
 
@@ -24,6 +25,7 @@ devtools::install_github('benjones2/WOODCARB3R', build_vignettes = TRUE)
 ##Looking up Data Tables
 
 Information on datasets can be found with `?` or `help()`.
+
 ```s
 ?hair1958
 ```

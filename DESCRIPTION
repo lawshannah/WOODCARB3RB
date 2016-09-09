@@ -4,10 +4,12 @@ Title: WOODCARB3R
 Version: 0.1.0
 Authors@R: c(person("Ben", "Jones", email = "jonesb@appstate.edu", role = c("aut", "cre")),
              person("Sami", "Hlebak", email = "hlebaksm@appstate.edu", role = c("aut")))
-Description: Calculations for wood products
+Description: Calculations for carbon removal contributions due to wood products.
 License: GPL-2
 LazyData: TRUE
 Depends:
+  R (>= 2.10)
+Import:
     devtools (>= 1.11.0),
     repmis (>= 0.5),
     xlsx (>= 0.5.7)

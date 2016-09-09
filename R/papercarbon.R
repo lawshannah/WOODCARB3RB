@@ -19,6 +19,7 @@ calcUSAproduction <- function(){
       return((apiFiber(y,3)+apiFiber(y,5))*(apiTotal(y,1)/apiTotal(y,5)))
     }
     if (y >1956){
+      #G, B, F
       return(apiFiber(y,4)*(apiTotal(y,1)/apiTotal(y,5)))
     }
   })

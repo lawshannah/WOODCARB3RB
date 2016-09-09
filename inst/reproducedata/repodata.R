@@ -165,7 +165,7 @@ use_data(lossIU, overwrite = TRUE)
 
 ##########LUMBER WOOD IN SF HOUSES 1800-1900
 lumberpre1900 <- read.xlsx("./data/CopyOfData/lumberpre1900.xlsx",1,header=FALSE)
-colnames(lumberpre1900)<-c("carbon")
+colnames(lumberpre1900)<-c("Carbon")
 use_data(lumberpre1900, overwrite = TRUE)
 
 
@@ -185,11 +185,11 @@ paperToLandFills <- read.xlsx("./data/CopyOfData/paperToLandFIlls.xlsx",1,header
 colnames(paperToLandFills) <-c("PaperToLandfills") #In discription add: Percent of paper in land fill by year
 use_data(paperToLandFills, overwrite = TRUE)
 ########
-imports1file<-read.xlsx("./data/CopyOfData/imports1.xlsx",1,header=FALSE)
-colnames(imports1file) <-c("SW.PLY","OSB.Waferboard","HW.PLY.veneer",
-                           "SW.lumber","HW.lumber","Partical.board","Hardboard","MDF","PPandBoard",
-                           "insulatingboard", "","year","HardPly","Partboard","hardboard","insulboard")
-use_data(imports1file, overwrite = TRUE)
+#imports1file<-read.xlsx("./data/CopyOfData/imports1.xlsx",1,header=FALSE)
+#colnames(imports1file) <-c("SW.PLY","OSB.Waferboard","HW.PLY.veneer",
+                           #"SW.lumber","HW.lumber","Partical.board","Hardboard","MDF","PPandBoard",
+                           #"insulatingboard", "","year","HardPly","Partboard","hardboard","insulboard")
+#use_data(imports1file, overwrite = TRUE)
 
 
 ########halflives for various end uses for yrs 1900-2050
@@ -213,7 +213,8 @@ use_data(IncePaper, overwrite = TRUE)
 
 #######
 apiFiberpulp <- read.xlsx("./data/CopyOfData/api1975Fiberpulp.xlsx",1,header=FALSE)
-colnames(apiFiberpulp)<-c("Wood.Pulp","Waste.Paper","Rags","Other","Total")
+##WHAT is column G?? is it other?
+colnames(apiFiberpulp)<-c("Wood.Pulp","Waste.Paper", "Rags","?Findout","Other","Total")
 use_data(apiFiberpulp, overwrite = TRUE)
 #############
 

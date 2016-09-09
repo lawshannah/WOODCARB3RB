@@ -263,9 +263,9 @@ paperToLF <- function(y){
 ########
 #imports1file<-read.xlsx("./Data/imports1.xlsx",1,header=FALSE)
 #rownames(imports1file)<-1965:2050
-imports1<-function(y,c){
-  return(imports1[y-1964,c])
-}
+# imports1<-function(y,c){
+#   return(imports1[y-1964,c])
+# }
 #########
 #recFibPulpUSA <- read.xlsx("./Data/recFibPulpusa.xlsx", 1, header=TRUE)
 #rownames(recFibPulpUSA)<-1998:2013

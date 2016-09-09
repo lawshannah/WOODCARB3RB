@@ -765,13 +765,74 @@
 "halfLives"
 
 
+###############################
+#' Consumption of Fibrous Materials in Paper and Board Manufacture in the United States
+#' from 1900 to 1974.
+#'
+#' Dataset containing estimated and reported statistics. All units are
+#' in tons, air dry weight.
+#'
+#' @format A data frame with 75 observations of 5 variables
+#'
+#' \itemize{
+#' \item \strong{Wood.Pulp} Consumption of Wood Pulp
+#' \item \strong{Waste.Paper} Consumption of Waste Paper
+#' \item \strong{Rags} Consumption of Rags
+#' \item \strong{?Findout} This might be other?
+#' \item \strong{Other} Consumption of Other Fibrous Materials
+#' \item \strong{Total} Total Consumption of Fibrous Materials
+#' }
+#'
+#' @source Estimated using best available data and historical patterns. Some data
+#' is original but no source in spreadsheet.
+#' @keywords apiFiberpulp
+"apiFiberpulp"
 
+###############################
+#' Summary of Total Wood Pulp Statistics in the United States
+#' from 1899 to 1972 with necessary statistics from 1869, 1879, 1889
+#'
+#' All units are in tons of 2000 pounds, air dry weight.
+#' All vectors are numeric.
+#'
+#' @format A data frame with 77 observations of 11 variables
+#'
+#' \itemize{
+#' \item \strong{Prod} Production of Wood Pulp
+#' \item \strong{Imports} Imports of Wood Pulp
+#' \item \strong{Exports} Exports of Wood Pulp
+#' \item \strong{NewSupply} New Supply of Wood Pulp
+#' \item \strong{Consump.Paper.Board} Consumption in Paper & Board
+#' \item \strong{WastePaper.Estimated.Prod} Estimated Production of Waste Paper
+#' \item \strong{WastePaper.Estimated.Imports} Estimated Imports of Waste Paper
+#' \item \strong{WastePaper.Estimated.Exports} Estimated Exports of Waste Paper
+#' \item \strong{Rags.Estimated.Prod} Estimated Production of Rags and Other
+#' \item \strong{Rags.Estimated.Imports} Estimated Imports of Rags and Other
+#' \item \strong{Rags.Estimated.Exports} Estimated Exports of Rags and Other
+#' }
+#'
+#' @source 1869 -  1962 U.  S.  Bureau of the Census
+#' 1963 -          Pulp Producers Division, A.  P.  I.
+#' Imports,  Exports,  Consumption -  Bureau of the Census
+#' New Supply  - Production plus Imports minus Exports
+#'
+#' @keywords apiTotalWoodPulp
+"apiTotalWoodPulp"
 
-
-
-
-
-
+###############################
+#' Lumber wood  in single and multifamily houses build 1800 to 1900
+#'
+#' All vectors are numeric. All units are ?.
+#'
+#' @format A vector with 151 observations of 1 variable.
+#'
+#' \itemize{
+#' \item \strong{Carbon} Lumber wood  in single and multifamily houses
+#' }
+#'
+#' @source 'ftp://ftp2.fs.fed.us/incoming/fpl/Skog/[Woodcarb II special lumber July 5 2007 Base Case.xls]SW Calc'!$V3878
+#' @keywords lumberpre1900
+"lumberpre1900"
 
 
 

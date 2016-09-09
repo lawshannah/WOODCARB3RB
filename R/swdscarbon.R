@@ -20,8 +20,8 @@ carbonfromdumps <- function(years, approach = c("Production",
 #' @export
 #'
 #' @examples
-#' calculatedumpcarbonstockchange()
-#' calculatedumpcarbonstockchange(totalcarbonstockchange = TRUE)
+#' calculatedumpcarbonstockchange(Years = 1990:2015)
+#' calculatedumpcarbonstockchange(Years = 1990:2015, totalcarbonstockchange = TRUE)
 calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE){
   usa <- calcUSAproduction()
   c <- calcplacediu(approach = "Stock Change")

@@ -194,11 +194,12 @@ use_data(paperToLandFills, overwrite = TRUE)
 
 ########halflives for various end uses for yrs 1900-2050
 halfLives <- read.xlsx("./data/CopyOfData/halfLives.xlsx", 1,header=FALSE)
-colnames(halfLives)<-c("HL.House.SF","HL.House.MultF","HL.House.MobHome","HL.House.Tot",
-                       "ResUpKeep.Tot","NonRes.construc.allRR","NonRes.construc.RR.ties",
-                       "NonRes.construc.Railcar","NonRes.construc.Tot",
-                       "Manuf.House.Furn","Manuf.Comm.Furn","Manuf.other","Manuf.tot",
-                       "ship.tot","Other.tot","other.industrial.tot")
+colnames(halfLives)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
+                       "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
+                       "New.Nonres.tot",
+                       "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
+                       "Manu.Tot",
+                       "Shipping.Tot","Other.Uses.Tot")
 #halfLives <- halfLives[-c(4, 9, 13)]
 use_data(halfLives, overwrite = TRUE)
 
@@ -312,6 +313,7 @@ colnames(ulrich6)<-c("AllProduction.Prod","AllProduct.Consump",
 use_data(ulrich6, overwrite=TRUE)
 
 fracsawnwood<-read.xlsx("./data/CopyOfData/fracsawnwood.xlsx",1,header=FALSE)
+fracsawnwood <- fracsawnwood[,1:16]
 colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
                           "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
                           "New.Nonres.tot",
@@ -319,28 +321,30 @@ colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom","House
                           "Manu.Tot",
                           "Shipping.Tot","Other.Uses.Tot","Uses.Indust.Prod","Export.Tot")
 fracsawnwood[is.na(fracsawnwood)] <- 0
-fracsawnwood <- fracsawnwood[,1:16]
+
 use_data(fracsawnwood, overwrite=TRUE)
 
 
 fracnonstrpanels <- read.xlsx("./data/CopyOfData/fracnonstrpanels.xlsx", 1,
                               header = FALSE)
-colnames(fracnonstrpanels)<-c("Years","House.SingFam","House.Multifam","House.MobHom","House.Tot",
+fracnonstrpanels <- fracnonstrpanels[,2:17]
+colnames(fracnonstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
                               "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
                               "New.Nonres.tot",
                               "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
                               "Manu.Tot",
                               "Shipping.Tot","Other.Uses.Tot")
-fracnonstrpanels <- fracnonstrpanels[,2:17]
+
 use_data(fracnonstrpanels, overwrite = TRUE)
 
 fracstrpanels <- read.xlsx("./data/CopyOfData/fracstrpanels.xlsx", 1,
                            header = FALSE)
-colnames(fracstrpanels)<-c("Years","House.SingFam","House.Multifam","House.MobHom","House.Tot",
+fracstrpanels <- fracstrpanels[,1:16]
+colnames(fracstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
                            "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
                            "New.Nonres.tot",
                            "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
                            "Manu.Tot",
                            "Shipping.Tot","Other.Uses.Tot")
-fracstrpanels <- fracstrpanels[,1:16]
+
 use_data(fracstrpanels, overwrite = TRUE)

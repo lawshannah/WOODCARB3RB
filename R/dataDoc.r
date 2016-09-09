@@ -742,20 +742,20 @@
 #'
 #' Half lives for different end uses.
 #'
-#' @format A data frame with 151 observations of 13 variables.
+#' @format A data frame with 151 observations of 16 variables.
 #' \itemize{
-#' \item \strong{HL.House.SF} Single Family Homes
-#' \item \strong{HL.House.MultF} Multi Family Homes
-#' \item \strong{HL.House.MobHome} Mobile Homes
-#' \item \strong{ResUpKeep.Tot} Total Residential Upkeep and Improvement
-#' \item \strong{NonRes.construc.allRR} All Railroads
-#' \item \strong{NonRes.construc.RR.ties} Railroad Ties
-#' \item \strong{NonRes.construc.Railcar} Railcar Repair
-#' \item \strong{Manuf.House.Furn} Household Furniture
-#' \item \strong{Manuf.Comm.Furn} Commercial Furniture
-#' \item \strong{Manuf.other} Manufacturing - Other Products
-#' \item \strong{ship.tot} Shipping
-#' \item \strong{Other.tot} Other Uses
+#' \item \strong{House.SingFam} Single Family Homes
+#' \item \strong{House.Multifam} Multi Family Homes
+#' \item \strong{House.MobHom} Mobile Homes
+#' \item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
+#' \item \strong{New.Nonres.AllRR} All Railroads
+#' \item \strong{New.Nonres.Rties} Railroad Ties
+#' \item \strong{New.Nonres.Rcar.Repair} Railcar Repair
+#' \item \strong{Manu.HouseFurniture} Household Furniture
+#' \item \strong{Manu.CommFurniture} Commercial Furniture
+#' \item \strong{Manu.OtherProducts} Manufacturing - Other Products
+#' \item \strong{Shipping.Tot} Shipping
+#' \item \strong{Other.Uses.Tot} Other Uses
 #' \item \strong{other.industrial.tot} Uses For Other Industrial Products
 #' }
 #'
@@ -834,12 +834,113 @@
 #' @keywords lumberpre1900
 "lumberpre1900"
 
+###############################
+#' Fractions of Sawnwood production used in various end uses
+#'
+#' All units are percentages and all vectors are numeric.
+#'
+#' @format A data frame with 151 observations of 16 variables.
+#'
+#' \itemize{
+#' \item \strong{House.SingFam} Single Family Homes
+#' \item \strong{House.Multifam} Multi Family Homes
+#' \item \strong{House.MobHom} Mobile Homes
+#' \item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
+#' \item \strong{New.Nonres.AllRR} All Railroads
+#' \item \strong{New.Nonres.Rties} Railroad Ties
+#' \item \strong{New.Nonres.Rcar.Repair} Railcar Repair
+#' \item \strong{Manu.HouseFurniture} Household Furniture
+#' \item \strong{Manu.CommFurniture} Commercial Furniture
+#' \item \strong{Manu.OtherProducts} Manufacturing - Other Products
+#' \item \strong{Shipping.Tot} Shipping
+#' \item \strong{Other.Uses.Tot} Other Uses
+#' \item \strong{other.industrial.tot} Uses For Other Industrial Products
+#' }
+#'
+#' @source Check spreadsheet - values entered in
+#' @keywords fracsawnwood
+"fracsawnwood"
 
+###############################
+#' Fractions of Structual Panel production used in various end uses
+#'
+#' All units are percentages and all vectors are numeric.
+#'
+#' @format A data frame with 151 observations of 16 variables.
+#'
+#' \itemize{
+#' \item \strong{House.SingFam} Single Family Homes
+#' \item \strong{House.Multifam} Multi Family Homes
+#' \item \strong{House.MobHom} Mobile Homes
+#' \item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
+#' \item \strong{New.Nonres.AllRR} All Railroads
+#' \item \strong{New.Nonres.Rties} Railroad Ties
+#' \item \strong{New.Nonres.Rcar.Repair} Railcar Repair
+#' \item \strong{Manu.HouseFurniture} Household Furniture
+#' \item \strong{Manu.CommFurniture} Commercial Furniture
+#' \item \strong{Manu.OtherProducts} Manufacturing - Other Products
+#' \item \strong{Shipping.Tot} Shipping
+#' \item \strong{Other.Uses.Tot} Other Uses
+#' \item \strong{other.industrial.tot} Uses For Other Industrial Products
+#' }
+#'
+#' @source Check spreadsheet - values entered in
+#' @keywords fracstrpanels
+"fracstrpanels"
 
+###############################
+#' Fractions of Non-Structural Panel production used in various end uses
+#'
+#' All units are percentages and all vectors are numeric.
+#'
+#' @format A data frame with 151 observations of 16 variables.
+#'
+#' \itemize{
+#' \item \strong{House.SingFam} Single Family Homes
+#' \item \strong{House.Multifam} Multi Family Homes
+#' \item \strong{House.MobHom} Mobile Homes
+#' \item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
+#' \item \strong{New.Nonres.AllRR} All Railroads
+#' \item \strong{New.Nonres.Rties} Railroad Ties
+#' \item \strong{New.Nonres.Rcar.Repair} Railcar Repair
+#' \item \strong{Manu.HouseFurniture} Household Furniture
+#' \item \strong{Manu.CommFurniture} Commercial Furniture
+#' \item \strong{Manu.OtherProducts} Manufacturing - Other Products
+#' \item \strong{Shipping.Tot} Shipping
+#' \item \strong{Other.Uses.Tot} Other Uses
+#' \item \strong{other.industrial.tot} Uses For Other Industrial Products
+#' }
+#'
+#' @source Check spreadsheet - values entered in
+#' @keywords fracnonstrpanels
+"fracnonstrpanels"
 
-
-
-
+###############################
+#' Fraction of wood lost when placed in use from various end uses.
+#'
+#' All units are percentages and all vectors are numeric.
+#'
+#' @format A data frame with 151 observations of 16 variables.
+#'
+#' \itemize{
+#' \item \strong{House.SingFam} Single Family Homes
+#' \item \strong{House.Multifam} Multi Family Homes
+#' \item \strong{House.MobHom} Mobile Homes
+#' \item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
+#' \item \strong{New.Nonres.AllRR} All Railroads
+#' \item \strong{New.Nonres.Rties} Railroad Ties
+#' \item \strong{New.Nonres.Rcar.Repair} Railcar Repair
+#' \item \strong{Manu.HouseFurniture} Household Furniture
+#' \item \strong{Manu.CommFurniture} Commercial Furniture
+#' \item \strong{Manu.OtherProducts} Manufacturing - Other Products
+#' \item \strong{Shipping.Tot} Shipping
+#' \item \strong{Other.Uses.Tot} Other Uses
+#' \item \strong{other.industrial.tot} Uses For Other Industrial Products
+#' }
+#'
+#' @source Check spreadsheet - values entered in
+#' @keywords lossIU
+"lossIU"
 
 
 

@@ -19,6 +19,8 @@ Example: decay_array[1, 3, 51, ] will produce a vector of percentage carbon left
 Example: decay_array[1, 3, , 101] will produce a vector of percentage carbon left after exponential decay of mobile homes built from 1900 to 2000 in the year 2000
 }
 \examples{
+\dontrun{
 calculatedecay()
+}
 }
 

@@ -19,6 +19,7 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
                                     halflives = halfLives){
   approachtype <- match.arg(approach)
   decay<- match.arg(decaytype)
+
   if(approachtype == "Production" | approachtype == "Stock Change"){
 
     vara <-  (SWP_CARBON_STOCKCHANGE(Years, approach = approachtype,

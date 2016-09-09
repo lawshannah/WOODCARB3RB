@@ -258,9 +258,9 @@
 #' }
 #'
 #' @format A data frame with 56 observations of 19 variables
-#' @source
-#' 1972-Present, American Forest and Paper Association, 1999 Annual Statistical Summary Recovered
-#'  Paper Utilization, p. 81 (6). 1965-1971, American Forest and Paper Association (2,4,5).
+#' @source 1972-Present, American Forest and Paper Association, 1999 Annual Statistical Summary Recovered
+#' Paper Utilization, p.81 (6). 1965-1971, American Forest and Paper Assocation (2,4,5).
+#'
 "howard47"
 
 ################################

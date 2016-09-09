@@ -15,7 +15,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' calculatedecay()
+#' }
 calculatedecay <- function(){
 
     halfLives <- halfLives[, !(colnames(halfLives) %in% totalEUs)]

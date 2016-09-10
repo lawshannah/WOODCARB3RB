@@ -14,6 +14,10 @@ finalCarbonContribution(Years = 1990:2015, approach = c("Production",
 \item{approach}{The approach used to calculate carbon contribution.}
 
 \item{decaytype}{Type of decay method to use}
+
+\item{plot}{whether to return a plot or not}
+
+\item{halflives}{data frame of half lives to use}
 }
 \value{
 A vector of carbon contributions for all Years. Plot returned is optional

@@ -2,16 +2,23 @@
 % Please edit documentation in R/swp-carbon.R
 \name{calcplacediu}
 \alias{calcplacediu}
-\title{Title}
+\title{Calculates total carbon placed in use for given years}
 \usage{
 calcplacediu(Years = 1900:2020, approach = c("Stock Change", "Production"),
   total = TRUE)
+}
+\arguments{
+\item{Years}{years to calculate carbon placed in use for}
+
+\item{approach}{The approach type to use. Fractions dont change but inflow does}
+
+\item{total}{Whether to return total placed in use or seperate it by end uses.}
 }
 \value{
 a data frame of carbon placed in use for various end uses
 }
 \description{
-Title
+Calculates total carbon placed in use for given years
 }
 \examples{
 calcplacediu()

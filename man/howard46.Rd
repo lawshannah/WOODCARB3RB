@@ -3,7 +3,7 @@
 \docType{data}
 \name{howard46}
 \alias{howard46}
-\title{Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965–1999}
+\title{Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965-1999}
 \format{A data frame with 56 observations of 19 variables}
 \source{
 American Paper Institute, American Forest & Paper Association: Statistics of Paper, Paperboard & Wood Pulp

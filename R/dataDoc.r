@@ -213,7 +213,7 @@
 "howard38"
 
 ################################
-#' Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965–1999
+#' Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965-1999
 #'
 #' Dataset containing consumption and production statistics for various board and paper products.
 #' Units are specified below.
@@ -238,7 +238,7 @@
 "howard46"
 
 ################################
-#' Paper and board new supply and recyclable paper consumption, exports,  imports, and total recovered, 1965–1999
+#' Paper and board new supply and recyclable paper consumption, exports, imports and total recovered, 1965-1999
 #'
 #' Dataset containing consumption and production statistics for various board and paper products.
 #' All units are in thousand tons unless otherwise specified.
@@ -942,11 +942,68 @@
 #' @keywords lossIU
 "lossIU"
 
+###############################
+#' Percent of paper that goes to landfills.
+#'
+#' Units are percentages and the vector is numeric.
+#'
+#' @format A data frame with 151 observations of 1 variable.
+#'
+#' \itemize{
+#' \strong{PaperToLandfills} Percent of paper that goes to landfills
+#' }
+#'
+#' @source Linked site, check spreadsheet
+#' @keywords paperToLandFills
+"paperToLandFills"
 
+#####################
+#' Recovered Fibre Pulp in the United States from 1998 to 2013
+#'
+#' All units are in metric tons and all vectors are numeric.
+#'
+#' @format A data frame with 16 observations of 3 variables
+#'
+#' \itemize{
+#' \strong{Prod.Quantity} Production Quantity of Recovered Fibre Pulp
+#' \strong{Imports.Quantity} Imports Quantity of Recovered Fibre Pulp
+#' \strong{Exports.Quantity} Exports Quantity of Recovered Fibre Pulp
+#' }
+#'
+#' @source from AF&PA Paper, paperboard & wood pulp, A Monthly statistical summary
+#' @keywords usaFiberPulp
+"usaFiberPulp"
 
+#####################
+#' Percent of wood that goes to dumps
+#'
+#' All units are percentages and the vector is numeric
+#'
+#' @format A data frome with 151 observations of 1 variable
+#'
+#' \itemize{
+#' \strong{WoodToDumps} Percentage of wood that goes to dumps
+#' }
+#'
+#' @source Linked spreadsheet (check this)
+#' @keywords woodToDumps
+"woodToDumps"
 
-
-
+#####################
+#' Percentage of wood that goes to landfills.
+#'
+#' Units are percentages and the vector is numeric.
+#'
+#' @format A data frame with 151 observations of 1 variable
+#'
+#' \itemize{
+#' \strong{WoodToLandFills} Percentage of wood going to landfills
+#' }
+#'
+#' @source Linked spreacsheet (check this)
+#' @keywords woodToLandFills
+#'
+"woodToLandFills"
 
 
 

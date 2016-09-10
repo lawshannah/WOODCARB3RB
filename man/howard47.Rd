@@ -3,7 +3,7 @@
 \docType{data}
 \name{howard47}
 \alias{howard47}
-\title{Paper and board new supply and recyclable paper consumption, exports,  imports, and total recovered, 1965–1999}
+\title{Paper and board new supply and recyclable paper consumption, exports, imports and total recovered, 1965-1999}
 \format{A data frame with 56 observations of 19 variables}
 \source{
 1972-Present, American Forest and Paper Association, 1999 Annual Statistical Summary Recovered

@@ -6,6 +6,12 @@
 \usage{
 calculatedumpcarbonproduction(Years, totalcarbonstockchange = FALSE)
 }
+\arguments{
+\item{Years}{years to calculate}
+
+\item{totalcarbonstockchange}{If true, returns carbon stock change, or returns data
+frame of intermediate calculations}
+}
 \value{
 Either a data frame of values from Calculation spreadsheet or total carbon output
 }

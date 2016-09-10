@@ -3,6 +3,8 @@
 #' @param Years years to return carbon totals for
 #' @param approach The approach used to calculate carbon contribution.
 #' @param decaytype Type of decay method to use
+#' @param plot whether to return a plot or not
+#' @param halflives data frame of half lives to use
 #'
 #' @return A vector of carbon contributions for all Years. Plot returned is optional
 #' @export

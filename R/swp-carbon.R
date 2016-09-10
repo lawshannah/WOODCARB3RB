@@ -242,7 +242,11 @@ calculateswp <- function(){
 }
 ###############
 
-#' Title
+#' Calculates total carbon placed in use for given years
+#'
+#' @param Years years to calculate carbon placed in use for
+#' @param approach The approach type to use. Fractions dont change but inflow does
+#' @param total Whether to return total placed in use or seperate it by end uses.
 #'
 #' @return a data frame of carbon placed in use for various end uses
 #' @export

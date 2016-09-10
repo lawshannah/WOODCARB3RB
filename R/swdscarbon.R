@@ -172,6 +172,10 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
 #'
 #' Column names with only letters come from Calc sheet, otherwise sheet is specified (need to change names)
 #'
+#' @param Years years to calculate
+#' @param totalcarbonstockchange If true, returns carbon stock change, or returns data
+#' frame of intermediate calculations
+#'
 #' @return Either a data frame of values from Calculation spreadsheet or total carbon output
 #' @export
 #'

@@ -7,7 +7,7 @@
 calculatedecay(halfLives. = halfLives)
 }
 \arguments{
-\item{halfLives}{data frames of half lives}
+\item{halfLives.}{data frames of half lives}
 }
 \value{
 four dimensional array

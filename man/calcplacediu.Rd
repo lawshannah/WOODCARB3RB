@@ -4,7 +4,7 @@
 \alias{calcplacediu}
 \title{Calculates total carbon placed in use for given years}
 \usage{
-calcplacediu(Years = 1900:2020, approach = c("Stock Change", "Production"),
+calcplacediu(Years = 1900:2020, approach = c("Production", "Stock Change"),
   total = TRUE)
 }
 \arguments{

@@ -17,7 +17,7 @@
 finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
                                                                    "Stock Change"),
                                     decaytype = c("Exponential",
-                                                  "Gamma"), plot = FALSE,
+                                                  "K=2"), plot = FALSE,
                                     halflives = halfLives){
   approachtype <- match.arg(approach)
   decay<- match.arg(decaytype)

@@ -1,7 +1,7 @@
 
 SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change"),
                                    decaydistribution = c("Exponential",
-                                                         "Gamma")){
+                                                         "K=2")){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
 

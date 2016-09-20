@@ -18,9 +18,7 @@
 #' \dontrun{
 #' calculatedecay()
 #' }
-calculatedecay <- function(){
-
-    halfLives <- halfLives[, !(colnames(halfLives) %in% totalEUs)]
+calculatedecay <- function(halfLives. = halfLives){
 
   decays <- 4
   enduses <- 13
@@ -35,7 +33,7 @@ calculatedecay <- function(){
   {
     for (j in 1:enduses)
     {
-      h <- halfLives[i,j] / log(2)
+      h <- halfLives.[i,j] / log(2)
       for (l in 1:(years - i + 1))
       {
         decay <- integrate(g, lower=0, upper=l)$value
@@ -57,7 +55,7 @@ calculatedecay <- function(){
       {
         m <- decayval * 2
         h <- h * m
-        decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+        decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
       }
       for (l in 1:(years - i + 1))
       {
@@ -78,40 +76,40 @@ calculatedecay <- function(){
   #   {
   #     k <- 1
   #     decayval <- 1
-  #     if (halfLives[i,j] >= 100) #finding k given each half life
+  #     if (halfLives.[i,j] >= 100) #finding k given each half life
   #     {
   #       while(abs(decayval - 0.5) > 0.001)
   #       {
   #         m <- decayval * 1.6
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
-  #     else if (halfLives[i,j] >= 72)
+  #     else if (halfLives.[i,j] >= 72)
   #     {
   #       while(abs(decayval - 0.5) > 0.001)
   #       {
   #         m <- decayval * 1.65
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
-  #     else if (halfLives[i,j] >= 50)
+  #     else if (halfLives.[i,j] >= 50)
   #     {
   #       while(abs(decayval - 0.5) > 0.001)
   #       {
   #         m <- decayval * 1.555
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
-  #     else if (halfLives[i,j] >= 24)
+  #     else if (halfLives.[i,j] >= 24)
   #     {
   #       while(abs(decayval - 0.5) > 0.001)
   #       {
   #         m <- decayval * 2.05
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     else
@@ -120,7 +118,7 @@ calculatedecay <- function(){
   #       {
   #         m <- decayval * 2.5
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives[i,j])$value
+  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     for (l in 1:(years - i + 1))
@@ -130,6 +128,7 @@ calculatedecay <- function(){
   #     }
   #   }
   # }
+  decay_array
 }
 
 # ##example and plots

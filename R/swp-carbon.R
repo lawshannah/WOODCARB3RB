@@ -253,8 +253,8 @@ calculateswp <- function(){
 #'
 #' @examples
 #' calcplacediu()
-calcplacediu <- function(Years = 1900:2020, approach = c("Stock Change",
-                                                         "Production"),
+calcplacediu <- function(Years = 1900:2020, approach = c("Production",
+                                                         "Stock Change"),
                          total = TRUE){
   approachtype <- match.arg(approach)
   swpcalcdata <- calculateswp()
@@ -273,7 +273,7 @@ calcplacediu <- function(Years = 1900:2020, approach = c("Stock Change",
 
 placeIU$V17 <- swpcalcdata$`Other Products Production Special`[Years-(minyr-1)]
   if(total == FALSE){
-    placeIU
+    placeIU[,-c(1,5,10,14)]
   }
   else{
     apply(placeIU[,-c(1,5,10,14)], 1, sum)

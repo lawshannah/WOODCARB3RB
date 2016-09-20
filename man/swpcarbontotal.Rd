@@ -4,18 +4,14 @@
 \alias{swpcarbontotal}
 \title{Calculates total carbon left in Yrs}
 \usage{
-swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"),
-  THETA, K, onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
+swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "K=2"),
+  onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
   "Stock Change"), halflives = halfLives)
 }
 \arguments{
 \item{Yrs}{years to calculate carbon totals for}
 
 \item{distribution}{type of decay distribution}
-
-\item{THETA}{optional value for other decay (will update with decay array next)}
-
-\item{K}{optional value for other decay (will update with decay array next)}
 
 \item{onlytotal}{return total carbon or totals by end uses}
 
@@ -24,6 +20,10 @@ swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"),
 \item{approach}{approach type to use to calculate}
 
 \item{halflives}{data frame of half lives for end uses}
+
+\item{THETA}{optional value for other decay (will update with decay array next)}
+
+\item{K}{optional value for other decay (will update with decay array next)}
 }
 \value{
 returns either only total for all end uses or total by enduses with option of lumberpre1900

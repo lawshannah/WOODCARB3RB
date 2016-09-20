@@ -4,7 +4,7 @@
 \alias{calculatedecay}
 \title{Calculates}
 \usage{
-calculatedecay()
+calculatedecay(halfLives. = halfLives)
 }
 \value{
 four dimensional array

@@ -17,7 +17,7 @@
 #' @examples
 #' swpcarbontotal(onlytotal=FALSE)
 #' swpcarbontotal(1950:1975, approach = "Stock Change")
-swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "Gamma"), THETA, K,
+swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "K=2"),
                            onlytotal=TRUE, lumberpre = TRUE, approach = c("Production",
                                                                           "Stock Change"),
                            halflives = halfLives){
@@ -32,35 +32,25 @@ swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "Gam
   }
 
   Var2_totalC_SWP <- data.frame(Years = Yrs)
-  totalEUs <- c(4,9,13) ##these are totals
-
+  #totalEUs <- c(4,9,13) ##these are totals
+  if (type == "K=2"){
+    decayarray <- calculatedecay()
+  }
   for(year in Yrs){
     yearrange <- 1:(year - minyr + 1) #number of years from 1900 to year
-    for (eu in 1:16) {
+    for (eu in 1:13) {
       if (type == "Exponential") {
         decays <- exp(-log(2)/halflives[yearrange,eu]*rev(yearrange))
       }
 
-      if (type == "Gamma") {
-        p<-0 #not exactly sure what this is
+      if (type == "K=2"){
 
-        decays <- numeric(length(yearrange))
-        for (i in yearrange){
-          if (missing(K)){
-            K <- findKorTHETAforGamma(halflife = halflives[i - 1899, eu], theta = THETA)
-          }
+        decays <- decayarray[2,eu,yearrange,year - minyr + 1]
 
-          if(missing(THETA)) {
-            THETA <- findKorTHETAforGamma(halflife = halflives[i - 1899, eu], k = K)
-          }
-
-          p[i+1]<-p[i]+1 ##this part still confused about, why not just use i instead of setting first val to 0. Signifies no years passed?
-          decays[i]<- 1 - integrate(g, lower=0, upper=p[i])$value
-        }
       }
-      Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- ifelse(eu %in% totalEUs, 0,
-                                                                                     sum(placeIU[yearrange,(eu+1)]*decays
-                                                                                         *(1 - lossIU[yearrange, eu])))
+      Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu]*decays
+                                                                                  *(1 - lossIU[yearrange,1]))
+
     }
   }
 

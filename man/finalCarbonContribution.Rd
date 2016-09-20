@@ -5,7 +5,7 @@
 \title{Calculate final carbon contribution to AFOLU.}
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
-  "Stock Change"), decaytype = c("Exponential", "Gamma"), plot = FALSE,
+  "Stock Change"), decaytype = c("Exponential", "K=2"), plot = FALSE,
   halflives = halfLives)
 }
 \arguments{

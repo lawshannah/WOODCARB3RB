@@ -152,13 +152,15 @@ use_data(ulrich5, overwrite = TRUE)
 
 
 ######LOSS when placed IU based on EU and yr
-lossIU <- read.xlsx("./inst/extdata/CopyOfData/lossWhenPlacedIU.xlsx",1,header=FALSE)
-colnames(lossIU)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
-                    "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
-                    "New.Nonres.tot",
-                    "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
-                    "Manu.Tot",
-                    "Shipping.Tot","Other.Uses.Tot")
+lossIU <- read.xlsx("./inst/extdata/CopyOfData/lossWhenPlacedIU.xlsx",1,header=FALSE,
+                    colIndex = 1)
+# colnames(lossIU)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
+#                     "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
+#                     "New.Nonres.tot",
+#                     "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
+#                     "Manu.Tot",
+#                     "Shipping.Tot","Other.Uses.Tot")
+#lossIU <- lossIU[,1]
 use_data(lossIU, overwrite = TRUE)
 
 ##########
@@ -193,14 +195,15 @@ use_data(paperToLandFills, overwrite = TRUE)
 
 
 ########halflives for various end uses for yrs 1900-2050
-halfLives <- read.xlsx("./inst/extdata/CopyOfData/halfLives.xlsx", 1,header=FALSE)
+halfLives <- read.xlsx("./inst/extdata/CopyOfData/halfLives.xlsx", 1,header=FALSE,
+                       colIndex = c(1,2,3,5,6,7,8,10,11,12,14,15,16,17))
+#halfLives <- halfLives[-c(4, 9, 13)]
 colnames(halfLives)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
                        "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
                        "New.Nonres.tot",
-                       "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
                        "Manu.Tot",
-                       "Shipping.Tot","Other.Uses.Tot")
-#halfLives <- halfLives[-c(4, 9, 13)]
+                       "Shipping.Tot","Other.Uses.Tot", "OtherIndustrialProducts")
+
 use_data(halfLives, overwrite = TRUE)
 
 
@@ -319,7 +322,7 @@ colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom","House
                           "New.Nonres.tot",
                           "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
                           "Manu.Tot",
-                          "Shipping.Tot","Other.Uses.Tot","Uses.Indust.Prod","Export.Tot")
+                          "Shipping.Tot","Other.Uses.Tot")
 fracsawnwood[is.na(fracsawnwood)] <- 0
 
 use_data(fracsawnwood, overwrite=TRUE)

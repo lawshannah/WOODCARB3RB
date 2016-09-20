@@ -8,8 +8,6 @@
 #' @param lumberpre whether to include carbon from lumber before 1900 in totals
 #' @param approach approach type to use to calculate
 #' @param halflives data frame of half lives for end uses
-#' @param THETA optional value for other decay (will update with decay array next)
-#' @param K optional value for other decay (will update with decay array next)
 #'
 #' @return returns either only total for all end uses or total by enduses with option of lumberpre1900
 #' @export

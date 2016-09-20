@@ -1,7 +1,7 @@
 ##creating blank four-dimensional array to fill
 ##look-up array:
 
-#' Calculates
+#' Calculates decay values
 #'
 #' 1. Decay Type (1 = exponential, 2 = k=2, 3 = chi-squared)
 #' 2. End Use (1 = Single Family Housing, 2 = Multifamily Housing, 3 = Mobile Homes, 4 = Residential Upkeep and Improvement, 5 = All Construction Excluding Railroads, 6 = Railroad Ties, 7 = Railcar Repair, 8 = Household Furniture, 9 = Commercial Furniture, 10 = Other Manufacturing, 11 = Shipping, 12 = Other Uses, 13 = Uses for Other Industrial Products)
@@ -10,7 +10,9 @@
 #' Example: decay_array[1, 3, 51, 101] will produce percentage carbon left after exponential decay of mobile homes built in 1950 at year 2000
 #' Example: decay_array[1, 3, 51, ] will produce a vector of percentage carbon left after exponential decay of mobile homes built in 1950 for years 1950 - end year
 #' Example: decay_array[1, 3, , 101] will produce a vector of percentage carbon left after exponential decay of mobile homes built from 1900 to 2000 in the year 2000
-
+#'
+#' @param halfLives. data frames of half lives
+#'
 #' @return four dimensional array
 #' @export
 #'

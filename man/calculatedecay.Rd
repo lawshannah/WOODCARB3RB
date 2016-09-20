@@ -2,9 +2,12 @@
 % Please edit documentation in R/decayarray.R
 \name{calculatedecay}
 \alias{calculatedecay}
-\title{Calculates}
+\title{Calculates decay values}
 \usage{
 calculatedecay(halfLives. = halfLives)
+}
+\arguments{
+\item{halfLives}{data frames of half lives}
 }
 \value{
 four dimensional array

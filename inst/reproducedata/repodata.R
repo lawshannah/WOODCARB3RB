@@ -203,7 +203,6 @@ colnames(halfLives)<-c("House.SingFam","House.Multifam","House.MobHom","House.To
                        "New.Nonres.tot",
                        "Manu.Tot",
                        "Shipping.Tot","Other.Uses.Tot", "OtherIndustrialProducts")
-
 use_data(halfLives, overwrite = TRUE)
 
 

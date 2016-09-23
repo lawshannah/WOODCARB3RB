@@ -19,7 +19,7 @@ SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Chan
 }
 
 PAPER_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change")){
-  USA <- calcUSAproduction()
+  USA <- calcUSApaper()
   approach = match.arg(approach)
   calcpaper <- function(years, CarbonInputFlowFromPaper){
 

@@ -1,11 +1,14 @@
 #' Calculates paper statistics
 #'
-#' @return a data frame with necessary intermediate calculations
+#' Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.
+#'
+#' @return A data frame with necessary intermediate calculations to calculate carbon from paper.
+#' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet (list them?)
 #' @export
 #'
 #' @examples
-#' calcUSAproduction()
-calcUSAproduction <- function(){
+#' calcUSApaper()
+calcUSApaper <- function(){
   yrs <- 1900:2020
   minyr <- 1900
   a5 <- 1

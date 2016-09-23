@@ -23,7 +23,7 @@ carbonfromdumps <- function(years, approach = c("Production",
 #' calculatedumpcarbonstockchange(Years = 1990:2015)
 #' calculatedumpcarbonstockchange(Years = 1990:2015, totalcarbonstockchange = TRUE)
 calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE){
-  usa <- calcUSAproduction()
+  usa <- calcUSApaper()
   c <- calcplacediu(approach = "Stock Change")
   swp <- swpcarbontotal(Yrs = yrs,approach = "Stock Change")
 
@@ -183,7 +183,7 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
 #' calculatedumpcarbonproduction(1995:2020)
 #' calculatedumpcarbonproduction(1990:1991, totalcarbonstockchange = TRUE)
 calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE){
-  usa <- calcUSAproduction()
+  usa <- calcUSApaper()
   c <- calcplacediu(approach = "Production")
   swp <- swpcarbontotal(Yrs = yrs)
 

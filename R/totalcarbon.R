@@ -2,12 +2,18 @@
 #'
 #' Calculates carbon per end use and total carbon in solidwood products.
 #'
+#' ALl units returned are in od tons of wood fiber.
+#' If "onlytotal" is false, total carbon is returned for each one of the 13 end uses.
+#' If "onlytotal" is true, the totals are summed up and one total is returned.
+#'
+#' This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet.
 #' @param Yrs years to calculate carbon totals for
 #' @param distribution type of decay distribution
 #' @param onlytotal return total carbon or totals by end uses
 #' @param lumberpre whether to include carbon from lumber before 1900 in totals
 #' @param approach approach type to use to calculate
-#' @param halflives data frame of half lives for end uses
+#' @param halflives data frame of half lives for end uses. Default half lives are used but
+#' a data frame with 13 columns with half lives for the appropriate years can be used.
 #'
 #' @return returns either only total for all end uses or total by enduses with option of lumberpre1900
 #' @export

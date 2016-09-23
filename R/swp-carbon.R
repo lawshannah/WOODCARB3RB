@@ -3,6 +3,7 @@
 #' Columns in SWPcalcdata that are used to calculate production and stock change approach.
 #'
 #' @return Data frame of Roundwood and solidwood production, imports and exports
+#' corresponds to columns in `SWPcalcdata` spreadsheet.
 #' @export
 #'
 #' @examples

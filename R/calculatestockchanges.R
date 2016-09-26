@@ -1,7 +1,8 @@
 
 SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change"),
                                    decaydistribution = c("Exponential",
-                                                         "K=2")){
+                                                         "K=2"),
+                                   halflives = halfLives){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
 
@@ -12,7 +13,8 @@ SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Chan
     index <- (min(years)-1):max(years)
   }
 
-  totals <- swpcarbontotal(Yrs = index, approach = approach, distribution = decay)
+  totals <- swpcarbontotal(Yrs = index, approach = approach, distribution = decay,
+                            halflives = halflives)
   #return(totals)
   changeinstock <- (totals[2:length(totals)] - totals[1:length(totals)-1])*PRO17
   return(changeinstock)

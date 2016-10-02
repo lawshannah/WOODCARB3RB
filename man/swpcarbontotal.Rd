@@ -31,7 +31,7 @@ Calculates carbon per end use and total carbon in solidwood products.
 \details{
 ALl units returned are in od tons of wood fiber.
 If "onlytotal" is false, total carbon is returned for each one of the 13 end uses.
-If "onlytotal" is true, the totals are summed up and one total is returned.
+If "onlytotal" is true, the totals are summed up and one total is returned. test
 
 This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet.
 }

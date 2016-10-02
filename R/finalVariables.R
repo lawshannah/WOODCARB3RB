@@ -31,7 +31,8 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
   if(approachtype == "Production" | approachtype == "Stock Change"){
 
     vara <-  (SWP_CARBON_STOCKCHANGE(Years, approach = approachtype,
-                                     decaydistribution = decay) +
+                                     decaydistribution = decay,
+                                     halflives = halflives) +
                 PAPER_CARBON_STOCKCHANGE(Years,
                                          approach = approachtype)) * 1000
 

@@ -29,14 +29,14 @@ swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "K=2
   approachtype <- match.arg(approach)
   placeIU <- calcplacediu(total = FALSE, approach = approachtype)
 
-  #if(type == "Gamma")
+
 
   g <- function(x){ ##gamma functionf
     ((x^(THETA - 1)) * (exp(-x/K))) / (gamma(THETA) * (K^THETA))
   }
 
   Var2_totalC_SWP <- data.frame(Years = Yrs)
-  #totalEUs <- c(4,9,13) ##these are totals
+
   if (type == "K=2"){
     decayarray <- calculatedecay()
   }

@@ -1,14 +1,15 @@
-#' Intermediate Calculations used for variables 1 and 2, calculated for all years
+#' Solidwood products statistics
 #'
-#' Columns in SWPcalcdata that are used to calculate production and stock change approach.
+#' Various production, imports and export data for different wood product types.
+#' 21 columns in SWPcalcdata that are used to calculate production and stock change approach.
 #'
 #' @return Data frame of Roundwood and solidwood production, imports and exports
 #' corresponds to columns in `SWPcalcdata` spreadsheet.
 #' @export
 #'
 #' @examples
-#' calculateswp()
-calculateswp <- function(){
+#' calculateswpdata()
+calculateswpdata <- function(){
   swpcalcdata <- data.frame(Years = yrs)
   yrs <- swpcalcdata$Years
 
@@ -243,7 +244,10 @@ calculateswp <- function(){
 }
 ###############
 
-#' Calculates total carbon placed in use for given years
+#' Total carbon placed in use in od tons of wood fiber
+#'
+#' Corresponds to B3147 column in SW Calc P and SW Calc spreadsheet for Production and Stock Change
+#' approach respectively.
 #'
 #' @param Years years to calculate carbon placed in use for
 #' @param approach The approach type to use. Fractions dont change but inflow does
@@ -254,11 +258,12 @@ calculateswp <- function(){
 #'
 #' @examples
 #' calcplacediu()
+#' calcplacediu(approach = "Stock Change", total = FALSE)
 calcplacediu <- function(Years = 1900:2020, approach = c("Production",
                                                          "Stock Change"),
                          total = TRUE){
   approachtype <- match.arg(approach)
-  swpcalcdata <- calculateswp()
+  swpcalcdata <- calculateswpdata()
   placeIU <- data.frame(Years = Years)
 
   if(approachtype == "Production"){

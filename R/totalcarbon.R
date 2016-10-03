@@ -6,7 +6,8 @@
 #' If "onlytotal" is false, total carbon is returned for each one of the 13 end uses.
 #' If "onlytotal" is true, the totals are summed up and one total is returned. test
 #'
-#' This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet.
+#' This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet for Production approach.
+#' This corresponds to the `SWCalc$H4389` column in the WOODCARB spreadsheet for Stock Change approach.
 #' @param Yrs years to calculate carbon totals for
 #' @param distribution type of decay distribution
 #' @param onlytotal return total carbon or totals by end uses

@@ -2,7 +2,7 @@
 % Please edit documentation in R/totalcarbon.R
 \name{swpcarbontotal}
 \alias{swpcarbontotal}
-\title{Calculates total carbon left in Yrs}
+\title{Total carbon in solid-wood products (od tons of wood fiber)}
 \usage{
 swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "K=2"),
   onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
@@ -33,7 +33,8 @@ ALl units returned are in od tons of wood fiber.
 If "onlytotal" is false, total carbon is returned for each one of the 13 end uses.
 If "onlytotal" is true, the totals are summed up and one total is returned. test
 
-This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet.
+This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet for Production approach.
+This corresponds to the `SWCalc$H4389` column in the WOODCARB spreadsheet for Stock Change approach.
 }
 \examples{
 swpcarbontotal(onlytotal=FALSE)

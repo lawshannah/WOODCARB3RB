@@ -15,8 +15,10 @@ carbonfromdumps <- function(years, approach = c("Production",
 #' @param totalcarbonstockchange Whether to return data frame of intermedate calculations or
 #'  just totals
 #'
-#' @return Either a data frame of calculations if totalcarbonstockchange is false, or
-#'  a numeric vector of stockchange totals if that argument is true
+#' @return If totalcarbonstockchange is false: a data frame of intermediate
+#'  calculations.  If totalcarbonstockchange is true: a numeric vector of stock change
+#'  for total carbon from dumps.
+#'
 #' @export
 #'
 #' @examples

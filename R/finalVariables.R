@@ -54,7 +54,66 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
 
 }
 
+#' Values for final 7 variables.
+#' All units are in Gg Carbon
+#' Var1A = Annual Change in stock of HWP in use form consumption
+#' Var1B = Annual Change in stock of HWP in SWDS from consumption
+#' Var2A = Annual Change in stock of HWP in use produced from domestic harvest
+#' Var2B = Annual Change in stock of HWP in SWDS produced from domestic harvest
+#' Var3 = Annual Imports of wood, paper products, wood fuel, pulp, recovered paper, roundwood/chips
+#' Var4 = Annual Exports of wood, paper products, wood fuel, pulp, recovered paper, roundwood/chips
+#' Var5 = Annual Domestic Harvest
+#' Var6 = Annual release of carbon to the atmosphere from HWP consumption (from fuelwood & products
+#' in use and products in SWDS)
+#' Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
+#' domestic harvest (from products in use and products in SWDS)
+#'
+#' @param Years years to calculate
+#' @param Variable variable to return
+#' @param decaydistribution decay distribution to use (if necessary)
+#' @param halflives half-lives for calculation (if necessary)
+#'
+#' @return a numeric vector of values for the selected variable for `Years`
+#' @export
+#'
+#' @examples
+#' finalVariable(Variable = "Var1A")
+#' finalVariable(Variable = "Var2B")
+finalVariables <- function(Years = 1990:2015, Variable = paste("Var", c("1A", "1B", "2A", "2B", "3", "4", "5", "6", "7"), sep=""),
+                           decaydistribution = c("Exponential", "K=2"),
+                           halflives = halfLives){
+  decay = match.arg(decaydistribution)
+  switch(Variable,
+         Var1A = (SWP_CARBON_STOCKCHANGE(Years, approach = "Stock Change",
+                                      decaydistribution = decay,
+                                      halflives = halflives) +
+                 PAPER_CARBON_STOCKCHANGE(Years,
+                                          approach = "Stock Change")) * 1000,
+         Var1B = carbonfromdumps(Years, approach = "Stock Change")  * 1000,
+         Var2A = (SWP_CARBON_STOCKCHANGE(Years, approach = "Production",
+                                         decaydistribution = decay,
+                                         halflives = halflives) +
+                    PAPER_CARBON_STOCKCHANGE(Years,
+                                             approach = "Production")) * 1000,
+         Var2B = carbonfromdumps(Years, approach = "Production")  * 1000)
 
+}
+
+#' Calculates changes in carbon stock from solid wood products.
+#' Units are in Tg Carbon.
+#' For production approach, values correspond to `Calculation$BY` in the spreadsheet.
+#' For stock change approach, values correspond to `Calculation$H` in the spreadsheet.
+#'
+#' @param years years to return carbon totals for
+#' @param approach The approach used to calculate carbon contribution.
+#' @param decaydistribution Type of decay method to use
+#' @param halflives data frame of half lives to use
+#'
+#' @return A vector of swp carbon stock changes for `years`
+#'
+#' @examples
+#' SWP_CARBON_STOCKCHANGE(1990:2000)
+#' SWP_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change", decaydistribution = "K=2")
 SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change"),
                                    decaydistribution = c("Exponential",
                                                          "K=2"),
@@ -76,6 +135,19 @@ SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Chan
   return(changeinstock)
 }
 
+#' Calculates changes in carbon stock from paper.
+#' Units are in Tg Carbon.
+#' For production approach, values correspond to `Calculation$CC` in the spreadsheet.
+#' For stock change approach, values correspond to `Calculation$L` in the spreadsheet.
+#'
+#' @param years years to return carbon totals for
+#' @param approach The approach used to calculate carbon contribution.
+#'
+#' @return A vector of paper carbon stock changes for `years`
+#'
+#' @examples
+#' PAPER_CARBON_STOCKCHANGE(1990:2000)
+#' PAPER_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change")
 PAPER_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change")){
   USA <- calcUSApaper()
   approach = match.arg(approach)

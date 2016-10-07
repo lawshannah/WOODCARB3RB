@@ -112,8 +112,10 @@ finalVariables <- function(Years = 1990:2015, Variable = paste("Var", c("1A", "1
 #' @return A vector of swp carbon stock changes for `years`
 #'
 #' @examples
+#' \dontrun{
 #' SWP_CARBON_STOCKCHANGE(1990:2000)
 #' SWP_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change", decaydistribution = "K=2")
+#' }
 SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change"),
                                    decaydistribution = c("Exponential",
                                                          "K=2"),
@@ -146,8 +148,10 @@ SWP_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Chan
 #' @return A vector of paper carbon stock changes for `years`
 #'
 #' @examples
+#' \dontrun{
 #' PAPER_CARBON_STOCKCHANGE(1990:2000)
 #' PAPER_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change")
+#' }
 PAPER_CARBON_STOCKCHANGE <- function(years, approach = c("Production", "Stock Change")){
   USA <- calcUSApaper()
   approach = match.arg(approach)

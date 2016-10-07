@@ -29,7 +29,9 @@ For production approach, values correspond to `Calculation$BY` in the spreadshee
 For stock change approach, values correspond to `Calculation$H` in the spreadsheet.
 }
 \examples{
+\dontrun{
 SWP_CARBON_STOCKCHANGE(1990:2000)
 SWP_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change", decaydistribution = "K=2")
+}
 }
 

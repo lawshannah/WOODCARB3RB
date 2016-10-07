@@ -24,7 +24,9 @@ For production approach, values correspond to `Calculation$CC` in the spreadshee
 For stock change approach, values correspond to `Calculation$L` in the spreadsheet.
 }
 \examples{
+\dontrun{
 PAPER_CARBON_STOCKCHANGE(1990:2000)
 PAPER_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change")
+}
 }
 

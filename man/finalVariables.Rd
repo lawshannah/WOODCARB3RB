@@ -48,7 +48,7 @@ Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood)
 domestic harvest (from products in use and products in SWDS)
 }
 \examples{
-finalVariable(Variable = "Var1A")
-finalVariable(Variable = "Var2B")
+finalVariables(Variable = "Var1A")
+finalVariables(Variable = "Var2B")
 }
 

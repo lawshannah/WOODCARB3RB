@@ -77,8 +77,8 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
 #' @export
 #'
 #' @examples
-#' finalVariable(Variable = "Var1A")
-#' finalVariable(Variable = "Var2B")
+#' finalVariables(Variable = "Var1A")
+#' finalVariables(Variable = "Var2B")
 finalVariables <- function(Years = 1990:2015, Variable = paste("Var", c("1A", "1B", "2A", "2B", "3", "4", "5", "6", "7"), sep=""),
                            decaydistribution = c("Exponential", "K=2"),
                            halflives = halfLives){

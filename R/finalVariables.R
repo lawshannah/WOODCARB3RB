@@ -111,6 +111,7 @@ finalVariables <- function(Years = 1990:2015, Variable = paste("Var", c("1A", "1
 #'
 #' @return A vector of swp carbon stock changes for `years`
 #' @export
+#'
 #' @examples
 #' \dontrun{
 #' SWP_CARBON_STOCKCHANGE(1990:2000)

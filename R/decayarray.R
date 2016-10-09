@@ -38,7 +38,7 @@ calculatedecay <- function(halfLives. = halfLives){
       h <- halfLives.[i,j] / log(2)
       for (l in 1:(years - i + 1))
       {
-        decay <- integrate(g, lower=0, upper=l)$value
+        decay <- stats::integrate(g, lower=0, upper=l)$value
         decay_array[1, j, i, (i + l - 1)] <- 1 - decay
       }
     }
@@ -57,11 +57,11 @@ calculatedecay <- function(halfLives. = halfLives){
       {
         m <- decayval * 2
         h <- h * m
-        decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
+        decayval <- stats::integrate(g, lower=0, upper=halfLives.[i,j])$value
       }
       for (l in 1:(years - i + 1))
       {
-        decay <- integrate(g, lower=0, upper=l)$value
+        decay <- stats::integrate(g, lower=0, upper=l)$value
         decay_array[2, j, i, (i + l - 1)] <- 1 - decay
       }
     }
@@ -84,7 +84,7 @@ calculatedecay <- function(halfLives. = halfLives){
   #       {
   #         m <- decayval * 1.6
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
+  #         decayval <- stats::integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     else if (halfLives.[i,j] >= 72)
@@ -93,7 +93,7 @@ calculatedecay <- function(halfLives. = halfLives){
   #       {
   #         m <- decayval * 1.65
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
+  #         decayval <- stats::integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     else if (halfLives.[i,j] >= 50)
@@ -102,7 +102,7 @@ calculatedecay <- function(halfLives. = halfLives){
   #       {
   #         m <- decayval * 1.555
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
+  #         decayval <- stats::integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     else if (halfLives.[i,j] >= 24)
@@ -111,7 +111,7 @@ calculatedecay <- function(halfLives. = halfLives){
   #       {
   #         m <- decayval * 2.05
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
+  #         decayval <- stats::integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     else
@@ -120,7 +120,7 @@ calculatedecay <- function(halfLives. = halfLives){
   #       {
   #         m <- decayval * 2.5
   #         k <- k * m
-  #         decayval <- integrate(g, lower=0, upper=halfLives.[i,j])$value
+  #         decayval <- stats::integrate(g, lower=0, upper=halfLives.[i,j])$value
   #       }
   #     }
   #     for (l in 1:(years - i + 1))
@@ -176,7 +176,7 @@ findKorTHETAforGamma <- function(halflife = 100, theta, k){
       l <- decayval * 1.6
       k <- k * l
 
-      decayval<-integrate(g, lower=0, upper=halflife)$value
+      decayval<-stats::integrate(g, lower=0, upper=halflife)$value
     }
     return(k)
   }
@@ -187,7 +187,7 @@ findKorTHETAforGamma <- function(halflife = 100, theta, k){
       l <- decayval / 0.5
       theta <- theta * l
 
-      decayval<-integrate(g, lower=0, upper=halflife)$value
+      decayval<-stats::integrate(g, lower=0, upper=halflife)$value
     }
     theta
   }

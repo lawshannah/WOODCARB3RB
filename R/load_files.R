@@ -1,3 +1,20 @@
+names <- c("hair1958","hair1963","hair1963t20",
+           "hair1963t21","howard28","howard37",
+           "howard38","howard46","howard47",
+           "howard49","howard5","howard53",
+           "ulrich29","ulrich36","ulrich4",
+           "ulrich5","lossIU","lumberpre1900",
+           "woodToLandFills","woodToDumps","paperToLandFills",
+           "halfLives","IncePaper","apiFiberpulp",
+           "apiTotalWoodPulp","usaFiberPulp","ince1",
+           "howard55","howard56","howard6",
+           "howard7", "ulrich52","ulrich53",
+           "ulrich54", "ulrich6","fracsawnwood",
+           "fracnonstrpanels", "fracstrpanels")
+for (i in seq(names)){
+  utils::globalVariables(names[i])
+}
+
 
 #######DATA FILES
 ###HAIR 1958 TAB 14 TIMBER DATA
@@ -265,9 +282,9 @@ paperToLF <- function(y){
 #########
 #recFibPulpUSA <- read.xlsx("./Data/recFibPulpusa.xlsx", 1, header=TRUE)
 #rownames(recFibPulpUSA)<-1998:2013
-recFibPulp_USA<-function(y,c){
-  return(recFibPulpUSA[y-1997,c])
-}
+# recFibPulp_USA<-function(y,c){
+#   return(recFibPulpUSA[y-1997,c])
+# }
 
 
 

@@ -32,11 +32,6 @@ swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "K=2
   placeIU <- calcplacediu(total = FALSE, approach = approachtype)
 
 
-
-  g <- function(x){ ##gamma functionf
-    ((x^(THETA - 1)) * (exp(-x/K))) / (gamma(THETA) * (K^THETA))
-  }
-
   Var2_totalC_SWP <- data.frame(Years = Yrs)
 
   if (type == "K=2"){

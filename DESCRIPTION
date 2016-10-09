@@ -1,7 +1,7 @@
 Package: WOODCARB3R
 Type: Package
 Title: WOODCARB3R
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(person("Ben", "Jones", email = "jonesb@appstate.edu", role = c("aut", "cre")),
              person("Sami", "Hlebak", email = "hlebaksm@appstate.edu", role = c("aut")),
              person("Alan", "Arnholt", email = "arnholtat@appstate.edu", role = "aut"),
@@ -11,12 +11,7 @@ Description: Calculations for carbon removal contributions due to wood products.
 License: GPL-2
 LazyData: TRUE
 Depends:
-  R (>= 2.10),
-  xlsx (>= 0.5.7)
-Import:
-    devtools (>= 1.11.0),
-    repmis (>= 0.5),
-    xlsx (>= 0.5.7)
+  R (>= 2.10)
 Suggests:
     knitr,
     rmarkdown,

@@ -80,3 +80,42 @@ finalVariables(Variable = "Var1B")
 ```
 
 ###Other Statistics 
+
+`finalCarbonContribution` and `finalVariables` calculate the final values for the WOODCARB model. There are many intermediate calculations and statistics that can be accessed using the package that are necessary to calculate the final values. 
+
+####Total Carbon 
+
+The model considers carbon stored in solid wood products, paper and solid waste disposal sites (SWDS). There are functions to calculate amounts of carbon stored in these places. 
+
+#####Solid Wood Products 
+
+`swpcarbontotal()` calculates total carbon stored in solid wood products in oven-dry tons of wood fiber.
+
+It gives the option of returning carbon totals by end use: (the default argument returns total carbon for all end uses)
+
+```{r}
+swpcarbontotal(c(1990,2015), onlytotal = FALSE) 
+```
+
+The default approach is Production but carbon totals using the Stock Change approach can be calculated as well. 
+
+```{r}
+swpcarbontotal(approach = "Stock Change")
+```
+
+There is an option to exclude carbon from lumber pre-1900 (the default includes this). 
+
+```{r}
+swpcarbontotal(lumberpre = FALSE)
+```
+
+Similar to `finalCarbonContribution()`, alternate half-lives can be provided. 
+
+```{r}
+swpcarbontotal(halflives = halfLives * 1.5)
+```
+
+#####Paper  
+
+
+#####Solid Waste Disposal Sites 

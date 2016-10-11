@@ -1,30 +1,43 @@
-library(xlsx)
-library(rJava)
+names <- c("hair1958","hair1963","hair1963t20",
+           "hair1963t21","howard28","howard37",
+           "howard38","howard46","howard47",
+           "howard49","howard5","howard53",
+           "ulrich29","ulrich36","ulrich4",
+           "ulrich5","lossIU","lumberpre1900",
+           "woodToLandFills","woodToDumps","paperToLandFills",
+           "halfLives","IncePaper","apiFiberpulp",
+           "apiTotalWoodPulp","usaFiberPulp","ince1",
+           "howard55","howard56","howard6",
+           "howard7", "ulrich52","ulrich53",
+           "ulrich54", "ulrich6","fracsawnwood",
+           "fracnonstrpanels", "fracstrpanels")
+for (i in seq(names)){
+  utils::globalVariables(names[i])
+}
+
+
 #######DATA FILES
 ###HAIR 1958 TAB 14 TIMBER DATA
 # FROM 1899-1956
-#hair1958 <- read.xlsx("./Data/hair1958.xlsx",1,header = FALSE)
-#rownames(hair1958) <- 1899:1956
 h8 <- function(y,c){
   return(hair1958[y-1898,c])
 }
 #######################
 #####HAIR 1963 TABLE 2 TIMBER PRODUCT DATA
 ##this table includes numbers results of calc
-#hair1963 <- read.xlsx("./Data/hair1963tab2.xlsx", 1, header=FALSE)
-#rownames(hair1963) <- 1900:1984
+
 h3 <- function(y,c){
   return(hair1963[y-1899,c])
 }
 #####HAIR1963 table 20 US import/export plywood 1927-1962
 #hair1963t20 <- read.xlsx("./Data/hair1963t20.xlsx",1,header=FALSE)
-#rownames(hair1963t20) <- 1927:1962
+
 h3t20 <- function(y,c){
   return(hair1963t20[y-1926,c])
 }
 #########HAIR1963 TABLE21
 #hair1963t21 <- read.xlsx("./Data/hair1963t21.xlsx",1,header=FALSE)
-#rownames(hair1963t21) <- 1927:1962
+
 h3t21 <- function(y,c){
   return(hair1963t21[y-1926,c])
 }
@@ -197,9 +210,9 @@ fnsp <- function(y,c){
 
 #rownames(halfLives) <- 1900:2050
 #halfLives <- halfLives[,-totalEUs]
-HL <- function(y,eu){
-  return(halfLives[y-1899,eu])
-}
+# HL <- function(y,eu){
+#   return(halfLives[y-1899,eu])
+# }
 ######LOSS when placed IU based on EU and yr
 #lossIU <- read.xlsx("./Data/lossWhenPlacedIU.xlsx",1,header=FALSE)
 
@@ -269,9 +282,9 @@ paperToLF <- function(y){
 #########
 #recFibPulpUSA <- read.xlsx("./Data/recFibPulpusa.xlsx", 1, header=TRUE)
 #rownames(recFibPulpUSA)<-1998:2013
-recFibPulp_USA<-function(y,c){
-  return(recFibPulpUSA[y-1997,c])
-}
+# recFibPulp_USA<-function(y,c){
+#   return(recFibPulpUSA[y-1997,c])
+# }
 
 
 

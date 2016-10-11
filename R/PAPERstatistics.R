@@ -76,7 +76,7 @@ calcUSApaper <- function(){
       return((h49(y,4)+h46(y,5)*(h46(y,1)/h46(y,2))*(h49(y,5)/100))*1000)
     }
     if (y > 2020){
-      return(USAdata$`Pulp for Paper Exports`[[USAdata$Years == 2002]])
+      return(USA$`Pulp for Paper Exports`[[USA$Years == 2002]])
     }
   })
 

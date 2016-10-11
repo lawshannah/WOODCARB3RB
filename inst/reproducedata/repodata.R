@@ -206,7 +206,6 @@ colnames(halfLives)<-c("House.SingFam","House.Multifam","House.MobHom","House.To
 use_data(halfLives, overwrite = TRUE)
 
 
-
 ##################
 ########PAPER
 IncePaper <- read.xlsx("./inst/extdata/CopyOfData/Ince_Paper.xlsx",1,header=FALSE)

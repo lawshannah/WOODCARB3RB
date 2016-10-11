@@ -4,7 +4,7 @@
 Authors: Ben Jones, Sami Hlebak, others here 
  
 
-## WOODCARB3R Version 0.1.1
+## WOODCARB3R Version 0.1.3
 
 [![Travis-CI Build Status](https://travis-ci.org/benjones2/WOODCARB3R.svg?branch=master)](https://travis-ci.org/benjones2/WOODCARB3R)
 

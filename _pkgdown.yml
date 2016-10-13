@@ -1,0 +1,17 @@
+title: WOODCARB3R
+
+template:
+  bootswatch: cosmo
+
+navbar:
+  type: default
+  left:
+  - text: Home
+    href: index.html
+  - text: Reference
+    href: reference/index.html
+  - text: Articles
+    href: articles/index.html
+  right:
+    - icon: fa-github fa-lg
+      href: https://github.com/alanarnholt/WOODCARB3R/

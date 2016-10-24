@@ -20,4 +20,17 @@ finalVariables(Variable = "Var2B")
 
 ## ------------------------------------------------------------------------
 finalVariables(Variable = "Var1A")
+finalVariables(Variable = "Var1B")
+
+## ------------------------------------------------------------------------
+swpcarbontotal(c(1990,2015), onlytotal = FALSE) 
+
+## ------------------------------------------------------------------------
+swpcarbontotal(approach = "Stock Change")
+
+## ------------------------------------------------------------------------
+swpcarbontotal(lumberpre = FALSE)
+
+## ------------------------------------------------------------------------
+swpcarbontotal(halflives = halfLives * 1.5)
 

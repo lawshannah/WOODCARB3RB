@@ -9,9 +9,7 @@
 #' @examples
 #' calcUSApaper()
 calcUSApaper <- function(){
-  yrs <- 1900:2020
-  minyr <- 1900
-  a5 <- 1
+
   USA <- data.frame(Years = yrs)
 
   ##api includes calculations from estimates/averages
@@ -36,13 +34,10 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Paper+Paperboard Production` <- sapply(yrs, function(y){
-    return(getIncePap(y,1)*1000*InceL5)
-  })
+  USA$`Paper+Paperboard Production` <- IncePaper[yrs-(minyr-1),1]*1000*InceL5
 
-  USA$`Paper+Paperboard Exports` <- sapply(yrs, function(y){
-    return(getIncePap(y,3)*1000*InceL5)
-  })
+
+  USA$`Paper+Paperboard Exports` <- IncePaper[yrs-(minyr-1),3]*1000*InceL5
 
   USA$`Pulp for Paper Production` <- sapply(yrs, function(y){
     if (y < 1965){

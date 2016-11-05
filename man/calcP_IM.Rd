@@ -11,7 +11,16 @@ calcP_IM(years = 1990:2020, var = FALSE)
 
 \item{var}{if true, returns variable 3. if false, returns statistics necessary to calculate variable 3}
 }
+\value{
+if var = FALSE, necessary intermediate calculations for Variable 3
+        if var = TRUE, returns values for Variable 3 for selected years
+}
 \description{
 Statistics for variable 3
+}
+\examples{
+calcP_IM(years = 1950:1980)
+calcP_IM(var = TRUE)
+calcP_IM(years = 2012:2015, var = TRUE)
 }
 

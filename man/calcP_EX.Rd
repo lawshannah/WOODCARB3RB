@@ -11,7 +11,16 @@ calcP_EX(years = 1990:2020, var = FALSE)
 
 \item{var}{If true, return only variable 4. If false, return intermediate statistics needed for variable 4}
 }
+\value{
+if var = FALSE, necessary calculations for Variable 4 for selected years
+        if var = TRUE, returns values for Variable 4 for selected years
+}
 \description{
 Statistics for variable 4
+}
+\examples{
+calcP_EX(var = TRUE)
+calcP_EX(years = 1995:2010)
+calcP_EX(years = 2015:2020, var = TRUE)
 }
 

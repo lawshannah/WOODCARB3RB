@@ -10,10 +10,14 @@
 #' @param years years to calculate for
 #' @param var if true, returns variable 3. if false, returns statistics necessary to calculate variable 3
 #'
-#' @return
+#' @return if var = FALSE, necessary intermediate calculations for Variable 3
+#'         if var = TRUE, returns values for Variable 3 for selected years
 #' @export
 #'
 #' @examples
+#' calcP_IM(years = 1950:1980)
+#' calcP_IM(var = TRUE)
+#' calcP_IM(years = 2012:2015, var = TRUE)
 calcP_IM <- function(years = 1990:2020, var = FALSE){
   var3 <- data.frame(Years = yrs)
 
@@ -109,7 +113,7 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 
   var3$variable3 <- (var3$Calc_AX+var3$Calc_AY
                 + var3$Calc_AZ+var3$Calc_BA + var3$Calc_BB)*1000
-  return(var3$usa_L[var3$Years %in% 2015:2020])
+  #return(var3$usa_L[var3$Years %in% 2015:2020])
   if(var == TRUE){
     return(var3$variable3[var3$Years %in% years])
   }
@@ -123,10 +127,14 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 #' @param years years to calculate
 #' @param var If true, return only variable 4. If false, return intermediate statistics needed for variable 4
 #'
-#' @return
+#' @return if var = FALSE, necessary calculations for Variable 4 for selected years
+#'         if var = TRUE, returns values for Variable 4 for selected years
 #' @export
 #'
 #' @examples
+#' calcP_EX(var = TRUE)
+#' calcP_EX(years = 1995:2010)
+#' calcP_EX(years = 2015:2020, var = TRUE)
 calcP_EX <- function(years = 1990:2020, var = FALSE){
   var4 <- data.frame(Years = yrs)
 
@@ -261,7 +269,7 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
   })
 
   var4$usa_Y <- var4$usa_AF + var4$usa_AV + var4$usa_AR
-  return(var4[var4$Years %in% years, c("usa_Y", "usa_E", "usa_J", "usa_M", "usa_U")])
+  #return(var4[var4$Years %in% years, c("usa_Y", "usa_E", "usa_J", "usa_M", "usa_U")])
   var4$Variable4 <- 1000 * (PRO17*var4$usa_E + PRO17 * var4$usa_J +
                                     PRO17 * var4$usa_M + PRO18 * var4$usa_U * uspaper$`Percent of Wood Pulp For Paper` +
                                     PRO18 * var4$usa_Y)

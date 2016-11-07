@@ -1,4 +1,10 @@
 $(function() {
+<<<<<<< HEAD
+  $("#sidebar").stick_in_parent({offset_top: 40});
+  $('body').scrollspy({
+    target: '#sidebar',
+    offset: 60
+=======
 
   $('#tocnav').affix({
     offset: {
@@ -8,6 +14,7 @@ $(function() {
   $('body').scrollspy({
     target: '#tocnav',
     offset: 80
+>>>>>>> master
   });
 
 });

@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<<<<<<< HEAD
 <title>Calculate carbon in SWDS for the Stock Change Method — calculatedumpcarbonstockchange • WOODCARB3R</title>
 
 <!-- jquery -->
@@ -13,6 +14,16 @@
 <!-- Bootstrap -->
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+=======
+<title>calculatedumpcarbonstockchange. WOODCARB3R</title>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
+
+<!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+>>>>>>> master
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -21,7 +32,10 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
+<<<<<<< HEAD
 <script src="../jquery.sticky-kit.min.js"></script>
+=======
+>>>>>>> master
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,9 +48,16 @@
   </head>
 
   <body>
+<<<<<<< HEAD
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+=======
+    <div class="container">
+      <header>
+      
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+>>>>>>> master
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -58,10 +79,16 @@
   <a href="../articles/index.html">Articles</a>
 </li>
       </ul>
+<<<<<<< HEAD
       
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/benjones2/WOODCARB3R/">
+=======
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/alanarnholt/WOODCARB3R/">
+>>>>>>> master
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -70,6 +97,7 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+<<<<<<< HEAD
 
       
       </header>
@@ -80,13 +108,28 @@
     <h1>Calculate carbon in SWDS for the Stock Change Method</h1>
     </div>
 
+=======
+      
+      </header>
+
+      <div class="page-header">
+  <h1>Calculate carbon in SWDS for the Stock Change Method</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-9">
+>>>>>>> master
     
     <p>Calculate carbon in SWDS for the Stock Change Method</p>
     
 
     <pre><span class='fu'>calculatedumpcarbonstockchange</span>(<span class='no'>Years</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
+<<<<<<< HEAD
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+=======
+    <h2>Arguments</h2>
+>>>>>>> master
     <dl class="dl-horizontal">
       <dt>Years</dt>
       <dd>years to calculate</dd>
@@ -95,6 +138,7 @@
 just totals</dd>
     </dl>
     
+<<<<<<< HEAD
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>If totalcarbonstockchange is false: a data frame of intermediate
@@ -103,6 +147,17 @@ just totals</dd>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+=======
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>If totalcarbonstockchange is false: a data frame of intermediate
+ calculations.  If totalcarbonstockchange is true: a numeric vector of stock change
+ for total carbon from dumps.</p>
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+>>>>>>> master
     <pre class="examples"><div class='input'><span class='fu'>calculatedumpcarbonstockchange</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>)</div><div class='output co'>#&gt;     Years TotalCarbonOutputStockChange ParamResults_Q   Dumps_C   Dumps_D
 #&gt; 91   1990                     50789440     0.01517695 0.3496421 129.91531
 #&gt; 92   1991                     50653922     0.01638197 0.3763961 125.03896
@@ -131,6 +186,7 @@ just totals</dd>
 #&gt; 115  2014                     59492926     0.01605844 0.4333457  54.63121
 #&gt; 116  2015                     60054468     0.01605844 0.4374360  52.84854
 #&gt;            Q   Dumps_F        X        Y       AA        V        D         J
+<<<<<<< HEAD
 #&gt; 91  17.13246 -5.107960 3.940466 49.98057 2.440731 13.19200 32.09376  94.96866
 #&gt; 92  18.12870 -4.876355 4.169601 52.57266 2.592087 13.95910 32.25799  96.74643
 #&gt; 93  16.49147 -4.706775 3.793037 54.72364 2.150980 12.69843 32.36923  98.18288
@@ -252,10 +308,127 @@ just totals</dd>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
+=======
+#&gt; 91  17.13246 -5.107960 3.940466 49.98057 2.440731 13.19200 32.65350  96.76489
+#&gt; 92  18.12870 -4.876355 4.169601 52.57266 2.592087 13.95910 32.07854  97.97587
+#&gt; 93  16.49147 -4.706775 3.793037 54.72364 2.150980 12.69843 33.45131  99.94062
+#&gt; 94  16.58525 -4.509473 3.814608 56.83290 2.109259 12.77064 34.70802 102.39031
+#&gt; 95  16.67655 -4.320109 3.835608 58.90109 2.068199 12.84095 36.27801 105.44697
+#&gt; 96  17.60415 -4.120510 4.048955 61.11618 2.215081 13.55520 36.55345 107.98078
+#&gt; 97  17.37573 -3.953325 3.996417 63.21572 2.099543 13.37931 35.87794 109.39389
+#&gt; 98  17.10318 -3.794001 3.933730 65.19324 1.977518 13.16944 37.76529 111.90364
+#&gt; 99  17.03138 -3.636803 3.917218 67.09711 1.903878 13.11417 38.49159 114.36441
+#&gt; 100 17.35492 -3.477032 3.991631 69.01777 1.920659 13.36329 40.08786 117.44950
+#&gt; 101 17.42191 -3.329376 4.007039 70.89744 1.879664 13.41487 39.41433 119.28330
+#&gt; 102 17.53896 -3.192460 4.033962 72.74848 1.851044 13.50500 36.92977 118.78845
+#&gt; 103 17.90601 -3.055314 4.118382 74.62756 1.879080 13.78763 36.70399 118.24046
+#&gt; 104 17.90168 -2.932237 4.117387 76.45093 1.823372 13.78430 36.37300 117.57206
+#&gt; 105 18.28541 -2.805199 4.205643 78.30687 1.855938 14.07976 37.82401 118.16718
+#&gt; 106 18.56736 -2.685623 4.270492 80.17170 1.864830 14.29686 36.99424 117.98875
+#&gt; 107 18.64136 -2.575650 4.287513 81.99873 1.827029 14.35385 37.42673 118.18194
+#&gt; 108 18.49822 -2.475103 4.254590 83.74057 1.741839 14.24363 36.14724 117.35589
+#&gt; 109 18.01104 -2.386522 4.142540 85.32288 1.582310 13.86850 33.68380 114.85448
+#&gt; 110 17.70145 -2.297428 4.071333 86.78996 1.467081 13.63011 29.42517 109.71397
+#&gt; 111 17.68062 -2.205285 4.066542 88.20965 1.419691 13.61408 30.57783 106.68151
+#&gt; 112 17.72160 -2.115436 4.075968 89.59713 1.387483 13.64563 29.69064 103.70090
+#&gt; 113 17.78510 -2.028691 4.090572 90.95837 1.361241 13.69452 29.38314 101.20054
+#&gt; 114 17.92253 -1.943744 4.122182 92.31065 1.352274 13.80035 29.41663  99.32466
+#&gt; 115 18.08467 -1.861652 4.159474 93.65973 1.349085 13.92520 40.22888 106.12011
+#&gt; 116 18.25537 -1.782674 4.198734 95.00763 1.347900 14.05663 40.77098 111.69978
+#&gt;            K   Dumps_H  Dumps_I         R       AG    Dumps_K       AI
+#&gt; 91  30.48604 0.4626850 56.59854 16.429239 7.228865 -4.2926022 9.200374
+#&gt; 92  30.86756 0.5056715 52.67830 15.395453 6.773999 -3.9202451 8.621454
+#&gt; 93  31.48656 0.4692067 49.02825 15.243331 6.707065 -3.6500414 8.536265
+#&gt; 94  32.25834 0.4851218 45.67579 15.519709 6.828672 -3.3524598 8.691037
+#&gt; 95  33.22135 0.5040337 42.60062 14.771499 6.499460 -3.0751781 8.272040
+#&gt; 96  34.01964 0.5489366 39.80521 13.372126 5.883735 -2.7954108 7.488390
+#&gt; 97  34.46484 0.5502242 37.22764 12.661983 5.571273 -2.5775620 7.090710
+#&gt; 98  35.25554 0.5554758 34.85470 13.476726 5.929760 -2.3729411 7.546967
+#&gt; 99  36.03082 0.5658326 32.67523 14.048315 6.181258 -2.1794699 7.867056
+#&gt; 100 37.00278 0.5917449 30.68859 14.441669 6.354334 -1.9866440 8.087334
+#&gt; 101 37.58052 0.6057791 28.86887 14.066401 6.189216 -1.8197208 7.877184
+#&gt; 102 37.42462 0.6033037 27.18790 12.900542 5.676239 -1.6809651 7.224304
+#&gt; 103 37.25198 0.6043468 25.63818 13.015858 5.726978 -1.5497181 7.288881
+#&gt; 104 37.04139 0.5949538 24.19991 11.970182 5.266880 -1.4382707 6.703302
+#&gt; 105 37.22889 0.5969629 22.87497 11.751226 5.170539 -1.3249428 6.580687
+#&gt; 106 37.17267 0.5969351 21.65269 11.447394 5.036854 -1.2222775 6.410541
+#&gt; 107 37.23354 0.5979125 20.52605 12.082041 5.316098 -1.1266420 6.765943
+#&gt; 108 36.97329 0.5937333 19.48288 11.844692 5.211665 -1.0431758 6.633028
+#&gt; 109 36.18521 0.5810780 18.50888 11.442585 5.034738 -0.9739979 6.407848
+#&gt; 110 34.56568 0.5550709 17.58638 10.787510 4.746504 -0.9224987 6.041005
+#&gt; 111 33.61030 0.5397289 16.72123 10.350354 4.554156 -0.8651525 5.796198
+#&gt; 112 32.67125 0.5246492 15.90922 10.061172 4.426916 -0.8120089 5.634256
+#&gt; 113 31.88350 0.5119993 15.14847  9.818584 4.320177 -0.7607429 5.498407
+#&gt; 114 31.29250 0.5025087 14.43794  9.636585 4.240097 -0.7105357 5.396487
+#&gt; 115 33.43343 0.5368886 13.81419 10.295887 4.530190 -0.6237497 5.765697
+#&gt; 116 35.19132 0.5651176 13.26483 10.837232 4.768382 -0.5493644 6.068850
+#&gt;            AJ          AL Total_swpstock_change_LD Total_paper_stock_change_LD
+#&gt; 91   91.07684  4.84660452                 10.52477                    7.782868
+#&gt; 92   95.14982  4.07298236                 11.67483                    6.926736
+#&gt; 93   98.95568  3.80586142                 10.14263                    6.862886
+#&gt; 94  102.73562  3.77993980                 10.37043                    7.256152
+#&gt; 95  105.94323  3.20760846                 10.58904                    6.631890
+#&gt; 96  108.25661  2.31337240                 11.64977                    5.401697
+#&gt; 97  110.08490  1.82829409                 11.52553                    4.822005
+#&gt; 98  112.26522  2.18032382                 11.35296                    5.737142
+#&gt; 99  114.65156  2.38633856                 11.38124                    6.388127
+#&gt; 100 117.13926  2.48769670                 11.80691                    6.855387
+#&gt; 101 119.31290  2.17363964                 11.96516                    6.543135
+#&gt; 102 120.76428  1.45137829                 12.16359                    5.446652
+#&gt; 103 122.21107  1.44679381                 12.61139                    5.624053
+#&gt; 104 123.03299  0.82192432                 12.67543                    4.650534
+#&gt; 105 123.70040  0.66740498                 13.13050                    4.513002
+#&gt; 106 124.17497  0.47457312                 13.47607                    4.289149
+#&gt; 107 124.96708  0.79210982                 13.60523                    4.981566
+#&gt; 108 125.59620  0.62912051                 13.51036                    4.797609
+#&gt; 109 125.98171  0.38551188                 13.06429                    4.446251
+#&gt; 110 125.99953  0.01781777                 12.79977                    3.841823
+#&gt; 111 125.78290 -0.21663376                 12.82848                    3.472369
+#&gt; 112 125.42159 -0.36130413                 12.91768                    3.253603
+#&gt; 113 124.94712 -0.47447189                 13.02707                    3.084962
+#&gt; 114 124.39703 -0.55009524                 13.20888                    2.979466
+#&gt; 115 124.22439 -0.17263371                 13.41263                    3.733807
+#&gt; 116 124.34896  0.12456494                 13.62186                    4.343583
+#&gt;     Var1b_STOCKCHANGE_TOTAL
+#&gt; 91                 18.30763
+#&gt; 92                 18.60157
+#&gt; 93                 17.00552
+#&gt; 94                 17.62658
+#&gt; 95                 17.22093
+#&gt; 96                 17.05147
+#&gt; 97                 16.34753
+#&gt; 98                 17.09010
+#&gt; 99                 17.76937
+#&gt; 100                18.66230
+#&gt; 101                18.50829
+#&gt; 102                17.61024
+#&gt; 103                18.23545
+#&gt; 104                17.32596
+#&gt; 105                17.64350
+#&gt; 106                17.76522
+#&gt; 107                18.58679
+#&gt; 108                18.30797
+#&gt; 109                17.51054
+#&gt; 110                16.64159
+#&gt; 111                16.30085
+#&gt; 112                16.17128
+#&gt; 113                16.11204
+#&gt; 114                16.18834
+#&gt; 115                17.14643
+#&gt; 116                17.96544
+#&gt; </div><div class='input'><span class='fu'>calculatedumpcarbonstockchange</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] 18.30763 18.60157 17.00552 17.62658 17.22093 17.05147 16.34753 17.09010
+#&gt;  [9] 17.76937 18.66230 18.50829 17.61024 18.23545 17.32596 17.64350 17.76522
+#&gt; [17] 18.58679 18.30797 17.51054 16.64159 16.30085 16.17128 16.11204 16.18834
+#&gt; [25] 17.14643 17.96544
+#&gt; </div></pre>
+  </div>
+  <div class="col-md-3">
+>>>>>>> master
   </div>
 </div>
 
       <footer>
+<<<<<<< HEAD
       <div class="copyright">
   <p>Developed by Ben Jones, Sami Hlebak, Alan Arnholt, Eric Marland.</p>
 </div>
@@ -264,6 +437,9 @@ just totals</dd>
   <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
+=======
+      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
+>>>>>>> master
       </footer>
    </div>
 

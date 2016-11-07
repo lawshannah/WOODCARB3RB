@@ -1,7 +1,7 @@
 
 # WOODCARB3R
 
-Authors: Ben Jones, Sami Hlebak, others here 
+Authors: Ben Jones, Sami Hlebak, Hannah Laws, Kelly Loucks, Andrew Sullivan, Eric Marland, and Alan Arnholt 
  
 
 ## WOODCARB3R Version 0.1.3

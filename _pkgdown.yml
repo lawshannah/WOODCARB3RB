@@ -14,4 +14,8 @@ navbar:
     href: articles/index.html
   right:
     - icon: fa-github fa-lg
+<<<<<<< HEAD
       href: https://github.com/benjones2/WOODCARB3R/
+=======
+      href: https://github.com/alanarnholt/WOODCARB3R/
+>>>>>>> master

@@ -6,6 +6,9 @@
 #mistake is excel for yrs 2019+2020
 
 #' Statistics for variable 3
+#' Calculates intermediate calculations that are needed for variable 3:
+#' Annual Imports of Wood, and paper products + wood fuel,
+#' pulp, recovered paper, roundwood/chips.
 #'
 #' @param years years to calculate for
 #' @param var if true, returns variable 3. if false, returns statistics necessary to calculate variable 3

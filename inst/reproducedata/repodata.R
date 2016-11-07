@@ -209,10 +209,9 @@ use_data(halfLives, overwrite = TRUE)
 ##################
 ########PAPER
 IncePaper <- read.xlsx("./inst/extdata/CopyOfData/Ince_Paper.xlsx",1,header=FALSE)
-colnames(IncePaper) <- c("Paper.board.prod","Paper.board.imports","Paper.board.ApparentConsumption",
-                         "Population", "Paper.board.ConsumptionPerCapita")
+colnames(IncePaper) <- c("Paper.Board.Prod","Paper.Board.Imports","Paper.Board.ApparentConsumption",
+                         "Population", "Paper.Board.ConsumptionPerCapita")
 use_data(IncePaper, overwrite = TRUE)
-
 #######
 apiFiberpulp <- read.xlsx("./inst/extdata/CopyOfData/api1975Fiberpulp.xlsx",1,header=FALSE)
 ##WHAT is column G?? is it other?
@@ -279,6 +278,7 @@ colnames(howard7)<-c("AllProduction.Prod","AllProduct.Consump",
                       "Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports",
                       "FuelWood.ProdAndConsumption","UnNamed1","UnNamed2","UnNamed3","UnNamed4","UnNamed5",
                       "UnNamed6","UnNamed7")
+howard7[is.na(howard7)] <- 0
 use_data(howard7, overwrite=TRUE)
 
 

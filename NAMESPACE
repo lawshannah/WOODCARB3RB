@@ -2,6 +2,8 @@
 
 export(PAPER_CARBON_STOCKCHANGE)
 export(SWP_CARBON_STOCKCHANGE)
+export(calcP_EX)
+export(calcP_IM)
 export(calcUSApaper)
 export(calcplacediu)
 export(calculatedecay)

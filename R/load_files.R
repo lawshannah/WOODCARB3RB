@@ -1,3 +1,5 @@
+##This code removes "no visible binding" error from R CMD check
+#solution from: http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when
 names <- c("hair1958","hair1963","hair1963t20",
            "hair1963t21","howard28","howard37",
            "howard38","howard46","howard47",
@@ -282,9 +284,9 @@ paperToLF <- function(y){
 #########
 #recFibPulpUSA <- read.xlsx("./Data/recFibPulpusa.xlsx", 1, header=TRUE)
 #rownames(recFibPulpUSA)<-1998:2013
-# recFibPulp_USA<-function(y,c){
-#   return(recFibPulpUSA[y-1997,c])
-# }
+FibPulp_USA<-function(y,c){
+  return(usaFiberPulp[y-1997,c])
+ }
 
 
 

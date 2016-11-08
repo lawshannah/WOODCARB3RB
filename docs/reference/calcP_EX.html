@@ -36,7 +36,7 @@
   <body>
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -94,13 +94,60 @@
       <dd>If true, return only variable 4. If false, return intermediate statistics needed for variable 4</dd>
     </dl>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>if var = FALSE, necessary calculations for Variable 4 for selected years
+        if var = TRUE, returns values for Variable 4 for selected years</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>calcP_EX</span>(<span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] 15078.00 15667.47 16032.21 14788.17 15665.37 17265.89 16732.92 16876.90
+#&gt;  [9] 15056.85 15245.33 16184.63 15336.17 15743.99 16302.59 16952.97 17312.49
+#&gt; [17] 18835.68 20656.59 21158.54 20616.42 22419.91 24671.92 23323.55 22850.52
+#&gt; [25] 18657.41 18716.93 18778.74 18830.11 18882.87 18564.08 18500.21</div><div class='input'><span class='fu'>calcP_EX</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>1995</span>:<span class='fl'>2010</span>)</div><div class='output co'>#&gt;     Years    usa_E   usa_J     usa_M    usa_U   usa_AK  usa_AO  usa_AF   usa_AV
+#&gt; 96   1995 11579781 2960824 1545086.1  7421625 37558.99 8298929 8261370  9908000
+#&gt; 97   1996 11846488 2934513 1403922.7  8872288 40814.36 7210644 7169830  8084000
+#&gt; 98   1997 11242106 2994858 1540840.3 10087972 29235.25 7019473 6990238  7882000
+#&gt; 99   1998 10072945 2346626  956616.7  8892837 21496.88 6046497 6025000  8117000
+#&gt; 100  1999 10039617 2705829 1017530.8  8626714 23181.09 5958827 5935646  8516800
+#&gt; 101  2000 10090240 2890247 1021331.7  8512477 24669.33 6433237 6408568 10272000
+#&gt; 102  2001  8358201 2427333  896764.5  8989223 26794.50 6193470 6166675 10597000
+#&gt; 103  2002  6759548 2422416  877027.4 11170874 26812.55 6280463 6253650 11267000
+#&gt; 104  2003  6011826 2336671  844918.4 11453398 22873.50 5870048 5847174 13805000
+#&gt; 105  2004  6155486 2377643 1033072.9 12207767 21615.65 6246517 6224901 13910000
+#&gt; 106  2005  6120742 2463928  998176.9 12923301 22081.73 6434980 6412898 13910000
+#&gt; 107  2006  5944601 2670925 1047980.6 12960194 23013.21 6629125 6606112 17501000
+#&gt; 108  2007  6815601 2418927 1243865.5 14078641 25543.32 6856699 6831156 19886000
+#&gt; 109  2008  7101131 2254614 1439877.5 14459223 30848.81 7821338 7790489 19469000
+#&gt; 110  2009  6443624 1880985 1096130.0 13338835 26389.10 7545389 7519000 21017000
+#&gt; 111  2010  7919807 2183797 1378552.1 15127184 29558.90 8294559 8265000 20692000
+#&gt;       usa_AR    usa_Y Variable4
+#&gt; 96      0.00 18169370  17265.89
+#&gt; 97      0.00 15253830  16732.92
+#&gt; 98      0.00 14872238  16876.90
+#&gt; 99  41730.28 14183730  15056.85
+#&gt; 100 32658.48 14485104  15245.33
+#&gt; 101 48080.54 16728649  16184.63
+#&gt; 102 16606.84 16780282  15336.17
+#&gt; 103 19774.71 17540425  15743.99
+#&gt; 104 41115.21 19693289  16302.59
+#&gt; 105 35380.02 20170281  16952.97
+#&gt; 106 36287.20 20359185  17312.49
+#&gt; 107 26769.07 24133881  18835.68
+#&gt; 108 25811.09 26742967  20656.59
+#&gt; 109 25401.04 27284890  21158.54
+#&gt; 110 68047.57 28604048  20616.42
+#&gt; 111 91942.69 29048943  22419.91</div><div class='input'><span class='fu'>calcP_EX</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>2015</span>:<span class='fl'>2020</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 18716.93 18778.74 18830.11 18882.87 18564.08 18500.21</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

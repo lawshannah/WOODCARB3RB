@@ -349,3 +349,6 @@ colnames(fracstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","Hous
                            "Shipping.Tot","Other.Uses.Tot")
 
 use_data(fracstrpanels, overwrite = TRUE)
+
+InceTable3 <- read.xlsx("./inst/extdata/CopyOfData/Ince_Table3", 1, header = FALSE)
+

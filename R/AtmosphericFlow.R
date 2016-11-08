@@ -5,8 +5,8 @@
 # #Annual Imports of wood, and paper products + wood fuel, pulp, recovered paper, roundwood/ chips
 #mistake is excel for yrs 2019+2020
 
-#' Statistics for variable 3
-#' Calculates intermediate calculations that are needed for variable 3:
+#' Statistics needed for variable 3
+#' Calculates intermediate calculations for variable 3:
 #' Annual Imports of Wood, and paper products + wood fuel,
 #' pulp, recovered paper, roundwood/chips.
 #'

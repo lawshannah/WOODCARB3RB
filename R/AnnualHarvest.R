@@ -5,7 +5,7 @@ annualDomesticHarvest <- function(years = 1990:2020, var = FALSE){
     return((Calc_DI(year)+Calc_DO(year)
             + Calc_DN(year))*1000)
   }
-  #########
+
   #DI= industrial roundwood production as C flow
   Calc_DI <- function(year){
     return(PRO17*usa_C(year)*1000)

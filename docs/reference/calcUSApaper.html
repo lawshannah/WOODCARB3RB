@@ -6,7 +6,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<<<<<<< HEAD
 <title>Calculates paper statistics — calcUSApaper • WOODCARB3R</title>
 
 <!-- jquery -->
@@ -14,16 +13,6 @@
 <!-- Bootstrap -->
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-=======
-<title>calcUSApaper. WOODCARB3R</title>
-
-<!-- jquery -->
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
-<!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-
->>>>>>> master
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -32,10 +21,7 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<<<<<<< HEAD
 <script src="../jquery.sticky-kit.min.js"></script>
-=======
->>>>>>> master
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -48,16 +34,9 @@
   </head>
 
   <body>
-<<<<<<< HEAD
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-=======
-    <div class="container">
-      <header>
-      
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
->>>>>>> master
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -79,16 +58,10 @@
   <a href="../articles/index.html">Articles</a>
 </li>
       </ul>
-<<<<<<< HEAD
       
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/benjones2/WOODCARB3R/">
-=======
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://github.com/alanarnholt/WOODCARB3R/">
->>>>>>> master
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -97,7 +70,6 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-<<<<<<< HEAD
 
       
       </header>
@@ -108,24 +80,12 @@
     <h1>Calculates paper statistics</h1>
     </div>
 
-=======
-      
-      </header>
-
-      <div class="page-header">
-  <h1>Calculates paper statistics</h1>
-</div>
-
-<div class="row">
-  <div class="col-md-9">
->>>>>>> master
     
     <p>Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.</p>
     
 
     <pre><span class='fu'>calcUSApaper</span>()</pre>
         
-<<<<<<< HEAD
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame with necessary intermediate calculations to calculate carbon from paper.
@@ -133,16 +93,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-=======
-    <div class="Value">
-      <h2>Value</h2>
-
-      <p>A data frame with necessary intermediate calculations to calculate carbon from paper.
-Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet (list them?)</p>
-    </div>
-    
-    <h2 id="examples">Examples</h2>
->>>>>>> master
     <pre class="examples"><div class='input'><span class='fu'>calcUSApaper</span>()</div><div class='output co'>#&gt;     Years apiTotalWP_L Recovered Fibre Pulp Exports Quantity
 #&gt; 1    1900     300848.1                                     0
 #&gt; 2    1901     334478.6                                     0
@@ -183,7 +133,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
 #&gt; 37   1936     810356.0                                     0
 #&gt; 38   1937     935241.2                                     0
 #&gt;     Paper+Paperboard Production Paper+Paperboard Exports
-<<<<<<< HEAD
 #&gt; 1                       2104466                 72815.53
 #&gt; 2                       2286815                 72815.53
 #&gt; 3                       2469163                 72815.53
@@ -222,46 +171,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
 #&gt; 36                      8919027                158446.60
 #&gt; 37                     10173879                173203.88
 #&gt; 38                     11626750                174466.02
-=======
-#&gt; 1                       2286815                 72815.53
-#&gt; 2                       2469163                 72815.53
-#&gt; 3                       2651512                 72815.53
-#&gt; 4                       2833861                 72815.53
-#&gt; 5                       3016210                 75436.89
-#&gt; 6                       3213258                 74873.79
-#&gt; 7                       3410306                 74310.68
-#&gt; 8                       3607355                 73747.57
-#&gt; 9                       3804403                 73184.47
-#&gt; 10                      4001451                 72621.36
-#&gt; 11                      4201686                 78815.53
-#&gt; 12                      4401921                 85009.71
-#&gt; 13                      4602156                 91203.88
-#&gt; 14                      4802391                 97398.06
-#&gt; 15                      5002626                103592.23
-#&gt; 16                      5160562                164524.27
-#&gt; 17                      5318498                225456.31
-#&gt; 18                      5476435                286388.35
-#&gt; 19                      5634371                347320.39
-#&gt; 20                      5792307                408252.43
-#&gt; 21                      6975847                357087.38
-#&gt; 22                      5178055                162135.92
-#&gt; 23                      6674596                147475.73
-#&gt; 24                      7641511                141359.22
-#&gt; 25                      7699015                145145.63
-#&gt; 26                      8739555                147961.17
-#&gt; 27                      9508821                177766.99
-#&gt; 28                      9710748                178834.95
-#&gt; 29                     10100328                212330.10
-#&gt; 30                     10815762                254757.28
-#&gt; 31                      9872951                209514.56
-#&gt; 32                      9108583                165922.33
-#&gt; 33                      7764924                115825.24
-#&gt; 34                      8922347                123203.88
-#&gt; 35                      8919027                158446.60
-#&gt; 36                     10173879                173203.88
-#&gt; 37                     11626750                174466.02
-#&gt; 38                     12463110                214951.46
->>>>>>> master
 #&gt;     Pulp for Paper Production Pulp for Paper Imports Pulp for Paper Exports
 #&gt; 1                     1628822               100249.1               22693.57
 #&gt; 2                     1810901               130174.1               20112.91
@@ -497,7 +406,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
 #&gt; 37                            5781.547                0.000000
 #&gt; 38                            6667.009                0.000000
 #&gt;     Chip Exports (tons) Paper+Paperbaord Imports Paper+Paperboard Consumption
-<<<<<<< HEAD
 #&gt; 1                   0.0                 9708.738                      2041359
 #&gt; 2                   0.0                14563.107                      2228562
 #&gt; 3                   0.0                19417.476                      2415765
@@ -575,85 +483,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
 #&gt; 36                       0.8692575                       3.7794839
 #&gt; 37                       0.8754367                       4.3618320
 #&gt; 38                       0.8754367                       5.0423285
-=======
-#&gt; 1                   0.0                 9708.738                      2223708
-#&gt; 2                   0.0                14563.107                      2410911
-#&gt; 3                   0.0                19417.476                      2598114
-#&gt; 4                   0.0                24271.845                      2785317
-#&gt; 5                   0.0                29126.214                      2969899
-#&gt; 6                   0.0                33980.583                      3172365
-#&gt; 7                   0.0                38834.951                      3374831
-#&gt; 8                   0.0                43689.320                      3577297
-#&gt; 9                   0.0                48543.689                      3779762
-#&gt; 10                  0.0                54368.932                      3983199
-#&gt; 11                  0.0               111320.388                      4234191
-#&gt; 12                  0.0               168271.845                      4485183
-#&gt; 13                  0.0               225223.301                      4736176
-#&gt; 14                  0.0               282174.757                      4987168
-#&gt; 15                  0.0               339126.214                      5238160
-#&gt; 16                  0.0               408679.612                      5404718
-#&gt; 17                  0.0               478233.010                      5571275
-#&gt; 18                  0.0               547786.408                      5737833
-#&gt; 19                  0.0               617339.806                      5904390
-#&gt; 20                  0.0               686893.204                      6070948
-#&gt; 21                  0.0               798349.515                      7417109
-#&gt; 22                  0.0               835631.068                      5851550
-#&gt; 23                  0.0              1108737.864                      7635858
-#&gt; 24                  0.0              1425728.155                      8925880
-#&gt; 25                  0.0              1456699.029                      9010568
-#&gt; 26                  0.0              1521456.311                     10113050
-#&gt; 27                  0.0              1916019.417                     11247074
-#&gt; 28                  0.0              2045922.330                     11577835
-#&gt; 29                  0.0              2200776.699                     12088775
-#&gt; 30                  0.0              2459805.825                     13020811
-#&gt; 31                  0.0              2296407.767                     11959845
-#&gt; 32                  0.0              2080970.874                     11023631
-#&gt; 33                  0.0              1801262.136                      9450361
-#&gt; 34                  0.0              1798446.602                     10597589
-#&gt; 35                  0.0              2199320.388                     10959901
-#&gt; 36                  0.0              2385436.893                     12386112
-#&gt; 37                  0.0              2771941.748                     14224225
-#&gt; 38                  0.0              3313009.709                     15561168
-#&gt;     Percent of Wood Pulp For Paper CarbonInputFlowPaperStockChange
-#&gt; 1                        0.8152971                       0.7072256
-#&gt; 2                        0.8152971                       0.7667635
-#&gt; 3                        0.8152971                       0.8263013
-#&gt; 4                        0.8152971                       0.8858392
-#&gt; 5                        0.8152971                       0.9445434
-#&gt; 6                        0.8152971                       1.0089354
-#&gt; 7                        0.8152971                       1.0733274
-#&gt; 8                        0.8152971                       1.1377194
-#&gt; 9                        0.8152971                       1.2021114
-#&gt; 10                       0.8152971                       1.2668121
-#&gt; 11                       0.8152971                       1.3466374
-#&gt; 12                       0.8152971                       1.4264627
-#&gt; 13                       0.8152971                       1.5062880
-#&gt; 14                       0.8152971                       1.5861133
-#&gt; 15                       0.8152971                       1.6659386
-#&gt; 16                       0.8289500                       1.7476951
-#&gt; 17                       0.8289500                       1.8015540
-#&gt; 18                       0.8289500                       1.8554128
-#&gt; 19                       0.8289500                       1.9092716
-#&gt; 20                       0.8430680                       1.9965648
-#&gt; 21                       0.8279319                       2.3954856
-#&gt; 22                       0.8279319                       1.8898611
-#&gt; 23                       0.8279319                       2.4661346
-#&gt; 24                       0.8279319                       2.8827697
-#&gt; 25                       0.8279319                       2.9101213
-#&gt; 26                       0.8279319                       3.2661874
-#&gt; 27                       0.8279319                       3.6324401
-#&gt; 28                       0.8279319                       3.7392653
-#&gt; 29                       0.8279319                       3.9042822
-#&gt; 30                       0.8133297                       4.1311308
-#&gt; 31                       0.8403641                       3.9206434
-#&gt; 32                       0.8403641                       3.6137364
-#&gt; 33                       0.8403641                       3.0979914
-#&gt; 34                       0.8403641                       3.4740726
-#&gt; 35                       0.8403641                       3.5928446
-#&gt; 36                       0.8692575                       4.1999853
-#&gt; 37                       0.8754367                       4.8575545
-#&gt; 38                       0.8754367                       5.3141187
->>>>>>> master
 #&gt;     Nonwood Fiber Percent of Total Pulp Consumption
 #&gt; 1                                       0.184702902
 #&gt; 2                                       0.184702902
@@ -733,7 +562,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
 #&gt; 37                                                    0.29276661
 #&gt; 38                                                    0.27699373
 #&gt;     Production Approach-C Input from Paper Products(Calc BU)
-<<<<<<< HEAD
 #&gt; 1                                                  0.6442175
 #&gt; 2                                                  0.6918427
 #&gt; 3                                                  0.7398450
@@ -783,55 +611,10 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
       <li><a href="#examples">Examples</a></li>
     </ul>
 
-=======
-#&gt; 1                                                  0.6988044
-#&gt; 2                                                  0.7459067
-#&gt; 3                                                  0.7934912
-#&gt; 4                                                  0.8414258
-#&gt; 5                                                  0.8896226
-#&gt; 6                                                  0.9595411
-#&gt; 7                                                  1.0139583
-#&gt; 8                                                  1.0433330
-#&gt; 9                                                  1.0954218
-#&gt; 10                                                 1.1221730
-#&gt; 11                                                 1.1272504
-#&gt; 12                                                 1.1723257
-#&gt; 13                                                 1.2408031
-#&gt; 14                                                 1.3010889
-#&gt; 15                                                 1.3064330
-#&gt; 16                                                 1.4360419
-#&gt; 17                                                 1.4647261
-#&gt; 18                                                 1.5146804
-#&gt; 19                                                 1.5741106
-#&gt; 20                                                 1.6441668
-#&gt; 21                                                 1.8524280
-#&gt; 22                                                 1.3712834
-#&gt; 23                                                 1.6142975
-#&gt; 24                                                 1.8348732
-#&gt; 25                                                 1.7941700
-#&gt; 26                                                 2.0200567
-#&gt; 27                                                 2.2364140
-#&gt; 28                                                 2.2907688
-#&gt; 29                                                 2.3819401
-#&gt; 30                                                 2.5205463
-#&gt; 31                                                 2.3605311
-#&gt; 32                                                 2.2340039
-#&gt; 33                                                 1.8621093
-#&gt; 34                                                 2.0599401
-#&gt; 35                                                 2.1486871
-#&gt; 36                                                 2.5553097
-#&gt; 37                                                 2.9226300
-#&gt; 38                                                 3.2536326
-#&gt;  [ reached getOption(&quot;max.print&quot;) -- omitted 83 rows ]
-#&gt; </div></pre>
-  </div>
-  <div class="col-md-3">
->>>>>>> master
   </div>
 </div>
 
       <footer>
-<<<<<<< HEAD
       <div class="copyright">
   <p>Developed by Ben Jones, Sami Hlebak, Alan Arnholt, Eric Marland.</p>
 </div>
@@ -840,9 +623,6 @@ Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsh
   <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
 </div>
 
-=======
-      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
->>>>>>> master
       </footer>
    </div>
 

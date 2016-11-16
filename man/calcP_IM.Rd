@@ -2,7 +2,10 @@
 % Please edit documentation in R/AtmosphericFlow.R
 \name{calcP_IM}
 \alias{calcP_IM}
-\title{Statistics for variable 3}
+\title{Statistics needed for variable 3
+Calculates intermediate calculations for variable 3:
+Annual Imports of Wood, and paper products + wood fuel,
+pulp, recovered paper, roundwood/chips.}
 \usage{
 calcP_IM(years = 1990:2020, var = FALSE)
 }
@@ -16,7 +19,10 @@ if var = FALSE, necessary intermediate calculations for Variable 3
         if var = TRUE, returns values for Variable 3 for selected years
 }
 \description{
-Statistics for variable 3
+Statistics needed for variable 3
+Calculates intermediate calculations for variable 3:
+Annual Imports of Wood, and paper products + wood fuel,
+pulp, recovered paper, roundwood/chips.
 }
 \examples{
 calcP_IM(years = 1950:1980)

@@ -351,4 +351,10 @@ colnames(fracstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","Hous
 use_data(fracstrpanels, overwrite = TRUE)
 
 InceTable3 <- read.xlsx("./inst/extdata/CopyOfData/Ince_Table3", 1, header = FALSE)
-
+colnames(InceTable3) <- c("Total.Industrial.Wood.Product.Production", paste("Roundwood.Equivalents.of.Production:",c("Hardwoods", "Softwoods",paste("Totals:",c("millionftsquared", "thousand.short.tons","thousand.metric.tons")))),
+                          paste("Industrial.Wood.Productivity:",c("lbs/ft^2", "tons/tons")),
+                          "Recovered.Paper.Utilization.Rate(AF&PA)",
+                          "U.S.Population(millions)","Per.Capita.Industrial.Wood.Product.Production",
+                          "Roundwood.Use.Per.Capita", "HW.Agrifiber", "HW.Roundwood", rep("",5),
+                          "U.S.Timber.Harvest")
+use_data(InceTable3, overwrite = TRUE)

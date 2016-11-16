@@ -37,9 +37,9 @@ Final estimates can be calculated from several approaches, each using a slightly
 
 Note:
 
-$$\Delta C_{DC} \: = \: \Delta C_{IU\:DC} + \Delta C_{SWDS\:DC}$$  
+$$\Delta C_{DC}  =  \Delta C_{IU\:DC} + \Delta C_{SWDS\:DC}$$  
 
-$$\Delta C_{DH} \: = \: \Delta C_{IU\:DH} + \Delta C_{SWDS\:DH}$$   
+$$\Delta C_{DH}  =  \Delta C_{IU\:DH} + \Delta C_{SWDS\:DH}$$   
 
 These variables are estimates of annual changes in stock of HWP carbon. 
 
@@ -49,15 +49,15 @@ The HWP Variables 3, 4, and 5 are estimates of annual product imports and export
 
 #####Annual change in C in products IU
 
-$$C_{IU \: T_{i \: j}}(t) \: = e^{-k_{T_j}*(t-1900)}*Inflow_{T_i}*F_{T_{i \: j}} \: \: \boldsymbol{[1]}$$ 
+$$C_{IU \: T_{i \: j}}(t)  = e^{-k_{T_j}*(t-1900)}*Inflow_{T_i}*F_{T_{i \: j}} \: \: \boldsymbol{[1]}$$ 
 
 
 
-$$C_{IU}(t) \: = \: \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C_{IU \: T_{i \: j}}(t) \: \: \boldsymbol{[2]}$$  
+$$C_{IU}(t)  =  \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C_{IU \: T_{i \: j}}(t) \: \: \boldsymbol{[2]}$$  
 
 Estimate the change in carbon in products IU as:
 
-$$\Delta C_{IU}(t) \: = \: C_{IU}(t) - C_{IU}(t-1) \: \: \boldsymbol{[3]}$$
+$$\Delta C_{IU}(t)  =  C_{IU}(t) - C_{IU}(t-1) \: \: \boldsymbol{[3]}$$
 
 Where:  
 
@@ -108,11 +108,11 @@ $$Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
     $$\times[\frac{(PW_p - PW_{IM} + PW_{EX})}{PW_p}] +EX_{rec\:fiber\:pulp} + EX_{rec\:paper} + EX_{woodpulp}$$
 
 Where:
-
-##talk about formulas, a5 sum up different approaches.  
+<!---
+talk about formulas, a5 sum up different approaches.  
+--->
 
 # References
-
 
 
 

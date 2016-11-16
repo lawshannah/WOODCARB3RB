@@ -49,17 +49,10 @@ The HWP Variables 3, 4, and 5 are estimates of annual product imports and export
 
 #####Annual change in C in products IU {-}
 
-<<<<<<< HEAD
-$$C_{IU \: T_{i \: j}}(t)  = e^{-k_{T_j}*(t-1900)}*Inflow_{T_i}*F_{T_{i \: j}} \: \: \boldsymbol{[1]}$$ 
 
-
-
-$$C_{IU}(t)  =  \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C_{IU \: T_{i \: j}}(t) \: \: \boldsymbol{[2]}$$  
 
 Estimate the change in carbon in products IU as:
 
-$$\Delta C_{IU}(t)  =  C_{IU}(t) - C_{IU}(t-1) \: \: \boldsymbol{[3]}$$
-=======
 \begin{equation}
 C_{IU \: T_{i \: j}}(t)  = e^{-k_{T_j}(t-1900)}\times \text{Inflow}_{T_i}\times F_{T_{i \: j}}
 (\#eq:one)
@@ -77,7 +70,7 @@ Estimate the change in carbon in products IU as:
 \Delta C_{IU}(t)  =  C_{IU}(t) - C_{IU}(t-1)
 (\#eq:three)
 \end{equation}
->>>>>>> 22c469a36a7c48621c9a280bb68418644676066c
+
 
 Where:  
 
@@ -133,15 +126,8 @@ For paper and paperboard products:
 \end{align}
     
 
-<<<<<<< HEAD
-Where:
-<!---
-talk about formulas, a5 sum up different approaches.  
---->
-=======
 Suppose we want to mention Equations \@ref(eq:one) and \@ref(eq:two).
 
->>>>>>> 22c469a36a7c48621c9a280bb68418644676066c
 
 Where:
 <!---

@@ -3,7 +3,7 @@ title: "WOODCARB3R Vignette"
 author: "Ben Jones"
 date: "`r Sys.Date()`"
 bibliography: carb2.bib
-output: rmarkdown::html_vignette
+output: bookdown::html_document2
 vignette: >
   %\VignetteIndexEntry{Vignette Title} 
   %\VignetteEngine{knitr::rmarkdown} 
@@ -15,7 +15,7 @@ This package calculates estimates of the U.S. HWP contribution to annual greenho
 Final estimates can be calculated from several approaches, each using a slightly different method. Different approaches and the calculations can be found below. 
 
 
-###Terms and Notation 
+###Terms and Notation {-}
 
 
 **Variable 1A**: $\Delta C_{IU\:DC}$ annual change in carbon stored in HWP in products in use where wood came from domestic consumption of products in the United States including imports, $Mg$ $C$ $yr^{-1}$.  
@@ -45,10 +45,11 @@ These variables are estimates of annual changes in stock of HWP carbon.
 
 The HWP Variables 3, 4, and 5 are estimates of annual product imports and exports, as well as annual harvest for products. They are not pools of carbon.
 
-###Estimating Variables 1A and 2A
+###Estimating Variables 1A and 2A {-}
 
-#####Annual change in C in products IU
+#####Annual change in C in products IU {-}
 
+<<<<<<< HEAD
 $$C_{IU \: T_{i \: j}}(t)  = e^{-k_{T_j}*(t-1900)}*Inflow_{T_i}*F_{T_{i \: j}} \: \: \boldsymbol{[1]}$$ 
 
 
@@ -58,6 +59,25 @@ $$C_{IU}(t)  =  \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C
 Estimate the change in carbon in products IU as:
 
 $$\Delta C_{IU}(t)  =  C_{IU}(t) - C_{IU}(t-1) \: \: \boldsymbol{[3]}$$
+=======
+\begin{equation}
+C_{IU \: T_{i \: j}}(t)  = e^{-k_{T_j}(t-1900)}\times \text{Inflow}_{T_i}\times F_{T_{i \: j}}
+(\#eq:one)
+\end{equation}
+
+
+\begin{equation}
+C_{IU}(t)  =  \sum\limits_{T=1900}^t \sum\limits_{i=1}^n \sum\limits_{j=1}^m C_{IU \: T_{i \: j}}(t)
+(\#eq:two)
+\end{equation}
+
+Estimate the change in carbon in products IU as:
+
+\begin{equation}
+\Delta C_{IU}(t)  =  C_{IU}(t) - C_{IU}(t-1)
+(\#eq:three)
+\end{equation}
+>>>>>>> 22c469a36a7c48621c9a280bb68418644676066c
 
 Where:  
 
@@ -99,13 +119,29 @@ End-use categories (labeled j) include four for solidwood products (single-famil
 
 For solidwood products: 
 
-$$Inflow_{T i} = P_{T  i} \:x \: \left[\frac{(SL_p - SL_{IM} + SL_{EX})}{SL_p}\right] \: \: \boldsymbol{[4]}$$
+\begin{equation}
+\text{Inflow}_{T i} = P_{T  i} \:x \: \left[\frac{(SL_p - SL_{IM} + SL_{EX})}{SL_p}\right]
+(\#eq:four)
+\end{equation}
 
 For paper and paperboard products:
 
-$$Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
-     \: \:\:\: \boldsymbol{[5]}$$
-    $$\times[\frac{(PW_p - PW_{IM} + PW_{EX})}{PW_p}] +EX_{rec\:fiber\:pulp} + EX_{rec\:paper} + EX_{woodpulp}$$
+\begin{align}
+\text{Inflow}_T &= P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})\times\left[ \frac{(PW_p - PW_{IM} + PW_{EX})}{PW_p}\right]\\ 
+&+ EX_{rec\:fiber\:pulp} + EX_{rec\:paper} + EX_{woodpulp}
+(\#eq:five)
+\end{align}
+    
+
+<<<<<<< HEAD
+Where:
+<!---
+talk about formulas, a5 sum up different approaches.  
+--->
+=======
+Suppose we want to mention Equations \@ref(eq:one) and \@ref(eq:two).
+
+>>>>>>> 22c469a36a7c48621c9a280bb68418644676066c
 
 Where:
 <!---
@@ -113,7 +149,6 @@ talk about formulas, a5 sum up different approaches.
 --->
 
 # References
-
 
 
 

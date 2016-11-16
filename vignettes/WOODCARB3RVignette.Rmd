@@ -108,11 +108,11 @@ $$Inflow_T = P_T \times (1-F_{nonwood\:fiber})\times(1-F_{woodpulp\:imp})
     $$\times[\frac{(PW_p - PW_{IM} + PW_{EX})}{PW_p}] +EX_{rec\:fiber\:pulp} + EX_{rec\:paper} + EX_{woodpulp}$$
 
 Where:
-
-##talk about formulas, a5 sum up different approaches.  
+<!---
+talk about formulas, a5 sum up different approaches.  
+--->
 
 # References
-
 
 
 

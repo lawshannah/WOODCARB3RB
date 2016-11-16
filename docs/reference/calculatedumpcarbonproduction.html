@@ -6,13 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate carbon in SWDS for the Production Method — calculatedumpcarbonproduction • WOODCARB3R</title>
+<title>calculatedumpcarbonproduction. WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -21,7 +22,6 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,9 +34,10 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container">
       <header>
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -58,7 +59,6 @@
   <a href="../articles/index.html">Articles</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/benjones2/WOODCARB3R/">
@@ -70,23 +70,22 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header">
-    <h1>Calculate carbon in SWDS for the Production Method</h1>
-    </div>
+      <div class="page-header">
+  <h1>Calculate carbon in SWDS for the Production Method</h1>
+</div>
 
+<div class="row">
+  <div class="col-md-9">
     
     <p>Column names with only letters come from Calc sheet, otherwise sheet is specified (need to change names)</p>
     
 
     <pre><span class='fu'>calculatedumpcarbonproduction</span>(<span class='no'>Years</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2>Arguments</h2>
     <dl class="dl-horizontal">
       <dt>Years</dt>
       <dd>years to calculate</dd>
@@ -95,12 +94,13 @@
 frame of intermediate calculations</dd>
     </dl>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <div class="Value">
+      <h2>Value</h2>
 
-    <p>Either a data frame of values from Calculation spreadsheet or total carbon output</p>
+      <p>Either a data frame of values from Calculation spreadsheet or total carbon output</p>
+    </div>
     
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>calculatedumpcarbonproduction</span>(<span class='fl'>1995</span>:<span class='fl'>2020</span>)</div><div class='output co'>#&gt;     Years       CA       CB ParamResults_V ParamResults_P       CI       CS
 #&gt; 96   1995 112.0782 35.31055      0.3930708      0.3930708 13.87955 6.107000
 #&gt; 97   1996 114.9872 36.22701      0.3673884      0.3673884 13.30938 5.856129
@@ -235,30 +235,16 @@ frame of intermediate calculations</dd>
 #&gt; 118                    6.109638                          18.25873
 #&gt; 119                    6.297017                          18.60920
 #&gt; 120                    6.464684                          18.94819
-#&gt; 121                    6.620172                          19.27484</div><div class='input'><span class='fu'>calculatedumpcarbonproduction</span>(<span class='fl'>1990</span>:<span class='fl'>1991</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 18.13123 18.72634</div></pre>
+#&gt; 121                    6.620172                          19.27484
+#&gt; </div><div class='input'><span class='fu'>calculatedumpcarbonproduction</span>(<span class='fl'>1990</span>:<span class='fl'>1991</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 18.13123 18.72634
+#&gt; </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3">
   </div>
 </div>
 
       <footer>
-      <div class="copyright">
-  <p>Developed by Ben Jones, Sami Hlebak, Alan Arnholt, Eric Marland.</p>
-</div>
-
-<div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
-</div>
-
+      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
       </footer>
    </div>
 

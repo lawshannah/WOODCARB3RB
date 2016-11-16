@@ -6,13 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Statistics for variable 3 — calcP_IM • WOODCARB3R</title>
+<title>calcP_IM. WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -21,7 +22,6 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,9 +34,10 @@
   </head>
 
   <body>
-    <div class="container template-reference-topic">
+    <div class="container">
       <header>
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -58,7 +59,6 @@
   <a href="../articles/index.html">Articles</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/benjones2/WOODCARB3R/">
@@ -70,23 +70,22 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
-
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header">
-    <h1>Statistics for variable 3</h1>
-    </div>
+      <div class="page-header">
+  <h1>Statistics for variable 3</h1>
+</div>
 
+<div class="row">
+  <div class="col-md-9">
     
     <p>Statistics for variable 3</p>
     
 
     <pre><span class='fu'>calcP_IM</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2020</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2>Arguments</h2>
     <dl class="dl-horizontal">
       <dt>years</dt>
       <dd>years to calculate for</dd>
@@ -94,13 +93,14 @@
       <dd>if true, returns variable 3. if false, returns statistics necessary to calculate variable 3</dd>
     </dl>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <div class="Value">
+      <h2>Value</h2>
 
-    <p>if var = FALSE, necessary intermediate calculations for Variable 3
+      <p>if var = FALSE, necessary intermediate calculations for Variable 3
         if var = TRUE, returns values for Variable 3 for selected years</p>
+    </div>
     
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <h2 id="examples">Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>calcP_IM</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>1950</span>:<span class='fl'>1980</span>)</div><div class='output co'>#&gt;    Years    usa_O    Calc_AX    usa_I   Calc_AY      usa_L    Calc_AZ   usa_T
 #&gt; 51  1950 734517.9 0.33317179  2977102 1.3503914   24456.52 0.01109329 4411165
 #&gt; 52  1951 606184.9 0.27496093  2311582 1.0485165   28450.70 0.01290502 4538058
@@ -164,33 +164,20 @@
 #&gt; 78 2.735448  92000.00      0 3956000 1.5431943  9375.688
 #&gt; 79 3.225019  70000.00      0 4094000 1.5970266 10578.096
 #&gt; 80 3.308764  78000.00      0 4396000 1.7148337 10478.606
-#&gt; 81 3.182476  87000.00      0 4138000 1.6141906  9469.013</div><div class='input'><span class='fu'>calcP_IM</span>(<span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] 12679.50 11551.75 12855.64 14511.74 15684.97 16712.32 16690.67 17983.12
+#&gt; 81 3.182476  87000.00      0 4138000 1.6141906  9469.013
+#&gt; </div><div class='input'><span class='fu'>calcP_IM</span>(<span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;  [1] 12679.50 11551.75 12855.64 14511.74 15684.97 16712.32 16690.67 17983.12
 #&gt;  [9] 18994.15 20599.10 21857.50 22051.45 23209.92 23706.93 26427.58 26792.51
 #&gt; [17] 25442.39 21649.52 16981.71 13114.89 14161.49 13922.97 14067.44 15142.07
-#&gt; [25] 19008.74 19872.28 20854.53 21817.52 22718.98 23537.00 25890.86</div><div class='input'><span class='fu'>calcP_IM</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>2012</span>:<span class='fl'>2015</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 14067.44 15142.07 19008.74 19872.28</div></pre>
+#&gt; [25] 19008.74 19872.28 20854.53 21817.52 22718.98 23537.00 25890.86
+#&gt; </div><div class='input'><span class='fu'>calcP_IM</span>(<span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>2012</span>:<span class='fl'>2015</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 14067.44 15142.07 19008.74 19872.28
+#&gt; </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3">
   </div>
 </div>
 
       <footer>
-      <div class="copyright">
-  <p>Developed by Ben Jones, Sami Hlebak, Alan Arnholt, Eric Marland.</p>
-</div>
-
-<div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
-</div>
-
+      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
       </footer>
    </div>
 

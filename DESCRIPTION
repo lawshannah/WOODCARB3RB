@@ -17,7 +17,5 @@ Suggests:
     rmarkdown,
     testthat,
     bookdown
-    
-    
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1

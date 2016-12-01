@@ -15,6 +15,9 @@ Depends:
 Suggests:
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    bookdown
+    
+    
 VignetteBuilder: knitr
 RoxygenNote: 5.0.1

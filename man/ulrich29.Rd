@@ -8,7 +8,7 @@
 \source{
 U.S. Department of Commerce. Bureau of the Census (43.51.52)
 U.S. Department of Agriculture, Forest Service; National Forest Products Association (16).
-Data for selected years 1899.1949 in "The demand and price situation for forest products", 1964, table 7 (31)
+Data for selected years 1899.1949 in 'The demand and price situation for forest products', 1964, table 7 (31)
 }
 \usage{
 ulrich29

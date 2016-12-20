@@ -31,13 +31,13 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
       return((h3(year,7)*InceS5+h3(year,9)*InceT5)*1000)
     }
     if (year < 1965){#Y, Z
-      return((u5(year,20)*InceS5+u6(year,20)*InceT5)*1000)
+      return((u5(year,20)*InceS5+u6(year,20) * InceT5) * 1000)
     }
     if (year < 1983){
-      return((h6(year,20)*InceS5+h7(year,21)*InceT5)*1000)
+      return((h6(year,20)*InceS5+h7(year,21) * InceT5) * 1000)
     }
     if (year < 2021){
-      return((h6(year,20)*InceS5+h7(year,20)*InceT5+h6(year,22)*InceS5+h7(year,22)*InceT5)*1000)
+      return((h6(year,20)*InceS5+h7(year,20)*InceT5+h6(year,22) * InceS5 + h7(year,22) * InceT5) * 1000)
     }
   })
 
@@ -45,13 +45,13 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 
   var3$usa_I <- sapply(yrs, function(year){
     if (year < 1918){
-      return(h8(year, 4)*InceF5*1000)
+      return(h8(year, 4) * InceF5 * 1000)
     }
     if (year < 1950){
-      return(((h8(year,5)+h8(year,7))*InceF5+(h8(year,6)*InceG5))*1000)
+      return(((h8(year,5) + h8(year,7)) * InceF5 + (h8(year,6) * InceG5)) * 1000)
     }
     if (year < 1965){
-      return(((u29(year, 5)*1000*InceF5)+(u29(year, 6)*1000*InceG5))*1000)
+      return(((u29(year, 5) * 1000*InceF5) + (u29(year, 6) * 1000 * InceG5)) * 1000)
     }
     if (year < 2021){
       ((h28(year, 5)*1000*InceF5)+(h28(year, 6)*1000*InceG5))*1000
@@ -70,12 +70,12 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
     if (year < 1954)
       return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5))*1000)
     if (year < 1956)
-      return(((u36(year, 5)*InceB5)+(u36(year,6)*InceE5)+(u54(year,2)*InceJ5)+(u53(year,2)*InceO5))*1000)
+      return(((u36(year, 5) * InceB5) + (u36(year,6) * InceE5) + (u54(year,2) * InceJ5) + (u53(year,2) * InceO5)) * 1000)
     if (year < 1963)
-      if (year == 1956 || year == 1959)
+      if (year == 1956 | year == 1959)
         return(((u36(year, 6)*InceE5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
-    else ##
-      return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
+      else ##
+        return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
     if (year < 1965)
       return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5)+(u52(year, 4)*InceI5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
     if (year < 1980)

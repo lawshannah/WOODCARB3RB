@@ -7,7 +7,7 @@
 \format{A data frame with 38 observations of 24 variables}
 \source{
 Based on data published by the U.S. Departments of Commerce and Agriculture.
-Data for 1900-49 in "The demand and price situation for forest products 1964", table 2 (31),
+Data for 1900-49 in 'The demand and price situation for forest products 1964', table 2 (31),
 }
 \usage{
 ulrich4

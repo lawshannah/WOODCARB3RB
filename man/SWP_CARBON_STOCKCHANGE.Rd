@@ -31,7 +31,7 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
 \examples{
 \dontrun{
 SWP_CARBON_STOCKCHANGE(1990:2000)
-SWP_CARBON_STOCKCHANGE(1950:1975, approach = "Stock Change", decaydistribution = "K=2")
+SWP_CARBON_STOCKCHANGE(1950:1975, approach = 'Stock Change', decaydistribution = 'K=2')
 }
 }
 

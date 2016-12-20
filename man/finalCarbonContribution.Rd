@@ -24,16 +24,16 @@ finalCarbonContribution(Years = 1990:2015, approach = c("Production",
 A vector of carbon contributions for all Years. Plot returned is optional
 }
 \description{
-The "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
-The "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet
+The 'Production' approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
+The 'Stock Change' approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet
 }
 \details{
 The plot argument returns a simple plot of time vs. carbon contribution.
 }
 \examples{
 finalCarbonContribution()
-finalCarbonContribution(approach = "Stock Change")
-finalCarbonContribution(approach = "Production",
-                         decaytype ="Exponential")
+finalCarbonContribution(approach = 'Stock Change')
+finalCarbonContribution(approach = 'Production',
+                         decaytype ='Exponential')
 }
 

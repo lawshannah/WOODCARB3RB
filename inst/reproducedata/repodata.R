@@ -3,7 +3,7 @@ library(repmis)
 library(xlsx)
 
 
-hair1958 <- read.xlsx("./inst/extdata/CopyOfData/hair1958.xlsx",1,header = FALSE)
+hair1958 <- read.xlsx("./inst/extdata/CopyOfData/hair1958.xlsx", 1, header = FALSE)
 colnames(hair1958) <- c("Prod.Tot",
                         "Prod.SW",
                         "Prod.HW",
@@ -17,9 +17,9 @@ colnames(hair1958) <- c("Prod.Tot",
                         "NewSupply", "PerCapita")
 use_data(hair1958, overwrite = TRUE)
 
-hair1963 <- read.xlsx("./inst/extdata/CopyOfData/hair1963tab2.xlsx", 1, header=FALSE)
-colnames(hair1963) <- c("Dom.Prod.Tot", "ApparentConsumption", "IndRW.Dom.Prod","IndRW.Imports",
-                        "IndRW.Prod.SW", "IndRW.Prod.HW", "IndRW.LogChipImports.SW",
+hair1963 <- read.xlsx("./inst/extdata/CopyOfData/hair1963tab2.xlsx", 1, header = FALSE)
+colnames(hair1963) <- c("Dom.Prod.Tot", "ApparentConsumption", "IndRW.Dom.Prod",
+                        "IndRW.Imports","IndRW.Prod.SW", "IndRW.Prod.HW", "IndRW.LogChipImports.SW",
                         "IndRW.LogChipExports.SW", "IndRW.LogChipImports.HW",
                         "IndRW.LogChipExports.HW", "IndRW.SW.PctOfProd", "IndRW.Exports.SW.PctOfProd",
                         "IndRW.Exports.HW.PctOfProd", "IndRW.Imports.SW.PctOfConsump",

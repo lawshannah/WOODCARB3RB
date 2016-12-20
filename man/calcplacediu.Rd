@@ -23,6 +23,6 @@ approach respectively.
 }
 \examples{
 calcplacediu()
-calcplacediu(approach = "Stock Change", total = FALSE)
+calcplacediu(approach = 'Stock Change', total = FALSE)
 }
 

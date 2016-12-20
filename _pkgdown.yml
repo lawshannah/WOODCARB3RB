@@ -16,3 +16,41 @@ navbar:
     - icon: fa-github fa-lg
       href: https://github.com/benjones2/WOODCARB3R/
 
+reference:
+  - title: "Functions"
+    desc: >
+      Functions for calculating intermediate carbon statistics
+      and final CO2 removal contributions
+    contents:
+      - calcP_EX
+      - calcP_IM
+      - calcplacediu
+      - calculatedecay
+      - calculatedumpcarbonproduction
+      - calculatedumpcarbonstockchange
+      - calculateswpdata
+      - calcUSApaper
+      - finalCarbonContribution
+      - finalVariables
+      - PAPER_CARBON_STOCKCHANGE
+      - SWP_CARBON_STOCKCHANGE
+      - swpcarbontotal
+  - title: "Data Sheets"
+    desc: "Input data sheets for carbon calculations"
+    contents:
+      - starts_with("api")
+      - starts_with("frac")
+      - starts_with("hair")
+      - halfLives
+      - starts_with("howard")
+      - ince1
+      - IncePaper
+      - lossIU
+      - lumberpre1900
+      - paperToLandFills
+      - starts_with("ulrich")
+      - usaFiberPulp
+      - woodToDumps
+      - woodToLandFills
+
+

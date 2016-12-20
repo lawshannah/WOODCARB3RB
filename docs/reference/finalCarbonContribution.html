@@ -6,14 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>finalCarbonContribution. WOODCARB3R</title>
+<title>Calculate final carbon contribution to AFOLU.
+ — finalCarbonContribution • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -22,6 +22,7 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,10 +35,9 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container template-reference-topic">
       <header>
-      
-<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -59,6 +59,7 @@
   <a href="../articles/index.html">Articles</a>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/benjones2/WOODCARB3R/">
@@ -70,26 +71,27 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
       
       </header>
 
-      <div class="page-header">
-  <h1>Calculate final carbon contribution to AFOLU.
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>Calculate final carbon contribution to AFOLU.
 </h1>
-</div>
+    </div>
 
-<div class="row">
-  <div class="col-md-9">
     
-    <p>The &quot;Production&quot; approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
-The &quot;Stock Change&quot; approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet</p>
+    <p>The &#39;Production&#39; approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
+The &#39;Stock Change&#39; approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet</p>
     
 
     <pre><span class='fu'>finalCarbonContribution</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>,
   <span class='st'>"Stock Change"</span>), <span class='kw'>decaytype</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>plot</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
     
-    <h2>Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>Years</dt>
       <dd>years to return carbon totals for</dd>
@@ -103,43 +105,55 @@ The &quot;Stock Change&quot; approach corresponds to `06 IPCC Tables`$P9 in the 
       <dd>data frame of half lives to use</dd>
     </dl>
     
-    <div class="Value">
-      <h2>Value</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <p>A vector of carbon contributions for all Years. Plot returned is optional</p>
-    </div>
-
-    <div class="Details">
-      <h2>Details</h2>
-
-      <p>The plot argument returns a simple plot of time vs. carbon contribution.</p>
-    </div>
+    <p>A vector of carbon contributions for all Years. Plot returned is optional</p>
     
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>finalCarbonContribution</span>()</div><div class='output co'>#&gt;  [1] -130993.82 -124381.79 -121155.59 -120091.92 -119385.74 -120209.87
-#&gt;  [7] -113017.73 -113790.89 -116931.74 -118124.41 -117582.53 -100639.24
-#&gt; [13]  -98358.70  -95540.13 -100289.10 -104168.46 -106980.30 -103968.37
-#&gt; [19]  -81891.53  -63887.33  -53954.53  -69509.31  -68873.45  -70956.71
-#&gt; [25]  -68637.85  -91843.96
-#&gt; </div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>"Stock Change"</span>)</div><div class='output co'>#&gt;  [1] -129227.46 -118397.81 -117724.51 -125612.82 -127328.93 -127591.74
-#&gt;  [7] -124631.45 -128764.26 -138022.79 -145351.95 -145729.50 -133204.40
-#&gt; [13] -133264.68 -127263.76 -139513.33 -143998.38 -136815.19 -117300.30
-#&gt; [19]  -78380.80  -50672.73  -43881.16  -53403.95  -57225.64  -67555.68
-#&gt; [25]  -83360.97 -116954.02
-#&gt; </div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>"Production"</span>,
-                         <span class='kw'>decaytype</span> <span class='kw'>=</span><span class='st'>"Exponential"</span>)</div><div class='output co'>#&gt;  [1] -130993.82 -124381.79 -121155.59 -120091.92 -119385.74 -120209.87
-#&gt;  [7] -113017.73 -113790.89 -116931.74 -118124.41 -117582.53 -100639.24
-#&gt; [13]  -98358.70  -95540.13 -100289.10 -104168.46 -106980.30 -103968.37
-#&gt; [19]  -81891.53  -63887.33  -53954.53  -69509.31  -68873.45  -70956.71
-#&gt; [25]  -68637.85  -91843.96
-#&gt; </div></pre>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The plot argument returns a simple plot of time vs. carbon contribution.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>finalCarbonContribution</span>()</div><div class='output co'>#&gt;  [1] -131771.55 -123758.01 -123790.61 -120707.52 -122498.31 -118411.13
+#&gt;  [7] -112219.10 -117343.83 -114188.45 -119182.37 -112968.80  -93478.73
+#&gt; [13]  -98188.13  -93967.40 -103967.46 -102683.17 -107666.14 -102762.70
+#&gt; [19]  -76830.26  -54360.98  -60549.58  -68943.22  -68312.97  -70814.78
+#&gt; [25]  -86538.26  -91250.87</div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>'Stock Change'</span>)</div><div class='output co'>#&gt;  [1] -129988.81 -117713.65 -120365.48 -126226.54 -130517.68 -125723.03
+#&gt;  [7] -123784.21 -132427.36 -135179.86 -146458.11 -140868.20 -125467.82
+#&gt; [13] -133133.89 -125584.82 -143587.19 -142407.25 -137608.40 -116011.73
+#&gt; [19]  -72961.66  -40438.37  -51054.53  -52783.49  -56627.13  -67402.01
+#&gt; [25] -102745.75 -116315.23</div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>'Production'</span>,
+                         <span class='kw'>decaytype</span> <span class='kw'>=</span><span class='st'>'Exponential'</span>)</div><div class='output co'>#&gt;  [1] -131771.55 -123758.01 -123790.61 -120707.52 -122498.31 -118411.13
+#&gt;  [7] -112219.10 -117343.83 -114188.45 -119182.37 -112968.80  -93478.73
+#&gt; [13]  -98188.13  -93967.40 -103967.46 -102683.17 -107666.14 -102762.70
+#&gt; [19]  -76830.26  -54360.98  -60549.58  -68943.22  -68312.97  -70814.78
+#&gt; [25]  -86538.26  -91250.87</div></pre>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
   </div>
 </div>
 
       <footer>
-      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
+      <div class="copyright">
+  <p>Developed by Ben Jones, Sami Hlebak, Alan Arnholt, Eric Marland.</p>
+</div>
+
+<div class="pkgdown">
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+</div>
+
       </footer>
    </div>
 

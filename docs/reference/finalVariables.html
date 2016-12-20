@@ -6,14 +6,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>finalVariables. WOODCARB3R</title>
+<title>Values for final 7 variables.
+ — finalVariables • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
@@ -22,6 +22,7 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,10 +35,9 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container template-reference-topic">
       <header>
-      
-<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -59,6 +59,7 @@
   <a href="../articles/index.html">Articles</a>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/benjones2/WOODCARB3R/">
@@ -70,16 +71,17 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
       
       </header>
 
-      <div class="page-header">
-  <h1>Values for final 7 variables.
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>Values for final 7 variables.
 </h1>
-</div>
+    </div>
 
-<div class="row">
-  <div class="col-md-9">
     
     <p>Values for final 7 variables.
 All units are in Gg Carbon
@@ -100,7 +102,7 @@ domestic harvest (from products in use and products in SWDS)</p>
   <span class='st'>"2A"</span>, <span class='st'>"2B"</span>, <span class='st'>"3"</span>, <span class='st'>"4"</span>, <span class='st'>"5"</span>, <span class='st'>"6"</span>, <span class='st'>"7"</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>""</span>),
   <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
     
-    <h2>Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>Years</dt>
       <dd>years to calculate</dd>
@@ -112,30 +114,43 @@ domestic harvest (from products in use and products in SWDS)</p>
       <dd>half-lives for calculation (if necessary)</dd>
     </dl>
     
-    <div class="Value">
-      <h2>Value</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <p>a numeric vector of values for the selected variable for `Years`</p>
-    </div>
+    <p>a numeric vector of values for the selected variable for `Years`</p>
     
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Variable</span> <span class='kw'>=</span> <span class='st'>"Var1A"</span>)</div><div class='output co'>#&gt;  [1] 17049.8828 13695.6138 15189.4365 16753.2544 17683.7151 17822.5016
-#&gt;  [7] 17634.5446 18109.6498 19928.8670 21083.5096 21189.8535 18452.8143
-#&gt; [13] 17809.7296 17095.1977 20251.1521 21327.5882 18601.3882 13520.3504
-#&gt; [19]  3592.0678 -3267.9224 -4592.0846 -1859.2830  -708.6011  2062.6613
-#&gt; [25]  6099.9515 14343.3463
-#&gt; </div><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Variable</span> <span class='kw'>=</span> <span class='st'>"Var2B"</span>)</div><div class='output co'>#&gt;  [1] 18131.23 18726.34 17260.19 17782.21 17248.91 17119.64 16452.02 17091.22
-#&gt;  [9] 17661.86 18255.52 18019.40 17022.70 17425.81 16395.06 16371.50 16413.09
-#&gt; [17] 17352.37 17489.53 17304.84 17069.91 16778.96 16998.70 17090.29 17158.66
-#&gt; [25] 17069.76 17496.19
-#&gt; </div></pre>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Variable</span> <span class='kw'>=</span> <span class='st'>'Var1A'</span>)</div><div class='output co'>#&gt;  [1] 17107.1033 13423.0348 15742.9581 16753.3412 18320.6135 17204.3066
+#&gt;  [7] 17344.7304 18935.3265 19077.9747 21281.0645 19920.3191 16605.7670
+#&gt; [13] 18004.3495 16874.5647 21463.6582 21019.8300 18904.9029 13275.9320
+#&gt; [19]  2342.2767 -5606.6893 -2418.5332 -1823.2435  -677.4553  2194.7400
+#&gt; [25] 11061.9029 13896.0643</div><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Variable</span> <span class='kw'>=</span> <span class='st'>'Var2B'</span>)</div><div class='output co'>#&gt;  [1] 18278.36 18812.33 17426.64 17949.01 17479.06 17228.99 16513.07 17262.74
+#&gt;  [9] 17738.36 18358.73 17969.61 16780.98 17212.91 16174.97 16274.85 16293.62
+#&gt; [17] 17268.23 17387.19 17089.68 16646.38 16572.71 16804.35 16906.41 16994.18
+#&gt; [25] 17366.38 17745.38</div></pre>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
   </div>
 </div>
 
       <footer>
-      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
+      <div class="copyright">
+  <p>Developed by Ben Jones, Sami Hlebak, Alan Arnholt, Eric Marland.</p>
+</div>
+
+<div class="pkgdown">
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+</div>
+
       </footer>
    </div>
 

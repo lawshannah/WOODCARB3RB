@@ -135,8 +135,3 @@ talk about formulas, a5 sum up different approaches.
 --->
 
 # References
-
-
-
-
-

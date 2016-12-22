@@ -19,6 +19,7 @@ carbonfromdumps <- function(years, approach = c("Production",
 #'  calculations.  If totalcarbonstockchange is true: a numeric vector of stock change
 #'  for total carbon from dumps.
 #'
+#'
 #' @export
 #'
 #' @examples

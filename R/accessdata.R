@@ -288,7 +288,9 @@ FibPulp_USA<-function(y,c){
   return(usaFiberPulp[y-1997,c])
  }
 
-
+Ince3 <- function(y,c){
+  return(InceTable3[y-1899,c])
+}
 
 
 

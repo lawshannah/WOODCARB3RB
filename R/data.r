@@ -995,25 +995,11 @@
 #' Gives percentage of all wood that goes to landfills.
 #'
 #' @format A data frame with 151 observations of 1 variable
-#' \describe{
-#'   \item\strong{{WoodToLandFills}}{Percentage of wood going to landfills}
+#' \itemize{
+#' \item \strong{WoodToLandFills} Percentage of wood going to landfills
 #' }
 #' @source Linked spreadsheet (check this)
 "woodToLandFills"
-
-#' Prices of 50,000 round cut diamonds.
-#'
-#' A dataset containing the prices and other attributes of almost 54,000
-#' diamonds.
-#'
-#' @format A data frame with 53940 rows and 10 variables:
-#' \describe{
-#'   \item{price}{price, in US dollars}
-#'   \item{carat}{weight of the diamond, in carats}
-#'   ...
-#' }
-#' @source \url{http://www.diamondse.info/}
-"diamonds"
 
 #######################
 #' Total production, productivity, recovered paper utilization, and per capita production
@@ -1039,8 +1025,9 @@
 #' \item \strong{HW.Roundwood} Hardwood Roundwood (units?)
 #' \item \strong{U.S.Timber.Harvest} United States Timber Harvest
 #' }
-#' @source
+#' @source Ince tables
 "InceTable3"
+
 
 
 

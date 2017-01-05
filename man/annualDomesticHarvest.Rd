@@ -20,4 +20,7 @@ of values for Annual Domestic Harvest
 Various statistics and intermediate calculations to solve for
 Variable 5, Annual Domestic Harvest (H)
 }
+\examples{
+annualDomesticHarvest(1935:1950, onlyvar = TRUE)
+}
 

@@ -11,6 +11,7 @@
 #' @export
 #'
 #' @examples
+#' annualDomesticHarvest(1935:1950, onlyvar = TRUE)
 annualDomesticHarvest <- function(years, onlyvar = FALSE){
   usa <- data.frame(Years = years)
 

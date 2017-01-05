@@ -40,7 +40,7 @@ finalCarbonContribution(Years = 1945:2017, approach = "Stock Change")
 Other options include calculating using a different decay type or values for half-lifes. 
 
 ```{r}
-#finalCarbonContribution(decaytype = "K=2", halflives = halfLives * 1.2)
+finalCarbonContribution(decaytype = "K=2", halflives = halfLives * 1.2)
 ```
 
 A plot can be returned as well. 

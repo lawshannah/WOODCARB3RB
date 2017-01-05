@@ -26,6 +26,9 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
                                     decaytype = c("Exponential",
                                                   "K=2"), plot = FALSE,
                                     halflives = halfLives){
+  if (missing(approach)){
+    approach = "Production"
+  }
   approachtype <- match.arg(approach)
   decay<- match.arg(decaytype)
 
@@ -82,7 +85,7 @@ finalVariables <- function(Years = 1990:2015,
   Var2B <- carbonfromdumps(Years, approach = "Production") *  1000
   Var3  <- calcP_IM(Years, var = TRUE)
   Var4  <- calcP_EX(Years, var = TRUE)
-  Var5 <- var5(Years, onlyvar = TRUE)
+  Var5 <- annualDomesticHarvest(Years, onlyvar = TRUE)
 
   df <- data.frame(Var1A, Var1B,
                    Var2A, Var2B,

@@ -950,7 +950,7 @@
 #' @format A data frame with 151 observations of 1 variable.
 #'
 #' \itemize{
-#' \strong{PaperToLandfills} Percent of paper that goes to landfills
+#' \item \strong{PaperToLandfills} Percent of paper that goes to landfills
 #' }
 #'
 #' @source Linked site, check spreadsheet
@@ -965,9 +965,9 @@
 #' @format A data frame with 16 observations of 3 variables
 #'
 #' \itemize{
-#' \strong{Prod.Quantity} Production Quantity of Recovered Fibre Pulp
-#' \strong{Imports.Quantity} Imports Quantity of Recovered Fibre Pulp
-#' \strong{Exports.Quantity} Exports Quantity of Recovered Fibre Pulp
+#' \item \strong{Prod.Quantity} Production Quantity of Recovered Fibre Pulp
+#' \item \strong{Imports.Quantity} Imports Quantity of Recovered Fibre Pulp
+#' \item \strong{Exports.Quantity} Exports Quantity of Recovered Fibre Pulp
 #' }
 #'
 #' @source from AF&PA Paper, paperboard & wood pulp, A Monthly statistical summary
@@ -975,14 +975,14 @@
 "usaFiberPulp"
 
 #####################
-#' Percent of wood that goes to dumps
+#' Percent of wood to dumps
 #'
-#' All units are percentages and the vector is numeric
+#' Gives percentage of all wood that goes to dumps.
 #'
 #' @format A data frome with 151 observations of 1 variable
 #'
 #' \itemize{
-#' \strong{WoodToDumps} Percentage of wood that goes to dumps
+#' \item \strong{WoodToDumps} Percentage of wood that goes to dumps
 #' }
 #'
 #' @source Linked spreadsheet (check this)
@@ -990,26 +990,57 @@
 "woodToDumps"
 
 #####################
-#' Percentage of wood that goes to landfills.
+#' Percentage of wood to landfills
 #'
-#' Units are percentages and the vector is numeric.
+#' Gives percentage of all wood that goes to landfills.
 #'
 #' @format A data frame with 151 observations of 1 variable
-#'
-#' \itemize{
-#' \strong{WoodToLandFills} Percentage of wood going to landfills
+#' \describe{
+#'   \item\strong{{WoodToLandFills}}{Percentage of wood going to landfills}
 #' }
-#'
-#' @source Linked spreacsheet (check this)
-#' @keywords woodToLandFills
-#'
+#' @source Linked spreadsheet (check this)
 "woodToLandFills"
 
+#' Prices of 50,000 round cut diamonds.
+#'
+#' A dataset containing the prices and other attributes of almost 54,000
+#' diamonds.
+#'
+#' @format A data frame with 53940 rows and 10 variables:
+#' \describe{
+#'   \item{price}{price, in US dollars}
+#'   \item{carat}{weight of the diamond, in carats}
+#'   ...
+#' }
+#' @source \url{http://www.diamondse.info/}
+"diamonds"
 
-
-
-
-
+#######################
+#' Total production, productivity, recovered paper utilization, and per capita production
+#'
+#' Dataset containing industrial wood and roundwood statistics,
+#' productivity, recovered paper utilization rate and per capita
+#' indudustrial wood production.
+#'
+#' @format A data frame with 151 observations of 15 variables.
+#' \itemize{
+#' \item \strong{Total.Industrial.Wood.Product.Production} Industrial wood production in thousand tons
+#' \item \strong{Roundwood.Equivalents.of.Production.Hardwoods} Hardwood production in million ft<sup>3</sup>
+#' \item \strong{Roundwood.Equivalents.of.Production.Softwoods} Softwood production in million ft<sup>3</sup>
+#' \item \strong{Roundwood.Equivalents.of.Production.Totals.millionftcubed} Production totals in million ft<sup>3</sup>
+#' \item \strong{Roundwood.Equivalents.of.Production.Totals.thousand.short.tons} Production totals in thousand short tons
+#' \item \strong{Roundwood.Equivalents.of.Production.Totals.thousand.metric.tons} Production totals in thousand metric tons
+#' \item \strong{Industrial.Wood.Productivity.lbs.ftsquared} Industrial wood product output per unit of roundwood input in (lbs/ft3)
+#' \item \strong{Industrial.Wood.Productivity} Industrial wood product output per unit of roundwood input in tons/tons
+#' \item \strong{Recovered.Paper.Utilization.Rate(AF&PA)} Recovered paper utilization rate
+#' \item \strong{U.S.Population} United States population in millions
+#' \item \strong{Per.Capita.Industrial.Wood.Product.Production} Per capita industrial wood product production, lbs/capita
+#' \item \strong{HW.Agrifiber} Hardwood Agrifiber (units?)
+#' \item \strong{HW.Roundwood} Hardwood Roundwood (units?)
+#' \item \strong{U.S.Timber.Harvest} United States Timber Harvest
+#' }
+#' @source
+"InceTable3"
 
 
 

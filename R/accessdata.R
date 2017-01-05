@@ -12,7 +12,7 @@ names <- c("hair1958","hair1963","hair1963t20",
            "howard55","howard56","howard6",
            "howard7", "ulrich52","ulrich53",
            "ulrich54", "ulrich6","fracsawnwood",
-           "fracnonstrpanels", "fracstrpanels")
+           "fracnonstrpanels", "fracstrpanels", "InceTable3")
 for (i in seq(names)){
   utils::globalVariables(names[i])
 }

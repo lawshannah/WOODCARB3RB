@@ -350,11 +350,21 @@ colnames(fracstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","Hous
 
 use_data(fracstrpanels, overwrite = TRUE)
 
-InceTable3 <- read.xlsx("./inst/extdata/CopyOfData/Ince_Table3", 1, header = FALSE)
-colnames(InceTable3) <- c("Total.Industrial.Wood.Product.Production", paste("Roundwood.Equivalents.of.Production:",c("Hardwoods", "Softwoods",paste("Totals:",c("millionftsquared", "thousand.short.tons","thousand.metric.tons")))),
-                          paste("Industrial.Wood.Productivity:",c("lbs/ft^2", "tons/tons")),
+InceTable3 <- read.xlsx("./inst/extdata/CopyOfData/Ince_Table3.xlsx", 1, header = FALSE, colClasses = "character")
+for(i in 1:ncol(InceTable3)){
+  InceTable3[,i] <- as.character(InceTable3[,i])
+
+}
+InceTable3[(InceTable3 == "N.A.") == T] <- NA
+for(i in 1:ncol(InceTable3)){
+  InceTable3[,i] <- suppressWarnings(as.numeric(InceTable3[,i]))
+
+}
+
+colnames(InceTable3) <- c("Total.Industrial.Wood.Product.Production", paste("Roundwood.Equivalents.of.Production.",c("Hardwoods", "Softwoods",paste("Totals",c(".millionftcubed", ".thousand.short.tons",".thousand.metric.tons"),sep="")),sep=""),
+                          "Industrial.Wood.Productivity.lbs.ftsquared", "Industrial.Wood.Productivity",
                           "Recovered.Paper.Utilization.Rate(AF&PA)",
                           "U.S.Population(millions)","Per.Capita.Industrial.Wood.Product.Production",
-                          "Roundwood.Use.Per.Capita", "HW.Agrifiber", "HW.Roundwood", rep("",5),
+                          "HW.Agrifiber", "HW.Roundwood", rep("",5),
                           "U.S.Timber.Harvest")
 use_data(InceTable3, overwrite = TRUE)

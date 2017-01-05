@@ -35,7 +35,7 @@
 #' @keywords hair1958
 "hair1958"
 
-############################### 
+###############################
 #' Estimated production, net imports, and apparent consumption of timber products in the US, 1900-1962
 #'
 #' Dataset containing estimated statistics for timber products. All vectors are numeric.
@@ -96,7 +96,7 @@
 #' @keywords hair1963
 "hair1963"
 
-############################### 
+###############################
 #' United States imports and exports of plywood, by softwoods and hardwoods, 1935-62 (with estimates of 1927-34)
 #'
 #' Dataset containing import and export statistics for plywood products.
@@ -117,7 +117,7 @@
 #' @source US Department of Commerce, Bureau of the Census
 "hair1963t20"
 
-############################### 
+###############################
 #' Imports and exports of veneer, by kind, in the US 1935-1962 (estimates of 1927-34).
 #'
 #' Dataset containing import and export statistics for veneer products.
@@ -136,7 +136,7 @@
 #' @keywords hair1963t21
 "hair1963t21"
 
-################################ 
+################################
 #' Lumber production, imports, exports, and consumption, by softwoods and hardwoods, 1965-1999.
 #'
 #' Dataset containing statistics for lumber products.
@@ -160,7 +160,7 @@
 #' @keywords howard28
 "howard28"
 
-################################ 
+################################
 #' Plywood production, imports, exports, and consumption, by softwoods and hardwoods, 1965-1999
 #'
 #' Dataset containing statisics for plywood products(3/8-in. basis).
@@ -186,7 +186,7 @@
 #' @keywords howard37
 "howard37"
 
-################################ 
+################################
 #' Production, imports, exports, and consumption of structural panel products, by type, 1980-1999
 #'
 #' Datasets containing statistics for various structural panel products.
@@ -212,7 +212,7 @@
 #' @keywords howard38
 "howard38"
 
-################################ 
+################################
 #' Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965-1999
 #'
 #' Dataset containing consumption and production statistics for various board and paper products.
@@ -237,7 +237,7 @@
 #' @source American Paper Institute, American Forest & Paper Association: Statistics of Paper, Paperboard & Wood Pulp
 "howard46"
 
-################################ 
+################################
 #' Paper and board new supply and recyclable paper consumption, exports, imports and total recovered, 1965-1999
 #'
 #' Dataset containing consumption and production statistics for various board and paper products.
@@ -263,7 +263,7 @@
 #'
 "howard47"
 
-################################ 
+################################
 #' Wood pulp production, imports, exports, and consumption, 1965-1999
 #'
 #' Dataset containing woodpulp statistics.
@@ -291,7 +291,7 @@
 #'  1966, 1968, 1972, 1975, 1985-1987 & 1996-1997 revised.
 "howard49"
 
-################################ 
+################################
 #' Production, imports, exports, and consumption of timber products, by major product, 1965-1999
 #'
 #' Dataset containing statistics for various timber products.
@@ -330,7 +330,7 @@
 #' U.S. Department of Agriculture, Forest Service(16, 69); Data may not add to totals because of rounding; Data have been revised.
 "howard5"
 
-################################ 
+################################
 #' Particleboard and medium-density fiberboard production, imports,
 #'
 #' Dataset containing various statistics for particleboard and medium-density fiberboard.
@@ -352,7 +352,7 @@
 #' U.S. Department of Agriculture (32).  Data may not add to totals because of rounding.
 "howard53"
 
-################################ 
+################################
 #' Lumber production, imports, exports, and consumption, by softwoods and hardwoods, 1950-87
 #'
 #' Dataset containing various statistics for lumber products.
@@ -385,10 +385,10 @@
 #' @source
 #' U.S. Department of Commerce. Bureau of the Census (43.51.52)
 #' U.S. Department of Agriculture, Forest Service; National Forest Products Association (16).
-#' Data for selected years 1899.1949 in 'The demand and price situation for forest products', 1964, table 7 (31)
+#' Data for selected years 1899.1949 in "The demand and price situation for forest products", 1964, table 7 (31)
 "ulrich29"
 
-################################ 
+################################
 #' Plywood production, imports, exports, and consumption, by softwoods and hardwoods, 1950-87
 #'
 #' Dataset containing various statistics for plywood products. (3/8-inch basis)
@@ -419,7 +419,7 @@
 #' American Plywood Association (5).
 "ulrich36"
 
-################################ 
+################################
 #' Production, imports, exports. and consumption of timber products, by major product, 1950-87
 #'
 #' Dataset containing statistics for various timber products (hardwood and softwood).
@@ -455,10 +455,10 @@
 #' @format A data frame with 38 observations of 24 variables
 #' @source
 #' Based on data published by the U.S. Departments of Commerce and Agriculture.
-#' Data for 1900-49 in 'The demand and price situation for forest products 1964', table 2 (31),
+#' Data for 1900-49 in "The demand and price situation for forest products 1964", table 2 (31),
 "ulrich4"
 
-################################ 
+################################
 #' Production, imports, exports, and consumption of softwood timber products, by major product, 1950-87
 #'
 #' Dataset containing statistics for softwood timber products.
@@ -498,7 +498,7 @@
 #' Data for 1900-49 in The demand and price situation for forest products 1964, table 2 (31),
 "ulrich5"
 
-################################ 
+################################
 #' Production, imports, exports and consumption of insulating board, 1950-1987
 #' Also includes historical production and exports data from 1925-1950.
 #'
@@ -521,7 +521,7 @@
 #'
 "ulrich54"
 
-################################ 
+################################
 #' Production, imports, exports, and consumption of hardwood timber products, by major product, 1950-87
 #'
 #' Dataset containing statistics for hardwood timber products.
@@ -558,7 +558,7 @@
 #'
 "ulrich6"
 
-######################################### 
+#########################################
 #' U.S. Paper & Paperboard, Production, Imports, Exports, Apparent Consumption, 1900 - 2050
 #' Data set containing statistics for paper and paperboard in the U.S.
 "IncePaper"
@@ -765,7 +765,7 @@
 "halfLives"
 
 
-############################### 
+###############################
 #' Consumption of Fibrous Materials in Paper and Board Manufacture in the United States
 #' from 1900 to 1974.
 #'
@@ -788,7 +788,7 @@
 #' @keywords apiFiberpulp
 "apiFiberpulp"
 
-############################### 
+###############################
 #' Summary of Total Wood Pulp Statistics in the United States
 #' from 1899 to 1972 with necessary statistics from 1869, 1879, 1889
 #'
@@ -819,7 +819,7 @@
 #' @keywords apiTotalWoodPulp
 "apiTotalWoodPulp"
 
-############################### 
+###############################
 #' Lumber wood  in single and multifamily houses build 1800 to 1900
 #'
 #' All vectors are numeric. All units are ?.
@@ -834,7 +834,7 @@
 #' @keywords lumberpre1900
 "lumberpre1900"
 
-############################### 
+###############################
 #' Fractions of Sawnwood production used in various end uses
 #'
 #' All units are percentages and all vectors are numeric.
@@ -861,7 +861,7 @@
 #' @keywords fracsawnwood
 "fracsawnwood"
 
-############################### 
+###############################
 #' Fractions of Structual Panel production used in various end uses
 #'
 #' All units are percentages and all vectors are numeric.
@@ -888,7 +888,7 @@
 #' @keywords fracstrpanels
 "fracstrpanels"
 
-############################### 
+###############################
 #' Fractions of Non-Structural Panel production used in various end uses
 #'
 #' All units are percentages and all vectors are numeric.
@@ -915,7 +915,7 @@
 #' @keywords fracnonstrpanels
 "fracnonstrpanels"
 
-############################### 
+###############################
 #' Fraction of wood lost when placed in use from various end uses.
 #'
 #' All units are percentages and all vectors are numeric.
@@ -942,7 +942,7 @@
 #' @keywords lossIU
 "lossIU"
 
-############################### 
+###############################
 #' Percent of paper that goes to landfills.
 #'
 #' Units are percentages and the vector is numeric.
@@ -950,14 +950,14 @@
 #' @format A data frame with 151 observations of 1 variable.
 #'
 #' \itemize{
-#' \strong{PaperToLandfills} Percent of paper that goes to landfills
+#' \item \strong{PaperToLandfills} Percent of paper that goes to landfills
 #' }
 #'
 #' @source Linked site, check spreadsheet
 #' @keywords paperToLandFills
 "paperToLandFills"
 
-##################### 
+#####################
 #' Recovered Fibre Pulp in the United States from 1998 to 2013
 #'
 #' All units are in metric tons and all vectors are numeric.
@@ -965,49 +965,68 @@
 #' @format A data frame with 16 observations of 3 variables
 #'
 #' \itemize{
-#' \strong{Prod.Quantity} Production Quantity of Recovered Fibre Pulp
-#' \strong{Imports.Quantity} Imports Quantity of Recovered Fibre Pulp
-#' \strong{Exports.Quantity} Exports Quantity of Recovered Fibre Pulp
+#' \item \strong{Prod.Quantity} Production Quantity of Recovered Fibre Pulp
+#' \item \strong{Imports.Quantity} Imports Quantity of Recovered Fibre Pulp
+#' \item \strong{Exports.Quantity} Exports Quantity of Recovered Fibre Pulp
 #' }
 #'
 #' @source from AF&PA Paper, paperboard & wood pulp, A Monthly statistical summary
 #' @keywords usaFiberPulp
 "usaFiberPulp"
 
-##################### 
-#' Percent of wood that goes to dumps
+#####################
+#' Percent of wood to dumps
 #'
-#' All units are percentages and the vector is numeric
+#' Gives percentage of all wood that goes to dumps.
 #'
 #' @format A data frome with 151 observations of 1 variable
 #'
 #' \itemize{
-#' \strong{WoodToDumps} Percentage of wood that goes to dumps
+#' \item \strong{WoodToDumps} Percentage of wood that goes to dumps
 #' }
 #'
 #' @source Linked spreadsheet (check this)
 #' @keywords woodToDumps
 "woodToDumps"
 
-##################### 
-#' Percentage of wood that goes to landfills.
+#####################
+#' Percentage of wood to landfills
 #'
-#' Units are percentages and the vector is numeric.
+#' Gives percentage of all wood that goes to landfills.
 #'
 #' @format A data frame with 151 observations of 1 variable
-#'
 #' \itemize{
-#' \strong{WoodToLandFills} Percentage of wood going to landfills
+#' \item \strong{WoodToLandFills} Percentage of wood going to landfills
 #' }
-#'
-#' @source Linked spreacsheet (check this)
-#' @keywords woodToLandFills
-#'
+#' @source Linked spreadsheet (check this)
 "woodToLandFills"
 
-
-
-
+#######################
+#' Total production, productivity, recovered paper utilization, and per capita production
+#'
+#' Dataset containing industrial wood and roundwood statistics,
+#' productivity, recovered paper utilization rate and per capita
+#' indudustrial wood production.
+#'
+#' @format A data frame with 151 observations of 15 variables.
+#' \itemize{
+#' \item \strong{Total.Industrial.Wood.Product.Production} Industrial wood production in thousand tons
+#' \item \strong{Roundwood.Equivalents.of.Production.Hardwoods} Hardwood production in million ft<sup>3</sup>
+#' \item \strong{Roundwood.Equivalents.of.Production.Softwoods} Softwood production in million ft<sup>3</sup>
+#' \item \strong{Roundwood.Equivalents.of.Production.Totals.millionftcubed} Production totals in million ft<sup>3</sup>
+#' \item \strong{Roundwood.Equivalents.of.Production.Totals.thousand.short.tons} Production totals in thousand short tons
+#' \item \strong{Roundwood.Equivalents.of.Production.Totals.thousand.metric.tons} Production totals in thousand metric tons
+#' \item \strong{Industrial.Wood.Productivity.lbs.ftsquared} Industrial wood product output per unit of roundwood input in (lbs/ft3)
+#' \item \strong{Industrial.Wood.Productivity} Industrial wood product output per unit of roundwood input in tons/tons
+#' \item \strong{Recovered.Paper.Utilization.Rate(AF&PA)} Recovered paper utilization rate
+#' \item \strong{U.S.Population} United States population in millions
+#' \item \strong{Per.Capita.Industrial.Wood.Product.Production} Per capita industrial wood product production, lbs/capita
+#' \item \strong{HW.Agrifiber} Hardwood Agrifiber (units?)
+#' \item \strong{HW.Roundwood} Hardwood Roundwood (units?)
+#' \item \strong{U.S.Timber.Harvest} United States Timber Harvest
+#' }
+#' @source Ince tables
+"InceTable3"
 
 
 

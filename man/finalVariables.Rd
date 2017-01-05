@@ -16,14 +16,11 @@ in use and products in SWDS)
 Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
 domestic harvest (from products in use and products in SWDS)}
 \usage{
-finalVariables(Years = 1990:2015, Variable = paste("Var", c("1A", "1B",
-  "2A", "2B", "3", "4", "5", "6", "7"), sep = ""),
-  decaydistribution = c("Exponential", "K=2"), halflives = halfLives)
+finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
+  "K=2"), halflives = halfLives)
 }
 \arguments{
 \item{Years}{years to calculate}
-
-\item{Variable}{variable to return}
 
 \item{decaydistribution}{decay distribution to use (if necessary)}
 
@@ -48,7 +45,7 @@ Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood)
 domestic harvest (from products in use and products in SWDS)
 }
 \examples{
-finalVariables(Variable = 'Var1A')
-finalVariables(Variable = 'Var2B')
+finalVariables(Years = 1950:2000)
+finalVariables(halflives = halfLives * 1.25)
 }
 

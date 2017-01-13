@@ -111,7 +111,7 @@ Primary products categories (labeled i) include three for solidwood products (lu
 End-use categories (labeled j) include four for solidwood products (single-family housing, multifamily housing, resi dential upkeep and improvement, and other uses) and one for all paper and paperboard uses. Other solidwood uses includes mobile homes, nonresidential construction, rail ties, rail cars, household furniture, commercial furniture, other manufacturing, shipping, and miscellaneous other.
 
 <br/>
-**Variable 2A–** Annual change in carbon held in products made from U.S.harvested wood (includes exports). 
+**Variable 2A**- Annual change in carbon held in products made from U.S.harvested wood (includes exports). 
 
 Equations \@ref(eq:one)  through \@ref(eq:three) are used again to estimate annual carbon change in solidwood and paper products har- vested in the United States and stored in various end uses. 
 

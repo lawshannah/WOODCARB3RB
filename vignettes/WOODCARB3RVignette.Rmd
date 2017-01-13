@@ -172,6 +172,56 @@ Just as for _Variable 1A_, estimates of carbon stock change in _Variable 2A_ req
 
 Additionally, special data is needed on domestic roundwood harvest, imports and exports, and paper-related fiber imports and exports in order to calculate the ratios needed for Equations \@ref(eq:four) and \@ref(eq:five). Other parameters including factors to convert original product units to tons of carbon are the same as for Variable 1A. Specifically, the fractions of each product with various end uses ($F_{Ti\:j}$) and the half-life of products in end uses ($HL_{T\:j}$) are assumed to be the same as for _Variable 1A_. Which means that exported products (or logs and chips) are assumed to have end uses in the same proportions as in the United States, as well as the same half-life. 
 
+
+**Estimating Variables 1B and 2B**
+-Annual change in carbon held in SWDS in the reporting country and annual change in carbon held in SWDS where wood came from harvest in the reporting country
+
+Estimates of annual change in carbon in "products in SWDS" for current year t for _Variables 1B and 2B_ may be obtained using Equations \@ref(eq:six) through [10], which are provided below. 
+
+Solid-waste disposal sites include dumps, where oxygen is available to decompose all wood and paper over time, and landfills, where a covering is placed over waste periodically and oxygen is sealed out. With limited oxygen, a portion of wood and paper does not decay and will stay permanently in the landfill, and a portion is temporary and will be emitted as $CO_{2}$ to or $CH_{4}$ over time.
+
+\begin{equation}
+C_{SWDS\:PERM}(t)  =  \sum\limits_{T=1900}^t [D_{SWP}(T)] \times (1-F_{TO \: DUMPS}(T))
+\times F_{SWP\:to \: SWDS}(T) \times (1- DOC_{F \: SWP}\times)
++ \sum\limits_{T=1900}^t [D_{PAPER}(T)]\times (1-F_{TO \: DUMPS}(T))
+\times F_{PAPER \: to \: SWDS}(T) \times (1-DOC_{F \: PAPER})]
+(\#eq:six)
+\end{equation}
+
+
+\begin{equation}
+C_{SWDS\:TEMP}(t)  =  \sum\limits_{T=1900}^t e^{-k_{SWP \: DUMPS} \times (t-T)}
+\times [D_{SWP}(T)\times F_{SWP \: to \: SWDS}(T)
+\times F_{TO \: DUMPS}(T)]
++ \sum\limits_{T=1900}^t e^{-k_{SWP \: LF} \times (t-T)} \times [D_{SWP}(T)]
+\times F_{SWP \: to \: SWDS}(T) \times (1-F_{TO \: DUMPS}(T))
+\times DOC_{F \: SWP}] + \sum\limits_{T=1900}^t e^{-k_{PAPER \: DUMPS} \times (t-T)} \times [D_{PAPER}(T)
+\times F_{PAPER to SWDS}(T) \times F_{TO \: DUMPS}(T)]
++ \sum\limits_{T=1900}^t e^{(-k_{PAPER \: LF} \times (t-T))}
+\times [D_{PAPER}(T)\times F_{PAPER \: to \: SWDS}(T)
+\times (1- F_{TO \: DUMPS}(T)) \times DOC_{F \: PAPER}]
+(\#eq:seven)
+\end{equation}
+
+
+\begin{equation}
+C_{SWDS}(t)  = C_{SWDS \: PERM}(t) + C_{SWDS \: TEMP}(t)
+
+(\#eq:eight)
+\end{equation}
+
+\begin{equation}
+\Delta C_{SWDS}(t) = C_{SWDS}(t)-C_{SWDS}(t-1)
+(\#eq:nine)
+\end{equation}
+
+\begin{equation}
+F_{X \: to \: SWDS}= 1- F_{X \: BURNED} - F_{X \: REC}- F_{X \: COMPOST},
+where \:X \: is\: either\: SWP\: or \: PAPER
+(\#eq:ten)
+\end{equation}
+
+
 <!---
 talk about formulas, a5 sum up different approaches.  
 --->

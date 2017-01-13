@@ -110,6 +110,15 @@ Primary products categories (labeled i) include three for solidwood products (lu
 
 End-use categories (labeled j) include four for solidwood products (single-family housing, multifamily housing, resi dential upkeep and improvement, and other uses) and one for all paper and paperboard uses. Other solidwood uses includes mobile homes, nonresidential construction, rail ties, rail cars, household furniture, commercial furniture, other manufacturing, shipping, and miscellaneous other.
 
+<br/>
+**Variable 2A**- Annual change in carbon held in products made from U.S.harvested wood (includes exports). 
+
+Equations \@ref(eq:one)  through \@ref(eq:three) are used again to estimate annual carbon change in solidwood and paper products har- vested in the United States and stored in various end uses. 
+
+
+The annual carbon inflow variables for solidwood and paper products are estimated using Equations \@ref(eq:four) and \@ref(eq:five), separately. The calculations are founded on the assumption that solidwood (or paper) products are all the same in the amount of roundwood used to make them in both the United States and in other countries where sawlogs or pulpwood may be exported and used to make products.
+
+
 For solidwood products: 
 
 \begin{equation}
@@ -126,10 +135,93 @@ For paper and paperboard products:
 \end{align}
     
 
-Suppose we want to mention Equations \@ref(eq:one) and \@ref(eq:two).
-
-
 Where:
+<br/>
+
+$t$ is the year for which annual change in HWP carbon stock is being estimated  
+    
+
+$P_{T_i}$ OR $P_{T}$ is carbon in solidwood (4 products) or paper products (1 product), respectively, produced in the U.S. in year T. The time subscript, T, is omitted for most right-hand side variables to simplify the equations. 
+    
+  $SL_{P}$ is sawlogs used to make lumber, plywood, and miscellaneous products in the U.S. in year T, Mg $yr^{-1}$. 
+    
+ $SL_{IM}$ is sawlogs imported and used to make lumber, plywood, and miscellaneous products in the U.S. in year T, T, Mg $yr^{-1}$. 
+ 
+  $SL_{EX}$ is sawlogs exported from the U.S. in year T, T, MG $yr^{-1}$. 
+  
+  $F_{nonwood\:fiber}$ is the fraction of total fiber used to make paper and paperboard that is nonwood fiber in year T.
+  
+  $F_{woodpulp\:imp}$ is the fraction of woodpulp used to make paper and paperboard imported to the U.S. in year T.
+  
+  $PW_{p}$ is pulpwood used to make paper and paperboard in the U.S. in year T, Mg $yr^{-1}$. 
+  
+  $PW_{IM}$ is pulpwood imported and used to make paper and paperboard in the United States in year T, MG $yr^{-1}$. 
+  
+  $PW_{EX}$ is pulpwood exported from the United States in year T, MG $yr^{-1}$.
+  
+  $EX_{rec\:fiber\:pulp}$ is carbon in recovered fiber pulp exported in year T, Mg $yr^{-1}$.
+  
+   $EX_{rec\:paper}$ is carbon in recovered paper exported in year T, Mg $yr^{-1}$.
+   
+  $EX_{woodpulp}$ is carbon in woodpulp exported in year T, Mg $yr^{-1}$.
+  
+<br/>    
+
+Just as for _Variable 1A_, estimates of carbon stock change in _Variable 2A_ require data on product production in the U.S. back to 1900.     
+  
+
+Additionally, special data is needed on domestic roundwood harvest, imports and exports, and paper-related fiber imports and exports in order to calculate the ratios needed for Equations \@ref(eq:four) and \@ref(eq:five). Other parameters including factors to convert original product units to tons of carbon are the same as for Variable 1A. Specifically, the fractions of each product with various end uses ($F_{Ti\:j}$) and the half-life of products in end uses ($HL_{T\:j}$) are assumed to be the same as for _Variable 1A_. Which means that exported products (or logs and chips) are assumed to have end uses in the same proportions as in the United States, as well as the same half-life. 
+
+
+**Estimating Variables 1B and 2B**
+-Annual change in carbon held in SWDS in the reporting country and annual change in carbon held in SWDS where wood came from harvest in the reporting country
+
+Estimates of annual change in carbon in "products in SWDS" for current year t for _Variables 1B and 2B_ may be obtained using Equations \@ref(eq:six) through [10], which are provided below. 
+
+Solid-waste disposal sites include dumps, where oxygen is available to decompose all wood and paper over time, and landfills, where a covering is placed over waste periodically and oxygen is sealed out. With limited oxygen, a portion of wood and paper does not decay and will stay permanently in the landfill, and a portion is temporary and will be emitted as $CO_{2}$ to or $CH_{4}$ over time.
+
+\begin{equation}
+C_{SWDS\:PERM}(t)  =  \sum\limits_{T=1900}^t [D_{SWP}(T)] \times (1-F_{TO \: DUMPS}(T))
+\times F_{SWP\:to \: SWDS}(T) \times (1- DOC_{F \: SWP}\times)
++ \sum\limits_{T=1900}^t [D_{PAPER}(T)]\times (1-F_{TO \: DUMPS}(T))
+\times F_{PAPER \: to \: SWDS}(T) \times (1-DOC_{F \: PAPER})]
+(\#eq:six)
+\end{equation}
+
+
+\begin{equation}
+C_{SWDS\:TEMP}(t)  =  \sum\limits_{T=1900}^t e^{-k_{SWP \: DUMPS} \times (t-T)}
+\times [D_{SWP}(T)\times F_{SWP \: to \: SWDS}(T)
+\times F_{TO \: DUMPS}(T)]
++ \sum\limits_{T=1900}^t e^{-k_{SWP \: LF} \times (t-T)} \times [D_{SWP}(T)]
+\times F_{SWP \: to \: SWDS}(T) \times (1-F_{TO \: DUMPS}(T))
+\times DOC_{F \: SWP}] + \sum\limits_{T=1900}^t e^{-k_{PAPER \: DUMPS} \times (t-T)} \times [D_{PAPER}(T)
+\times F_{PAPER to SWDS}(T) \times F_{TO \: DUMPS}(T)]
++ \sum\limits_{T=1900}^t e^{(-k_{PAPER \: LF} \times (t-T))}
+\times [D_{PAPER}(T)\times F_{PAPER \: to \: SWDS}(T)
+\times (1- F_{TO \: DUMPS}(T)) \times DOC_{F \: PAPER}]
+(\#eq:seven)
+\end{equation}
+
+
+\begin{equation}
+C_{SWDS}(t)  = C_{SWDS \: PERM}(t) + C_{SWDS \: TEMP}(t)
+
+(\#eq:eight)
+\end{equation}
+
+\begin{equation}
+\Delta C_{SWDS}(t) = C_{SWDS}(t)-C_{SWDS}(t-1)
+(\#eq:nine)
+\end{equation}
+
+\begin{equation}
+F_{X \: to \: SWDS}= 1- F_{X \: BURNED} - F_{X \: REC}- F_{X \: COMPOST},
+where \:X \: is\: either\: SWP\: or \: PAPER
+(\#eq:ten)
+\end{equation}
+
+
 <!---
 talk about formulas, a5 sum up different approaches.  
 --->

@@ -4,7 +4,24 @@
 \name{howard28}
 \alias{howard28}
 \title{Lumber production, imports, exports, and consumption, by softwoods and hardwoods, 1965-1999.}
-\format{A data frame with 56 observations of 15 variables}
+\format{A data frame with 56 observations of 15 variables:
+\describe{
+\item{Prod.Tot}{Total Lumber Production}
+\item{Prod.SW}{Softwood Lumber Production}
+\item{Prod.HW}{Hardwood Lumber Production}
+\item{Imports.Tot}{Total Lumber Imports}
+\item{Imports.SW}{Softwood Lumber Imports}
+\item{Imports.HW}{Hardwood Lumber Imports}
+\item{Exports.Tot}{Total Lumber Exports}
+\item{Exports.SW}{Softwood Lumber Exports}
+\item{Exports.HW}{Hardwood Lumber Exports}
+\item{Consump.Tot}{Total Lumber Consumption}
+\item{Consump.SW}{Softwood Lumber Consumption}
+\item{Consump.HW}{Hardwood Lumber Consumption}
+\item{PerCapConsump.Tot}{Total Per Capita Consumption, in Board ft.}
+\item{PerCapConsump.SW}{Softwood Per Capita Consumption, in Board ft.}
+\item{PerCapConsump.HW}{Hardwood Per Capita Consumption, in Board ft.}
+}}
 \source{
 None Listed (need to find)
 }
@@ -14,20 +31,6 @@ howard28
 \description{
 Dataset containing statistics for lumber products.
 All units are in Billion Board ft. unless otherwise specified. All vectors are numeric.
-\itemize{
-\item \strong{Prod.Tot} Total Lumber Production
-\item \strong{Prod.SW} Softwood Lumber Production
-\item \strong{Prod.HW} Hardwood Lumber Production
-\item \strong{Imports.Tot} Total Lumber Imports
-\item \strong{Imports.SW} Softwood Lumber Imports
-\item \strong{Imports.HW} Hardwood Lumber Imports
-\item \strong{Consump.Tot} Total Lumber Consumption
-\item \strong{Consump.SW} Softwood Lumber Consumption
-\item \strong{Consump.HW} Hardwood Lumber Consumption
-\item \strong{PerCapConsump.Tot} Total Per Capita Consumption, in Board ft.
-\item \strong{PerCapConsump.SW} Softwood Per Capita Consumption, in Board ft.
-\item \strong{PerCapConsump.HW} Hardwood Per Capita Consumption, in Board ft.
-}
 }
 \keyword{howard28}
 

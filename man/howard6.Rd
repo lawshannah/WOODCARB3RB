@@ -4,42 +4,42 @@
 \name{howard6}
 \alias{howard6}
 \title{Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.}
-\format{A data frame with 56 observations on 34 variables. (all units are in million cubic feet except when specified otherwise)
-\itemize{
-\item \code{AllProduction.Prod} (All products production)
-\item \code{AllProduct.Consump}(All products consumption)
-\item \code{Ind.RW.Tot.Prod}(Industrial roundwood uses total production)
-\item \code{Ind.RW.Tot.Imports}(Industrial roundwood uses total imports)
-\item \code{Ind.RW.Tot.Exports}(Industrial roundwood uses total exports)
-\item \code{Ind.RW.Tot.Consump}(Industrial roundwood uses total consumption)
-\item \code{Ind.RW.Lum.Prod}(Industrial roundwood uses lumber production)
-\item \code{Ind.RW.Lum.Imports}(Industrial roundwood uses lumber imports)
-\item \code{Ind.RW.Lum.Exports}(Industrial roundwood uses lumber exports)
-\item \code{Ind.RW.Lum.Consump}(Industrial roundwood uses lumber consumption)
-\item \code{Ind.RW.PlyandVen.Prod}(Industrial roundwood uses plywood and veneer production)
-\item \code{Ind.RW.PlyamdVen.Imports}(Industrial roundwood uses plywood and veneer imports)
-\item \code{Ind.RW.PlyandVen.Exports}(Industrial roundwood uses plywood and veneer exports)
-\item \code{Ind.RW.PlyandVen.Consump}(Industrial roundwood uses plywood and veneer consumption)
-\item \code{IndRW.Pulp.Prod}(Industrial roundwood uses pulp-based products production)
-\item \code{Ind.RW.Pulp.Imports}(Industrial roundwood uses pulp-based products imports)
-\item \code{Ind.RW.Pulp.Exports}(Industrial roundwood uses pulp-based products exports)
-\item \code{Ind.RW.Pulp.Consump}(Industrial roundwood uses pulp-based products consumption)
-\item \code{Ind.RW.OtherIndustrial.ProdAndConsump}(Other industrial product production and consumption)
-\item \code{Ind.RW.Logs.Imports}(Industrial roundwood uses log imports)
-\item \code{Ind.RW.Logs.Exports}(Industrial roundwood uses log exports)
-\item \code{Ind.RW.Pulp.Imports}(Industrial roundwood uses pulpwood chip imports)
-\item \code{Ind.RW.Pulp.Exports}(Industrial roundwood uses pulpwood chip exports)
-\item \code{FuelWood.ProdAndConsumption}(Fuelwood production and consumption)
-\item \code{UnNamed1}
-\item \code{UnNamed2}
-\item \code{UnNamed3}
-\item \code{UnNamed4}
-\item \code{UnNamed5}
-\item \code{UnNamed6}
-\item \code{UnNamed7}
-\item \code{UnNamed8}
-\item \code{UnNamed9}
-\item \code{UnNamed10}
+\format{A data frame with 56 observations on 34 variables:
+\describe{
+\item{AllProduction.Prod}{All products production}
+\item{AllProduct.Consump}{All products consumption}
+\item{Ind.RW.Tot.Prod}{Industrial roundwood uses total production}
+\item{Ind.RW.Tot.Imports}{Industrial roundwood uses total imports}
+\item{Ind.RW.Tot.Exports}{Industrial roundwood uses total exports}
+\item{Ind.RW.Tot.Consump}{Industrial roundwood uses total consumption}
+\item{Ind.RW.Lum.Prod}{Industrial roundwood uses lumber production}
+\item{Ind.RW.Lum.Imports}{Industrial roundwood uses lumber imports}
+\item{Ind.RW.Lum.Exports}{Industrial roundwood uses lumber exports}
+\item{Ind.RW.Lum.Consump}{Industrial roundwood uses lumber consumption}
+\item{Ind.RW.PlyandVen.Prod}{Industrial roundwood uses plywood and veneer production}
+\item{Ind.RW.PlyandVen.Imports}{Industrial roundwood uses plywood and veneer imports}
+\item{Ind.RW.PlyandVen.Exports}{Industrial roundwood uses plywood and veneer exports}
+\item{Ind.RW.PlyandVen.Consump}{Industrial roundwood uses plywood and veneer consumption}
+\item{Ind.RW.Pulp.Prod}{Industrial roundwood uses pulp-based products production}
+\item{Ind.RW.Pulp.Imports}{Industrial roundwood uses pulp-based products imports}
+\item{Ind.RW.Pulp.Exports}{Industrial roundwood uses pulp-based products exports}
+\item{Ind.RW.Pulp.Consump}{Industrial roundwood uses pulp-based products consumption}
+\item{Ind.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
+\item{Ind.RW.Logs.Imports}{Industrial roundwood uses log imports}
+\item{Ind.RW.Logs.Exports}{Industrial roundwood uses log exports}
+\item{Ind.RW.Pulp.Imports}{Industrial roundwood uses pulpwood chip imports}
+\item{Ind.RW.Pulp.Exports}{Industrial roundwood uses pulpwood chip exports}
+\item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
+\item{UnNamed1}{}
+\item{UnNamed2}{}
+\item{UnNamed3}{}
+\item{UnNamed4}{}
+\item{UnNamed5}{}
+\item{UnNamed6}{}
+\item{UnNamed7}{}
+\item{UnNamed8}{}
+\item{UnNamed9}{}
+\item{UnNamed10}{}
 }}
 \source{
 USFS Estimations and Bureau of Census Data
@@ -48,7 +48,7 @@ USFS Estimations and Bureau of Census Data
 howard6
 }
 \description{
-Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.
+All units are in million cubic feet except when specified otherwise.
 }
-\keyword{howard6}
+\keyword{datasets}
 

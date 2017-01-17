@@ -4,34 +4,33 @@
 \name{apiTotalWoodPulp}
 \alias{apiTotalWoodPulp}
 \title{Summary of Total Wood Pulp Statistics in the United States
-from 1899 to 1972 with necessary statistics from 1869, 1879, 1889}
-\format{A data frame with 77 observations of 11 variables
-
-\itemize{
-\item \strong{Prod} Production of Wood Pulp
-\item \strong{Imports} Imports of Wood Pulp
-\item \strong{Exports} Exports of Wood Pulp
-\item \strong{NewSupply} New Supply of Wood Pulp
-\item \strong{Consump.Paper.Board} Consumption in Paper & Board
-\item \strong{WastePaper.Estimated.Prod} Estimated Production of Waste Paper
-\item \strong{WastePaper.Estimated.Imports} Estimated Imports of Waste Paper
-\item \strong{WastePaper.Estimated.Exports} Estimated Exports of Waste Paper
-\item \strong{Rags.Estimated.Prod} Estimated Production of Rags and Other
-\item \strong{Rags.Estimated.Imports} Estimated Imports of Rags and Other
-\item \strong{Rags.Estimated.Exports} Estimated Exports of Rags and Other
+from 1899 to 1972 with necessary statistics from 1869, 1879, 1889.}
+\format{A data frame with 77 observations of 11 variables:
+\describe{
+\item{Prod}{Production of Wood Pulp}
+\item{Imports}{Imports of Wood Pulp}
+\item{Exports}{Exports of Wood Pulp}
+\item{NewSupply}{New Supply of Wood Pulp}
+\item{Consump.Paper.Board}{Consumption in Paper & Board}
+\item{WastePaper.Estimated.Prod}{Estimated Production of Waste Paper}
+\item{WastePaper.Estimated.Imports}{Estimated Imports of Waste Paper}
+\item{WastePaper.Estimated.Exports}{Estimated Exports of Waste Paper}
+\item{Rags.Estimated.Prod}{Estimated Production of Rags and Other}
+\item{Rags.Estimated.Imports}{Estimated Imports of Rags and Other}
+\item{Rags.Estimated.Exports}{Estimated Exports of Rags and Other}
 }}
 \source{
 1869 -  1962 U.  S.  Bureau of the Census
-1963 -          Pulp Producers Division, A.  P.  I.
+1963 - Pulp Producers Division, A.  P.  I.
 Imports,  Exports,  Consumption -  Bureau of the Census
-New Supply  - Production plus Imports minus Exports
 }
 \usage{
 apiTotalWoodPulp
 }
 \description{
+New Supply is Production plus Imports minus Exports
 All units are in tons of 2000 pounds, air dry weight.
 All vectors are numeric.
 }
-\keyword{apiTotalWoodPulp}
+\keyword{datasets}
 

@@ -4,10 +4,10 @@
 \name{woodToDumps}
 \alias{woodToDumps}
 \title{Percent of wood to dumps}
-\format{A data frome with 151 observations of 1 variable
+\format{A data frome with 151 observations of 1 variable:
 
-\itemize{
-\item \strong{WoodToDumps} Percentage of wood that goes to dumps
+\describe{
+\item{WoodToDumps}{Percentage of wood that goes to dumps}
 }}
 \source{
 Linked spreadsheet (check this)
@@ -18,5 +18,5 @@ woodToDumps
 \description{
 Gives percentage of all wood that goes to dumps.
 }
-\keyword{woodToDumps}
+\keyword{datasets}
 

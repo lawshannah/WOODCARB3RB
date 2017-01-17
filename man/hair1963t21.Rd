@@ -4,7 +4,15 @@
 \name{hair1963t21}
 \alias{hair1963t21}
 \title{Imports and exports of veneer, by kind, in the US 1935-1962 (estimates of 1927-34).}
-\format{A data frame with 36 observations on 6 variables}
+\format{A data frame with 36 observations on 6 variables:
+\describe{
+\item{Imports.Tot}{Total Veneer Imports}
+\item{Imports.BirchMaple}{Birch or Maple Veneer Imports}
+\item{Imports.Other}{Other Products Imports}
+\item{Exports.Tot}{Total Veneer Exports}
+\item{Exports.Fancy.Face.Figured.Special}{Exports of fancy, face, figured and special Veneer Products}
+\item{Exports.UtilityCommercialContainer}{Exports of utility, commerical and container Veneer Products}
+}}
 \source{
 US Department of Commerce, Bureau of the Census
 }
@@ -14,16 +22,6 @@ hair1963t21
 \description{
 Dataset containing import and export statistics for veneer products.
 All units are in 1000 Sq. Ft. All vectors are numeric.
-}
-\details{
-\itemize{
-\item \strong{Imports.Tot} Total Veneer Imports
-\item \strong{Imports.BirchMaple} Birch or Maple Veneer Imports
-\item \strong{Imports.Other} Other Products Imports
-\item \strong{Exports.Tot} Total Veneer Exports
-\item \strong{Exports.Fancy,Face,Figured,Special} Exports of fancy, face, figured and special Veneer Products
-\item \strong{Exports.UtilityCommericalContainer} Exports of utility, commerical and container Veneer Products
-}
 }
 \keyword{hair1963t21}
 

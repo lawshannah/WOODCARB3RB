@@ -4,7 +4,22 @@
 \name{howard46}
 \alias{howard46}
 \title{Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965-1999}
-\format{A data frame with 56 observations of 19 variables}
+\format{A data frame with 56 observations of 19 variables:
+\describe{
+\item{Prod.PaperBoard}{Prod.PaperBoard. Paper and Paperboard Production, in 1000 Tons}
+\item{Consump.Tot}{Total Consumption of Fibrous Materials, in 1000 Tons}
+\item{Consump.WoodPulp}{Consumption of Woodpulp, in 1000 Tons}
+\item{Consump.RecPaper}{Consumption of Recovered Paper, in 1000 Tons}
+\item{Consump.Other}{Consumption of Other Fibrous Materials, in 1000 Tons}
+\item{Consump.PerTonProd.Tot}{Total Consumption of Fibrous Material per ton of Paper and Board Produced, in Tons}
+\item{Consump.PerTonProd.WoodPulp}{Consumption of Wood pulp per ton of Paper and Board Produced, in Tons}
+\item{Consump.PerTonProd.RecPaper}{Consumption of Recovered Paper per ton of Paper and Board Produced, in Tons}
+\item{Consump.PerTonProd.Other}{Consumption of Other Fibrous Materials per ton of Paper and Board Produced, in Tons}
+\item{RagsOther.RecPaperUtiRatePerc}{Rags and Other: Recovered Paper Utilization Rate Percent}
+\item{RagsOther.Prod.Estimated}{Rags and Other: Estimated Production, in Thousand Tons}
+\item{RagsOther.Imports.Estimated}{Rags and Other: Estimated Imports, in Thousand Tons}
+\item{RagsOther.Exports.Estimated}{Rags and Other: Estimated Exports, in Thousand Tons}
+}}
 \source{
 American Paper Institute, American Forest & Paper Association: Statistics of Paper, Paperboard & Wood Pulp
 }
@@ -14,23 +29,6 @@ howard46
 \description{
 Dataset containing consumption and production statistics for various board and paper products.
 Units are specified below.
-}
-\details{
-\itemize{
-\item \strong{Prod.PaperBoard}Prod.PaperBoard. Paper and Paperboard Production, in 1000 Tons
-\item \strong{Consump.Tot} Total Consumption of Fibrous Materials, in 1000 Tons
-\item \strong{Consump.WoodPulp} Consumption of Woodpulp, in 1000 Tons
-\item \strong{Consump.RecPaper} Consumption of Recovered Paper, in 1000 Tons
-\item \strong{Consump.Other} Consumption of Other Fibrous Materials, in 1000 Tons
-\item \strong{Consump.PerTonProd.Tot} Total Consumption of Fibrous Material per ton of Paper and Board Produced, in Tons
-\item \strong{Consump.PerTonProd.WoodPulp} Consumption of Wood pulp per ton of Paper and Board Produced, in Tons
-\item \strong{Consump.PerTonProd.RecPaper} Consumption of Recovered Paper per ton of Paper and Board Produced, in Tons
-\item \strong{Consump.PerTonProd.Other} Consumption of Other Fibrous Materials per ton of Paper and Board Produced, in Tons
-\item \strong{RagsOther.RecPaperUtiRatePerc} Rags and Other: Recovered Paper Utilization Rate Percent
-\item \strong{RagsOther.Prod.Estimated} Rags and Other: Estimated Production, in Thousand Tons
-\item \strong{RagsOther.Imports.Estimated} Rags and Other: Estimated Imports, in Thousand Tons
-\item \strong{RagsOther.Exports.Estimated} Rags and Other: Estimated Exports, in Thousand Tons
-}
 }
 \keyword{datasets}
 

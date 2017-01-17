@@ -3,23 +3,25 @@
 \docType{data}
 \name{fracstrpanels}
 \alias{fracstrpanels}
-\title{Fractions of Structual Panel production used in various end uses}
-\format{A data frame with 151 observations of 16 variables.
-
-\itemize{
-\item \strong{House.SingFam} Single Family Homes
-\item \strong{House.Multifam} Multi Family Homes
-\item \strong{House.MobHom} Mobile Homes
-\item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
-\item \strong{New.Nonres.AllRR} All Railroads
-\item \strong{New.Nonres.Rties} Railroad Ties
-\item \strong{New.Nonres.Rcar.Repair} Railcar Repair
-\item \strong{Manu.HouseFurniture} Household Furniture
-\item \strong{Manu.CommFurniture} Commercial Furniture
-\item \strong{Manu.OtherProducts} Manufacturing - Other Products
-\item \strong{Shipping.Tot} Shipping
-\item \strong{Other.Uses.Tot} Other Uses
-\item \strong{other.industrial.tot} Uses For Other Industrial Products
+\title{Fractions of Structural Panel production used in various end uses}
+\format{A data frame with 151 observations of 16 variables:
+\describe{
+\item{House.SingFam}{Fraction of structural panel production in Single Family Homes}
+\item{House.Multifam}{Fraction of structural panel production in Multi Family Homes}
+\item{House.MobHom}{Fraction of structural panel production in Mobile Homes}
+\item{House.Tot}{Total fraction of structural panel production in homes}
+\item{Res.Upkeep}{Fraction of structural panel production in Total Residential Upkeep and Improvement}
+\item{New.Nonres.AllRR}{Fraction of structural panel production in All Railroads}
+\item{New.Nonres.Rties}{Fraction of structural panel production in Railroad Ties}
+\item{New.Nonres.Rcar.Repair}{Fraction of structural panel production in Railcar Repair}
+\item{New.Nonres.tot}{Total fraction of structural panel production in non-residential end uses}
+\item{Manu.HouseFurniture}{Fraction of structural panel production in Household Furniture}
+\item{Manu.CommFurniture}{Fraction of structural panel production in Commercial Furniture}
+\item{Manu.OtherProducts}{Fraction of structural panel production in Manufacturing and Other Products}
+\item{Manu.Tot}{Total fraction of structural panel production in manufacturing}
+\item{Shipping.Tot}{Fraction of structural panel production in Shipping}
+\item{Other.Uses.Tot}{Fraction of structural panel production in Other Uses}
+\item{Other.Industrial.Tot}{Fraction of structural panel production in Uses For Other Industrial Products}
 }}
 \source{
 Check spreadsheet - values entered in
@@ -30,5 +32,5 @@ fracstrpanels
 \description{
 All units are percentages and all vectors are numeric.
 }
-\keyword{fracstrpanels}
+\keyword{datasets}
 

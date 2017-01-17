@@ -4,10 +4,9 @@
 \name{paperToLandFills}
 \alias{paperToLandFills}
 \title{Percent of paper that goes to landfills.}
-\format{A data frame with 151 observations of 1 variable.
-
-\itemize{
-\item \strong{PaperToLandfills} Percent of paper that goes to landfills
+\format{A data frame with 151 observations of 1 variable:
+\describe{
+\item{PaperToLandfills}{Percent of paper that goes to landfills}
 }}
 \source{
 Linked site, check spreadsheet
@@ -18,5 +17,5 @@ paperToLandFills
 \description{
 Units are percentages and the vector is numeric.
 }
-\keyword{paperToLandFills}
+\keyword{datasets}
 

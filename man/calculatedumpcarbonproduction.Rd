@@ -18,8 +18,4 @@ Either a data frame of values from Calculation spreadsheet or total carbon outpu
 \description{
 Column names with only letters come from Calc sheet, otherwise sheet is specified (need to change names)
 }
-\examples{
-calculatedumpcarbonproduction(1995:2020)
-calculatedumpcarbonproduction(1990:1991, totalcarbonstockchange = TRUE)
-}
 

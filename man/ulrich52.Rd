@@ -4,15 +4,15 @@
 \name{ulrich52}
 \alias{ulrich52}
 \title{Particleboard and medium density fiberboard production, imports, exports, and consumption, 1950-87}
-\format{A data frame with 38 observations of  7 variables. (all units in millions square feet except when specified otherwise):
-\itemize{
-\item \code{Prod.tot} (Production Total)
-\item \code{Prod.Part.Board}(Production of Partical Board)
-\item \code{Prod.Med.Fiberboard}(Medium Density Fiberboard)
-\item \code{Imports}(Imports)
-\item \code{Exports}(Exports)
-\item \code{Consump.Tot}(Consumption Total)
-\item \code{Consump.PerCapita}(Consumption Per Capits (square feet))
+\format{A data frame with 38 observations of  7 variables:
+\describe{
+\item{Prod.tot}{Production Total}
+\item{Prod.Part.Board}{Production of Partical Board}
+\item{Prod.Med.Fiberboard}{Medium Density Fiberboard}
+\item{Imports}{Particleboard and medium density fiberboard imports}
+\item{Exports}{Particleboard and medium density fiberboard exports}
+\item{Consump.Tot}{Consumption Total}
+\item{Consump.PerCapita}{Consumption Per Capita, square feet}
 }}
 \source{
 U.S. Department of Commerce, Bureau of the Census
@@ -21,7 +21,7 @@ U.S. Department of Commerce, Bureau of the Census
 ulrich52
 }
 \description{
-Particleboard and medium density fiberboard production, imports, exports, and consumption, 1950-87
+All units in millions square feet except when specified otherwise.
 }
-\keyword{ulrich52}
+\keyword{datasets}
 

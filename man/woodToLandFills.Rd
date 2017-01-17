@@ -4,9 +4,9 @@
 \name{woodToLandFills}
 \alias{woodToLandFills}
 \title{Percentage of wood to landfills}
-\format{A data frame with 151 observations of 1 variable
-\itemize{
-\item \strong{WoodToLandFills} Percentage of wood going to landfills
+\format{A data frame with 151 observations of 1 variable:
+\describe{
+\item{WoodToLandFills}{Percentage of wood going to landfills}
 }}
 \source{
 Linked spreadsheet (check this)

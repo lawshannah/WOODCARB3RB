@@ -1,4 +1,5 @@
-#' Calculate final carbon contribution to AFOLU.
+#' Estimates U.S. HWP contribution to annual greenhouse gas removals.
+#'
 #' All units returned are in Thousand metric tons CO2 Equivalent
 #'
 #' The "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
@@ -42,7 +43,10 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
 
 }
 
-#' Values for final 7 variables.
+#' Calculates the 7 HWP Variables.
+#'
+#' Returns variables needed to calculate overall contribution.
+#'
 #' All units are in Gg Carbon
 #' Var1A = Annual Change in stock of HWP in use form consumption
 #' Var1B = Annual Change in stock of HWP in SWDS from consumption
@@ -105,7 +109,6 @@ finalVariables <- function(Years = 1990:2015,
 #' @param halflives data frame of half lives to use
 #'
 #' @return A vector of swp carbon stock changes for `years`
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -143,7 +146,6 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
 #' @param approach The approach used to calculate carbon contribution.
 #'
 #' @return A vector of paper carbon stock changes for `years`
-#' @export
 #'
 #' @examples
 #' \dontrun{

@@ -4,7 +4,21 @@
 \name{howard38}
 \alias{howard38}
 \title{Production, imports, exports, and consumption of structural panel products, by type, 1980-1999}
-\format{A data frame with 41 observations and 21 variables}
+\format{A data frame with 41 observations and 21 variables:
+\describe{
+\item{Prod.Tot}{Total Production}
+\item{Prod.SWPlywood}{Softwood Plywood Production}
+\item{Prod.OSP}{Other Structural Panels Production}
+\item{Imports.Tot}{Total Imports}
+\item{Imports.SWPlywood}{Softwood Plywood Imports}
+\item{Imports.OSP}{Other Structual Panels Imports}
+\item{Exports.Tot}{Total Exports}
+\item{Exports.SWPlywood}{Softwood Plywood Exports}
+\item{Exports.OSP}{Other Structural Panels Exports}
+\item{Consump.Tot}{Total Consumption}
+\item{Consump.SWPlywood}{Softwood Plywood Consumption}
+\item{Consump.OSP}{Other Structural Panels Consumption}
+}}
 \source{
 American Plywood Association, US Dept. of Agriculture
 Foreign Agricultural Service
@@ -15,20 +29,6 @@ howard38
 \description{
 Datasets containing statistics for various structural panel products.
 All units are in Million Square ft.
-\itemize{
-\item \strong{Prod.Tot} Total Production
-\item \strong{Prod.SWPlywood} Softwood Plywood Production
-\item \strong{Prod.OSP} Other Structural Panels Production
-\item \strong{Imports.Tot} Total Imports
-\item \strong{Imports.SWPlywood} Softwood Plywood Imports
-\item \strong{Imports.OSP} Other Structual Panels Imports
-\item \strong{Exports.Tot} Total Exports
-\item \strong{Exports.SWPlywood} Softwood Plywood Exports
-\item \strong{Exports.OSP} Other Structural Panels Exports
-\item \strong{Consump.Tot} Total Consumption
-\item \strong{Consump.SWPlywood} Softwood Plywood Consumption
-\item \strong{Consump.OSP} Other Structural Panels Consumption
-}
 }
 \keyword{howard38}
 

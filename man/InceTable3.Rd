@@ -4,22 +4,28 @@
 \name{InceTable3}
 \alias{InceTable3}
 \title{Total production, productivity, recovered paper utilization, and per capita production}
-\format{A data frame with 151 observations of 15 variables.
-\itemize{
-\item \strong{Total.Industrial.Wood.Product.Production} Industrial wood production in thousand tons
-\item \strong{Roundwood.Equivalents.of.Production.Hardwoods} Hardwood production in million ft<sup>3</sup>
-\item \strong{Roundwood.Equivalents.of.Production.Softwoods} Softwood production in million ft<sup>3</sup>
-\item \strong{Roundwood.Equivalents.of.Production.Totals.millionftcubed} Production totals in million ft<sup>3</sup>
-\item \strong{Roundwood.Equivalents.of.Production.Totals.thousand.short.tons} Production totals in thousand short tons
-\item \strong{Roundwood.Equivalents.of.Production.Totals.thousand.metric.tons} Production totals in thousand metric tons
-\item \strong{Industrial.Wood.Productivity.lbs.ftsquared} Industrial wood product output per unit of roundwood input in (lbs/ft3)
-\item \strong{Industrial.Wood.Productivity} Industrial wood product output per unit of roundwood input in tons/tons
-\item \strong{Recovered.Paper.Utilization.Rate(AF&PA)} Recovered paper utilization rate
-\item \strong{U.S.Population} United States population in millions
-\item \strong{Per.Capita.Industrial.Wood.Product.Production} Per capita industrial wood product production, lbs/capita
-\item \strong{HW.Agrifiber} Hardwood Agrifiber (units?)
-\item \strong{HW.Roundwood} Hardwood Roundwood (units?)
-\item \strong{U.S.Timber.Harvest} United States Timber Harvest
+\format{A data frame with 151 observations of 15 variables:
+\describe{
+\item{Total.Industrial.Wood.Product.Production}{Industrial wood production in thousand tons}
+\item{Roundwood.Equivalents.of.Production.Hardwoods}{Hardwood production in million ft<sup>3</sup>}
+\item{Roundwood.Equivalents.of.Production.Softwoods}{Softwood production in million ft<sup>3</sup>}
+\item{Roundwood.Equivalents.of.Production.Totals.millionftcubed}{Production totals in million ft<sup>3</sup>}
+\item{Roundwood.Equivalents.of.Production.Totals.thousand.short.tons}{Production totals in thousand short tons}
+\item{Roundwood.Equivalents.of.Production.Totals.thousand.metric.tons}{Production totals in thousand metric tons}
+\item{Industrial.Wood.Productivity.lbs.ftsquared}{Industrial wood product output per unit of roundwood input in (lbs/ft3)}
+\item{Industrial.Wood.Productivity}{Industrial wood product output per unit of roundwood input in tons/tons}
+\item{Recovered.Paper.Utilization.Rate(AF&PA)}{Recovered paper utilization rate}
+\item{U.S.Population}{United States population in millions}
+\item{Per.Capita.Industrial.Wood.Product.Production}{Per capita industrial wood product production, lbs/capita}
+\item{HW.Agrifiber}{Hardwood Agrifiber (units?)}
+\item{HW.Roundwood}{Hardwood Roundwood (units?)}
+\item{Empty}{}
+\item{Empty}{}
+\item{Empty}{}
+\item{Empty}{}
+\item{Empty}{}
+\item{U.S.Timber.Harvest}{United States Timber Harvest}
+
 }}
 \source{
 Ince tables

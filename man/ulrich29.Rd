@@ -4,7 +4,24 @@
 \name{ulrich29}
 \alias{ulrich29}
 \title{Lumber production, imports, exports, and consumption, by softwoods and hardwoods, 1950-87}
-\format{A data frame with 38 observations of 15 variables}
+\format{A data frame with 38 observations of 15 variables:
+\describe{
+\item{Prod.Tot}{Total Lumber Production}
+\item{Prod.SW}{Softwood Lumber Production}
+\item{Prod.HW}{Hardwood Lumber Prodcution}
+\item{Imports.Tot}{Total Lumber Imports}
+\item{Imports.SW}{Softwood Lumber Imports}
+\item{Imports.HW}{Hardwood Lumber Imports}
+\item{Exports.Tot}{Total Lumber Exports}
+\item{Exports.SW}{Softwood Lumber Exports}
+\item{Exports.HW}{Hardwood Lumber Exports}
+\item{Consump.Tot}{Total Lumber Consumption}
+\item{Consump.SW}{Softwood Lumber Consumption}
+\item{Consump.HW}{Hardwood Lumber Consumption}
+\item{PerCapitaConsump.Tot}{Total Lumber Consumption Per Capita, in Board ft.}
+\item{PerCapitaConsump.SW}{Softwood Lumber Consumption Per Capita, in Board ft.}
+\item{PerCapitaConsump.HW}{Hardwood Lumber Consumption Per Capita, in Board ft.}
+}}
 \source{
 U.S. Department of Commerce. Bureau of the Census (43.51.52)
 U.S. Department of Agriculture, Forest Service; National Forest Products Association (16).
@@ -21,25 +38,6 @@ Data may not add to totals because of rounding. Estimates of softwood lumber pro
 late 1970's and early 1980's by the Bureau of the Census and some major softwood industry associations currently vary by as much as
 5 percent. Cooperative studies are underway to resolve these differences. Revisions made by Census as a result of these studies
 will be reported in future issues of U.S. timber production, trade, consumption, and price statistics.
-}
-\details{
-\itemize{
-\item \strong{Prod.Tot} Total Lumber Production
-\item \strong{Prod.SW} Softwood Lumber Production
-\item \strong{Prod.HW} Hardwood Lumber Prodcution
-\item \strong{Imports.Tot} Total Lumber Imports
-\item \strong{Imports.SW} Softwood Lumber Imports
-\item \strong{Imports.HW} Hardwood Lumber Imports
-\item \strong{Exports.Tot} Total Lumber Exports
-\item \strong{Exports.SW} Softwood Lumber Exports
-\item \strong{Exports.HW} Hardwood Lumber Exports
-\item \strong{Consump.Tot} Total Lumber Consumption
-\item \strong{Consump.SW} Softwood Lumber Consumption
-\item \strong{Consump.HW} Hardwood Lumber Consumption
-\item \strong{PerCapitaConsump.Tot} Total Lumber Consumption Per Capita, in Board ft.
-\item \strong{PerCapitaConsump.SW} Softwood Lumber Consumption Per Capita, in Board ft.
-\item \strong{PerCapitaConsump.HW} Hardwood Lumber Consumption Per Capita, in Board ft.
-}
 }
 \keyword{datasets}
 

@@ -4,13 +4,13 @@
 \name{howard56}
 \alias{howard56}
 \title{Hardboard production, imports, exports and consumption, 1965-1999.}
-\format{A data frame with 56 observations on 5 variables. (all units are in million square feet except when specified otherwise)
-\itemize{
-\item \code{Production} (Production)
-\item \code{Imports}(Imports)
-\item \code{Exports}(Exports)
-\item \code{Total}(Total)
-\item \code{PerCapita}(Per Capita units: Square feet)
+\format{A data frame with 56 observations on 5 variables:
+\describe{
+\item{Production}{Hardboard production}
+\item{Imports}{Hardboard imports}
+\item{Exports}{Hardboard exports}
+\item{Total.Consumption}{Total Hardboard Consumption}
+\item{PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
 }}
 \source{
 USFS Estimations and Bureau of Census Data
@@ -19,7 +19,7 @@ USFS Estimations and Bureau of Census Data
 howard56
 }
 \description{
-Hardboard production, imports, exports and consumption, 1965-1999.
+All units are in million square feet except when specified otherwise.
 }
-\keyword{howard56}
+\keyword{datasets}
 

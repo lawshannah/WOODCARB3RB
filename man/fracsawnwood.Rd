@@ -4,22 +4,24 @@
 \name{fracsawnwood}
 \alias{fracsawnwood}
 \title{Fractions of Sawnwood production used in various end uses}
-\format{A data frame with 151 observations of 16 variables.
-
-\itemize{
-\item \strong{House.SingFam} Single Family Homes
-\item \strong{House.Multifam} Multi Family Homes
-\item \strong{House.MobHom} Mobile Homes
-\item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
-\item \strong{New.Nonres.AllRR} All Railroads
-\item \strong{New.Nonres.Rties} Railroad Ties
-\item \strong{New.Nonres.Rcar.Repair} Railcar Repair
-\item \strong{Manu.HouseFurniture} Household Furniture
-\item \strong{Manu.CommFurniture} Commercial Furniture
-\item \strong{Manu.OtherProducts} Manufacturing - Other Products
-\item \strong{Shipping.Tot} Shipping
-\item \strong{Other.Uses.Tot} Other Uses
-\item \strong{other.industrial.tot} Uses For Other Industrial Products
+\format{A data frame with 151 observations of 13 variables:
+\describe{
+\item{House.SingFam}{Fraction of sawnwood production in Single Family Homes}
+\item{House.Multifam}{Fraction of sawnwood production in Multi Family Homes}
+\item{House.MobHom}{Fraction of sawnwood production in Mobile Homes}
+\item{House.Tot}{Total fraction of sawnwood production in homes}
+\item{Res.Upkeep}{Fraction of sawnwood production in Total Residential Upkeep and Improvement}
+\item{New.Nonres.AllRR}{Fraction of sawnwood production in All Railroads}
+\item{New.Nonres.Rties}{Fraction of sawnwood production in Railroad Ties}
+\item{New.Nonres.Rcar.Repair}{Fraction of sawnwood production in Railcar Repair}
+\item{New.Nonres.tot}{Total fraction of sawnwood production in non-residential end uses}
+\item{Manu.HouseFurniture}{Fraction of sawnwood production in Household Furniture}
+\item{Manu.CommFurniture}{Fraction of sawnwood production in Commercial Furniture}
+\item{Manu.OtherProducts}{Fraction of sawnwood production in Manufacturing and Other Products}
+\item{Manu.Tot}{Total fraction of sawnwood production in manufacturing}
+\item{Shipping.Tot}{Fraction of sawnwood production in Shipping}
+\item{Other.Uses.Tot}{Fraction of sawnwood production in Other Uses}
+\item{Other.Industrial.Tot}{Fraction of sawnwood production in Uses For Other Industrial Products}
 }}
 \source{
 Check spreadsheet - values entered in
@@ -30,5 +32,5 @@ fracsawnwood
 \description{
 All units are percentages and all vectors are numeric.
 }
-\keyword{fracsawnwood}
+\keyword{datasets}
 

@@ -5,7 +5,14 @@
 \alias{ulrich54}
 \title{Production, imports, exports and consumption of insulating board, 1950-1987
 Also includes historical production and exports data from 1925-1950.}
-\format{A data frame with 72 observations of 5 variables}
+\format{A data frame with 72 observations of 5 variables:
+\describe{
+\item{Hardboard.Prod}{Hardboard Production}
+\item{Hardboard.Import}{Hardboard Imports}
+\item{Hardboard.Exports}{Hardboard Exports}
+\item{Hardboard.Consump.Tot}{Total Hardboard Consumption}
+\item{Hardboard.Consump.PerCapita}{Hardboard Consumption Per Capita}
+}}
 \source{
 U.S. Department of Commerce, Bureau of the Census (48,51, 52);
 American Paper Institute (3, 4); American Hardboard Association.
@@ -17,15 +24,6 @@ ulrich54
 \description{
 Dataset contains statistics for insulating board.
 All units are in million square ft unless otherwise specified. All vectors are numeric.
-}
-\details{
-\itemize{
-\item \strong{HardBoard.Prod} HardBoard Production
-\item \strong{HardBoard.Import} HardBoard Imports
-\item \strong{HardBoard.Exports} HardBoard Exports
-\item \strong{HardBoard.Consump.Tot} Total HardBoard Consumption
-\item \strong{HardBoard.Consump.PerCapita} HardBoard Consumption Per Capita
-}
 }
 \keyword{datasets}
 

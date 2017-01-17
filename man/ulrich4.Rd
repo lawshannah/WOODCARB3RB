@@ -4,7 +4,33 @@
 \name{ulrich4}
 \alias{ulrich4}
 \title{Production, imports, exports. and consumption of timber products, by major product, 1950-87}
-\format{A data frame with 38 observations of 24 variables}
+\format{A data frame with 38 observations of 24 variables:
+\describe{
+\item{AllProducts.Prod}{Production for all timber products}
+\item{AllProducts.Consump}{Consumption for all timber products}
+\item{Tot.Prod}{Total Production for major timber products}
+\item{Tot.Imports}{Total Imports for major timber products}
+\item{Tot.Exports}{Total Exports for major timber products}
+\item{Tot.Consump}{Total Consumption for major timber products}
+\item{Lumber.Prod}{Lumber Products Prodcution}
+\item{Lumber.Imports}{Lumber Products Imports}
+\item{Lumber.Exports}{Lumber Products Exports}
+\item{Lumber.Consump}{Lumber Products Consumption}
+\item{PlywoodVeneer.Prod}{Plywood and Veneer Products Production}
+\item{PlywoodVeneer.Imports}{Plywood and Veneer Products Imports}
+\item{PlywoodVeneer.Exports}{Plywood and Veneer Products Exports}
+\item{PlywoodVeneer.Consump}{Plywood and Veneer Products Consumption}
+\item{PulpProducts.Prod}{Pulp Products Production}
+\item{PulpProducts.Imports}{Pulp Products Imports}
+\item{PulpProducts.Exports}{Pulp Products Exports}
+\item{PulpProducts.Consump}{Pulp Products Consumption}
+\item{OtherIndProducts.ProdandConsump}{Production and Consumption for other industrial products}
+\item{Logs.Imports}{Log Imports}
+\item{Logs.Exports}{Log Exports}
+\item{PulpwoodChip.Exports}{Pulpwood-chip Exports}
+\item{Fuelwood.ProdandConsump}{Production and Consumption for fuelwood products}
+\item{LogChipExports.PercofProduction}{Log and Chip exports as a percent of production}
+}}
 \source{
 Based on data published by the U.S. Departments of Commerce and Agriculture.
 Data for 1900-49 in "The demand and price situation for forest products 1964", table 2 (31),
@@ -15,34 +41,6 @@ ulrich4
 \description{
 Dataset containing statistics for various timber products (hardwood and softwood).
 All units are Million cubic ft (roundwood equivalent) unless otherwise specified.
-}
-\details{
-\itemize{
-\item \strong{AllProducts.Prod} Production for all timber products
-\item \strong{AllProducts.Consump} Consumption for all timber products
-\item \strong{Tot.Prod} Total Production for major timber products
-\item \strong{Tot.Imports} Total Imports for major timber products
-\item \strong{Tot.Exports} Total Exports for major timber products
-\item \strong{Tot.Consump} Total Consumption for major timber products
-\item \strong{Lumber.Prod} Lumber Products Prodcution
-\item \strong{Lumber.Imports} Lumber Products Imports
-\item \strong{Lumber.Exports} Lumber Products Exports
-\item \strong{Lumber.Consump} Lumber Products Consumption
-\item \strong{PlywoodVeneer.Prod} Plywood and Veneer Products Production
-\item \strong{PlywoodVeneer.Imports} Plywood and Veneer Products Imports
-\item \strong{PlywoodVeneer.Exports} Plywood and Veneer Products Exports
-\item \strong{PlywoodVeneer.Consump} Plywood and Veneer Products Consumption
-\item \strong{PulpProducts.Prod} Pulp Products Production
-\item \strong{PulpProducts.Imports} Pulp Products Imports
-\item \strong{PulpProducts.Exports} Pulp Products Exports
-\item \strong{PulpProducts.Consump} Pulp Products Consumption
-\item \strong{OtherIndProducts.ProdandConsump} Production and Consumption for other industrial products
-\item \strong{Logs.Imports} Log Imports
-\item \strong{Logs.Exports} Log Exports
-\item \strong{PulpwoodChip.Exports} Pulpwood-chip Exports
-\item \strong{Fuelwood.ProdandConsump} Production and Consumption for fuelwood products
-\item \strong{LogChipExports.PercofProduction} Log and Chip exports as a percent of production
-}
 }
 \keyword{datasets}
 

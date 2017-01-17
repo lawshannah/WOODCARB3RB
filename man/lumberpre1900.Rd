@@ -3,11 +3,10 @@
 \docType{data}
 \name{lumberpre1900}
 \alias{lumberpre1900}
-\title{Lumber wood  in single and multifamily houses build 1800 to 1900}
-\format{A vector with 151 observations of 1 variable.
-
-\itemize{
-\item \strong{Carbon} Lumber wood  in single and multifamily houses
+\title{Lumber wood in single and multifamily houses build 1800 to 1900}
+\format{A vector with 151 observations of 1 variable:
+\describe{
+\item{Carbon.Lumberwood}{Carbon from lumber wood in single and multifamily houses in od tons wood fiber}
 }}
 \source{
 'ftp://ftp2.fs.fed.us/incoming/fpl/Skog/[Woodcarb II special lumber July 5 2007 Base Case.xls]SW Calc'!$V3878
@@ -16,7 +15,7 @@
 lumberpre1900
 }
 \description{
-All vectors are numeric. All units are ?.
+Lumber wood in single and multifamily houses build 1800 to 1900
 }
-\keyword{lumberpre1900}
+\keyword{datasets}
 

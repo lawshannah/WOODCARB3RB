@@ -4,7 +4,17 @@
 \name{hair1963t20}
 \alias{hair1963t20}
 \title{United States imports and exports of plywood, by softwoods and hardwoods, 1935-62 (with estimates of 1927-34)}
-\format{A data frame with 36 observations on 8 variables}
+\format{A data frame with 36 observations on 8 variables:
+\describe{
+\item{Imports.Tot}{Total Plywood Imports}
+\item{SW.Imports}{Softwood Imports}
+\item{HW.Imports.Tot}{Total Hardwood Imports}
+\item{HW.Imports.Birch}{Birch Imports}
+\item{HW.Imports.Other}{Other Hardwoods Imports}
+\item{Exports.Tot}{Total Plywood Exports}
+\item{SW.Exports}{Softwood Exports}
+\item{HW.Exports}{Hardwood Exports}
+}}
 \source{
 US Department of Commerce, Bureau of the Census
 }
@@ -14,18 +24,6 @@ hair1963t20
 \description{
 Dataset containing import and export statistics for plywood products.
 All units are in Thousand Sq Ft. All vectors are numeric.
-}
-\details{
-\itemize{
-\item \strong{Imports.Tot} Total Plywood Imports
-\item \strong{SW.Imports} Softwood Imports
-\item \strong{HW.Imports.Tot} Total Hardwood Imports
-\item \strong{HW.Imports.Birch} Birch Imports
-\item \strong{HW.Imports.Other} Other Hardwoods Imports
-\item \strong{Exports.Tot} Total Plywood Exports
-\item \strong{SW.Exports} Softwood Exports
-\item \strong{HW.Exports} Hardwood Exports
-}
 }
 \keyword{datasets}
 

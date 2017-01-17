@@ -20,8 +20,4 @@ If totalcarbonstockchange is false: a data frame of intermediate
 \description{
 Calculate carbon in SWDS for the Stock Change Method
 }
-\examples{
-calculatedumpcarbonstockchange(Years = 1990:2015)
-calculatedumpcarbonstockchange(Years = 1990:2015, totalcarbonstockchange = TRUE)
-}
 

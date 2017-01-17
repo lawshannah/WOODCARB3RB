@@ -3,22 +3,22 @@
 \docType{data}
 \name{halfLives}
 \alias{halfLives}
-\title{Half Lives}
-\format{A data frame with 151 observations of 16 variables.
-\itemize{
-\item \strong{House.SingFam} Single Family Homes
-\item \strong{House.Multifam} Multi Family Homes
-\item \strong{House.MobHom} Mobile Homes
-\item \strong{Res.Upkeep} Total Residential Upkeep and Improvement
-\item \strong{New.Nonres.AllRR} All Railroads
-\item \strong{New.Nonres.Rties} Railroad Ties
-\item \strong{New.Nonres.Rcar.Repair} Railcar Repair
-\item \strong{Manu.HouseFurniture} Household Furniture
-\item \strong{Manu.CommFurniture} Commercial Furniture
-\item \strong{Manu.OtherProducts} Manufacturing - Other Products
-\item \strong{Shipping.Tot} Shipping
-\item \strong{Other.Uses.Tot} Other Uses
-\item \strong{other.industrial.tot} Uses For Other Industrial Products
+\title{Half lives for each end use.}
+\format{A data frame with 151 observations of 13 variables:
+\describe{
+\item{House.SingFam}{Half lives for Single Family Homes}
+\item{House.Multifam}{Half lives for Multi Family Homes}
+\item{House.MobHom}{Half lives for Mobile Homes}
+\item{Res.Upkeep}{Half lives for Total Residential Upkeep and Improvement}
+\item{New.Nonres.AllRR}{Half lives for All Railroads}
+\item{New.Nonres.Rties}{Half lives for Railroad Ties}
+\item{New.Nonres.Rcar.Repair}{Half lives for Railcar Repair}
+\item{Manu.HouseFurniture}{Half lives for Household Furniture}
+\item{Manu.CommFurniture}{Half lives for Commercial Furniture}
+\item{Manu.OtherProducts}{Half lives for Manufacturing and Other Products}
+\item{Shipping.Tot}{Half lives for Shipping}
+\item{Other.Uses.Tot}{Half lives for Other Uses}
+\item{Other.Industrial.Tot}{Half lives for Uses For Other Industrial Products}
 }}
 \source{
 USFS data
@@ -27,7 +27,7 @@ USFS data
 halfLives
 }
 \description{
-Half lives for different end uses.
+Half lives for each of the 13 end uses.
 }
-\keyword{halfLives}
+\keyword{datasets}
 

@@ -2,19 +2,7 @@
 % Please edit documentation in R/finalVariables.R
 \name{finalVariables}
 \alias{finalVariables}
-\title{Values for final 7 variables.
-All units are in Gg Carbon
-Var1A = Annual Change in stock of HWP in use form consumption
-Var1B = Annual Change in stock of HWP in SWDS from consumption
-Var2A = Annual Change in stock of HWP in use produced from domestic harvest
-Var2B = Annual Change in stock of HWP in SWDS produced from domestic harvest
-Var3 = Annual Imports of wood, paper products, wood fuel, pulp, recovered paper, roundwood/chips
-Var4 = Annual Exports of wood, paper products, wood fuel, pulp, recovered paper, roundwood/chips
-Var5 = Annual Domestic Harvest
-Var6 = Annual release of carbon to the atmosphere from HWP consumption (from fuelwood & products
-in use and products in SWDS)
-Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
-domestic harvest (from products in use and products in SWDS)}
+\title{Calculates the 7 HWP Variables.}
 \usage{
 finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
   "K=2"), halflives = halfLives)
@@ -30,7 +18,9 @@ finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
 a numeric vector of values for the selected variable for `Years`
 }
 \description{
-Values for final 7 variables.
+Returns variables needed to calculate overall contribution.
+}
+\details{
 All units are in Gg Carbon
 Var1A = Annual Change in stock of HWP in use form consumption
 Var1B = Annual Change in stock of HWP in SWDS from consumption

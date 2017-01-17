@@ -1,3 +1,19 @@
+minyr <- 1900
+currentyear <- maxyr <- 2020
+
+yrs <- minyr:maxyr
+
+a5 <- 1  #switch to include exports
+
+enduses <- c("SingleFam", "MultiFam", "MobileHomes", "TotalHomes", "ResidentialUpkeep",
+    "AllRailroads", "Railroadties", "RailcairRepair", "TotalnonResidential",
+    "HouseFurniture", "CommercialFurniture", "OtherManufacturing", "Total Manufacturing",
+    "Shipping", "OtherUses", "OtherIndustrial", "Exports")
+totalEUs <- c("HL.House.Tot", "NonRes.construc.Tot", "Manuf.tot")  ##total end uses to not count in carbon totals
+primaryclasses <- c("Sawnwood", "StructuralPanels", "NonStructuralPanels",
+    "OtherIndustrial")
+
+#Conversion Factors
 ## conversions od - oven dry
 PRO17 <- 4.535925e-07  ##SWP, odt -> Tg/c
 PRO18 <- 3.9008955e-07  ##PAPer, odt -> Tg/C
@@ -31,3 +47,4 @@ PRM61 <- 0.0840178400678722  #Paper waste HL in SWDS, dumps
 PRJ96 <- 1  #Factor to adjust base MSW not burned for paper and wood
 PRM19 <- 0.183  #carbon content in dry matter, bark percent softwoods
 PRM20 <- 0.209  #carbon content in dry matter, bark percent hardwoods
+

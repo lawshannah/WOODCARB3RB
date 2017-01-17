@@ -4,32 +4,31 @@
 \name{hair1958}
 \alias{hair1958}
 \title{Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958}
-\format{A data frame with 58 observations on 23 variables
-
-\itemize{
-\item \strong{Prod.Tot} Production Total
-\item \strong{Prod.SW} Production of Softwoods
-\item \strong{Prod.HW} Production of Hardwoods
-\item \strong{Imports.Tot} Total Imports
-\item \strong{Imports.SW} Imports for Softwood
-\item \strong{Imports.HW} Imports for Hardwoods
-\item \strong{Imports.Mixed} Imports for Mixed Woods
-\item \strong{Imports.Mixed.PercOfTot} Mixed Woods Percent of Total Imports
-\item \strong{Imports.SW.PerOfTot} Softwoods Percent of Total Imports
-\item \strong{Imports.HW.PercOfTot} Hardwoods Percent of Total Imports
-\item \strong{Imports.Estimated.SW} Estimated Softwood Imports
-\item \strong{Imports.Estimated.HW} Estimated Hardwood Imports
-\item \strong{Exports.Tot} Total Exports
-\item \strong{Exports.SW} Softwood Exports
-\item \strong{Exports.HW} Hardwood Exports
-\item \strong{Exports.Mixed} Mixed Woods Exports
-\item \strong{Exports.Mixed.PercOfTot} Mixed Woods Percent of Total Exports
-\item \strong{Exports.SW.PercOfTot} Softwoods Percent of Total Exports
-\item \strong{Exports.HW.PercOfTot} Hardwoods Percent of Total Exports
-\item \strong{Exports.Estimated.SW} Estimated Softwood Exports
-\item \strong{Exports.Estimated HW} Estimated Hardwood Exports
-\item \strong{NewSupply} New Supply
-\item \strong{PerCapita} Per Capita Use, in Board ft.
+\format{A data frame with 58 observations on 23 variables:
+\describe{
+\item{Prod.Tot}{Production Total}
+\item{Prod.SW}{Production of Softwoods}
+\item{Prod.HW}{Production of Hardwoods}
+\item{Imports.Tot}{Total Imports}
+\item{Imports.SW}{Imports for Softwood}
+\item{Imports.HW}{Imports for Hardwoods}
+\item{Imports.Mixed}{Imports for Mixed Woods}
+\item{Imports.Mixed.PercOfTot}{Mixed Woods Percent of Total Imports}
+\item{Imports.SW.PercOfTot}{Softwoods Percent of Total Imports}
+\item{Imports.HW.PercOfTot}{Hardwoods Percent of Total Imports}
+\item{Imports.Estimated.SW}{Estimated Softwood Imports}
+\item{Imports.Estimated.HW}{Estimated Hardwood Imports}
+\item{Exports.Tot}{Total Exports}
+\item{Exports.SW}{Softwood Exports}
+\item{Exports.HW}{Hardwood Exports}
+\item{Exports.Mixed}{Mixed Woods Exports}
+\item{Exports.Mixed.PercOfTot}{Mixed Woods Percent of Total Exports}
+\item{Exports.SW.PercOfTot}{Softwoods Percent of Total Exports}
+\item{Exports.HW.PercOfTot}{Hardwoods Percent of Total Exports}
+\item{Exports.Estimated.SW}{Estimated Softwood Exports}
+\item{Exports.Estimated.HW}{Estimated Hardwood Exports}
+\item{NewSupply}{New Supply}
+\item{PerCapita}{Per Capita Use, in Board ft.}
 }}
 \source{
 USFS Estimations and Bureau of Census Data

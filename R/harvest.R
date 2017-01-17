@@ -8,10 +8,6 @@
 #'
 #' @return Depends on onlyvar, either data frame of intermediate calculations or a vector
 #' of values for Annual Domestic Harvest
-#' @export
-#'
-#' @examples
-#' annualDomesticHarvest(1935:1950, onlyvar = TRUE)
 annualDomesticHarvest <- function(years, onlyvar = FALSE){
   usa <- data.frame(Years = years)
 

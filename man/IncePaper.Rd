@@ -3,15 +3,27 @@
 \docType{data}
 \name{IncePaper}
 \alias{IncePaper}
-\title{U.S. Paper & Paperboard, Production, Imports, Exports, Apparent Consumption, 1900 - 2050
-Data set containing statistics for paper and paperboard in the U.S.}
-\format{An object of class \code{data.frame} with 152 rows and 10 columns.}
+\title{U.S. Paper & Paperboard, Production, Imports, Exports, Apparent Consumption, 1900 - 2050.}
+\format{A data frame with 48 observations of 22 variables:
+\describe{
+\item{Paper.Board.Prod}{Paper and board production}
+\item{Paper.Board.Imports}{Paper and board imports}
+\item{Paper.Board.ApparentConsumption}{Paper and board apparent consumption}
+\item{Population}{United states population in thousands}
+\item{Paper.Board.ConsumptionPerCapita}{Paper and board consumption per capita, in pounds}
+}}
+\source{
+Historical Paper & Paperboard - American Forest & Paper Association, AF&PA (American Paper Institute for earlier years)
+Projections - RPA timber assessment, PNW-GTR-560 (see http://www.fs.fed.us/pnw/pubs/gtr560/)
+}
 \usage{
 IncePaper
 }
 \description{
-U.S. Paper & Paperboard, Production, Imports, Exports, Apparent Consumption, 1900 - 2050
+Production & consumption after 1958 excludes wet machine board & insulating board; trade & consumption exclude converted 'products'.
+Production & consumption include building paper but not insulating board or hardboard.
 Data set containing statistics for paper and paperboard in the U.S.
+Data are in thousands of short tons per year.
 }
 \keyword{datasets}
 

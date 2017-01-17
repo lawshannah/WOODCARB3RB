@@ -4,7 +4,24 @@
 \name{howard37}
 \alias{howard37}
 \title{Plywood production, imports, exports, and consumption, by softwoods and hardwoods, 1965-1999}
-\format{A data frame with 56 observations of 15 variables}
+\format{A data frame with 56 observations of 15 variables:
+\describe{
+\item{Prod.Tot}{Total Plywood Production}
+\item{Prod.SW}{Softwood Plywood Production}
+\item{Prod.HW}{Hardwood Plywood Production}
+\item{Imports.Tot}{Total Plywood Imports}
+\item{Imports.SW}{Softwood Plywood Imports}
+\item{Imports.HW}{Hardwood Plywood Imports}
+\item{Exports.Tot}{Total Plywood Exports}
+\item{Exports.SW}{Softwood Plywood Exports}
+\item{Exports.HW}{Hardwood Plywood Exports}
+\item{Consump.Tot}{Total Plywood Consumption}
+\item{Consump.SW}{Softwood Plywood Consumption}
+\item{Consump.HW}{Hardwood Plywood Consumption}
+\item{PerCapConsump.Tot}{Total Per Capita Consumption, in Square ft.}
+\item{PerCapConsump.SW}{Softwood Per Capita Consumption, in Square ft.}
+\item{PerCapConsump.HW}{Hardwood Per Capita Consumption, in Square ft.}
+}}
 \source{
 US Dept. of Commerce, Bureau of Census, American Plywood Association
 The Engineered Wood Association, US Dept. of Agriculture, Foreign Agriculture Service
@@ -15,20 +32,6 @@ howard37
 \description{
 Dataset containing statisics for plywood products(3/8-in. basis).
 All units are in Million Square ft. unless otherwise specified.
-\itemize{
-\item \strong{Prod.Tot} Total Plywood Production
-\item \strong{Prod.SW} Softwood Plywood Production
-\item \strong{Prod.HW} Hardwood Plywood Production
-\item \strong{Imports.Tot} Total Plywood Imports
-\item \strong{Imports.SW} Softwood Plywood Imports
-\item \strong{Imports.HW} Hardwood Plywood Imports
-\item \strong{Consump.Tot} Total Plywood Consumption
-\item \strong{Consump.SW} Softwood Plywood Consumption
-\item \strong{Consump.HW.} Hardwood Plywood Consumption
-\item \strong{PerCapConsump.Tot} Total Per Capita Consumption, in Square ft.
-\item \strong{PerCapConsump.SW} Softwood Per Capita Consumption, in Square ft.
-\item \strong{PerCapConsump.HW} Hardwood Per Capita Consumption, in Square ft.
-}
 }
 \keyword{howard37}
 

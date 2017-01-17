@@ -4,7 +4,16 @@
 \name{howard53}
 \alias{howard53}
 \title{Particleboard and medium-density fiberboard production, imports,}
-\format{A data frame with 56 observations of 7 variables}
+\format{A data frame with 56 observations of 7 variables:
+\describe{
+\item{Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
+\item{Prod.ParticleBoard}{Particleboard Production}
+\item{Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
+\item{Imports}{Particleboard and Medium-Density Fiberboard Imports}
+\item{Exports}{Particleboard and Medium-Density Fiberboard Exports}
+\item{Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
+\item{Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
+}}
 \source{
 National Particleboard Association (20); U.S. International Trade Commission (69);
 U.S. Department of Agriculture (32).  Data may not add to totals because of rounding.
@@ -15,17 +24,6 @@ howard53
 \description{
 Dataset containing various statistics for particleboard and medium-density fiberboard.
 All units are in Million Square ft unless otherwise specified.
-}
-\details{
-\itemize{
-\item \strong{Prod.Tot} Total Particleboard and Medium-Density Fiberboard Production
-\item \strong{Prod.ParticleBoard} Particleboard Production
-\item \strong{Prod.MediumDensityFiberboard} Medium-Density Fiberboard Production
-\item \strong{Imports} Particleboard and Medium-Density Fiberboard Imports
-\item \strong{Exports} Particleboard and Medium-Density Fiberboard Exports
-\item \strong{Consump.Tot} Total Particleboard and Medium-Density Fiberboard Consumption
-\item \strong{Consump.PerCap(Sq ft)} Per Capita Consumption, in Square ft.
-}
 }
 \keyword{datasets}
 

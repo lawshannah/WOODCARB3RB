@@ -4,13 +4,13 @@
 \name{howard55}
 \alias{howard55}
 \title{Insulating board production, imports, exports, and consumption, 1965-1999.}
-\format{A data frame with 56 observations of  5 variables. (all units in thousand tons except when specified otherwise):
-\itemize{
-\item \code{Production} (Production)
-\item \code{Imports}(Imports)
-\item \code{Exports}(Exports)
-\item \code{Total}(Total)
-\item \code{PerCapita}(Per Capita units: Pounds)
+\format{A data frame with 56 observations of  5 variables:
+\describe{
+\item{Production}{Insulating board production}
+\item{Imports}{Insulating board imports}
+\item{Exports}{Insulating board exports}
+\item{Total.Consumption}{Insulating board total}
+\item{PerCapita.Consumption}{Per Capita Consumption in Pounds}
 }}
 \source{
 USFS Estimations and Bureau of Census Data
@@ -19,7 +19,7 @@ USFS Estimations and Bureau of Census Data
 howard55
 }
 \description{
-Insulating board production, imports, exports, and consumption, 1965-1999.
+All units in thousand tons except when specified otherwise.
 }
-\keyword{howard55}
+\keyword{datasets}
 

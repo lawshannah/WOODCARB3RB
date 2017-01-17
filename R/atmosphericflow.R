@@ -1,10 +1,3 @@
-##Atmospheric Flow Approach
-#Stockchangeapproach + (var3 - var4) *44/12
-
-##Var #3 P_IM
-# #Annual Imports of wood, and paper products + wood fuel, pulp, recovered paper, roundwood/ chips
-#mistake is excel for yrs 2019+2020
-
 #' Statistics needed for variable 3
 #' Calculates intermediate calculations for variable 3:
 #' Annual Imports of Wood, and paper products + wood fuel,
@@ -15,12 +8,6 @@
 #'
 #' @return if var = FALSE, necessary intermediate calculations for Variable 3
 #'         if var = TRUE, returns values for Variable 3 for selected years
-#' @export
-#'
-#' @examples
-#' calcP_IM(years = 1950:1980)
-#' calcP_IM(var = TRUE)
-#' calcP_IM(years = 2012:2015, var = TRUE)
 calcP_IM <- function(years = 1990:2020, var = FALSE){
   var3 <- data.frame(Years = yrs)
 
@@ -132,12 +119,6 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 #'
 #' @return if var = FALSE, necessary calculations for Variable 4 for selected years
 #'         if var = TRUE, returns values for Variable 4 for selected years
-#' @export
-#'
-#' @examples
-#' calcP_EX(var = TRUE)
-#' calcP_EX(years = 1995:2010)
-#' calcP_EX(years = 2015:2020, var = TRUE)
 calcP_EX <- function(years = 1990:2020, var = FALSE){
   var4 <- data.frame(Years = yrs)
 

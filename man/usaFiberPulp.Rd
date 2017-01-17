@@ -4,12 +4,11 @@
 \name{usaFiberPulp}
 \alias{usaFiberPulp}
 \title{Recovered Fibre Pulp in the United States from 1998 to 2013}
-\format{A data frame with 16 observations of 3 variables
-
-\itemize{
-\item \strong{Prod.Quantity} Production Quantity of Recovered Fibre Pulp
-\item \strong{Imports.Quantity} Imports Quantity of Recovered Fibre Pulp
-\item \strong{Exports.Quantity} Exports Quantity of Recovered Fibre Pulp
+\format{A data frame with 16 observations of 3 variables:
+\describe{
+\item{Prod.Quantity}{Production Quantity of Recovered Fibre Pulp}
+\item{Imports.Quantity}{Imports Quantity of Recovered Fibre Pulp}
+\item{Exports.Quantity}{Exports Quantity of Recovered Fibre Pulp}
 }}
 \source{
 from AF&PA Paper, paperboard & wood pulp, A Monthly statistical summary
@@ -20,5 +19,5 @@ usaFiberPulp
 \description{
 All units are in metric tons and all vectors are numeric.
 }
-\keyword{usaFiberPulp}
+\keyword{datasets}
 

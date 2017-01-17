@@ -4,7 +4,16 @@
 \name{howard49}
 \alias{howard49}
 \title{Wood pulp production, imports, exports, and consumption, 1965-1999}
-\format{A data frame with 56 observations of 15 variables}
+\format{A data frame with 56 observations of 15 variables:
+\describe{
+\item{Production}{Wood pulp Production}
+\item{Imports}{Wood pulp Imports}
+\item{Imports.PercConsump}{Imports as Percent of Consumption}
+\item{Exports}{Wood pulp Exports}
+\item{Exports.PercProd}{Exports as Percent of Production}
+\item{Consump.Tot}{Total Consumption}
+\item{Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
+}}
 \source{
 U.S. Department of Commerce, Bureau of the Census (52,56,57); American Forest
 and Paper Association (2,4); United Nations, Food and Agriculture Organization (29).
@@ -21,17 +30,6 @@ howard49
 Dataset containing woodpulp statistics.
 All units are in thousand pounds unless otherwise specified.
 Consumption = Production + Imports - Exports
-}
-\details{
-\itemize{
-\item \strong{Production} Wood pulp Production
-\item \strong{Imports} Wood pulp Imports
-\item \strong{Imports.PercConsump} Imports as Percent of Consumption
-\item \strong{Exports} Wood pulp Exports
-\item \strong{Exports.PercProd} Exports as Percent of Production
-\item \strong{Consump.Tot} Total Consumption
-\item \strong{Consump.PerCap(pounds)} Per Capita Consumption in pounds
-}
 }
 \keyword{datasets}
 

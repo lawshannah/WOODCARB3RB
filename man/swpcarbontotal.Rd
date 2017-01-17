@@ -2,39 +2,40 @@
 % Please edit documentation in R/totalcarbon.R
 \name{swpcarbontotal}
 \alias{swpcarbontotal}
-\title{Total carbon in solid-wood products (od tons of wood fiber)}
+\title{Calculate total carbon in solidwood products.}
 \usage{
 swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "K=2"),
   onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
   "Stock Change"), halflives = halfLives)
 }
 \arguments{
-\item{Yrs}{years to calculate carbon totals for}
+\item{Yrs}{years to calculate totals for.}
 
-\item{distribution}{type of decay distribution}
+\item{distribution}{type of decay distribution.}
 
-\item{onlytotal}{return total carbon or totals by end uses}
+\item{onlytotal}{if false, total carbon is returned for each one of the 13 end uses.
+if true, one total is summed and returned}
 
-\item{lumberpre}{whether to include carbon from lumber before 1900 in totals}
+\item{lumberpre}{if false, carbon from lumber before 1900 is excluded from totals}
 
-\item{approach}{approach type to use to calculate}
+\item{approach}{approach type to use to calculate.
+If onlytotal is false then the data returned won't correspond to data in WOODCARB II
+If onlytotal is true:
+For production approach, the data returned corresponds to the `SWCalcP$H4389` column in WOODCARB II.
+For stock change approach, the data returned corresponds to the `SWCalc$H4389` column in WOODCARB II.}
 
 \item{halflives}{data frame of half lives for end uses. Default half lives are used but
 a data frame with 13 columns with half lives for the appropriate years can be used.}
 }
 \value{
-returns either only total for all end uses or total by enduses with option of lumberpre1900
+Output is either a data frame with 13 columns or 1 column based on the onlytotal argument
 }
 \description{
-Calculates carbon per end use and total carbon in solidwood products.
+Calculates total carbon and carbon by end use in solidwood products. Capable of
+calculating carbon totals with different approaches, halflives, and decay distributions.
 }
 \details{
-ALl units returned are in od tons of wood fiber.
-If "onlytotal" is false, total carbon is returned for each one of the 13 end uses.
-If "onlytotal" is true, the totals are summed up and one total is returned.
-
-This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet for Production approach and
- the `SWCalc$H4389` column for Stock Change approach.
+All units returned are in od tons of wood fiber.
 }
 \examples{
 swpcarbontotal(onlytotal=FALSE)

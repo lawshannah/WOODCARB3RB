@@ -4,7 +4,19 @@
 \name{howard47}
 \alias{howard47}
 \title{Paper and board new supply and recyclable paper consumption, exports, imports and total recovered, 1965-1999}
-\format{A data frame with 56 observations of 19 variables}
+\format{A data frame with 56 observations of 19 variables:
+\describe{
+\item{PaperBoardNewSupply}{New supply of Paper and Board}
+\item{RecPap.ConsumedatPaperBoardMills}{Recyclable Paper Consumed at Paper and Board Mills}
+\item{RecPap.MoldedPulpInsulationandOther}{Recyclable Paper for Molded pulp, insulation and other uses}
+\item{RecPap.Exports}{Recyclable Paper Exports}
+\item{RecPap.Imports}{Recyclable Paper Imports}
+\item{RecPap.TotRecovered}{Total Recyclable Paper Recovered}
+\item{RecPap.RecoveryRate}{Recyclable Paper Recovery Rate as a percent}
+\item{NoName}{Recylable Paper Totals for certain years}
+\item{Ratio.ExportstoProduction}{Ratio of Exports to Production}
+\item{Ratio.ImportstoProduction}{Ratio of Imports to Production}
+}}
 \source{
 1972-Present, American Forest and Paper Association, 1999 Annual Statistical Summary Recovered
 Paper Utilization, p.81 (6). 1965-1971, American Forest and Paper Assocation (2,4,5).
@@ -16,20 +28,6 @@ howard47
 Dataset containing consumption and production statistics for various board and paper products.
 All units are in thousand tons unless otherwise specified.
 Recovery rate is the ratio of total recovered paper collected to new supply of paper and paperboard.
-}
-\details{
-\itemize{
-\item \strong{PaperBoardNewSupply} New supply of Paper and Board
-\item \strong{RecPap.ConsumedatPaperBoardMills} Recyclable Paper Consumed at Paper and Board Mills
-\item \strong{RecPap.MoldedPulpInsulationandOther} Recyclable Paper for Molded pulp, insulation and other uses
-\item \strong{RecPap.Exports} Recyclable Paper Exports
-\item \strong{RecPap.Imports} Recyclable Paper Imports
-\item \strong{RecPap.TotRecovered} Total Recyclable Paper Recovered
-\item \strong{RecPap.RecoveryRate} Recyclable Paper Recovery Rate, as a percent.
-\item \strong{NoName} Recylable Paper Totals for certain years
-\item \strong{Ratio.ExportstoProduction} Ratio of Exports to Production
-\item \strong{Ratio.ImportstoProduction} Ratio of Imports to Production
-}
 }
 \keyword{datasets}
 

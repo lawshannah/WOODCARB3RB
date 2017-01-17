@@ -4,11 +4,26 @@
 \name{ulrich36}
 \alias{ulrich36}
 \title{Plywood production, imports, exports, and consumption, by softwoods and hardwoods, 1950-87}
-\format{A data frame with 38 observations of 15 variables}
-\source{
-U.S. Department of Commerce, Bureauot Census (40,50.51,52)
-American Plywood Association (5).
+\format{A data frame with 38 observations of 15 variables:
+\describe{
+\item{Prod.Tot}{Total Plywood Production}
+\item{Prod.SW}{Softwood Plywood Production}
+\item{Prod.HW}{Hardwood Plywood Production}
+\item{Imports.Tot}{Total Plywood Imports}
+\item{Imports.SW}{Softwood Plywood Imports}
+\item{Imports.HW}{Hardwood Plywood Imports}
+\item{Exports.Tot}{Total Plywood Exports}
+\item{Exports.SW}{Softwood Plywood Exports}
+\item{Exports.HW}{Hardwood Plywood Exports}
+\item{Consump.Tot}{Total Plywood Consumption}
+\item{Consump.SW}{Softwood Plywood Consumption}
+\item{Consump.HW}{Hardwood Plywood Consumption}
+\item{PerCapitaConsump.Tot}{Total Plywood Consumption Per Capita, in Square ft.}
+\item{PerCapitaConsump.SW}{Softwood Plywood Consumption Per Capita, in Square ft.}
+\item{PerCapitaConsump.HW}{Hardwood Plywood Consumption Per Capita, in Square ft.}
 }
+U.S. Department of Commerce, Bureauot Census (40,50.51,52)
+American Plywood Association (5).}
 \usage{
 ulrich36
 }
@@ -16,25 +31,6 @@ ulrich36
 Dataset containing various statistics for plywood products. (3/8-inch basis)
 All units are in Million Square ft unless otherwise specified.
 Year 1987 includes small volumes of mixed species (not classified as softwoods or hardwoods).
-}
-\details{
-\itemize{
-\item \strong{Prod.Tot} Total Plywood Production
-\item \strong{Prod.SW} Softwood Plywood Production
-\item \strong{Prod.HW} Hardwood Plywood Production
-\item \strong{Imports.Tot} Total Plywood Imports
-\item \strong{Imports.SW} Softwood Plywood Imports
-\item \strong{Imports.HW} Hardwood Plywood Imports
-\item \strong{Exports.Tot} Total Plywood Exports
-\item \strong{Exports.SW} Softwood Plywood Exports
-\item \strong{Exports.HW} Hardwood Plywood Exports
-\item \strong{Consump.Tot} Total Plywood Consumption
-\item \strong{Consump.SW} Softwood Plywood Consumption
-\item \strong{Consump.HW} Hardwood Plywood Consumption
-\item \strong{PerCapitaConsump.Tot} Total Plywood Consumption Per Capita, in Square ft
-\item \strong{PerCapitaConsump.SW} Softwood Plywood Consumption Per Capita, in Square ft
-\item \strong{PerCapitaConsump.HW} Hardwood Plywood Consumption Per Capita, in Square ft
-}
 }
 \keyword{datasets}
 

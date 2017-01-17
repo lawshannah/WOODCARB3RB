@@ -2,8 +2,7 @@
 % Please edit documentation in R/finalVariables.R
 \name{finalCarbonContribution}
 \alias{finalCarbonContribution}
-\title{Calculate final carbon contribution to AFOLU.
-All units returned are in Thousand metric tons CO2 Equivalent}
+\title{Estimates U.S. HWP contribution to annual greenhouse gas removals.}
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
   "Stock Change", "Atmospheric Flow"), decaytype = c("Exponential", "K=2"),
@@ -24,10 +23,12 @@ finalCarbonContribution(Years = 1990:2015, approach = c("Production",
 A vector of carbon contributions for all Years. Plot returned is optional
 }
 \description{
-The "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
-The "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet
+All units returned are in Thousand metric tons CO2 Equivalent
 }
 \details{
+The "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
+The "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet
+
 The plot argument returns a simple plot of time vs. carbon contribution.
 }
 \examples{

@@ -4,13 +4,13 @@
 \name{ulrich53}
 \alias{ulrich53}
 \title{Insulating board production, imports, exports, and consumption, 1950-87}
-\format{A data frame with 63 observations of  6 variables. (all units in millions square feet except when specified otherwise):
-\itemize{
-\item \code{InsulatingBoard.Prod} (Insulating Board Production)
-\item \code{InsulatingBoard.Import}(Insulating Board Imports)
-\item \code{InsulatingBoard.Exports}(Inulating Board Exports)
-\item \code{InsulatingBoard.Consump.Tot}(Insulating Board consumption total)
-\item \code{InsulatingBoard.Consump.PerCapita}(Insulating Board consumption per capita (square feet))
+\format{A data frame with 63 observations of  6 variables:
+\describe{
+\item{InsulatingBoard.Prod}{Insulating Board Production}
+\item{InsulatingBoard.Import}{Insulating Board Imports}
+\item{InsulatingBoard.Exports}{Inulating Board Exports}
+\item{InsulatingBoard.Consump.Tot}{Insulating Board consumption total}
+\item{InsulatingBoard.Consump.PerCapita}{Insulating Board consumption per capita, in square feet}
 }}
 \source{
 U.S. Department of Commerce, Bureau of the Census
@@ -19,7 +19,7 @@ U.S. Department of Commerce, Bureau of the Census
 ulrich53
 }
 \description{
-Insulating board production, imports, exports, and consumption, 1950-87
+All units in millions square feet except when specified otherwise
 }
-\keyword{ulrich53}
+\keyword{datasets}
 

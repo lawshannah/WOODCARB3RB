@@ -5,15 +5,14 @@
 \alias{apiFiberpulp}
 \title{Consumption of Fibrous Materials in Paper and Board Manufacture in the United States
 from 1900 to 1974.}
-\format{A data frame with 75 observations of 5 variables
-
-\itemize{
-\item \strong{Wood.Pulp} Consumption of Wood Pulp
-\item \strong{Waste.Paper} Consumption of Waste Paper
-\item \strong{Rags} Consumption of Rags
-\item \strong{?Findout} This might be other?
-\item \strong{Other} Consumption of Other Fibrous Materials
-\item \strong{Total} Total Consumption of Fibrous Materials
+\format{A data frame with 75 observations of 5 variables:
+\describe{
+\item{Wood.Pulp}{Consumption of Wood Pulp}
+\item{Waste.Paper}{Consumption of Waste Paper}
+\item{Rags}{Consumption of Rags}
+\item{?Findout}{This might be other?}
+\item{Other}{Consumption of Other Fibrous Materials}
+\item{Total}{Total Consumption of Fibrous Materials}
 }}
 \source{
 Estimated using best available data and historical patterns. Some data
@@ -26,5 +25,5 @@ apiFiberpulp
 Dataset containing estimated and reported statistics. All units are
 in tons, air dry weight.
 }
-\keyword{apiFiberpulp}
+\keyword{datasets}
 

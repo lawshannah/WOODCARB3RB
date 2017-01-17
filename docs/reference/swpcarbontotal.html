@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Total carbon in solid-wood products (od tons of wood fiber) — swpcarbontotal • WOODCARB3R</title>
+<title>Calculate total carbon in solidwood products. — swpcarbontotal • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,11 +77,12 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Total carbon in solid-wood products (od tons of wood fiber)</h1>
+    <h1>Calculate total carbon in solidwood products.</h1>
     </div>
 
     
-    <p>Calculates carbon per end use and total carbon in solidwood products.</p>
+    <p>Calculates total carbon and carbon by end use in solidwood products. Capable of
+calculating carbon totals with different approaches, halflives, and decay distributions.</p>
     
 
     <pre><span class='fu'>swpcarbontotal</span>(<span class='kw'>Yrs</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>distribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>),
@@ -91,15 +92,20 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>Yrs</dt>
-      <dd>years to calculate carbon totals for</dd>
+      <dd>years to calculate totals for.</dd>
       <dt>distribution</dt>
-      <dd>type of decay distribution</dd>
+      <dd>type of decay distribution.</dd>
       <dt>onlytotal</dt>
-      <dd>return total carbon or totals by end uses</dd>
+      <dd>if false, total carbon is returned for each one of the 13 end uses.
+if true, one total is summed and returned</dd>
       <dt>lumberpre</dt>
-      <dd>whether to include carbon from lumber before 1900 in totals</dd>
+      <dd>if false, carbon from lumber before 1900 is excluded from totals</dd>
       <dt>approach</dt>
-      <dd>approach type to use to calculate</dd>
+      <dd>approach type to use to calculate.
+If onlytotal is false then the data returned won&#39;t correspond to data in WOODCARB II
+If onlytotal is true:
+For production approach, the data returned corresponds to the `SWCalcP$H4389` column in WOODCARB II.
+For stock change approach, the data returned corresponds to the `SWCalc$H4389` column in WOODCARB II.</dd>
       <dt>halflives</dt>
       <dd>data frame of half lives for end uses. Default half lives are used but
 a data frame with 13 columns with half lives for the appropriate years can be used.</dd>
@@ -107,15 +113,11 @@ a data frame with 13 columns with half lives for the appropriate years can be us
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>returns either only total for all end uses or total by enduses with option of lumberpre1900</p>
+    <p>Output is either a data frame with 13 columns or 1 column based on the onlytotal argument</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>ALl units returned are in od tons of wood fiber.
-If &#39;onlytotal&#39; is false, total carbon is returned for each one of the 13 end uses.
-If &#39;onlytotal&#39; is true, the totals are summed up and one total is returned. test</p>
-    <p>This corresponds to the `SWCalcP$H4389` column in the WOODCARB spreadsheet for Production approach.
-This corresponds to the `SWCalc$H4389` column in the WOODCARB spreadsheet for Stock Change approach.</p>
+    <p>All units returned are in od tons of wood fiber.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -199,7 +201,7 @@ This corresponds to the `SWCalc$H4389` column in the WOODCARB spreadsheet for St
 #&gt; 23   2970683079
 #&gt; 24   2977443519
 #&gt; 25   2985851216
-#&gt; 26   2996456638</div><div class='input'><span class='fu'>swpcarbontotal</span>(<span class='fl'>1950</span>:<span class='fl'>1975</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>'Stock Change'</span>)</div><div class='output co'>#&gt;  [1] 1818871465 1833139774 1846854799 1860447189 1873679776 1888553014
+#&gt; 26   2996456638</div><div class='input'><span class='fu'>swpcarbontotal</span>(<span class='fl'>1950</span>:<span class='fl'>1975</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>"Stock Change"</span>)</div><div class='output co'>#&gt;  [1] 1818871465 1833139774 1846854799 1860447189 1873679776 1888553014
 #&gt;  [7] 1903747351 1913075329 1923424778 1937991525 1948188912 1957986752
 #&gt; [13] 1969760420 1984637567 2001804356 2022063587 2042473059 2060743598
 #&gt; [19] 2081491502 2102594227 2122853013 2147675904 2174928424 2201899977

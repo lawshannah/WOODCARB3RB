@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate final carbon contribution to AFOLU.
- — finalCarbonContribution • WOODCARB3R</title>
+<title>Estimates U.S. HWP contribution to annual greenhouse gas removals. — finalCarbonContribution • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -78,18 +77,16 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate final carbon contribution to AFOLU.
-</h1>
+    <h1>Estimates U.S. HWP contribution to annual greenhouse gas removals.</h1>
     </div>
 
     
-    <p>The &#39;Production&#39; approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
-The &#39;Stock Change&#39; approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet</p>
+    <p>All units returned are in Thousand metric tons CO2 Equivalent</p>
     
 
     <pre><span class='fu'>finalCarbonContribution</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>,
-  <span class='st'>"Stock Change"</span>), <span class='kw'>decaytype</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>plot</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
+  <span class='st'>"Stock Change"</span>, <span class='st'>"Atmospheric Flow"</span>), <span class='kw'>decaytype</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>),
+  <span class='kw'>plot</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -111,6 +108,8 @@ The &#39;Stock Change&#39; approach corresponds to `06 IPCC Tables`$P9 in the WO
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
+    <p>The &quot;Production&quot; approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
+The &quot;Stock Change&quot; approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet</p>
     <p>The plot argument returns a simple plot of time vs. carbon contribution.</p>
     
 
@@ -119,12 +118,12 @@ The &#39;Stock Change&#39; approach corresponds to `06 IPCC Tables`$P9 in the WO
 #&gt;  [7] -112219.10 -117343.83 -114188.45 -119182.37 -112968.80  -93478.73
 #&gt; [13]  -98188.13  -93967.40 -103967.46 -102683.17 -107666.14 -102762.70
 #&gt; [19]  -76830.26  -54360.98  -60549.58  -68943.22  -68312.97  -70814.78
-#&gt; [25]  -86538.26  -91250.87</div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>'Stock Change'</span>)</div><div class='output co'>#&gt;  [1] -129988.81 -117713.65 -120365.48 -126226.54 -130517.68 -125723.03
-#&gt;  [7] -123784.21 -132427.36 -135179.86 -146458.11 -140868.20 -125467.82
-#&gt; [13] -133133.89 -125584.82 -143587.19 -142407.25 -137608.40 -116011.73
-#&gt; [19]  -72961.66  -40438.37  -51054.53  -52783.49  -56627.13  -67402.01
-#&gt; [25] -102745.75 -116315.23</div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>'Production'</span>,
-                         <span class='kw'>decaytype</span> <span class='kw'>=</span><span class='st'>'Exponential'</span>)</div><div class='output co'>#&gt;  [1] -131771.55 -123758.01 -123790.61 -120707.52 -122498.31 -118411.13
+#&gt; [25]  -86538.26  -91250.87</div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>"Stock Change"</span>)</div><div class='output co'>#&gt;  [1] -129621.60 -116344.77 -119985.28 -126805.46 -129953.63 -125980.54
+#&gt;  [7] -122340.29 -131434.35 -137217.83 -147057.27 -141195.29 -125039.45
+#&gt; [13] -130714.01 -125812.07 -143193.24 -142102.08 -138121.66 -115131.55
+#&gt; [19]  -73079.21  -42305.07  -49151.35  -52374.83  -57982.74  -67784.59
+#&gt; [25] -110330.38 -115278.27</div><div class='input'><span class='fu'>finalCarbonContribution</span>(<span class='kw'>approach</span> <span class='kw'>=</span> <span class='st'>"Production"</span>,
+                         <span class='kw'>decaytype</span> <span class='kw'>=</span><span class='st'>"Exponential"</span>)</div><div class='output co'>#&gt;  [1] -131771.55 -123758.01 -123790.61 -120707.52 -122498.31 -118411.13
 #&gt;  [7] -112219.10 -117343.83 -114188.45 -119182.37 -112968.80  -93478.73
 #&gt; [13]  -98188.13  -93967.40 -103967.46 -102683.17 -107666.14 -102762.70
 #&gt; [19]  -76830.26  -54360.98  -60549.58  -68943.22  -68312.97  -70814.78

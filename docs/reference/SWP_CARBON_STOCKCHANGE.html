@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Calculates changes in carbon stock from solid wood products.
- — SWP_CARBON_STOCKCHANGE • WOODCARB3R</title>
+ — swp_carbon_stockchange • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -89,7 +89,7 @@ For production approach, values correspond to `Calculation$BY` in the spreadshee
 For stock change approach, values correspond to `Calculation$H` in the spreadsheet.</p>
     
 
-    <pre><span class='fu'>SWP_CARBON_STOCKCHANGE</span>(<span class='no'>years</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>, <span class='st'>"Stock Change"</span>),
+    <pre><span class='fu'>swp_carbon_stockchange</span>(<span class='no'>years</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>, <span class='st'>"Stock Change"</span>),
   <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
@@ -111,8 +111,8 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># SWP_CARBON_STOCKCHANGE(1990:2000)</span>
-<span class='co'># SWP_CARBON_STOCKCHANGE(1950:1975, approach = 'Stock Change', decaydistribution = 'K=2')</span>
+<span class='co'># swp_carbon_stockchange(1990:2000)</span>
+<span class='co'># swp_carbon_stockchange(1950:1975, approach = "Stock Change", decaydistribution = "K=2")</span>
 <span class='co'>## ---------------------------------------------</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -22,18 +22,8 @@ reference:
       Functions for calculating intermediate carbon statistics
       and final CO2 removal contributions
     contents:
-      - calcP_EX
-      - calcP_IM
-      - calcplacediu
-      - calculatedecay
-      - calculatedumpcarbonproduction
-      - calculatedumpcarbonstockchange
-      - calculateswpdata
-      - calcUSApaper
       - finalCarbonContribution
       - finalVariables
-      - PAPER_CARBON_STOCKCHANGE
-      - SWP_CARBON_STOCKCHANGE
       - swpcarbontotal
   - title: "Data Sheets"
     desc: "Input data sheets for carbon calculations"

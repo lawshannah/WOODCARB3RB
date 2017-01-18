@@ -173,10 +173,10 @@ Just as for _Variable 1A_, estimates of carbon stock change in _Variable 2A_ req
 Additionally, special data is needed on domestic roundwood harvest, imports and exports, and paper-related fiber imports and exports in order to calculate the ratios needed for Equations \@ref(eq:four) and \@ref(eq:five). Other parameters including factors to convert original product units to tons of carbon are the same as for Variable 1A. Specifically, the fractions of each product with various end uses ($F_{Ti\:j}$) and the half-life of products in end uses ($HL_{T\:j}$) are assumed to be the same as for _Variable 1A_. Which means that exported products (or logs and chips) are assumed to have end uses in the same proportions as in the United States, as well as the same half-life. 
 
 
-**Estimating Variables 1B and 2B**
--Annual change in carbon held in SWDS in the reporting country and annual change in carbon held in SWDS where wood came from harvest in the reporting country
+###Estimating Variables 1B and 2B {-}
+#####Annual change in carbon held in SWDS in the reporting country and annual change in carbon held in SWDS where wood came from harvest in the reporting country {-}
 
-Estimates of annual change in carbon in "products in SWDS" for current year t for _Variables 1B and 2B_ may be obtained using Equations \@ref(eq:six) through [10], which are provided below. 
+Estimates of annual change in carbon in "products in SWDS" for current year t for _Variables 1B and 2B_ may be obtained using Equations \@ref(eq:six) through \@ref(eq:ten), which are provided below. 
 
 Solid-waste disposal sites include dumps, where oxygen is available to decompose all wood and paper over time, and landfills, where a covering is placed over waste periodically and oxygen is sealed out. With limited oxygen, a portion of wood and paper does not decay and will stay permanently in the landfill, and a portion is temporary and will be emitted as $CO_{2}$ to or $CH_{4}$ over time.
 
@@ -217,10 +217,54 @@ C_{SWDS}(t)  = C_{SWDS \: PERM}(t) + C_{SWDS \: TEMP}(t)
 
 \begin{equation}
 F_{X \: to \: SWDS}= 1- F_{X \: BURNED} - F_{X \: REC}- F_{X \: COMPOST},
-where \:X \: is\: either\: SWP\: or \: PAPER
 (\#eq:ten)
 \end{equation}
 
+Where X is either SWP or PAPER.
+
+
+
+Where:
+<br/>
+
+$t$ is current year (for year for which annual change in HWP carbon stock is being estimated). 
+    
+$T$ is the yar when the products are initially discarded and, in part, go into "products in SWDS" pool.
+    
+$D_{SWP}(t)$ is the amount of carbon discarded from solidwood products in use in year t, Mg $yr^{-1}$. 
+    
+$D_{PAPER}(t)$ is the amount of carbon discarded from paper products in use in year t,  Mg $yr^{-1}$. 
+ 
+$F_{SWP\:to\:SWDS}(T)$ is the fraction of solidwood products discarded in year T that are sent to SWDS (includes dumps and landfills).
+  
+$F_{TO\:DUMPS}(T)$ is the fraction of solidwood and paper products that are discarded to SWDS that go to dumps rather than landfills in year T.
+  
+$F_{X\:BURNED}(T)$ is the fraction of products (X=SWP or paper) discarded in year T that are burned with or without energy production.
+  
+$F_{X\:REC}(T)$ is the fraction of products (X=SWP or paper) discarded in year T that are recovered for domestic recycling or for export.
+  
+$F_{X\:COMPOST}(T)$ is the fraction of products (X=SWP or paper) discarded in year T that are composted. 
+  
+$DOC_{F\:SWP}$ is the fraction of solidwood product carbon placed in SWDS that are landfills that is degradable (emitted to the atmosphere).
+  
+$DOC_{F\:PAPER}$ is the fraction of paper product carbon placed in SWDS that are landfills that is degradable. 
+  
+$C_{SWDS\:PERM}(t)$ is the total stock of carbon permanently stored in SWDS in year t. 
+   
+$k_{X\:Y}$ is the Annual rate at which the products placed in (y=) dumps or landfills emitted to the atmosphere. Where products are (x=) solidwood products (SWP) or paper. It is equal to ln(2)/HL, where HL is the half-life in years that HWP carbon is held in dumps or landfills before being emitted to the atmosphere.
+
+$C_{SWDS\:TEMP}(t)$ is the total stock of carbon temporarily stored in SWDS in year t.
+
+$\Delta C_{SWDS}$ is the annual change in carbon in products in SWDS between the end of year  $t - 1$ and the end of year $t$, Mg $yr^{-1}$
+
+<br/> 
+Notes on Equations:
+
+* Equation \@ref(eq:six) estimates, for current year t, the total stock of solidwood and paper product carbon that is permanently stored in landfill SWDS. 
+* Equation \@ref(eq:seven) estimates, for current year t, the stock of solidwood and paper product carbon that is temporarily stored in dumps or landfill SWDS. The rate of decay (or half-life) for the degradable carbon varies by product and type of SWDS (dumps or landfills).
+* Equation \@ref(eq:nine) estimates, for current year t, the change in total carbon stock in products in SWDS. 
+
+*Estimating Variable 1B- Annual change in carbon held in SWDS in the reporting country.* Variable 1B is estimated using equations \@ref(eq:six) through \@ref(eq:nine) where the variables $D_{SWP}(t)$ and $D_{PAPER}(t)$ are amounts of solidwood and paper products, respectively, that are discarded within the U.S. in year T. These are amounts that are discarded from products previously consumed in the U.S. 
 
 <!---
 talk about formulas, a5 sum up different approaches.  

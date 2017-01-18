@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fractions of Structural Panel production used in various end uses — fracstrpanels • WOODCARB3R</title>
+<title>Annual Domestic Harvest — annualDomesticHarvest • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,50 +77,38 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Fractions of Structural Panel production used in various end uses</h1>
+    <h1>Annual Domestic Harvest</h1>
     </div>
 
     
-    <p>All units are percentages and all vectors are numeric.</p>
+    <p>Various statistics and intermediate calculations to solve for
+Variable 5, Annual Domestic Harvest (H)</p>
     
 
-    <pre><span class='no'>fracstrpanels</span></pre>
-        
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A data frame with 151 observations of 16 variables:
-<dl class='dl-horizontal'>
-<dt>House.SingFam</dt><dd>Fraction of structural panel production in Single Family Homes</dd>
-<dt>House.Multifam</dt><dd>Fraction of structural panel production in Multi Family Homes</dd>
-<dt>House.MobHom</dt><dd>Fraction of structural panel production in Mobile Homes</dd>
-<dt>House.Tot</dt><dd>Total fraction of structural panel production in homes</dd>
-<dt>Res.Upkeep</dt><dd>Fraction of structural panel production in Total Residential Upkeep and Improvement</dd>
-<dt>New.Nonres.AllRR</dt><dd>Fraction of structural panel production in All Railroads</dd>
-<dt>New.Nonres.Rties</dt><dd>Fraction of structural panel production in Railroad Ties</dd>
-<dt>New.Nonres.Rcar.Repair</dt><dd>Fraction of structural panel production in Railcar Repair</dd>
-<dt>New.Nonres.tot</dt><dd>Total fraction of structural panel production in non-residential end uses</dd>
-<dt>Manu.HouseFurniture</dt><dd>Fraction of structural panel production in Household Furniture</dd>
-<dt>Manu.CommFurniture</dt><dd>Fraction of structural panel production in Commercial Furniture</dd>
-<dt>Manu.OtherProducts</dt><dd>Fraction of structural panel production in Manufacturing and Other Products</dd>
-<dt>Manu.Tot</dt><dd>Total fraction of structural panel production in manufacturing</dd>
-<dt>Shipping.Tot</dt><dd>Fraction of structural panel production in Shipping</dd>
-<dt>Other.Uses.Tot</dt><dd>Fraction of structural panel production in Other Uses</dd>
-<dt>Other.Industrial.Tot</dt><dd>Fraction of structural panel production in Uses For Other Industrial Products</dd>
-</dl></p>
+    <pre><span class='fu'>annualDomesticHarvest</span>(<span class='no'>years</span>, <span class='kw'>onlyvar</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <dl class="dl-horizontal">
+      <dt>years</dt>
+      <dd>years to calculate statistics for</dd>
+      <dt>onlyvar</dt>
+      <dd>If true, only the variable 5 will be returned.
+If false, other calculations needed to produce variable 5 will be returned</dd>
+    </dl>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Check spreadsheet - values entered in</p>
+    <p>Depends on onlyvar, either data frame of intermediate calculations or a vector
+of values for Annual Domestic Harvest</p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#format">Format</a></li>
-
-      <li><a href="#source">Source</a></li>
+      <li><a href="#value">Value</a></li>
           </ul>
 
   </div>

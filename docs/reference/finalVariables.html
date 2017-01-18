@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Values for final 7 variables.
- — finalVariables • WOODCARB3R</title>
+<title>Calculates the 7 HWP Variables. — finalVariables • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -78,13 +77,33 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Values for final 7 variables.
-</h1>
+    <h1>Calculates the 7 HWP Variables.</h1>
     </div>
 
     
-    <p>Values for final 7 variables.
-All units are in Gg Carbon
+    <p>Returns variables needed to calculate overall contribution.</p>
+    
+
+    <pre><span class='fu'>finalVariables</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>,
+  <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <dl class="dl-horizontal">
+      <dt>Years</dt>
+      <dd>years to calculate</dd>
+      <dt>decaydistribution</dt>
+      <dd>decay distribution to use (if necessary)</dd>
+      <dt>halflives</dt>
+      <dd>half-lives for calculation (if necessary)</dd>
+    </dl>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>a numeric vector of values for the selected variable for `Years`</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>All units are in Gg Carbon
 Var1A = Annual Change in stock of HWP in use form consumption
 Var1B = Annual Change in stock of HWP in SWDS from consumption
 Var2A = Annual Change in stock of HWP in use produced from domestic harvest
@@ -98,36 +117,9 @@ Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood)
 domestic harvest (from products in use and products in SWDS)</p>
     
 
-    <pre><span class='fu'>finalVariables</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>Variable</span> <span class='kw'>=</span> <span class='fu'>paste</span>(<span class='st'>"Var"</span>, <span class='fu'>c</span>(<span class='st'>"1A"</span>, <span class='st'>"1B"</span>,
-  <span class='st'>"2A"</span>, <span class='st'>"2B"</span>, <span class='st'>"3"</span>, <span class='st'>"4"</span>, <span class='st'>"5"</span>, <span class='st'>"6"</span>, <span class='st'>"7"</span>), <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>""</span>),
-  <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>Years</dt>
-      <dd>years to calculate</dd>
-      <dt>Variable</dt>
-      <dd>variable to return</dd>
-      <dt>decaydistribution</dt>
-      <dd>decay distribution to use (if necessary)</dd>
-      <dt>halflives</dt>
-      <dd>half-lives for calculation (if necessary)</dd>
-    </dl>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>a numeric vector of values for the selected variable for `Years`</p>
-    
-
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Variable</span> <span class='kw'>=</span> <span class='st'>'Var1A'</span>)</div><div class='output co'>#&gt;  [1] 17107.1033 13423.0348 15742.9581 16753.3412 18320.6135 17204.3066
-#&gt;  [7] 17344.7304 18935.3265 19077.9747 21281.0645 19920.3191 16605.7670
-#&gt; [13] 18004.3495 16874.5647 21463.6582 21019.8300 18904.9029 13275.9320
-#&gt; [19]  2342.2767 -5606.6893 -2418.5332 -1823.2435  -677.4553  2194.7400
-#&gt; [25] 11061.9029 13896.0643</div><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Variable</span> <span class='kw'>=</span> <span class='st'>'Var2B'</span>)</div><div class='output co'>#&gt;  [1] 18278.36 18812.33 17426.64 17949.01 17479.06 17228.99 16513.07 17262.74
-#&gt;  [9] 17738.36 18358.73 17969.61 16780.98 17212.91 16174.97 16274.85 16293.62
-#&gt; [17] 17268.23 17387.19 17089.68 16646.38 16572.71 16804.35 16906.41 16994.18
-#&gt; [25] 17366.38 17745.38</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1950</span>:<span class='fl'>2000</span>)
+<span class='fu'>finalVariables</span>(<span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span> * <span class='fl'>1.25</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -135,6 +127,8 @@ domestic harvest (from products in use and products in SWDS)</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -23,8 +23,8 @@
 #' @export
 #'
 #' @examples
-#' swpcarbontotal(onlytotal=FALSE)
-#' swpcarbontotal(1950:1975, approach = "Stock Change")
+#' swpcarbontotal(c(1990,2000,2010), onlytotal=FALSE)
+#' swpcarbontotal(1950:1960, approach = "Stock Change")
 swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2"),
                            onlytotal=TRUE, lumberpre = TRUE, approach = c("Production",
                                                                           "Stock Change"),
@@ -40,6 +40,7 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
   if (type == "K=2"){
     decayarray <- calculatedecay()
   }
+
   for(year in Yrs){
 
     yearrange <- 1:(year - minyr + 1) #number of years from 1900 to year

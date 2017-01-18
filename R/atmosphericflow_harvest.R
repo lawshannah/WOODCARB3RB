@@ -193,7 +193,6 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
       #V, N, X, X
       return( h6(year, 'Ind.RW.Logs.Exports') * InceS5 +
               h7(year, 'Ind.RW.PlyandVen.Exports') * InceT5 +
-                ##PULPCHIP??
               h6(year, 'Ind.RW.Pulpchip.Exports') * InceS5 +
               h7(year, 'Ind.RW.Pulpchip.Exports') * InceT5)
       }

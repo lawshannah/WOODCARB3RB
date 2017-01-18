@@ -45,44 +45,39 @@
     
     
 <div class="contents">
-<p>This package is designed to calculate various statistics regarding wood products in the United States. Included are functions to calculate carbon from dumps/landfills, paper and wood products of different wood types. Statistics are broken down into production, imports and exports.</p>
-<p>The main goal is to calculate the final carbon contribution which is reported to the IPCC. This is calculated based on the approach selected (Production, Stock Change, Atmospheric).</p>
+<p>This package is designed to calculate the carbon sequestration in harvested wood products in the United States. Functions estimate carbon in wood products, solid-waste disposal sites, and paper. A collection of production, import and export data from various sources is used to calculate intermediate statistics which is then used to calulate the 5 HWP variables and the final carbon contribution.</p>
+<p>The main goal is to calculate the final carbon contribution and produce a report which is reported to the IPCC. This is calculated based on the approach selected (Production, Stock Change, Atmospheric).</p>
 <p>Currently, the Production Approach is the one used to report contribution values to the IPCC.</p>
-<div id="final-carbon-contribution" class="section level3">
-<h3 class="hasAnchor"><html><body><a href="#final-carbon-contribution" class="anchor"> </a></body></html>Final Carbon Contribution</h3>
+<div id="final-carbon-contribution" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#final-carbon-contribution" class="anchor"> </a></body></html>Final Carbon Contribution</h2>
 <p>The final reported value is the contribution to AFOLU CO<sub>2</sub> emissions/removal. It&rsquo;s units are Gg CO<sub>2</sub>/Yr</p>
 <p>To calculate the carbon contribution:</p>
 <ul><li><code><a href="../reference/finalCarbonContribution.html">finalCarbonContribution()</a></code></li>
-</ul><p>The default arguments calculate the carbon contribution from 1990 to 2015 using the Production approach. It returns a single vector with the carbon contributions for each year specified.</p>
+</ul><p>The default arguments calculate the carbon contribution from 1990 to 2015 using the Production approach. It returns a vector with the carbon contributions for each year.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/finalCarbonContribution.html">finalCarbonContribution</a></span>()
  [<span class="dv">1</span>] -<span class="fl">131771.55</span> -<span class="fl">123758.01</span> -<span class="fl">123790.61</span> -<span class="fl">120707.52</span> -<span class="fl">122498.31</span> -<span class="fl">118411.13</span>
  [<span class="dv">7</span>] -<span class="fl">112219.10</span> -<span class="fl">117343.83</span> -<span class="fl">114188.45</span> -<span class="fl">119182.37</span> -<span class="fl">112968.80</span>  -<span class="fl">93478.73</span>
 [<span class="dv">13</span>]  -<span class="fl">98188.13</span>  -<span class="fl">93967.40</span> -<span class="fl">103967.46</span> -<span class="fl">102683.17</span> -<span class="fl">107666.14</span> -<span class="fl">102762.70</span>
 [<span class="dv">19</span>]  -<span class="fl">76830.26</span>  -<span class="fl">54360.98</span>  -<span class="fl">60549.58</span>  -<span class="fl">68943.22</span>  -<span class="fl">68312.97</span>  -<span class="fl">70814.78</span>
 [<span class="dv">25</span>]  -<span class="fl">86538.26</span>  -<span class="fl">91250.87</span></code></pre></div>
-<p>Different ranges of years can be selected along with a seperate approach.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/finalCarbonContribution.html">finalCarbonContribution</a></span>(<span class="dt">Years =</span> <span class="dv">1945</span>:<span class="dv">2017</span>, <span class="dt">approach =</span> <span class="st">"Stock Change"</span>)
- [<span class="dv">1</span>]  -<span class="fl">35980.51</span>  -<span class="fl">48968.15</span>  -<span class="fl">52484.20</span>  -<span class="fl">55691.62</span>  -<span class="fl">42382.72</span>  -<span class="fl">58923.08</span>
- [<span class="dv">7</span>]  -<span class="fl">55496.04</span>  -<span class="fl">52437.42</span>  -<span class="fl">54603.15</span>  -<span class="fl">53586.67</span>  -<span class="fl">59911.04</span>  -<span class="fl">61606.90</span>
-[<span class="dv">13</span>]  -<span class="fl">49815.40</span>  -<span class="fl">51083.09</span>  -<span class="fl">60704.41</span>  -<span class="fl">59177.18</span>  -<span class="fl">59187.86</span>  -<span class="fl">64237.52</span>
-[<span class="dv">19</span>]  -<span class="fl">70079.04</span>  -<span class="fl">76991.83</span>  -<span class="fl">85404.27</span>  -<span class="fl">89288.55</span>  -<span class="fl">83636.48</span>  -<span class="fl">90855.66</span>
-[<span class="dv">25</span>]  -<span class="fl">94597.43</span>  -<span class="fl">90666.63</span>  -<span class="fl">99935.74</span> -<span class="fl">110015.87</span> -<span class="fl">113308.72</span>  -<span class="fl">96044.25</span>
-[<span class="dv">31</span>]  -<span class="fl">75389.00</span>  -<span class="fl">98187.42</span> -<span class="fl">110918.20</span> -<span class="fl">119268.03</span> -<span class="fl">119212.36</span> -<span class="fl">101289.02</span>
-[<span class="dv">37</span>]  -<span class="fl">94125.40</span>  -<span class="fl">88088.50</span> -<span class="fl">115062.63</span> -<span class="fl">129028.90</span> -<span class="fl">127623.50</span> -<span class="fl">137960.44</span>
-[<span class="dv">43</span>] -<span class="fl">148285.83</span> -<span class="fl">144835.79</span> -<span class="fl">140221.36</span> -<span class="fl">129621.60</span> -<span class="fl">116344.77</span> -<span class="fl">119985.28</span>
-[<span class="dv">49</span>] -<span class="fl">126805.46</span> -<span class="fl">129953.63</span> -<span class="fl">125980.54</span> -<span class="fl">122340.29</span> -<span class="fl">131434.35</span> -<span class="fl">137217.83</span>
-[<span class="dv">55</span>] -<span class="fl">147057.27</span> -<span class="fl">141195.29</span> -<span class="fl">125039.45</span> -<span class="fl">130714.01</span> -<span class="fl">125812.07</span> -<span class="fl">143193.24</span>
-[<span class="dv">61</span>] -<span class="fl">142102.08</span> -<span class="fl">138121.66</span> -<span class="fl">115131.55</span>  -<span class="fl">73079.21</span>  -<span class="fl">42305.07</span>  -<span class="fl">49151.35</span>
-[<span class="dv">67</span>]  -<span class="fl">52374.83</span>  -<span class="fl">57982.74</span>  -<span class="fl">67784.59</span> -<span class="fl">110330.38</span> -<span class="fl">115278.27</span> -<span class="fl">119714.73</span>
-[<span class="dv">73</span>] -<span class="fl">125956.87</span></code></pre></div>
-<p>Other options include calculating using a different decay type or values for half-lifes.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/finalCarbonContribution.html">finalCarbonContribution</a></span>(<span class="dt">decaytype =</span> <span class="st">"K=2"</span>, <span class="dt">halflives =</span> halfLives *<span class="st"> </span><span class="fl">1.2</span>)
- [<span class="dv">1</span>] -<span class="fl">128582.94</span> -<span class="fl">120554.83</span> -<span class="fl">120608.93</span> -<span class="fl">117509.49</span> -<span class="fl">119269.12</span> -<span class="fl">115090.70</span>
- [<span class="dv">7</span>] -<span class="fl">108822.45</span> -<span class="fl">113891.04</span> -<span class="fl">110656.86</span> -<span class="fl">115626.28</span> -<span class="fl">109373.52</span>  -<span class="fl">89742.35</span>
-[<span class="dv">13</span>]  -<span class="fl">94361.66</span>  -<span class="fl">90015.30</span>  -<span class="fl">99987.22</span>  -<span class="fl">98679.72</span> -<span class="fl">103594.04</span>  -<span class="fl">98512.80</span>
-[<span class="dv">19</span>]  -<span class="fl">72086.46</span>  -<span class="fl">48984.37</span>  -<span class="fl">54634.83</span>  -<span class="fl">62641.35</span>  -<span class="fl">61704.53</span>  -<span class="fl">64024.28</span>
-[<span class="dv">25</span>]  -<span class="fl">79641.90</span>  -<span class="fl">84331.30</span></code></pre></div>
-<p>A plot can be returned as well.</p>
+<p>The years, approach used, decay distribution, and values for end use half life values can be entered as arguments. <code>halfLives</code> is a data frame with the default half life values.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/finalCarbonContribution.html">finalCarbonContribution</a></span>(<span class="dt">Years =</span> <span class="dv">1945</span>:<span class="dv">2017</span>, <span class="dt">approach =</span> <span class="st">"Atmospheric Flow"</span>, <span class="dt">decaydistribution =</span> <span class="st">"K=2"</span>, <span class="dt">halflives =</span> halfLives*<span class="st"> </span><span class="fl">1.2</span>)
+ [<span class="dv">1</span>]  -<span class="fl">24894.655</span>  -<span class="fl">14997.452</span>   -<span class="fl">6949.219</span>   -<span class="fl">2427.162</span>  -<span class="fl">10236.789</span>
+ [<span class="dv">6</span>]  -<span class="fl">40550.080</span>  -<span class="fl">39508.489</span>  -<span class="fl">36978.712</span>  -<span class="fl">37752.797</span>  -<span class="fl">36990.341</span>
+[<span class="dv">11</span>]  -<span class="fl">42953.195</span>  -<span class="fl">43854.629</span>  -<span class="fl">33651.701</span>  -<span class="fl">34360.360</span>  -<span class="fl">42028.082</span>
+[<span class="dv">16</span>]  -<span class="fl">41900.419</span>  -<span class="fl">42308.453</span>  -<span class="fl">45491.601</span>  -<span class="fl">53119.246</span>  -<span class="fl">60636.439</span>
+[<span class="dv">21</span>]  -<span class="fl">68046.576</span>  -<span class="fl">72389.961</span>  -<span class="fl">71125.041</span>  -<span class="fl">80206.445</span>  -<span class="fl">83482.083</span>
+[<span class="dv">26</span>]  -<span class="fl">84195.931</span>  -<span class="fl">87669.683</span>  -<span class="fl">98228.673</span> -<span class="fl">104329.684</span>  -<span class="fl">90670.262</span>
+[<span class="dv">31</span>]  -<span class="fl">73570.273</span>  -<span class="fl">94610.852</span> -<span class="fl">102382.535</span> -<span class="fl">107265.507</span> -<span class="fl">113036.268</span>
+[<span class="dv">36</span>] -<span class="fl">100579.873</span>  -<span class="fl">88438.252</span>  -<span class="fl">82617.652</span> -<span class="fl">104764.026</span> -<span class="fl">113104.770</span>
+[<span class="dv">41</span>] -<span class="fl">110358.355</span> -<span class="fl">123863.062</span> -<span class="fl">136114.855</span> -<span class="fl">143743.744</span> -<span class="fl">143378.913</span>
+[<span class="dv">46</span>] -<span class="fl">135783.688</span> -<span class="fl">128650.145</span> -<span class="fl">128808.241</span> -<span class="fl">124992.911</span> -<span class="fl">127079.396</span>
+[<span class="dv">51</span>] -<span class="fl">125191.611</span> -<span class="fl">119698.011</span> -<span class="fl">124627.803</span> -<span class="fl">120115.937</span> -<span class="fl">124902.434</span>
+[<span class="dv">56</span>] -<span class="fl">117979.000</span>  -<span class="fl">98021.401</span> -<span class="fl">101013.206</span>  -<span class="fl">96373.469</span> -<span class="fl">106379.370</span>
+[<span class="dv">61</span>] -<span class="fl">105471.855</span> -<span class="fl">112063.867</span> -<span class="fl">109388.444</span>  -<span class="fl">85509.382</span>  -<span class="fl">65937.308</span>
+[<span class="dv">66</span>]  -<span class="fl">74684.511</span>  -<span class="fl">86322.979</span>  -<span class="fl">85888.850</span>  -<span class="fl">89632.475</span> -<span class="fl">102409.351</span>
+[<span class="dv">71</span>] -<span class="fl">104327.684</span> -<span class="fl">105426.000</span> -<span class="fl">108465.443</span></code></pre></div>
+<p>A plot can be returned.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/finalCarbonContribution.html">finalCarbonContribution</a></span>(<span class="dt">plot =</span> <span class="ot">TRUE</span>)
  [<span class="dv">1</span>] -<span class="fl">131771.55</span> -<span class="fl">123758.01</span> -<span class="fl">123790.61</span> -<span class="fl">120707.52</span> -<span class="fl">122498.31</span> -<span class="fl">118411.13</span>
  [<span class="dv">7</span>] -<span class="fl">112219.10</span> -<span class="fl">117343.83</span> -<span class="fl">114188.45</span> -<span class="fl">119182.37</span> -<span class="fl">112968.80</span>  -<span class="fl">93478.73</span>
@@ -90,56 +85,41 @@
 [<span class="dv">19</span>]  -<span class="fl">76830.26</span>  -<span class="fl">54360.98</span>  -<span class="fl">60549.58</span>  -<span class="fl">68943.22</span>  -<span class="fl">68312.97</span>  -<span class="fl">70814.78</span>
 [<span class="dv">25</span>]  -<span class="fl">86538.26</span>  -<span class="fl">91250.87</span></code></pre></div>
 </div>
-<div id="individual-variables" class="section level3">
-<h3 class="hasAnchor"><html><body><a href="#individual-variables" class="anchor"> </a></body></html>Individual Variables</h3>
+<div id="hwp-variables" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#hwp-variables" class="anchor"> </a></body></html>HWP Variables</h2>
+<p><code>finalVariables</code> returns a data frame with all of the HWP variables.<br>
+Alternate years, decay distribution, and half lives can be substituted for defaults.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/finalVariables.html">finalVariables</a></span>()</code></pre></div>
 </div>
-<div id="other-statistics" class="section level3">
-<h3 class="hasAnchor"><html><body><a href="#other-statistics" class="anchor"> </a></body></html>Other Statistics</h3>
-<p><code>finalCarbonContribution</code> and <code>finalVariables</code> calculate the final values for the WOODCARB model. There are many intermediate calculations and statistics that can be accessed using the package that are necessary to calculate the final values.</p>
-<div id="total-carbon" class="section level4">
-<h4 class="hasAnchor"><html><body><a href="#total-carbon" class="anchor"> </a></body></html>Total Carbon</h4>
-<p>The model considers carbon stored in solid wood products, paper and solid waste disposal sites (SWDS). There are functions to calculate amounts of carbon stored in these places.</p>
-<div id="solid-wood-products" class="section level5">
-<h5 class="hasAnchor"><html><body><a href="#solid-wood-products" class="anchor"> </a></body></html>Solid Wood Products</h5>
-<p><code><a href="../reference/swpcarbontotal.html">swpcarbontotal()</a></code> calculates total carbon stored in solid wood products in oven-dry tons of wood fiber.</p>
-<p>It gives the option of returning carbon totals by end use: (the default argument returns total carbon for all end uses)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/swpcarbontotal.html">swpcarbontotal</a></span>(<span class="kw">c</span>(<span class="dv">1990</span>,<span class="dv">2015</span>), <span class="dt">onlytotal =</span> <span class="ot">FALSE</span>) 
-  Years       EU1       EU2      EU3       EU4       EU5      EU6     EU7
-<span class="dv">1</span>  <span class="dv">1990</span> <span class="dv">706414309</span> <span class="dv">182866038</span> <span class="dv">63065693</span> <span class="dv">258801895</span> <span class="dv">116211294</span> <span class="dv">32956528</span> <span class="dv">3874448</span>
-<span class="dv">2</span>  <span class="dv">2015</span> <span class="dv">976024693</span> <span class="dv">164356403</span> <span class="dv">83886558</span> <span class="dv">345051002</span> <span class="dv">158248655</span> <span class="dv">29717939</span> <span class="dv">4114937</span>
+<div id="other-statistics" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#other-statistics" class="anchor"> </a></body></html>Other Statistics</h2>
+<div id="total-carbon" class="section level3">
+<h3 class="hasAnchor"><html><body><a href="#total-carbon" class="anchor"> </a></body></html>Total Carbon</h3>
+<p>Carbon in solid wood products, paper and solid waste disposal sites (SWDS) is estimated. There are functions to calculate amounts of carbon stored in these places.</p>
+<div id="solid-wood-products" class="section level4">
+<h4 class="hasAnchor"><html><body><a href="#solid-wood-products" class="anchor"> </a></body></html>Solid Wood Products</h4>
+<p><code><a href="../reference/swpcarbontotal.html">swpcarbontotal()</a></code> calculates total carbon stored in solid wood products in oven-dry tons of wood fiber. It gives the option of returning carbon totals by end use (the default argument returns total carbon for all end uses). Alternate approaches and half life values can be used. <code>lumberpre</code> allows carbon from lumber before 1900 to be excluded from total.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/swpcarbontotal.html">swpcarbontotal</a></span>(<span class="kw">c</span>(<span class="dv">1990</span>,<span class="dv">2015</span>), <span class="dt">onlytotal =</span> <span class="ot">FALSE</span>, <span class="dt">lumberpre =</span> <span class="ot">FALSE</span>,
+               <span class="dt">approach =</span> <span class="st">"Stock Change"</span>, <span class="dt">halflives =</span> halfLives *<span class="st"> </span>.<span class="dv">9</span>) 
+  Years        EU1       EU2      EU3       EU4       EU5      EU6     EU7
+<span class="dv">1</span>  <span class="dv">1990</span>  <span class="dv">711997891</span> <span class="dv">177943676</span> <span class="dv">64020379</span> <span class="dv">267419244</span> <span class="dv">117241559</span> <span class="dv">31949898</span> <span class="dv">3828763</span>
+<span class="dv">2</span>  <span class="dv">2015</span> <span class="dv">1045739543</span> <span class="dv">162923082</span> <span class="dv">90506785</span> <span class="dv">376198692</span> <span class="dv">170804689</span> <span class="dv">29755821</span> <span class="dv">4278874</span>
         EU8      EU9      EU10      EU11      EU12      EU13 LumberPre1900
-<span class="dv">1</span>  <span class="dv">97501711</span> <span class="dv">32435774</span>  <span class="dv">83160265</span> <span class="dv">180886699</span> <span class="dv">231453156</span> <span class="dv">478162361</span>      <span class="dv">70903425</span>
-<span class="dv">2</span> <span class="dv">143407013</span> <span class="dv">73922231</span> <span class="dv">119933477</span> <span class="dv">207145928</span> <span class="dv">257419209</span> <span class="dv">394777995</span>      <span class="dv">38450600</span>
+<span class="dv">1</span> <span class="dv">100213040</span> <span class="dv">34991435</span>  <span class="dv">85106106</span> <span class="dv">179199837</span> <span class="dv">227168744</span> <span class="dv">435352707</span>      <span class="dv">70903425</span>
+<span class="dv">2</span> <span class="dv">158547648</span> <span class="dv">86069446</span> <span class="dv">131441369</span> <span class="dv">218238442</span> <span class="dv">269893945</span> <span class="dv">351612290</span>      <span class="dv">38450600</span>
   Total Carbon
-<span class="dv">1</span>   <span class="dv">2538693597</span>
-<span class="dv">2</span>   <span class="dv">2996456638</span></code></pre></div>
-<p>The default approach is Production but carbon totals using the Stock Change approach can be calculated as well.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/swpcarbontotal.html">swpcarbontotal</a></span>(<span class="dt">approach =</span> <span class="st">"Stock Change"</span>)
- [<span class="dv">1</span>] <span class="dv">2646761363</span> <span class="dv">2673035705</span> <span class="dv">2703355844</span> <span class="dv">2735338384</span> <span class="dv">2768769959</span> <span class="dv">2801338951</span>
- [<span class="dv">7</span>] <span class="dv">2835741847</span> <span class="dv">2871557867</span> <span class="dv">2909461717</span> <span class="dv">2949936691</span> <span class="dv">2989985217</span> <span class="dv">3027433541</span>
-[<span class="dv">13</span>] <span class="dv">3067032562</span> <span class="dv">3105954761</span> <span class="dv">3151841937</span> <span class="dv">3198510092</span> <span class="dv">3240154427</span> <span class="dv">3270837460</span>
-[<span class="dv">19</span>] <span class="dv">3281687639</span> <span class="dv">3281768476</span> <span class="dv">3282069463</span> <span class="dv">3284479932</span> <span class="dv">3289334070</span> <span class="dv">3298536683</span>
-[<span class="dv">25</span>] <span class="dv">3312091178</span> <span class="dv">3329495393</span></code></pre></div>
-<p>There is an option to exclude carbon from lumber pre-1900 (the default includes this).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/swpcarbontotal.html">swpcarbontotal</a></span>(<span class="dt">lumberpre =</span> <span class="ot">FALSE</span>)
- [<span class="dv">1</span>] <span class="dv">2467790172</span> <span class="dv">2495693767</span> <span class="dv">2525224480</span> <span class="dv">2553785141</span> <span class="dv">2582103068</span> <span class="dv">2608424954</span>
- [<span class="dv">7</span>] <span class="dv">2635211500</span> <span class="dv">2662610817</span> <span class="dv">2689147039</span> <span class="dv">2717325851</span> <span class="dv">2744848629</span> <span class="dv">2768407232</span>
-[<span class="dv">13</span>] <span class="dv">2793239680</span> <span class="dv">2816343113</span> <span class="dv">2842445454</span> <span class="dv">2868565370</span> <span class="dv">2892838337</span> <span class="dv">2912744438</span>
-[<span class="dv">19</span>] <span class="dv">2920184015</span> <span class="dv">2920157084</span> <span class="dv">2920851398</span> <span class="dv">2924539963</span> <span class="dv">2929302667</span> <span class="dv">2937063711</span>
-[<span class="dv">25</span>] <span class="dv">2946447817</span> <span class="dv">2958006039</span></code></pre></div>
-<p>Similar to <code><a href="../reference/finalCarbonContribution.html">finalCarbonContribution()</a></code>, alternate half-lives can be provided.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/swpcarbontotal.html">swpcarbontotal</a></span>(<span class="dt">halflives =</span> halfLives *<span class="st"> </span><span class="fl">1.5</span>)
- [<span class="dv">1</span>] <span class="dv">3047281504</span> <span class="dv">3081105782</span> <span class="dv">3116666371</span> <span class="dv">3151357245</span> <span class="dv">3185900880</span> <span class="dv">3218529198</span>
- [<span class="dv">7</span>] <span class="dv">3251702599</span> <span class="dv">3285570186</span> <span class="dv">3318648380</span> <span class="dv">3353450915</span> <span class="dv">3387673833</span> <span class="dv">3417984993</span>
-[<span class="dv">13</span>] <span class="dv">3449628580</span> <span class="dv">3479590709</span> <span class="dv">3512615635</span> <span class="dv">3545720893</span> <span class="dv">3577030346</span> <span class="dv">3603998101</span>
-[<span class="dv">19</span>] <span class="dv">3618452549</span> <span class="dv">3625352452</span> <span class="dv">3632890524</span> <span class="dv">3643358404</span> <span class="dv">3654842765</span> <span class="dv">3669285440</span>
-[<span class="dv">25</span>] <span class="dv">3685321129</span> <span class="dv">3703513793</span></code></pre></div>
-</div>
-<div id="paper" class="section level5">
-<h5 class="hasAnchor"><html><body><a href="#paper" class="anchor"> </a></body></html>Paper</h5>
-</div>
-<div id="solid-waste-disposal-sites" class="section level5">
-<h5 class="hasAnchor"><html><body><a href="#solid-waste-disposal-sites" class="anchor"> </a></body></html>Solid Waste Disposal Sites</h5>
+<span class="dv">1</span>   <span class="dv">2507336701</span>
+<span class="dv">2</span>   <span class="dv">3134461226</span></code></pre></div>
+<!---
+Function for swp, paper and dump carbon totals. 
+Functions:
+finalCarbonContrib 
+finalVariables
+carbontotals 
+returnIntermediateData 
+
+question about sapply/forloop vs other code 
+--->
 </div>
 </div>
 </div>
@@ -147,6 +127,12 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked"><li><a href="#final-carbon-contribution">Final Carbon Contribution</a></li>
+      <li><a href="#hwp-variables">HWP Variables</a></li>
+      <li><a href="#other-statistics">Other Statistics</a></li>
+      </ul></div>
       </div>
 
 </div>

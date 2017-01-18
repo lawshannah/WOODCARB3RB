@@ -59,16 +59,25 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #'
 #' Returns variables needed to calculate overall contribution.
 #'
-#' All units are in Gg Carbon
+#' All units are in Gg Carbon.
+#'
 #' Var1A = Annual Change in stock of HWP in use form consumption
+#'
 #' Var1B = Annual Change in stock of HWP in SWDS from consumption
+#'
 #' Var2A = Annual Change in stock of HWP in use produced from domestic harvest
+#'
 #' Var2B = Annual Change in stock of HWP in SWDS produced from domestic harvest
+#'
 #' Var3 = Annual Imports of wood, paper products, wood fuel, pulp, recovered paper, roundwood/chips
+#'
 #' Var4 = Annual Exports of wood, paper products, wood fuel, pulp, recovered paper, roundwood/chips
+#'
 #' Var5 = Annual Domestic Harvest
+#'
 #' Var6 = Annual release of carbon to the atmosphere from HWP consumption (from fuelwood & products
 #' in use and products in SWDS)
+#'
 #' Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
 #' domestic harvest (from products in use and products in SWDS)
 #'
@@ -77,7 +86,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
 #'
-#' @return a data frame with nine columns (Variables 1 and 2 have two parts each).
+#' @return Data frame with nine columns (Variables 1 and 2 have two parts each).
 #' If the decay distribution is exponential then the data frame returned will correspond
 #' to table containing final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
 #' @export

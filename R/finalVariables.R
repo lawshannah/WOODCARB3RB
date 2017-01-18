@@ -78,7 +78,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' Var6 = Annual release of carbon to the atmosphere from HWP consumption (from fuelwood & products
 #' in use and products in SWDS)
 #'
-#' Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
+#' Var7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
 #' domestic harvest (from products in use and products in SWDS)
 #'
 #' @param Years years to calculate

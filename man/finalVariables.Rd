@@ -43,7 +43,7 @@ Var5 = Annual Domestic Harvest
 Var6 = Annual release of carbon to the atmosphere from HWP consumption (from fuelwood & products
 in use and products in SWDS)
 
-Var 7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
+Var7 = Annual release of carbon to the atmosphere from HWP (including fuelwood) where wood came from
 domestic harvest (from products in use and products in SWDS)
 }
 \examples{

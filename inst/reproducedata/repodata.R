@@ -255,7 +255,7 @@ colnames(howard6)<-c("AllProduction.Prod","AllProduct.Consump",
                      "Ind.RW.Pulp.Prod","Ind.RW.Pulp.Imports","Ind.RW.Pulp.Exports","Ind.RW.Pulp.Consump",
                      "Ind.RW.OtherIndustrial.ProdAndConsump",
                      "Ind.RW.Logs.Imports","Ind.RW.Logs.Exports",
-                     "Ind.RW.Pulp.Imports","Ind.RW.Pulp.Exports",
+                     "Ind.RW.Pulpchip.Imports","Ind.RW.Pulpchip.Exports",
                      "FuelWood.ProdAndConsumption","UnNamed1","UnNamed2","UnNamed3","UnNamed4","UnNamed5",
                      "UnNamed6","UnNamed7","UnNamed8","UnNamed9","UnNamed10")
 use_data(howard6, overwrite=TRUE)
@@ -263,13 +263,13 @@ use_data(howard6, overwrite=TRUE)
 
 howard7<-read.xlsx("./inst/extdata/CopyOfData/howard7.xlsx",1,header=FALSE)
 colnames(howard7)<-c("AllProduction.Prod","AllProduct.Consump",
-                      "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
-                      "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
-                      "Indu.RW.PlyandVen.Prod","Indu.RW.PlyandVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
-                      "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
-                      "Indu.RW.OtherIndustrial.ProdAndConsump",
-                      "Indu.RW.Logs.Imports","Indu.RW.Logs.Exports",
-                      "Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports",
+                      "Ind.RW.Tot.Prod","Ind.RW.Tot.Imports","Ind.RW.Tot.Exports","Ind.RW.Tot.Consump",
+                      "Ind.RW.Lum.Prod","Ind.RW.Lum.Imports","Ind.RW.Lum.Exports","Ind.RW.Lum.Consump",
+                      "Ind.RW.PlyandVen.Prod","Ind.RW.PlyandVen.Imports","Ind.RW.PlyandVen.Exports","Ind.RW.PlyandVen.Consump",
+                      "Ind.RW.Pulp.Prod","Ind.RW.Pulp.Imports","Ind.RW.Pulp.Exports","Ind.RW.Pulp.Consump",
+                      "Ind.RW.OtherIndustrial.ProdAndConsump",
+                      "Ind.RW.Logs.Imports","Ind.RW.Logs.Exports",
+                      "Ind.RW.Pulpchip.Imports","Ind.RW.Pulpchip.Exports",
                       "FuelWood.ProdAndConsumption","UnNamed1","UnNamed2","UnNamed3","UnNamed4","UnNamed5",
                       "UnNamed6","UnNamed7")
 howard7[is.na(howard7)] <- 0
@@ -297,13 +297,13 @@ use_data(ulrich54, overwrite=TRUE)
 
 ulrich6<-read.xlsx("./inst/extdata/CopyOfData/ulrich6.xlsx",1,header=FALSE)
 colnames(ulrich6)<-c("AllProduction.Prod","AllProduct.Consump",
-                     "Indu.RW.Tot.Prod","Indu.RW.Tot.Imports","Indu.RW.Tot.Exports","Indu.RW.Tot.Consump",
-                     "Indu.RW.Lum.Prod","Indu.RW.Lum.Imports","Indu.RW.Lum.Exports","Indu.RW.Lum.Consump",
-                     "Indu.RW.PlyandVen.Prod","Indu.RW.PlyandVen.Imports","Indu.RW.PlyandVen.Exports","Indu.RW.PlyandVen.Consump",
-                     "Indu.RW.Pulp.Prod","Indu.RW.Pulp.Imports","Indu.RW.Pulp.Exports","Indu.RW.Pulp.Consump",
-                     "Indu.RW.OtherIndustrial.ProdAndConsump",
+                     "Ind.RW.Tot.Prod","Ind.RW.Tot.Imports","Ind.RW.Tot.Exports","Ind.RW.Tot.Consump",
+                     "Ind.RW.Lum.Prod","Ind.RW.Lum.Imports","Ind.RW.Lum.Exports","Ind.RW.Lum.Consump",
+                     "Ind.RW.PlyandVen.Prod","Ind.RW.PlyandVen.Imports","Ind.RW.PlyandVen.Exports","Ind.RW.PlyandVen.Consump",
+                     "Ind.RW.Pulp.Prod","Ind.RW.Pulp.Imports","Ind.RW.Pulp.Exports","Ind.RW.Pulp.Consump",
+                     "Ind.RW.OtherIndustrial.ProdAndConsump",
 
-                     "Indu.RW.Logs.Imports","Indu.RW.Logs.Exports",
+                     "Ind.RW.Logs.Imports","Ind.RW.Logs.Exports",
                      "FuelWood.ProdAndConsumption","UnNamed1")
 use_data(ulrich6, overwrite=TRUE)
 

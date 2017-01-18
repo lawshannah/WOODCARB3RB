@@ -3,32 +3,32 @@
 \docType{data}
 \name{howard7}
 \alias{howard7}
-\title{Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.}
+\title{Production, imports, exports, and consumption of hardwood products, by major product, 1965-1999.}
 \format{A data frame with 56 observations on 31 variables:
 \describe{
 \item{AllProduction.Prod}{All products production}
 \item{AllProduct.Consump}{All products consumption}
-\item{Indu.RW.Tot.Prod}{Industrial roundwood uses total production}
-\item{Indu.RW.Tot.Imports}{Industrial roundwood uses total imports}
-\item{Indu.RW.Tot.Exports}{Industrial roundwood uses total exports}
-\item{Indu.RW.Tot.Consump}{Industrial roundwood uses total consumption}
-\item{Indu.RW.Lum.Prod}{Industrial roundwood uses lumber production}
-\item{Indu.RW.Lum.Imports}{Industrial roundwood uses lumber imports}
-\item{Indu.RW.Lum.Exports}{Industrial roundwood uses lumber exports}
-\item{Indu.RW.Lum.Consump}{Industrial roundwood uses lumber consumption}
-\item{Indu.RW.PlyandVen.Prod}{Industrial roundwood uses plywood and veneer production}
-\item{Indu.RW.PlyandVen.Imports}{Industrial roundwood uses plywood and veneer imports}
-\item{Indu.RW.PlyandVen.Exports}{Industrial roundwood uses plywood and veneer exports}
-\item{Indu.RW.PlyandVen.Consump}{Industrial roundwood uses plywood and veneer consumption}
-\item{Indu.RW.Pulp.Prod}{Industrial roundwood uses pulp-based products production}
-\item{Indu.RW.Pulp.Imports}{Industrial roundwood uses pulp-based products imports}
-\item{Indu.RW.Pulp.Exports}{Industrial roundwood uses pulp-based products exports}
-\item{Indu.RW.Pulp.Consump}{Industrial roundwood uses pulp-based products consumption}
-\item{Indu.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
-\item{Indu.RW.Logs.Imports}{Industrial roundwood uses log imports}
-\item{Indu.RW.Logs.Exports}{Industrial roundwood uses log exports}
-\item{Indu.RW.Pulp.Imports}{Industrial roundwood uses pulpwood chip imports}
-\item{Indu.RW.Pulp.Exports}{Industrial roundwood uses pulpwood chip exports}
+\item{Ind.RW.Tot.Prod}{Industrial roundwood uses total production}
+\item{Ind.RW.Tot.Imports}{Industrial roundwood uses total imports}
+\item{Ind.RW.Tot.Exports}{Industrial roundwood uses total exports}
+\item{Ind.RW.Tot.Consump}{Industrial roundwood uses total consumption}
+\item{Ind.RW.Lum.Prod}{Industrial roundwood uses lumber production}
+\item{Ind.RW.Lum.Imports}{Industrial roundwood uses lumber imports}
+\item{Ind.RW.Lum.Exports}{Industrial roundwood uses lumber exports}
+\item{Ind.RW.Lum.Consump}{Industrial roundwood uses lumber consumption}
+\item{Ind.RW.PlyandVen.Prod}{Industrial roundwood uses plywood and veneer production}
+\item{Ind.RW.PlyandVen.Imports}{Industrial roundwood uses plywood and veneer imports}
+\item{Ind.RW.PlyandVen.Exports}{Industrial roundwood uses plywood and veneer exports}
+\item{Ind.RW.PlyandVen.Consump}{Industrial roundwood uses plywood and veneer consumption}
+\item{Ind.RW.Pulp.Prod}{Industrial roundwood uses pulp-based products production}
+\item{Ind.RW.Pulp.Imports}{Industrial roundwood uses pulp-based products imports}
+\item{Ind.RW.Pulp.Exports}{Industrial roundwood uses pulp-based products exports}
+\item{Ind.RW.Pulp.Consump}{Industrial roundwood uses pulp-based products consumption}
+\item{Ind.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
+\item{Ind.RW.Logs.Imports}{Industrial roundwood uses log imports}
+\item{Ind.RW.Logs.Exports}{Industrial roundwood uses log exports}
+\item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
+\item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
 \item{UnNamed1}{}
 \item{UnNamed2}{}

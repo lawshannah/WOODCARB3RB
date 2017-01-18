@@ -27,8 +27,8 @@
 \item{Ind.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
 \item{Ind.RW.Logs.Imports}{Industrial roundwood uses log imports}
 \item{Ind.RW.Logs.Exports}{Industrial roundwood uses log exports}
-\item{Ind.RW.Pulp.Imports}{Industrial roundwood uses pulpwood chip imports}
-\item{Ind.RW.Pulp.Exports}{Industrial roundwood uses pulpwood chip exports}
+\item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
+\item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
 \item{UnNamed1}{}
 \item{UnNamed2}{}

@@ -1,15 +1,27 @@
+#Earliest year used in counting of carboin
 minyr <- 1900
-currentyear <- maxyr <- 2020
 
+#The latest year calculated
+maxyr <- 2020
+
+#The current year
+currentyear <- maxyr
+
+#Range of years to calculate
 yrs <- minyr:maxyr
 
-a5 <- 1  #switch to include exports
+#switch to include exports
+a5 <- 1
 
+#Vector of end use categories
 enduses <- c("SingleFam", "MultiFam", "MobileHomes", "TotalHomes", "ResidentialUpkeep",
     "AllRailroads", "Railroadties", "RailcairRepair", "TotalnonResidential",
     "HouseFurniture", "CommercialFurniture", "OtherManufacturing", "Total Manufacturing",
     "Shipping", "OtherUses", "OtherIndustrial", "Exports")
-totalEUs <- c("HL.House.Tot", "NonRes.construc.Tot", "Manuf.tot")  ##total end uses to not count in carbon totals
+
+#total end uses to not count in carbon totals
+totalEUs <- c("HL.House.Tot", "NonRes.construc.Tot", "Manuf.tot")
+
 primaryclasses <- c("Sawnwood", "StructuralPanels", "NonStructuralPanels",
     "OtherIndustrial")
 

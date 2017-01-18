@@ -8,25 +8,25 @@
 \describe{
 \item{AllProduction.Prod}{Total production of all products}
 \item{AllProduct.Consump}{Total consumption of all products}
-\item{Indu.RW.Tot.Prod}{Total production of all industrial roundwood products}
-\item{Indu.RW.Tot.Imports}{Total imports of all industrial roundwood products}
-\item{Indu.RW.Tot.Exports}{Total exports of all industrial roundwood products}
-\item{Indu.RW.Tot.Consump}{Total consumption of all industrial roundwood products}
-\item{Indu.RW.Lum.Prod}{Production of lumber products}
-\item{Indu.RW.Lum.Imports}{Imports of lumber products}
-\item{Indu.RW.Lum.Exports}{Exports of lumber products}
-\item{Indu.RW.Lum.Consump}{Consumption of lumber products}
-\item{Indu.RW.PlyandVen.Prod}{Production of plywood and veneer products}
-\item{Indu.RW.PlyandVen.Imports}{Imports of plywood and veneer products}
-\item{Indu.RW.PlyandVen.Exports}{Exports of plywood and veneer products}
-\item{Indu.RW.PlyandVen.Consump}{Consumption of plywood and veneer products}
-\item{Indu.RW.Pulp.Prod}{Production of pulp products}
-\item{Indu.RW.Pulp.Imports}{Imports of pulp products}
-\item{Indu.RW.Pulp.Exports}{Exports of pulp products}
-\item{Indu.RW.Pulp.Consump}{Consumption of pulp products}
-\item{Indu.RW.OtherIndustrial.ProdAndConsump}{Production and consumption of Other industrial roundwood products}
-\item{Indu.RW.Logs.Imports}{Imports of logs}
-\item{Indu.RW.Logs.Exports}{Exports of logs}
+\item{Ind.RW.Tot.Prod}{Total production of all industrial roundwood products}
+\item{Ind.RW.Tot.Imports}{Total imports of all industrial roundwood products}
+\item{Ind.RW.Tot.Exports}{Total exports of all industrial roundwood products}
+\item{Ind.RW.Tot.Consump}{Total consumption of all industrial roundwood products}
+\item{Ind.RW.Lum.Prod}{Production of lumber products}
+\item{Ind.RW.Lum.Imports}{Imports of lumber products}
+\item{Ind.RW.Lum.Exports}{Exports of lumber products}
+\item{Ind.RW.Lum.Consump}{Consumption of lumber products}
+\item{Ind.RW.PlyandVen.Prod}{Production of plywood and veneer products}
+\item{Ind.RW.PlyandVen.Imports}{Imports of plywood and veneer products}
+\item{Ind.RW.PlyandVen.Exports}{Exports of plywood and veneer products}
+\item{Ind.RW.PlyandVen.Consump}{Consumption of plywood and veneer products}
+\item{Ind.RW.Pulp.Prod}{Production of pulp products}
+\item{Ind.RW.Pulp.Imports}{Imports of pulp products}
+\item{Ind.RW.Pulp.Exports}{Exports of pulp products}
+\item{Ind.RW.Pulp.Consump}{Consumption of pulp products}
+\item{Ind.RW.OtherIndustrial.ProdAndConsump}{Production and consumption of Other industrial roundwood products}
+\item{Ind.RW.Logs.Imports}{Imports of logs}
+\item{Ind.RW.Logs.Exports}{Exports of logs}
 \item{FuelWood.ProdAndConsumption}{Production and Consumption of Fuelwood}
 \item{UnNamed1}{Unnamed}
 }}

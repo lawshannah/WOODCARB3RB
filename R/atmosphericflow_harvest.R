@@ -5,7 +5,6 @@
 #'
 #' @param years years to calculate for
 #' @param var if true, returns variable 3. if false, returns statistics necessary to calculate variable 3
-#'
 #' @return if var = FALSE, necessary intermediate calculations for Variable 3
 #'         if var = TRUE, returns values for Variable 3 for selected years
 calcP_IM <- function(years = 1990:2020, var = FALSE){
@@ -13,77 +12,111 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 
   uspaper <- calcUSApaper()
 
-  var3$usa_O <- sapply(yrs, function(year){
+  var3$usa_O <- 1000 * sapply(yrs, function(year){
     if (year < 1950){
-      return((h3(year,7)*InceS5+h3(year,9)*InceT5)*1000)
+      return( h3(year, 'LogChipImports.SW') * InceS5 +
+              h3(year, 'LogChipImports.HW') * InceT5)
     }
     if (year < 1965){#Y, Z
-      return((u5(year,20)*InceS5+u6(year,20) * InceT5) * 1000)
+      return( u5(year, 'Logs.Imports') * InceS5 +
+              u6(year, 'Ind.RW.Logs.Imports') * InceT5)
     }
     if (year < 1983){
-      return((h6(year,20)*InceS5+h7(year,21) * InceT5) * 1000)
+      return( h6(year, 'Ind.RW.Logs.Imports') * InceS5 +
+              h7(year, 'Ind.RW.Logs.Exports') * InceT5)
     }
     if (year < 2021){
-      return((h6(year,20)*InceS5+h7(year,20)*InceT5+h6(year,22) * InceS5 + h7(year,22) * InceT5) * 1000)
+      return( h6(year, 'Ind.RW.Logs.Imports') * InceS5 +
+              h7(year, 'Ind.RW.Logs.Imports') * InceT5 +
+              h6(year, 'Ind.RW.Pulpchip.Imports') * InceS5 +
+              h7(year, 'Ind.RW.Pulpchip.Imports') * InceT5)
     }
   })
 
   var3$Calc_AX <- PRO17 * var3$usa_O
 
-  var3$usa_I <- sapply(yrs, function(year){
+  var3$usa_I <- 1000 * sapply(yrs, function(year){
     if (year < 1918){
-      return(h8(year, 4) * InceF5 * 1000)
+      return(h8(year, 'Imports.Tot') * InceF5)
     }
     if (year < 1950){
-      return(((h8(year,5) + h8(year,7)) * InceF5 + (h8(year,6) * InceG5)) * 1000)
+      return( (h8(year, 'Imports.SW') + h8(year, 'Imports.Mixed')) * InceF5 +
+                (h8(year, 'Imports.HW') * InceG5) )
     }
     if (year < 1965){
-      return(((u29(year, 5) * 1000*InceF5) + (u29(year, 6) * 1000 * InceG5)) * 1000)
+      return( (u29(year, 'Imports.SW') * 1000 * InceF5) +
+                (u29(year, 'Imports.HW') * 1000 * InceG5))
     }
     if (year < 2021){
-      ((h28(year, 5)*1000*InceF5)+(h28(year, 6)*1000*InceG5))*1000
+      return( (h28(year, 'Imports.SW') * 1000 * InceF5) +
+               (h28(year, 'Imports.HW') * 1000 * InceG5))
     }
   })
 
   var3$Calc_AY <- PRO17 * var3$usa_I
 
-  var3$usa_L <- sapply(yrs, function(year){
+  var3$usa_L <- 1000 * sapply(yrs, function(year){
     if (year < 1927)
       return(0)
     if (year < 1935)
-      return((h3t21(year,1)/1000)*InceR5*1000)
+      return( h3t21(year, 'Imports.Tot')/1000 * InceR5)
     if (year < 1950)
-      return(((h3t20(year,3)*InceE5 +h3t21(year,1)*InceR5)/1000)*1000)
+      return( h3t20(year, 'HW.Imports.Tot') * InceE5 +
+              h3t21(year, 'Imports.Tot') * InceR5/1000)
     if (year < 1954)
-      return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5))*1000)
+      return( u36(year, 'Imports.SW') * InceB5 +
+               u36(year, 'Imports.HW') * InceE5)
     if (year < 1956)
-      return(((u36(year, 5) * InceB5) + (u36(year,6) * InceE5) + (u54(year,2) * InceJ5) + (u53(year,2) * InceO5)) * 1000)
+      return( u36(year, 'Imports.SW') * InceB5 +
+              u36(year, 'Imports.HW') * InceE5 +
+              u54(year, 'Hardboard.Import') * InceJ5 +
+              u53(year, 'InsulatingBoard.Import') * InceO5)
     if (year < 1963)
       if (year == 1956 | year == 1959)
-        return(((u36(year, 6)*InceE5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
-      else ##
-        return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
+        return( u36(year, 'Imports.HW') * InceE5 +
+                u54(year, 'Hardboard.Import') * InceJ5 +
+                u53(year, 'InsulatingBoard.Import') * InceO5)
+      else
+        return( u36(year, 'Imports.SW') * InceB5 +
+                u36(year, 'Imports.HW') * InceE5 +
+                u54(year, 'Hardboard.Import') * InceJ5 +
+                u53(year, 'InsulatingBoard.Import') * InceO5)
     if (year < 1965)
-      return(((u36(year, 5)*InceB5)+(u36(year, 6)*InceE5)+(u52(year, 4)*InceI5)+(u54(year, 2)*InceJ5)+(u53(year, 2)*InceO5))*1000)
+      return( u36(year, 'Imports.SW') * InceB5 +
+              u36(year, 'Imports.HW') * InceE5 +
+              u52(year, 'Imports') * InceI5 +
+              u54(year, 'Hardboard.Import') * InceJ5 +
+              u53(year, 'InsulatingBoard.Import') * InceO5)
     if (year < 1980)
-      return(((h37(year,5)*InceB5)+(h37(year,6)*InceE5)+(h53(year,4)*InceI5)+(h56(year,2)*InceJ5)+h55(year,2)*InceQ5)*1000)###InceP23 doesnt make sense**, Q5 does.
+      return(h37(year, 'Imports.SW') * InceB5 +
+               h37(year, 'Imports.HW') * InceE5 +
+               h53(year, 'Imports') * InceI5 +
+               h56(year, 'Imports') * InceJ5 +
+               h55(year, 'Imports') * InceQ5)###InceP23 doesnt make sense**, Q5 does.
     if(year < 2021)#these dont match up - formulas for 2019 and 2020 in spreadsheet dont make sense.
-      return(((h37(year,5)*InceB5)+(h38(year,6)*InceC5)+(h37(year, 6)*InceE5)+(h53(year,4)*InceI5)+(h56(year,2)*InceJ5)+h55(year, 2)*InceQ5)*1000)
+      return( h37(year, 'Imports.SW') * InceB5 +
+              h38(year, 'Imports.OSP') * InceC5 +
+              h37(year, 'Imports.HW') * InceE5 +
+              h53(year, 'Imports') * InceI5 +
+              h56(year, 'Imports') * InceJ5 +
+              h55(year, 'Imports') * InceQ5)
   })
+
 
   var3$Calc_AZ <- PRO17 * var3$usa_L
 
-  var3$usa_T <- IncePaper[yrs-(minyr-2),2]*1000*InceL5
+
+  var3$usa_T <- 1000 * IncePaper[yrs-(minyr-2), 'Paper.Board.Imports'] * InceL5
 
 
-  var3$Calc_BA <- PRO18* var3$usa_T * uspaper$`Percent of Wood Pulp For Paper`
+  var3$Calc_BA <- PRO18 * var3$usa_T * uspaper$`Percent of Wood Pulp For Paper`
 
 
   var3$usa_AU <- sapply(yrs, function(year){
     if (year < 1965)
-      return(apiTotal(year,7))
+      return(apiTotal(year, 'WastePaper.Estimated.Imports'))
     if (year < 2021)
-      return(h47(year,5)*1000)
+      return(h47(year, 'RecPap.Imports') * 1000)
   })
 
 
@@ -96,14 +129,17 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
       return(FibPulp_USA(2007,"Imports.Quantity")*.90718)
   })
 
-  var3$usa_AX <- uspaper$`Wood Pulp for Paper Imports`+
-    var3$usa_AU+var3$usa_AQ
+
+  var3$usa_AX <- uspaper$`Wood Pulp for Paper Imports` + var3$usa_AU + var3$usa_AQ
+
 
   var3$Calc_BB <- PRO18 * var3$usa_AX
 
-  var3$variable3 <- (var3$Calc_AX+var3$Calc_AY
-                + var3$Calc_AZ+var3$Calc_BA + var3$Calc_BB)*1000
-  #return(var3$usa_L[var3$Years %in% 2015:2020])
+
+  var3$variable3 <- 1000 * (var3$Calc_AX+var3$Calc_AY
+                + var3$Calc_AZ+var3$Calc_BA + var3$Calc_BB)
+
+
   if(var == TRUE){
     return(var3$variable3[var3$Years %in% years])
   }
@@ -128,7 +164,8 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
   ##these are treated as zeros but could possibly use better estimate of data than zero? howard7a column N
   var4$usa_E <- sapply(yrs, function(year){
     if(year < 1950){
-      return(1000 *((h3(year, 8) * InceS5) + (h3(year, 10) * InceT5)))
+      return(1000 *((h3(year, 'LogChipExports.SW') * InceS5)
+                    + (h3(year, 'LogChipExports.HW') * InceT5)))
     }
 
     if(year < 1965){
@@ -203,25 +240,25 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
   var4$usa_U <- 1000 * InceL5 * IncePaper[yrs-(minyr-2),"Paper.Board.ApparentConsumption"]
 
   var4$usa_AK <- sapply(yrs, function(year){
-    if(year >1899 && year <1965){
+    if(year < 1965){
       return(apiTotal(year,11)) #was year - 1
     }
 
-    if(year > 1964 && year < 2014){
+    if(year < 2014){
       return(1000*h46(year,13))
     }
 
-    if(year > 2013 && year < 2021){
+    if(year < 2021){
       return(1000*h46(2007,13))
     }
   })
 
   var4$usa_AO <- sapply(yrs, function(year){
-    if(year > 1899 && year < 1965){
+    if(year < 1965){
       return(apiTotal(year,3) + apiTotal(year,11))
     }
 
-    if(year > 1964 && year < 2021){
+    if(year < 2021){
       return(1000*(h49(year,4) + h46(year,13)))
     }
   })
@@ -242,12 +279,14 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
   var4$usa_AV[var4$Years %in% 1965:2020] <- 1000 * howard47[(1965:2020)-1964,4]
 
   var4$usa_AR <- sapply(yrs, function(year){
-    if(year < 1998){return(0)}
+    if(year < 1998){
+      return(0)
+    }
 
-    if(year > 1997 && year < 2014){
+    if(year < 2014){
       return(0.90718 * FibPulp_USA(year, 3))
     }
-    if(year > 2013 && year < 2021){
+    if(year < 2021){
       return(0.90718 * FibPulp_USA(2007, 3))
     }
   })
@@ -282,10 +321,10 @@ annualDomesticHarvest <- function(years, onlyvar = FALSE){
     if (year < 1950){
       return(h3(year, 5)* InceV5)
     }
-    if (year > 1949 && year < 1965){
+    if (year < 1965){
       return(u5(year, 4) * InceV5)
     }
-    if (year > 1964 && year < 2014){
+    if (year < 2014){
       return(h6(year, 3) * InceV5)
     }
     if (year > 2013 && year < 2051){

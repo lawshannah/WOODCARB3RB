@@ -56,22 +56,27 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
   var3$Calc_AY <- PRO17 * var3$usa_I
 
   var3$usa_L <- 1000 * sapply(yrs, function(year){
-    if (year < 1927)
+    if (year < 1927) {
       return(0)
-    if (year < 1935)
+    }
+    if (year < 1935) {
       return( h3t21(year, 'Imports.Tot')/1000 * InceR5)
-    if (year < 1950)
+    }
+    if (year < 1950) {
       return( h3t20(year, 'HW.Imports.Tot') * InceE5 +
               h3t21(year, 'Imports.Tot') * InceR5/1000)
-    if (year < 1954)
+    }
+    if (year < 1954) {
       return( u36(year, 'Imports.SW') * InceB5 +
                u36(year, 'Imports.HW') * InceE5)
-    if (year < 1956)
+    }
+    if (year < 1956) {
       return( u36(year, 'Imports.SW') * InceB5 +
               u36(year, 'Imports.HW') * InceE5 +
               u54(year, 'Hardboard.Import') * InceJ5 +
               u53(year, 'InsulatingBoard.Import') * InceO5)
-    if (year < 1963)
+    }
+    if (year < 1963) {
       if (year == 1956 | year == 1959)
         return( u36(year, 'Imports.HW') * InceE5 +
                 u54(year, 'Hardboard.Import') * InceJ5 +
@@ -81,25 +86,29 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
                 u36(year, 'Imports.HW') * InceE5 +
                 u54(year, 'Hardboard.Import') * InceJ5 +
                 u53(year, 'InsulatingBoard.Import') * InceO5)
-    if (year < 1965)
+    }
+    if (year < 1965) {
       return( u36(year, 'Imports.SW') * InceB5 +
               u36(year, 'Imports.HW') * InceE5 +
               u52(year, 'Imports') * InceI5 +
               u54(year, 'Hardboard.Import') * InceJ5 +
               u53(year, 'InsulatingBoard.Import') * InceO5)
-    if (year < 1980)
+    }
+    if (year < 1980) {
       return(h37(year, 'Imports.SW') * InceB5 +
                h37(year, 'Imports.HW') * InceE5 +
-               h53(year, 'Imports') * InceI5 +
-               h56(year, 'Imports') * InceJ5 +
-               h55(year, 'Imports') * InceQ5)###InceP23 doesnt make sense**, Q5 does.
-    if(year < 2021)#these dont match up - formulas for 2019 and 2020 in spreadsheet dont make sense.
+               h53(year, 'Particle_MDF.Imports') * InceI5 +
+               h56(year, 'Hardboard.Imports') * InceJ5 +
+               h55(year, 'Insulboard.Imports') * InceQ5)###InceP23 doesnt make sense**, Q5 does.
+    }
+    if (year < 2021) {#these dont match up - formulas for 2019 and 2020 in spreadsheet dont make sense.
       return( h37(year, 'Imports.SW') * InceB5 +
               h38(year, 'Imports.OSP') * InceC5 +
               h37(year, 'Imports.HW') * InceE5 +
-              h53(year, 'Imports') * InceI5 +
-              h56(year, 'Imports') * InceJ5 +
-              h55(year, 'Imports') * InceQ5)
+              h53(year, 'Particle_MDF.Imports') * InceI5 +
+              h56(year, 'Hardboard.Imports') * InceJ5 +
+              h55(year, 'Insulboard.Imports') * InceQ5)
+    }
   })
 
 
@@ -152,7 +161,6 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 #'
 #' @param years years to calculate
 #' @param var If true, return only variable 4. If false, return intermediate statistics needed for variable 4
-#'
 #' @return if var = FALSE, necessary calculations for Variable 4 for selected years
 #'         if var = TRUE, returns values for Variable 4 for selected years
 calcP_EX <- function(years = 1990:2020, var = FALSE){
@@ -162,77 +170,115 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
 
   ##2008 later refers to empty cells in spreadsheet
   ##these are treated as zeros but could possibly use better estimate of data than zero? howard7a column N
-  var4$usa_E <- sapply(yrs, function(year){
-    if(year < 1950){
-      return(1000 *((h3(year, 'LogChipExports.SW') * InceS5)
-                    + (h3(year, 'LogChipExports.HW') * InceT5)))
+  var4$usa_E <- 1000 * sapply(yrs, function(year){
+
+    if (year < 1950) {
+      return( h3(year, 'LogChipExports.SW') * InceS5 +
+              h3(year, 'LogChipExports.HW') * InceT5)
     }
 
-    if(year < 1965){
-      return(1000 * ((u5(year, 21) * InceS5) + (u6(year, 22) * InceT5)))}
-
-    if(year < 1990){
-      return(1000 * ((h6(year, 21)*InceS5) + (h7(year, 13) * InceT5)
-                     + ((h5(year, 23)*InceS5)*(154/(154+117)))
-                     + ((h5(year, 23)*InceT5)*(117/(154+117)))))}
-
-    if(year < 2021){
-      return(1000 * ((h6(year, 21)*InceS5) + (h7(year, 13) * InceT5)
-                     + ((h6(year, 23)*InceS5))
-                     + ((h7(year, 23)*InceT5))))}
-  })
-
-  var4$usa_J <- sapply(yrs, function(year){
-    if (year == 1900){
-      return(1000*(h8(year, 13) * InceF5))}
-
-    if(year >1900 && year < 1950){
-      return(1000*(((h8(year, 14) + (h8(year,16))) * InceF5) + (h8(year,15) * InceG5)))
+    if (year < 1965) {
+      return( u5(year, 'Logs.Exports') * InceS5 +
+              u6(year, 'Ind.RW.Logs.Exports') * InceT5)
     }
 
-    if(year > 1949 && year < 1965){
-      return(1000*((u29(year, 8) * 1000 * InceF5) + (u29(year, 9) * 1000 * InceG5)))}
+    if (year < 1990) {
+      return( h6(year, 'Ind.RW.Logs.Exports') * InceS5 +
+              h7(year, 'Ind.RW.PlyandVen.Exports') * InceT5 +
+              h5(year, 'PulpwoodChip.Exports') * InceS5 * (154/(154+117)) +
+              h5(year, 'PulpwoodChip.Exports') * InceT5 * (117/(154+117)))
+    }
 
-    if(year > 1964 && year < 2021){
-      return(1000*((h28(year, 8) * 1000 * InceF5) + (h28(year, 9) * 1000 * InceG5)))}
+    if (year < 2021) {
+      #V, N, X, X
+      return( h6(year, 'Ind.RW.Logs.Exports') * InceS5 +
+              h7(year, 'Ind.RW.PlyandVen.Exports') * InceT5 +
+                ##PULPCHIP??
+              h6(year, 'Ind.RW.Pulpchip.Exports') * InceS5 +
+              h7(year, 'Ind.RW.Pulpchip.Exports') * InceT5)
+      }
+  })
+
+  var4$usa_J <- 1000 * sapply(yrs, function(year){
+    if (year == 1900) {
+      return((h8(year, 'Exports.Tot') * InceF5))
+    }
+
+    if (year < 1950) {
+      return( (h8(year, 'Exports.SW') + h8(year,'Exports.Mixed') * InceF5) +
+               h8(year, 'Exports.HW') * InceG5)
+    }
+
+    if (year < 1965) {
+      return( 1000 * (u29(year, 'Exports.SW') * InceF5 +
+              u29(year, 'Exports.HW') * InceG5))
+    }
+
+    if (year < 2021) {
+      return( 1000 * (h28(year, 'Exports.SW') * InceF5 +
+              h28(year, 'Exports.HW') * InceG5))
+    }
 
   })
 
-  var4$usa_M <- sapply(yrs, function(year){
-    if(year < 1916){
+  var4$usa_M <- 1000 * sapply(yrs, function(year){
+    if (year < 1916) {
       return(0)
     }
 
-    if(year < 1925){
-      return(1000*u54(year, 3)*InceJ5)
+    if (year < 1925) {
+      return(u54(year, 'Hardboard.Exports') * InceJ5)
     }
 
-    if(year == 1925 || year == 1926){
-      return(((u54(year, 3)*InceJ5)+(u53(year, 3)*InceO5))*1000)
+    if (year == 1925 || year == 1926) {
+      return( u54(year, 'Hardboard.Exports') * InceJ5 +
+              u53(year, 'InsulatingBoard.Exports') * InceO5)
     }
 
-    if(year < 1940){
-      return(1000*((h3t20(year, 7)/1000*InceB5) + (((h3t20(year,8)*InceE5) + (h3t21(year,4)*InceR5))/1000) + (u54(year,3)*InceJ5) + (u53(year,3)*InceO5)))
+    if (year < 1940) {
+      return( h3t20(year, 'SW.Exports')/1000 * InceB5 +
+              (h3t20(year, 'HW.Exports') * InceE5 +
+                  h3t21(year, 'Exports.Tot') * InceR5)/1000 +
+              u54(year, 'Hardboard.Exports') * InceJ5 +
+              u53(year, 'InsulatingBoard.Exports') * InceO5)
     }
 
-    if(year < 1950){
-      return(1000*(((h3t20(year, 7)/1000)*InceB5) + (((h3t20(year,8) + (h3t21(year,4)))/1000)*InceE5) + (u54(year, 3)*InceJ5) + (u53(year,3)*InceO5)))
+    if (year < 1950) {
+      return( h3t20(year, 'SW.Exports')/1000 * InceB5 +
+                (h3t20(year, 'HW.Exports') +
+                     h3t21(year, 'Exports.Tot'))/1000 * InceE5 +
+              u54(year, 'Hardboard.Exports') * InceJ5 +
+              u53(year, 'InsulatingBoard.Exports') * InceO5)
     }
 
-    if(year < 1965){
-      return(1000*((u36(year, 8)*InceB5) + (u36(year, 9)*InceE5) + (u54(year, 3)*InceJ5) + (u53(year, 3)*InceO5)))
+    if (year < 1965) {
+      return( u36(year, 'Exports.SW') * InceB5 +
+              u36(year, 'Exports.HW') * InceE5 +
+              u54(year, 'Hardboard.Exports') * InceJ5 +
+              u53(year, 'InsulatingBoard.Exports') * InceO5)
     }
 
-    if(year < 1991){
-      return(1000*((h37(year, 8)*InceB5) + (h37(year, 9)*InceE5) + (h53(year, 5)*InceI5) + (h56(year, 3)*InceJ5) + (h55(year, 3)*InceQ5)))
+    if (year < 1991) {
+      return( h37(year, 'Exports.SW') * InceB5 +
+              h37(year, 'Exports.HW') * InceE5 +
+              h53(year, 'Particle_MDF.Exports') * InceI5 +
+              h56(year, 'Hardboard.Exports') * InceJ5 +
+              h55(year, 'Insulboard.Exports') * InceQ5)
     }
 
-    if(year < 2019){
-      return(1000*((h37(year, 8)*InceB5) + (h38(year, 9)*InceC5) + (h37(year, 9)*InceE5) + (h53(year, 5)*InceI5) + (h56(year, 3)*InceJ5) + (h55(year, 3)*InceQ5)))
+    if (year < 2019) {
+      return( h37(year, 'Exports.SW')*InceB5 +
+              h38(year, 'Exports.OSP')*InceC5 +
+              h37(year, 'Exports.HW')*InceE5 +
+              h53(year, 'Particle_MDF.Exports') * InceI5 +
+              h56(year, 'Hardboard.Exports') * InceJ5 +
+              h55(year, 'Insulboard.Exports') * InceQ5)
     }
 
-    if(year < 2021){
-      return(1000*((h37(year, 8)*InceB5) + (h38(year, 9)*InceC5) + (h37(year, 9)*InceE5)))
+    if (year < 2021) {
+      return( h37(year, 'Exports.SW') * InceB5 +
+              h38(year, 'Exports.OSP') * InceC5 +
+              h37(year, 'Exports.HW') * InceE5)
     }
 
   })
@@ -240,26 +286,28 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
   var4$usa_U <- 1000 * InceL5 * IncePaper[yrs-(minyr-2),"Paper.Board.ApparentConsumption"]
 
   var4$usa_AK <- sapply(yrs, function(year){
-    if(year < 1965){
-      return(apiTotal(year,11)) #was year - 1
+    if(year < 1965) {
+      return(apiTotal(year, 'Rags.Estimated.Exports'))
     }
 
-    if(year < 2014){
-      return(1000*h46(year,13))
+    if(year < 2014) {
+      return(1000 * h46(year, 'RagsOther.Exports.Estimated'))
     }
 
-    if(year < 2021){
-      return(1000*h46(2007,13))
+    if(year < 2021) {
+      return(1000 * h46(2007, 'RagsOther.Exports.Estimated'))
     }
   })
 
   var4$usa_AO <- sapply(yrs, function(year){
     if(year < 1965){
-      return(apiTotal(year,3) + apiTotal(year,11))
+      return( apiTotal(year, 'Woodpulp.Exports') +
+              apiTotal(year, 'Rags.Estimated.Exports'))
     }
 
     if(year < 2021){
-      return(1000*(h49(year,4) + h46(year,13)))
+      return(1000*(h49(year, 'Woodpulp.Exports') +
+                     h46(year, 'RagsOther.Exports.Estimated')))
     }
   })
 
@@ -275,25 +323,26 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
   #   }
   # })
 
-  var4$usa_AV[var4$Years %in% 1900:1964] <- apiTotalWoodPulp[(1900:1964)-1895,8]
-  var4$usa_AV[var4$Years %in% 1965:2020] <- 1000 * howard47[(1965:2020)-1964,4]
+  var4$usa_AV[var4$Years %in% 1900:1964] <- apiTotalWoodPulp[(1900:1964)-1895, 'WastePaper.Estimated.Exports']
+  var4$usa_AV[var4$Years %in% 1965:2020] <- 1000 * howard47[(1965:2020)-1964, 'RecPap.Exports']
 
-  var4$usa_AR <- sapply(yrs, function(year){
+  var4$usa_AR <- sapply(yrs, function(year) {
     if(year < 1998){
       return(0)
     }
 
     if(year < 2014){
-      return(0.90718 * FibPulp_USA(year, 3))
+      return(0.90718 * FibPulp_USA(year, 'Exports.Quantity'))
     }
+
     if(year < 2021){
-      return(0.90718 * FibPulp_USA(2007, 3))
+      return(0.90718 * FibPulp_USA(2007, 'Exports.Quantity'))
     }
   })
 
   var4$usa_Y <- var4$usa_AF + var4$usa_AV + var4$usa_AR
-  #return(var4[var4$Years %in% years, c("usa_Y", "usa_E", "usa_J", "usa_M", "usa_U")])
-  var4$Variable4 <- 1000 * (PRO17*var4$usa_E + PRO17 * var4$usa_J +
+
+  var4$Variable4 <- 1000 * (PRO17 * var4$usa_E + PRO17 * var4$usa_J +
                                     PRO17 * var4$usa_M + PRO18 * var4$usa_U * uspaper$`Percent of Wood Pulp For Paper` +
                                     PRO18 * var4$usa_Y)
   if(var == TRUE){

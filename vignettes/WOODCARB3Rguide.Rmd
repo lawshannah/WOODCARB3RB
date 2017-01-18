@@ -11,13 +11,13 @@ knitr::opts_chunk$set(collapse = T, comment = NA)
 library(WOODCARB3R)
 ```
 
-This package is designed to calculate various statistics regarding wood products in the United States. Included are functions to calculate carbon from dumps/landfills, paper and wood products of different wood types. Statistics are broken down into production, imports and exports. 
+This package is designed to calculate the carbon sequestration in harvested wood products in the United States. Functions estimate carbon in wood products, solid-waste disposal sites, and paper. A collection of production, import and export data from various sources is used to calculate intermediate statistics which is then used to calulate the 5 HWP variables and the final carbon contribution.  
 
-The main goal is to calculate the final carbon contribution which is reported to the IPCC. This is calculated based on the approach selected (Production, Stock Change, Atmospheric).  
+The main goal is to calculate the final carbon contribution and produce a report which is reported to the IPCC. This is calculated based on the approach selected (Production, Stock Change, Atmospheric).  
 
-Currently, the Production Approach is the one used to report contribution values to the IPCC. 
+Currently, the Production Approach is the one used to report contribution values to the IPCC.  
 
-###Final Carbon Contribution  
+##Final Carbon Contribution  
 
 The final reported value is the contribution to AFOLU CO<sub>2</sub> emissions/removal. It's units are Gg CO<sub>2</sub>/Yr 
 
@@ -25,69 +25,55 @@ To calculate the carbon contribution:
 
 * `finalCarbonContribution()` 
 
-The default arguments calculate the carbon contribution from 1990 to 2015 using the Production approach. It returns a single vector with the carbon contributions for each year specified. 
+The default arguments calculate the carbon contribution from 1990 to 2015 using the Production approach. It returns a vector with the carbon contributions for each year. 
 
 ```{r}
 finalCarbonContribution()
 ```
 
-Different ranges of years can be selected along with a seperate approach. 
+The years, approach used, decay distribution, and values for end use half life values can be entered as arguments. `halfLives` is a data frame with the default half life values.  
 
 ```{r}
-finalCarbonContribution(Years = 1945:2017, approach = "Stock Change")
+finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", decaydistribution = "K=2", halflives = halfLives* 1.2)
 ```
 
-Other options include calculating using a different decay type or values for half-lifes. 
-
-```{r}
-finalCarbonContribution(decaytype = "K=2", halflives = halfLives * 1.2)
-```
-
-A plot can be returned as well. 
+A plot can be returned. 
 
 ```{r, fig.width=6, fig.height=4}
 finalCarbonContribution(plot = TRUE)
 ```
 
-###Individual Variables  
+##HWP Variables 
 
-###Other Statistics 
-
-`finalCarbonContribution` and `finalVariables` calculate the final values for the WOODCARB model. There are many intermediate calculations and statistics that can be accessed using the package that are necessary to calculate the final values. 
-
-####Total Carbon 
-
-The model considers carbon stored in solid wood products, paper and solid waste disposal sites (SWDS). There are functions to calculate amounts of carbon stored in these places. 
-
-#####Solid Wood Products 
-
-`swpcarbontotal()` calculates total carbon stored in solid wood products in oven-dry tons of wood fiber.
-
-It gives the option of returning carbon totals by end use: (the default argument returns total carbon for all end uses)
+`finalVariables` returns a data frame with all of the HWP variables.   
+Alternate years, decay distribution, and half lives can be substituted for defaults. 
 
 ```{r}
-swpcarbontotal(c(1990,2015), onlytotal = FALSE) 
+finalVariables()
 ```
 
-The default approach is Production but carbon totals using the Stock Change approach can be calculated as well. 
+##Other Statistics 
+
+###Total Carbon 
+
+Carbon in solid wood products, paper and solid waste disposal sites (SWDS) is estimated. There are functions to calculate amounts of carbon stored in these places. 
+
+####Solid Wood Products 
+
+`swpcarbontotal()` calculates total carbon stored in solid wood products in oven-dry tons of wood fiber. It gives the option of returning carbon totals by end use (the default argument returns total carbon for all end uses). Alternate approaches and half life values can be used. `lumberpre` allows carbon from lumber before 1900 to be excluded from total. 
 
 ```{r}
-swpcarbontotal(approach = "Stock Change")
+swpcarbontotal(c(1990,2015), onlytotal = FALSE, lumberpre = FALSE,
+               approach = "Stock Change", halflives = halfLives * .9) 
 ```
 
-There is an option to exclude carbon from lumber pre-1900 (the default includes this). 
+<!---
+Function for swp, paper and dump carbon totals. 
+Functions:
+finalCarbonContrib 
+finalVariables
+carbontotals 
+returnIntermediateData 
 
-```{r}
-swpcarbontotal(lumberpre = FALSE)
-```
-
-Similar to `finalCarbonContribution()`, alternate half-lives can be provided. 
-
-```{r}
-swpcarbontotal(halflives = halfLives * 1.5)
-```
-
-#####Paper  
-
-
-#####Solid Waste Disposal Sites 
+question about sapply/forloop vs other code 
+--->

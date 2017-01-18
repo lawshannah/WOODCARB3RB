@@ -5,8 +5,8 @@
 \title{Estimates U.S. HWP contribution to annual greenhouse gas removals.}
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
-  "Stock Change", "Atmospheric Flow"), decaytype = c("Exponential", "K=2"),
-  plot = FALSE, halflives = halfLives)
+  "Stock Change", "Atmospheric Flow"), decaydistribution = c("Exponential",
+  "K=2"), plot = FALSE, halflives = halfLives)
 }
 \arguments{
 \item{Years}{years to return carbon totals for}
@@ -16,7 +16,7 @@ finalCarbonContribution(Years = 1990:2015, approach = c("Production",
 "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB II spreadsheet
 "Atmospheric Flow" approach corresponds to `06 IPCC Tables`$Q9 in the WOODCARB II spreadsheet}
 
-\item{decaytype}{Type of decay method to use}
+\item{decaydistribution}{Type of decay method to use}
 
 \item{plot}{if true, returns a simple plot of time vs. carbon contribution.}
 
@@ -48,6 +48,6 @@ the atmosphere and forests/HWPs within a country.
 finalCarbonContribution()
 finalCarbonContribution(approach = "Stock Change")
 finalCarbonContribution(approach = "Production",
-                         decaytype ="Exponential")
+                         decaydistribution ="Exponential")
 }
 

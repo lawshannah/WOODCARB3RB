@@ -6,13 +6,13 @@
 \title{Particleboard and medium-density fiberboard production, imports,}
 \format{A data frame with 56 observations of 7 variables:
 \describe{
-\item{Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
-\item{Prod.ParticleBoard}{Particleboard Production}
-\item{Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
-\item{Imports}{Particleboard and Medium-Density Fiberboard Imports}
-\item{Exports}{Particleboard and Medium-Density Fiberboard Exports}
-\item{Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
-\item{Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
+\item{Particle_MDF.Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
+\item{Particle_MDF.Prod.ParticleBoard}{Particleboard Production}
+\item{Particle_MDF.Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
+\item{Particle_MDF.Imports}{Particleboard and Medium-Density Fiberboard Imports}
+\item{Particle_MDF.Exports}{Particleboard and Medium-Density Fiberboard Exports}
+\item{Particle_MDF.Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
+\item{Particle_MDF.Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
 }}
 \source{
 National Particleboard Association (20); U.S. International Trade Commission (69);

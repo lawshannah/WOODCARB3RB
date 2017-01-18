@@ -88,10 +88,10 @@ colnames(howard47) <- c("PaperBoardNewSupply",
 use_data(howard47, overwrite = TRUE)
 
 howard49 <- read.xlsx("./inst/extdata/CopyOfData/howard49.xlsx",1,header=FALSE)
-colnames(howard49) <- c("Production",
+colnames(howard49) <- paste("Woodpulp.",c("Production",
                         "Imports", "Imports.PercConsump",
                         "Exports", "Exports.PercProd",
-                        "Consump.Tot", "Consump.PerCap(pounds)")
+                        "Consump.Tot", "Consump.PerCap(pounds)"), sep="")
 use_data(howard49, overwrite = TRUE)
 
 howard5 <- read.xlsx("./inst/extdata/CopyOfData/howard5.xlsx",1,header=FALSE)
@@ -107,9 +107,9 @@ colnames(howard5) <- c("AllProducts.Prod", "AllProducts.Consump",
 use_data(howard5, overwrite = TRUE)
 
 howard53 <- read.xlsx("./inst/extdata/CopyOfData/howard53.xlsx",1,header=FALSE)
-colnames(howard53) <- c("Prod.Tot", "Prod.ParticleBoard", "Prod.MediumDensityFiberboard",
+colnames(howard53) <- paste("Particle_MDF.", c("Prod.Tot", "Prod.ParticleBoard", "Prod.MediumDensityFiberboard",
                         "Imports", "Exports",
-                        "Consump.Tot", "Consump.PerCap(Sq ft)")
+                        "Consump.Tot", "Consump.PerCap(Sq ft)"), sep="")
 use_data(howard53, overwrite = TRUE)
 
 ulrich29 <- read.xlsx("./inst/extdata/CopyOfData/ulrich29.xlsx",1,header=FALSE)
@@ -209,12 +209,14 @@ use_data(IncePaper, overwrite = TRUE)
 #######
 apiFiberpulp <- read.xlsx("./inst/extdata/CopyOfData/api1975Fiberpulp.xlsx",1,header=FALSE)
 ##WHAT is column G?? is it other?
-colnames(apiFiberpulp)<-c("Wood.Pulp","Waste.Paper", "Rags","?Findout","Other","Total")
+colnames(apiFiberpulp) <- c("Wood.Pulp.Consumption","Waste.Paper.Consumption", "Rags.Consumption",
+                            "?Findout","Other.Consumption","Total.Consumption")
 use_data(apiFiberpulp, overwrite = TRUE)
 #############
 
 apiTotalWoodPulp <- read.xlsx("./inst/extdata/CopyOfData/apiTotalWoodPulp.xlsx",1,header=FALSE)
-colnames(apiTotalWoodPulp)<-c("Prod","Imports","Exports","NewSupply", "Consump.Paper.Board",
+colnames(apiTotalWoodPulp)<-c("Woodpulp.Prod","Woodpulp.Imports","Woodpulp.Exports",
+                              "Woodpulp.NewSupply", "Consump.Paper.Board",
                               "WastePaper.Estimated.Prod","WastePaper.Estimated.Imports",
                               "WastePaper.Estimated.Exports",
                               "Rags.Estimated.Prod",
@@ -240,14 +242,17 @@ use_data(ince1, overwrite = TRUE)
 
 
 howard55<-read.xlsx("./inst/extdata/CopyOfData/howard55.xlsx",1,header=FALSE)
-colnames(howard55)<-c("Production","Imports","Exports","Total.Consumption","PerCapita.Consumption")
+colnames(howard55) <- paste("Insulboard.", c("Production","Imports","Exports",
+                      "Total.Consumption","PerCapita.Consumption"), sep = "")
 use_data(howard55, overwrite=TRUE)
 
 howard56<-read.xlsx("./inst/extdata/CopyOfData/howard56.xlsx",1,header=FALSE)
-colnames(howard56)<-c("Production","Imports","Exports","Total.Consumption","PerCapita.Consumption")
+colnames(howard56)<- paste("Hardboard.", c("Production","Imports","Exports",
+                            "Total.Consumption","PerCapita.Consumption"), sep="")
 use_data(howard56, overwrite=TRUE)
 
 howard6<-read.xlsx("./inst/extdata/CopyOfData/howard6.xlsx",1,header=FALSE)
+howard6[is.na(howard6)] <- 0
 colnames(howard6)<-c("AllProduction.Prod","AllProduct.Consump",
                      "Ind.RW.Tot.Prod","Ind.RW.Tot.Imports","Ind.RW.Tot.Exports","Ind.RW.Tot.Consump",
                      "Ind.RW.Lum.Prod","Ind.RW.Lum.Imports","Ind.RW.Lum.Exports","Ind.RW.Lum.Consump",
@@ -262,6 +267,7 @@ use_data(howard6, overwrite=TRUE)
 
 
 howard7<-read.xlsx("./inst/extdata/CopyOfData/howard7.xlsx",1,header=FALSE)
+howard7[is.na(howard7)] <- 0
 colnames(howard7)<-c("AllProduction.Prod","AllProduct.Consump",
                       "Ind.RW.Tot.Prod","Ind.RW.Tot.Imports","Ind.RW.Tot.Exports","Ind.RW.Tot.Consump",
                       "Ind.RW.Lum.Prod","Ind.RW.Lum.Imports","Ind.RW.Lum.Exports","Ind.RW.Lum.Consump",
@@ -281,6 +287,7 @@ colnames(ulrich52)<-c("Prod.tot","Prod.Part.Board","Prod.Med.Fiberboard",
                       "Imports","Exports","Consump.Tot","Consump.PerCapita")
 use_data(ulrich52, overwrite=TRUE)
 
+
 ulrich53<-read.xlsx("./inst/extdata/CopyOfData/ulrich53.xlsx",1,header=FALSE)
 colnames(ulrich53)<-c("InsulatingBoard.Prod","InsulatingBoard.Import",
                       "InsulatingBoard.Exports",
@@ -288,12 +295,14 @@ colnames(ulrich53)<-c("InsulatingBoard.Prod","InsulatingBoard.Import",
                       "InsulatingBoard.Consump.PerCapita")
 use_data(ulrich53, overwrite=TRUE)
 
+
 ulrich54<-read.xlsx("./inst/extdata/CopyOfData/ulrich54.xlsx",1,header=FALSE)
 colnames(ulrich54)<-c("Hardboard.Prod","Hardboard.Import",
                       "Hardboard.Exports",
                       "Hardboard.Consump.Tot",
                       "Hardboard.Consump.PerCapita")
 use_data(ulrich54, overwrite=TRUE)
+
 
 ulrich6<-read.xlsx("./inst/extdata/CopyOfData/ulrich6.xlsx",1,header=FALSE)
 colnames(ulrich6)<-c("AllProduction.Prod","AllProduct.Consump",
@@ -306,6 +315,7 @@ colnames(ulrich6)<-c("AllProduction.Prod","AllProduct.Consump",
                      "Ind.RW.Logs.Imports","Ind.RW.Logs.Exports",
                      "FuelWood.ProdAndConsumption","UnNamed1")
 use_data(ulrich6, overwrite=TRUE)
+
 
 fracsawnwood<-read.xlsx("./inst/extdata/CopyOfData/fracsawnwood.xlsx",1,header=FALSE)
 fracsawnwood <- fracsawnwood[,1:16]
@@ -332,6 +342,7 @@ colnames(fracnonstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","H
 
 use_data(fracnonstrpanels, overwrite = TRUE)
 
+
 fracstrpanels <- read.xlsx("./inst/extdata/CopyOfData/fracstrpanels.xlsx", 1,
                            header = FALSE)
 fracstrpanels <- fracstrpanels[,1:16]
@@ -343,6 +354,7 @@ colnames(fracstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","Hous
                            "Shipping.Tot","Other.Uses.Tot", "Other.Industrial.Tot")
 
 use_data(fracstrpanels, overwrite = TRUE)
+
 
 InceTable3 <- read.xlsx("./inst/extdata/CopyOfData/Ince_Table3.xlsx", 1, header = FALSE, colClasses = "character")
 InceTable3 <- InceTable3[,1:20]

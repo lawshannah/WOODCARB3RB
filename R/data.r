@@ -282,13 +282,13 @@
 #'
 #' @format A data frame with 56 observations of 15 variables:
 #' \describe{
-#' \item{Production}{Wood pulp Production}
-#' \item{Imports}{Wood pulp Imports}
-#' \item{Imports.PercConsump}{Imports as Percent of Consumption}
-#' \item{Exports}{Wood pulp Exports}
-#' \item{Exports.PercProd}{Exports as Percent of Production}
-#' \item{Consump.Tot}{Total Consumption}
-#' \item{Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
+#' \item{Woodpulp.Production}{Wood pulp Production}
+#' \item{Woodpulp.Imports}{Wood pulp Imports}
+#' \item{Woodpulp.Imports.PercConsump}{Imports as Percent of Consumption}
+#' \item{Woodpulp.Exports}{Wood pulp Exports}
+#' \item{Woodpulp.Exports.PercProd}{Exports as Percent of Production}
+#' \item{Woodpulp.Consump.Tot}{Total Consumption}
+#' \item{Woodpulp.Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
 #' }
 #' @source
 #' U.S. Department of Commerce, Bureau of the Census (52,56,57); American Forest
@@ -348,13 +348,13 @@
 #'
 #' @format A data frame with 56 observations of 7 variables:
 #' \describe{
-#' \item{Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
-#' \item{Prod.ParticleBoard}{Particleboard Production}
-#' \item{Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
-#' \item{Imports}{Particleboard and Medium-Density Fiberboard Imports}
-#' \item{Exports}{Particleboard and Medium-Density Fiberboard Exports}
-#' \item{Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
-#' \item{Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
+#' \item{Particle_MDF.Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
+#' \item{Particle_MDF.Prod.ParticleBoard}{Particleboard Production}
+#' \item{Particle_MDF.Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
+#' \item{Particle_MDF.Imports}{Particleboard and Medium-Density Fiberboard Imports}
+#' \item{Particle_MDF.Exports}{Particleboard and Medium-Density Fiberboard Exports}
+#' \item{Particle_MDF.Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
+#' \item{Particle_MDF.Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
 #' }
 #' @source
 #' National Particleboard Association (20); U.S. International Trade Commission (69);
@@ -647,11 +647,11 @@
 #'
 #' @format A data frame with 56 observations of  5 variables:
 #' \describe{
-#' \item{Production}{Insulating board production}
-#' \item{Imports}{Insulating board imports}
-#' \item{Exports}{Insulating board exports}
-#' \item{Total.Consumption}{Insulating board total}
-#' \item{PerCapita.Consumption}{Per Capita Consumption in Pounds}
+#' \item{Insulboard.Production}{Insulating board production}
+#' \item{Insulboard.Imports}{Insulating board imports}
+#' \item{Insulboard.Exports}{Insulating board exports}
+#' \item{Insulboard.Total.Consumption}{Insulating board total}
+#' \item{Insulboard.PerCapita.Consumption}{Per Capita Consumption in Pounds}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard55"
@@ -664,11 +664,11 @@
 #'
 #' @format A data frame with 56 observations on 5 variables:
 #' \describe{
-#' \item{Production}{Hardboard production}
-#' \item{Imports}{Hardboard imports}
-#' \item{Exports}{Hardboard exports}
-#' \item{Total.Consumption}{Total Hardboard Consumption}
-#' \item{PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
+#' \item{Hardboard.Production}{Hardboard production}
+#' \item{Hardboard.Imports}{Hardboard imports}
+#' \item{Hardboard.Exports}{Hardboard exports}
+#' \item{Hardboard.Total.Consumption}{Total Hardboard Consumption}
+#' \item{Hardboard.PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard56"
@@ -831,12 +831,12 @@
 #'
 #' @format A data frame with 75 observations of 5 variables:
 #' \describe{
-#' \item{Wood.Pulp}{Consumption of Wood Pulp}
-#' \item{Waste.Paper}{Consumption of Waste Paper}
-#' \item{Rags}{Consumption of Rags}
+#' \item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
+#' \item{Waste.Paper.Consumption}{Consumption of Waste Paper}
+#' \item{Rags.Consumption}{Consumption of Rags}
 #' \item{?Findout}{This might be other?}
-#' \item{Other}{Consumption of Other Fibrous Materials}
-#' \item{Total}{Total Consumption of Fibrous Materials}
+#' \item{Other.Consumption}{Consumption of Other Fibrous Materials}
+#' \item{Total.Consumption}{Total Consumption of Fibrous Materials}
 #' }
 #' @source Estimated using best available data and historical patterns. Some data
 #' is original but no source in spreadsheet.
@@ -853,10 +853,10 @@
 #'
 #' @format A data frame with 77 observations of 11 variables:
 #' \describe{
-#' \item{Prod}{Production of Wood Pulp}
-#' \item{Imports}{Imports of Wood Pulp}
-#' \item{Exports}{Exports of Wood Pulp}
-#' \item{NewSupply}{New Supply of Wood Pulp}
+#' \item{Woodpulp.Prod}{Production of Wood Pulp}
+#' \item{Woodpulp.Imports}{Imports of Wood Pulp}
+#' \item{Woodpulp.Exports}{Exports of Wood Pulp}
+#' \item{Woodpulp.NewSupply}{New Supply of Wood Pulp}
 #' \item{Consump.Paper.Board}{Consumption in Paper & Board}
 #' \item{WastePaper.Estimated.Prod}{Estimated Production of Waste Paper}
 #' \item{WastePaper.Estimated.Imports}{Estimated Imports of Waste Paper}

@@ -20,7 +20,7 @@
 #' "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB II spreadsheet
 #' "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB II spreadsheet
 #' "Atmospheric Flow" approach corresponds to `06 IPCC Tables`$Q9 in the WOODCARB II spreadsheet
-#' @param decaytype Type of decay method to use
+#' @param decaydistribution Type of decay method to use
 #' @param plot if true, returns a simple plot of time vs. carbon contribution.
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
@@ -32,18 +32,18 @@
 #' finalCarbonContribution()
 #' finalCarbonContribution(approach = "Stock Change")
 #' finalCarbonContribution(approach = "Production",
-#'                          decaytype ="Exponential")
-finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
+#'                          decaydistribution ="Exponential")
+finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production",
                                                                    "Stock Change",
                                                                    "Atmospheric Flow"),
-                                    decaytype = c("Exponential",
+                                    decaydistribution = c("Exponential",
                                                   "K=2"), plot = FALSE,
                                     halflives = halfLives){
   if (missing(approach)){
     approach = "Production"
   }
   approachtype <- match.arg(approach)
-  decay<- match.arg(decaytype)
+  decay<- match.arg(decaydistribution)
 
   fvs <- finalVariables(Years, decay, halflives)
 
@@ -145,7 +145,7 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
     index <- (min(years)-1):max(years)
   }
 
-  totals <- swpcarbontotal(Yrs = index, approach = approach, distribution = decay,
+  totals <- swpcarbontotal(Yrs = index, approach = approach, decaydistribution = decay,
                            halflives = halflives)
   #return(totals)
   changeinstock <- (totals[2:length(totals)] - totals[1:length(totals)-1])*PRO17

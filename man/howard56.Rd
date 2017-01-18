@@ -6,11 +6,11 @@
 \title{Hardboard production, imports, exports and consumption, 1965-1999.}
 \format{A data frame with 56 observations on 5 variables:
 \describe{
-\item{Production}{Hardboard production}
-\item{Imports}{Hardboard imports}
-\item{Exports}{Hardboard exports}
-\item{Total.Consumption}{Total Hardboard Consumption}
-\item{PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
+\item{Hardboard.Production}{Hardboard production}
+\item{Hardboard.Imports}{Hardboard imports}
+\item{Hardboard.Exports}{Hardboard exports}
+\item{Hardboard.Total.Consumption}{Total Hardboard Consumption}
+\item{Hardboard.PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
 }}
 \source{
 USFS Estimations and Bureau of Census Data

@@ -7,12 +7,12 @@
 from 1900 to 1974.}
 \format{A data frame with 75 observations of 5 variables:
 \describe{
-\item{Wood.Pulp}{Consumption of Wood Pulp}
-\item{Waste.Paper}{Consumption of Waste Paper}
-\item{Rags}{Consumption of Rags}
+\item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
+\item{Waste.Paper.Consumption}{Consumption of Waste Paper}
+\item{Rags.Consumption}{Consumption of Rags}
 \item{?Findout}{This might be other?}
-\item{Other}{Consumption of Other Fibrous Materials}
-\item{Total}{Total Consumption of Fibrous Materials}
+\item{Other.Consumption}{Consumption of Other Fibrous Materials}
+\item{Total.Consumption}{Total Consumption of Fibrous Materials}
 }}
 \source{
 Estimated using best available data and historical patterns. Some data

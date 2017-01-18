@@ -9,7 +9,7 @@ output:
 Authors: Ben Jones, Sami Hlebak, Hannah Laws, Kelly Loucks, Andrew Sullivan, Eric Marland, and Alan Arnholt 
  
 
-## WOODCARB3R Version 0.1.3
+## WOODCARB3R Version 0.1.4
 
 [![Travis-CI Build Status](https://travis-ci.org/benjones2/WOODCARB3R.svg?branch=master)](https://travis-ci.org/benjones2/WOODCARB3R)
 

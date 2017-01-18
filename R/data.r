@@ -282,13 +282,13 @@
 #'
 #' @format A data frame with 56 observations of 15 variables:
 #' \describe{
-#' \item{Production}{Wood pulp Production}
-#' \item{Imports}{Wood pulp Imports}
-#' \item{Imports.PercConsump}{Imports as Percent of Consumption}
-#' \item{Exports}{Wood pulp Exports}
-#' \item{Exports.PercProd}{Exports as Percent of Production}
-#' \item{Consump.Tot}{Total Consumption}
-#' \item{Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
+#' \item{Woodpulp.Production}{Wood pulp Production}
+#' \item{Woodpulp.Imports}{Wood pulp Imports}
+#' \item{Woodpulp.Imports.PercConsump}{Imports as Percent of Consumption}
+#' \item{Woodpulp.Exports}{Wood pulp Exports}
+#' \item{Woodpulp.Exports.PercProd}{Exports as Percent of Production}
+#' \item{Woodpulp.Consump.Tot}{Total Consumption}
+#' \item{Woodpulp.Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
 #' }
 #' @source
 #' U.S. Department of Commerce, Bureau of the Census (52,56,57); American Forest
@@ -348,13 +348,13 @@
 #'
 #' @format A data frame with 56 observations of 7 variables:
 #' \describe{
-#' \item{Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
-#' \item{Prod.ParticleBoard}{Particleboard Production}
-#' \item{Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
-#' \item{Imports}{Particleboard and Medium-Density Fiberboard Imports}
-#' \item{Exports}{Particleboard and Medium-Density Fiberboard Exports}
-#' \item{Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
-#' \item{Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
+#' \item{Particle_MDF.Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
+#' \item{Particle_MDF.Prod.ParticleBoard}{Particleboard Production}
+#' \item{Particle_MDF.Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
+#' \item{Particle_MDF.Imports}{Particleboard and Medium-Density Fiberboard Imports}
+#' \item{Particle_MDF.Exports}{Particleboard and Medium-Density Fiberboard Exports}
+#' \item{Particle_MDF.Consump.Tot}{Total Particleboard and Medium-Density Fiberboard Consumption}
+#' \item{Particle_MDF.Consump.PerCap(Sq ft)}{Per Capita Consumption of particleboard and medium-density fiberboard, in Square ft.}
 #' }
 #' @source
 #' National Particleboard Association (20); U.S. International Trade Commission (69);
@@ -536,25 +536,25 @@
 #' \describe{
 #' \item{AllProduction.Prod}{Total production of all products}
 #' \item{AllProduct.Consump}{Total consumption of all products}
-#' \item{Indu.RW.Tot.Prod}{Total production of all industrial roundwood products}
-#' \item{Indu.RW.Tot.Imports}{Total imports of all industrial roundwood products}
-#' \item{Indu.RW.Tot.Exports}{Total exports of all industrial roundwood products}
-#' \item{Indu.RW.Tot.Consump}{Total consumption of all industrial roundwood products}
-#' \item{Indu.RW.Lum.Prod}{Production of lumber products}
-#' \item{Indu.RW.Lum.Imports}{Imports of lumber products}
-#' \item{Indu.RW.Lum.Exports}{Exports of lumber products}
-#' \item{Indu.RW.Lum.Consump}{Consumption of lumber products}
-#' \item{Indu.RW.PlyandVen.Prod}{Production of plywood and veneer products}
-#' \item{Indu.RW.PlyandVen.Imports}{Imports of plywood and veneer products}
-#' \item{Indu.RW.PlyandVen.Exports}{Exports of plywood and veneer products}
-#' \item{Indu.RW.PlyandVen.Consump}{Consumption of plywood and veneer products}
-#' \item{Indu.RW.Pulp.Prod}{Production of pulp products}
-#' \item{Indu.RW.Pulp.Imports}{Imports of pulp products}
-#' \item{Indu.RW.Pulp.Exports}{Exports of pulp products}
-#' \item{Indu.RW.Pulp.Consump}{Consumption of pulp products}
-#' \item{Indu.RW.OtherIndustrial.ProdAndConsump}{Production and consumption of Other industrial roundwood products}
-#' \item{Indu.RW.Logs.Imports}{Imports of logs}
-#' \item{Indu.RW.Logs.Exports}{Exports of logs}
+#' \item{Ind.RW.Tot.Prod}{Total production of all industrial roundwood products}
+#' \item{Ind.RW.Tot.Imports}{Total imports of all industrial roundwood products}
+#' \item{Ind.RW.Tot.Exports}{Total exports of all industrial roundwood products}
+#' \item{Ind.RW.Tot.Consump}{Total consumption of all industrial roundwood products}
+#' \item{Ind.RW.Lum.Prod}{Production of lumber products}
+#' \item{Ind.RW.Lum.Imports}{Imports of lumber products}
+#' \item{Ind.RW.Lum.Exports}{Exports of lumber products}
+#' \item{Ind.RW.Lum.Consump}{Consumption of lumber products}
+#' \item{Ind.RW.PlyandVen.Prod}{Production of plywood and veneer products}
+#' \item{Ind.RW.PlyandVen.Imports}{Imports of plywood and veneer products}
+#' \item{Ind.RW.PlyandVen.Exports}{Exports of plywood and veneer products}
+#' \item{Ind.RW.PlyandVen.Consump}{Consumption of plywood and veneer products}
+#' \item{Ind.RW.Pulp.Prod}{Production of pulp products}
+#' \item{Ind.RW.Pulp.Imports}{Imports of pulp products}
+#' \item{Ind.RW.Pulp.Exports}{Exports of pulp products}
+#' \item{Ind.RW.Pulp.Consump}{Consumption of pulp products}
+#' \item{Ind.RW.OtherIndustrial.ProdAndConsump}{Production and consumption of Other industrial roundwood products}
+#' \item{Ind.RW.Logs.Imports}{Imports of logs}
+#' \item{Ind.RW.Logs.Exports}{Exports of logs}
 #' \item{FuelWood.ProdAndConsumption}{Production and Consumption of Fuelwood}
 #' \item{UnNamed1}{Unnamed}
 #' }
@@ -647,11 +647,11 @@
 #'
 #' @format A data frame with 56 observations of  5 variables:
 #' \describe{
-#' \item{Production}{Insulating board production}
-#' \item{Imports}{Insulating board imports}
-#' \item{Exports}{Insulating board exports}
-#' \item{Total.Consumption}{Insulating board total}
-#' \item{PerCapita.Consumption}{Per Capita Consumption in Pounds}
+#' \item{Insulboard.Production}{Insulating board production}
+#' \item{Insulboard.Imports}{Insulating board imports}
+#' \item{Insulboard.Exports}{Insulating board exports}
+#' \item{Insulboard.Total.Consumption}{Insulating board total}
+#' \item{Insulboard.PerCapita.Consumption}{Per Capita Consumption in Pounds}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard55"
@@ -664,11 +664,11 @@
 #'
 #' @format A data frame with 56 observations on 5 variables:
 #' \describe{
-#' \item{Production}{Hardboard production}
-#' \item{Imports}{Hardboard imports}
-#' \item{Exports}{Hardboard exports}
-#' \item{Total.Consumption}{Total Hardboard Consumption}
-#' \item{PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
+#' \item{Hardboard.Production}{Hardboard production}
+#' \item{Hardboard.Imports}{Hardboard imports}
+#' \item{Hardboard.Exports}{Hardboard exports}
+#' \item{Hardboard.Total.Consumption}{Total Hardboard Consumption}
+#' \item{Hardboard.PerCapita.Consumption}{Per Capita Hardboard Consumption in Square feet}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard56"
@@ -702,8 +702,8 @@
 #' \item{Ind.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
 #' \item{Ind.RW.Logs.Imports}{Industrial roundwood uses log imports}
 #' \item{Ind.RW.Logs.Exports}{Industrial roundwood uses log exports}
-#' \item{Ind.RW.Pulp.Imports}{Industrial roundwood uses pulpwood chip imports}
-#' \item{Ind.RW.Pulp.Exports}{Industrial roundwood uses pulpwood chip exports}
+#' \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
+#' \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 #' \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
 #' \item{UnNamed1}{}
 #' \item{UnNamed2}{}
@@ -721,7 +721,7 @@
 
 
 
-#' Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.
+#' Production, imports, exports, and consumption of hardwood products, by major product, 1965-1999.
 #'
 #' All units are in million cubic feet except when specified otherwise.
 #'
@@ -729,27 +729,27 @@
 #' \describe{
 #' \item{AllProduction.Prod}{All products production}
 #' \item{AllProduct.Consump}{All products consumption}
-#' \item{Indu.RW.Tot.Prod}{Industrial roundwood uses total production}
-#' \item{Indu.RW.Tot.Imports}{Industrial roundwood uses total imports}
-#' \item{Indu.RW.Tot.Exports}{Industrial roundwood uses total exports}
-#' \item{Indu.RW.Tot.Consump}{Industrial roundwood uses total consumption}
-#' \item{Indu.RW.Lum.Prod}{Industrial roundwood uses lumber production}
-#' \item{Indu.RW.Lum.Imports}{Industrial roundwood uses lumber imports}
-#' \item{Indu.RW.Lum.Exports}{Industrial roundwood uses lumber exports}
-#' \item{Indu.RW.Lum.Consump}{Industrial roundwood uses lumber consumption}
-#' \item{Indu.RW.PlyandVen.Prod}{Industrial roundwood uses plywood and veneer production}
-#' \item{Indu.RW.PlyandVen.Imports}{Industrial roundwood uses plywood and veneer imports}
-#' \item{Indu.RW.PlyandVen.Exports}{Industrial roundwood uses plywood and veneer exports}
-#' \item{Indu.RW.PlyandVen.Consump}{Industrial roundwood uses plywood and veneer consumption}
-#' \item{Indu.RW.Pulp.Prod}{Industrial roundwood uses pulp-based products production}
-#' \item{Indu.RW.Pulp.Imports}{Industrial roundwood uses pulp-based products imports}
-#' \item{Indu.RW.Pulp.Exports}{Industrial roundwood uses pulp-based products exports}
-#' \item{Indu.RW.Pulp.Consump}{Industrial roundwood uses pulp-based products consumption}
-#' \item{Indu.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
-#' \item{Indu.RW.Logs.Imports}{Industrial roundwood uses log imports}
-#' \item{Indu.RW.Logs.Exports}{Industrial roundwood uses log exports}
-#' \item{Indu.RW.Pulp.Imports}{Industrial roundwood uses pulpwood chip imports}
-#' \item{Indu.RW.Pulp.Exports}{Industrial roundwood uses pulpwood chip exports}
+#' \item{Ind.RW.Tot.Prod}{Industrial roundwood uses total production}
+#' \item{Ind.RW.Tot.Imports}{Industrial roundwood uses total imports}
+#' \item{Ind.RW.Tot.Exports}{Industrial roundwood uses total exports}
+#' \item{Ind.RW.Tot.Consump}{Industrial roundwood uses total consumption}
+#' \item{Ind.RW.Lum.Prod}{Industrial roundwood uses lumber production}
+#' \item{Ind.RW.Lum.Imports}{Industrial roundwood uses lumber imports}
+#' \item{Ind.RW.Lum.Exports}{Industrial roundwood uses lumber exports}
+#' \item{Ind.RW.Lum.Consump}{Industrial roundwood uses lumber consumption}
+#' \item{Ind.RW.PlyandVen.Prod}{Industrial roundwood uses plywood and veneer production}
+#' \item{Ind.RW.PlyandVen.Imports}{Industrial roundwood uses plywood and veneer imports}
+#' \item{Ind.RW.PlyandVen.Exports}{Industrial roundwood uses plywood and veneer exports}
+#' \item{Ind.RW.PlyandVen.Consump}{Industrial roundwood uses plywood and veneer consumption}
+#' \item{Ind.RW.Pulp.Prod}{Industrial roundwood uses pulp-based products production}
+#' \item{Ind.RW.Pulp.Imports}{Industrial roundwood uses pulp-based products imports}
+#' \item{Ind.RW.Pulp.Exports}{Industrial roundwood uses pulp-based products exports}
+#' \item{Ind.RW.Pulp.Consump}{Industrial roundwood uses pulp-based products consumption}
+#' \item{Ind.RW.OtherIndustrial.ProdAndConsump}{Other industrial product production and consumption}
+#' \item{Ind.RW.Logs.Imports}{Industrial roundwood uses log imports}
+#' \item{Ind.RW.Logs.Exports}{Industrial roundwood uses log exports}
+#' \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
+#' \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 #' \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
 #' \item{UnNamed1}{}
 #' \item{UnNamed2}{}
@@ -831,12 +831,12 @@
 #'
 #' @format A data frame with 75 observations of 5 variables:
 #' \describe{
-#' \item{Wood.Pulp}{Consumption of Wood Pulp}
-#' \item{Waste.Paper}{Consumption of Waste Paper}
-#' \item{Rags}{Consumption of Rags}
+#' \item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
+#' \item{Waste.Paper.Consumption}{Consumption of Waste Paper}
+#' \item{Rags.Consumption}{Consumption of Rags}
 #' \item{?Findout}{This might be other?}
-#' \item{Other}{Consumption of Other Fibrous Materials}
-#' \item{Total}{Total Consumption of Fibrous Materials}
+#' \item{Other.Consumption}{Consumption of Other Fibrous Materials}
+#' \item{Total.Consumption}{Total Consumption of Fibrous Materials}
 #' }
 #' @source Estimated using best available data and historical patterns. Some data
 #' is original but no source in spreadsheet.
@@ -853,10 +853,10 @@
 #'
 #' @format A data frame with 77 observations of 11 variables:
 #' \describe{
-#' \item{Prod}{Production of Wood Pulp}
-#' \item{Imports}{Imports of Wood Pulp}
-#' \item{Exports}{Exports of Wood Pulp}
-#' \item{NewSupply}{New Supply of Wood Pulp}
+#' \item{Woodpulp.Prod}{Production of Wood Pulp}
+#' \item{Woodpulp.Imports}{Imports of Wood Pulp}
+#' \item{Woodpulp.Exports}{Exports of Wood Pulp}
+#' \item{Woodpulp.NewSupply}{New Supply of Wood Pulp}
 #' \item{Consump.Paper.Board}{Consumption in Paper & Board}
 #' \item{WastePaper.Estimated.Prod}{Estimated Production of Waste Paper}
 #' \item{WastePaper.Estimated.Imports}{Estimated Imports of Waste Paper}

@@ -10,12 +10,15 @@ finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
 \arguments{
 \item{Years}{years to calculate}
 
-\item{decaydistribution}{decay distribution to use (if necessary)}
+\item{decaydistribution}{decay distribution to use. Defaults to exponential distribution.}
 
-\item{halflives}{half-lives for calculation (if necessary)}
+\item{halflives}{data frame of half lives to use. Must have a column associated with each
+one of 13 end uses and half life values for 1900 until the maximum year of interest.}
 }
 \value{
-a numeric vector of values for the selected variable for `Years`
+a data frame with nine columns (Variables 1 and 2 have two parts each).
+If the decay distribution is exponential then the data frame returned will correspond
+to table containing final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
 }
 \description{
 Returns variables needed to calculate overall contribution.

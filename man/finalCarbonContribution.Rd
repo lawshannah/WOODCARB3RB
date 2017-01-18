@@ -5,36 +5,49 @@
 \title{Estimates U.S. HWP contribution to annual greenhouse gas removals.}
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
-  "Stock Change", "Atmospheric Flow"), decaytype = c("Exponential", "K=2"),
-  plot = FALSE, halflives = halfLives)
+  "Stock Change", "Atmospheric Flow"), decaydistribution = c("Exponential",
+  "K=2"), plot = FALSE, halflives = halfLives)
 }
 \arguments{
 \item{Years}{years to return carbon totals for}
 
-\item{approach}{The approach used to calculate carbon contribution.}
+\item{approach}{The approach used to calculate carbon contribution.
+"Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB II spreadsheet
+"Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB II spreadsheet
+"Atmospheric Flow" approach corresponds to `06 IPCC Tables`$Q9 in the WOODCARB II spreadsheet}
 
-\item{decaytype}{Type of decay method to use}
+\item{decaydistribution}{Type of decay method to use}
 
-\item{plot}{whether to return a plot or not}
+\item{plot}{if true, returns a simple plot of time vs. carbon contribution.}
 
-\item{halflives}{data frame of half lives to use}
+\item{halflives}{data frame of half lives to use. Must have a column associated with each
+one of 13 end uses and half life values for 1900 until the maximum year of interest.}
 }
 \value{
 A vector of carbon contributions for all Years. Plot returned is optional
+All units returned are in Thousand metric tons CO2 Equivalent.
 }
 \description{
-All units returned are in Thousand metric tons CO2 Equivalent
+Uses formulas described in WOODCARB II paper to calculate contribution contribution
+with the HWP variables.
 }
 \details{
-The "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
-The "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet
+Decay type and half life options allow for analysis of contribution levels under
+different circumstances.
 
-The plot argument returns a simple plot of time vs. carbon contribution.
+The Production Approach focuses on estimating annual carbon stock change in HWP and
+forests where the carbon is from trees harvested in the reporting country.
+
+The Stock Change Approach focuses on estimating annual carbon stock change in HWP and
+forests in a country regardless of wood origin.
+
+The Atmospheric Flow Approach focuses on estimating annual carbon fluxes between
+the atmosphere and forests/HWPs within a country.
 }
 \examples{
 finalCarbonContribution()
 finalCarbonContribution(approach = "Stock Change")
 finalCarbonContribution(approach = "Production",
-                         decaytype ="Exponential")
+                         decaydistribution ="Exponential")
 }
 

@@ -1,44 +1,56 @@
 #' Estimates U.S. HWP contribution to annual greenhouse gas removals.
 #'
-#' All units returned are in Thousand metric tons CO2 Equivalent
+#' Uses formulas described in WOODCARB II paper to calculate contribution contribution
+#' with the HWP variables.
 #'
-#' The "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB spreadsheet
-#' The "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB spreadsheet
+#' Decay type and half life options allow for analysis of contribution levels under
+#' different circumstances.
 #'
-#' The plot argument returns a simple plot of time vs. carbon contribution.
+#' The Production Approach focuses on estimating annual carbon stock change in HWP and
+#' forests where the carbon is from trees harvested in the reporting country.
+#'
+#' The Stock Change Approach focuses on estimating annual carbon stock change in HWP and
+#' forests in a country regardless of wood origin.
+#'
+#' The Atmospheric Flow Approach focuses on estimating annual carbon fluxes between
+#' the atmosphere and forests/HWPs within a country.
 #'
 #' @param Years years to return carbon totals for
 #' @param approach The approach used to calculate carbon contribution.
-#' @param decaytype Type of decay method to use
-#' @param plot whether to return a plot or not
-#' @param halflives data frame of half lives to use
-#'
+#' "Production" approach corresponds to `06 IPCC Tables`$R9 in the WOODCARB II spreadsheet
+#' "Stock Change" approach corresponds to `06 IPCC Tables`$P9 in the WOODCARB II spreadsheet
+#' "Atmospheric Flow" approach corresponds to `06 IPCC Tables`$Q9 in the WOODCARB II spreadsheet
+#' @param decaydistribution Type of decay method to use
+#' @param plot if true, returns a simple plot of time vs. carbon contribution.
+#' @param halflives data frame of half lives to use. Must have a column associated with each
+#' one of 13 end uses and half life values for 1900 until the maximum year of interest.
 #' @return A vector of carbon contributions for all Years. Plot returned is optional
+#' All units returned are in Thousand metric tons CO2 Equivalent.
 #' @export
 #'
 #' @examples
 #' finalCarbonContribution()
 #' finalCarbonContribution(approach = "Stock Change")
 #' finalCarbonContribution(approach = "Production",
-#'                          decaytype ="Exponential")
-finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
+#'                          decaydistribution ="Exponential")
+finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production",
                                                                    "Stock Change",
                                                                    "Atmospheric Flow"),
-                                    decaytype = c("Exponential",
+                                    decaydistribution = c("Exponential",
                                                   "K=2"), plot = FALSE,
                                     halflives = halfLives){
   if (missing(approach)){
     approach = "Production"
   }
   approachtype <- match.arg(approach)
-  decay<- match.arg(decaytype)
+  decay<- match.arg(decaydistribution)
 
   fvs <- finalVariables(Years, decay, halflives)
 
   switch(approach,
-         Production = (-1*fvs[,3]-fvs[,4])*44/12,
-         `Stock Change` = (-1*fvs[,1]-fvs[,2])*44/12,
-         `Atmospheric Flow` = ((-1*fvs[,1]-fvs[,2])*44/12)+(fvs[,5]-fvs[,6])*44/12
+         Production = (-1*fvs[,"Var2A"]-fvs[,"Var2B"])*44/12,
+         `Stock Change` = (-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12,
+         `Atmospheric Flow` = ((-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12)+(fvs[,"Var3"]-fvs[,"Var4"])*44/12
   )
 
 }
@@ -61,10 +73,13 @@ finalCarbonContribution <- function(Years = 1990:2015,approach = c("Production",
 #' domestic harvest (from products in use and products in SWDS)
 #'
 #' @param Years years to calculate
-#' @param decaydistribution decay distribution to use (if necessary)
-#' @param halflives half-lives for calculation (if necessary)
+#' @param decaydistribution decay distribution to use. Defaults to exponential distribution.
+#' @param halflives data frame of half lives to use. Must have a column associated with each
+#' one of 13 end uses and half life values for 1900 until the maximum year of interest.
 #'
-#' @return a numeric vector of values for the selected variable for `Years`
+#' @return a data frame with nine columns (Variables 1 and 2 have two parts each).
+#' If the decay distribution is exponential then the data frame returned will correspond
+#' to table containing final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
 #' @export
 #'
 #' @examples
@@ -104,9 +119,10 @@ finalVariables <- function(Years = 1990:2015,
 #' For stock change approach, values correspond to `Calculation$H` in the spreadsheet.
 #'
 #' @param years years to return carbon totals for
-#' @param approach The approach used to calculate carbon contribution.
-#' @param decaydistribution Type of decay method to use
-#' @param halflives data frame of half lives to use
+#' @param approach approach type used to calculate
+#' @param decaydistribution type of decay distribution to use
+#' @param halflives data frame of half lives to use. Must have a column associated with each
+#' one of 13 end uses and half life values for 1900 until the maximum year of interest.
 #'
 #' @return A vector of swp carbon stock changes for `years`
 #'
@@ -129,7 +145,7 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
     index <- (min(years)-1):max(years)
   }
 
-  totals <- swpcarbontotal(Yrs = index, approach = approach, distribution = decay,
+  totals <- swpcarbontotal(Yrs = index, approach = approach, decaydistribution = decay,
                            halflives = halflives)
   #return(totals)
   changeinstock <- (totals[2:length(totals)] - totals[1:length(totals)-1])*PRO17

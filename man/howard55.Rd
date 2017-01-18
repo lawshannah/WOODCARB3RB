@@ -6,11 +6,11 @@
 \title{Insulating board production, imports, exports, and consumption, 1965-1999.}
 \format{A data frame with 56 observations of  5 variables:
 \describe{
-\item{Production}{Insulating board production}
-\item{Imports}{Insulating board imports}
-\item{Exports}{Insulating board exports}
-\item{Total.Consumption}{Insulating board total}
-\item{PerCapita.Consumption}{Per Capita Consumption in Pounds}
+\item{Insulboard.Production}{Insulating board production}
+\item{Insulboard.Imports}{Insulating board imports}
+\item{Insulboard.Exports}{Insulating board exports}
+\item{Insulboard.Total.Consumption}{Insulating board total}
+\item{Insulboard.PerCapita.Consumption}{Per Capita Consumption in Pounds}
 }}
 \source{
 USFS Estimations and Bureau of Census Data

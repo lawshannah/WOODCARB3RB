@@ -13,11 +13,12 @@ swp_carbon_stockchange(years, approach = c("Production", "Stock Change"),
 \arguments{
 \item{years}{years to return carbon totals for}
 
-\item{approach}{The approach used to calculate carbon contribution.}
+\item{approach}{approach type used to calculate}
 
-\item{decaydistribution}{Type of decay method to use}
+\item{decaydistribution}{type of decay distribution to use}
 
-\item{halflives}{data frame of half lives to use}
+\item{halflives}{data frame of half lives to use. Must have a column associated with each
+one of 13 end uses and half life values for 1900 until the maximum year of interest.}
 }
 \value{
 A vector of swp carbon stock changes for `years`

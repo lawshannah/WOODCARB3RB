@@ -6,13 +6,13 @@
 \title{Wood pulp production, imports, exports, and consumption, 1965-1999}
 \format{A data frame with 56 observations of 15 variables:
 \describe{
-\item{Production}{Wood pulp Production}
-\item{Imports}{Wood pulp Imports}
-\item{Imports.PercConsump}{Imports as Percent of Consumption}
-\item{Exports}{Wood pulp Exports}
-\item{Exports.PercProd}{Exports as Percent of Production}
-\item{Consump.Tot}{Total Consumption}
-\item{Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
+\item{Woodpulp.Production}{Wood pulp Production}
+\item{Woodpulp.Imports}{Wood pulp Imports}
+\item{Woodpulp.Imports.PercConsump}{Imports as Percent of Consumption}
+\item{Woodpulp.Exports}{Wood pulp Exports}
+\item{Woodpulp.Exports.PercProd}{Exports as Percent of Production}
+\item{Woodpulp.Consump.Tot}{Total Consumption}
+\item{Woodpulp.Consump.PerCap(pounds)}{Per Capita Consumption in pounds}
 }}
 \source{
 U.S. Department of Commerce, Bureau of the Census (52,56,57); American Forest

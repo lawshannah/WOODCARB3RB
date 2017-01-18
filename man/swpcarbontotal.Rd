@@ -4,14 +4,14 @@
 \alias{swpcarbontotal}
 \title{Calculate total carbon in solidwood products.}
 \usage{
-swpcarbontotal(Yrs = 1990:2015, distribution = c("Exponential", "K=2"),
+swpcarbontotal(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2"),
   onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
   "Stock Change"), halflives = halfLives)
 }
 \arguments{
 \item{Yrs}{years to calculate totals for.}
 
-\item{distribution}{type of decay distribution.}
+\item{decaydistribution}{type of decay distribution.}
 
 \item{onlytotal}{if false, total carbon is returned for each one of the 13 end uses.
 if true, one total is summed and returned}

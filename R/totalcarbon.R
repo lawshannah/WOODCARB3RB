@@ -6,7 +6,7 @@
 #' All units returned are in od tons of wood fiber.
 #'
 #' @param Yrs years to calculate totals for.
-#' @param distribution type of decay distribution.
+#' @param decaydistribution type of decay distribution.
 #' @param onlytotal
 #' if false, total carbon is returned for each one of the 13 end uses.
 #' if true, one total is summed and returned
@@ -25,12 +25,12 @@
 #' @examples
 #' swpcarbontotal(onlytotal=FALSE)
 #' swpcarbontotal(1950:1975, approach = "Stock Change")
-swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "K=2"),
+swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2"),
                            onlytotal=TRUE, lumberpre = TRUE, approach = c("Production",
                                                                           "Stock Change"),
                            halflives = halfLives){
 
-  type <- match.arg(distribution)
+  type <- match.arg(decaydistribution)
   approachtype <- match.arg(approach)
   placeIU <- calcplacediu(total = FALSE, approach = approachtype)
 
@@ -75,4 +75,4 @@ swpcarbontotal <- function(Yrs = 1990:2015, distribution = c("Exponential", "K=2
   }
 }
 
-
+#papercarbontotal <- function(Yrs = 1990:2015)

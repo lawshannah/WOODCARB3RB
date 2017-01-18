@@ -7,10 +7,10 @@
 from 1899 to 1972 with necessary statistics from 1869, 1879, 1889.}
 \format{A data frame with 77 observations of 11 variables:
 \describe{
-\item{Prod}{Production of Wood Pulp}
-\item{Imports}{Imports of Wood Pulp}
-\item{Exports}{Exports of Wood Pulp}
-\item{NewSupply}{New Supply of Wood Pulp}
+\item{Woodpulp.Prod}{Production of Wood Pulp}
+\item{Woodpulp.Imports}{Imports of Wood Pulp}
+\item{Woodpulp.Exports}{Exports of Wood Pulp}
+\item{Woodpulp.NewSupply}{New Supply of Wood Pulp}
 \item{Consump.Paper.Board}{Consumption in Paper & Board}
 \item{WastePaper.Estimated.Prod}{Estimated Production of Waste Paper}
 \item{WastePaper.Estimated.Imports}{Estimated Imports of Waste Paper}

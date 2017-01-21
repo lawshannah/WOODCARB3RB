@@ -45,13 +45,24 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
   approachtype <- match.arg(approach)
   decay<- match.arg(decaydistribution)
 
-  fvs <- finalVariables(Years, decay, halflives)
+  fvs <- finalVariables(Years, decay, halflives, approach = approachtype)
 
-  switch(approach,
-         Production = (-1*fvs[,"Var2A"]-fvs[,"Var2B"])*44/12,
-         `Stock Change` = (-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12,
-         `Atmospheric Flow` = ((-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12)+(fvs[,"Var3"]-fvs[,"Var4"])*44/12
-  )
+  if (approachtype == "Atmospheric Flow") {
+    contrib <- ((-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12)+(fvs[,"Var3"]-fvs[,"Var4"])*44/12
+  }
+  else {
+    #First column is 1A/2A for Stock change and production respectively,
+    #and second column is 1B/2B for stock change and production respectively.
+    contrib <- (-1*fvs[,1]-fvs[,2])*44/12
+  }
+  r <- list(contrib)
+  if (plot == TRUE) {
+    p <- plot(Years, contrib, xlab="Years", ylab="Total CO2 Contribution",
+              main = "Total Carbon Removals")
+    r[2] <- p
+  }
+
+  return(unlist(r))
 
 }
 
@@ -85,10 +96,14 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' @param decaydistribution decay distribution to use. Defaults to exponential distribution.
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
+#' @param approach approach to calculate corresponding final variables for.
+#' If null, all final variables are calculated and returned.
 #'
-#' @return Data frame with nine columns (Variables 1 and 2 have two parts each).
-#' If the decay distribution is exponential then the data frame returned will correspond
-#' to table containing final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
+#' @return If an approach is specified then only the variables needed for that
+#' approach will be returned. If approach is null then a data frame with nine
+#' columns (Variables 1 and 2 have two parts each) will be returned. If the decay distribution
+#' is exponential then the data frame returned will correspond to table containing
+#' final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
 #' @export
 #'
 #' @examples
@@ -96,29 +111,79 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' finalVariables(halflives = halfLives * 1.25)
 finalVariables <- function(Years = 1990:2015,
                            decaydistribution = c("Exponential", "K=2"),
-                           halflives = halfLives){
+                           halflives = halfLives, approach = NULL){
+
   decay <- match.arg(decaydistribution)
 
-  Var1A <- (swp_carbon_stockchange(Years, approach = "Stock Change",
-                                   decaydistribution = decay,
-                                   halflives = halflives) +
-              paper_carbon_stockchange(Years,
-                                       approach = "Stock Change")) * 1000
-  Var1B <- carbonfromdumps(Years, approach = "Stock Change")  * 1000
-  Var2A <- (swp_carbon_stockchange(Years, approach = "Production",
-                                   decaydistribution = decay,
-                                   halflives = halflives) +
-              paper_carbon_stockchange(Years,
-                                       approach = "Production")) * 1000
-  Var2B <- carbonfromdumps(Years, approach = "Production") *  1000
-  Var3  <- calcP_IM(Years, var = TRUE)
-  Var4  <- calcP_EX(Years, var = TRUE)
-  Var5 <- annualDomesticHarvest(Years, onlyvar = TRUE)
+  Var1A <- function(){
+    (swp_carbon_stockchange(Years, approach = "Stock Change",
+                            decaydistribution = decay,
+                            halflives = halflives) +
+       paper_carbon_stockchange(Years,
+                                approach = "Stock Change")) * 1000
+  }
 
-  df <- data.frame(Var1A, Var1B,
-                   Var2A, Var2B,
-                   Var3, Var4,
-                   Var5)
+  Var1B <- function(){
+
+    carbonfromdumps(Years, approach = "Stock Change")  * 1000
+  }
+
+  Var2A <- function(){
+    (swp_carbon_stockchange(Years, approach = "Production",
+                            decaydistribution = decay,
+                            halflives = halflives) +
+       paper_carbon_stockchange(Years,
+                                approach = "Production")) * 1000
+  }
+
+  Var2B <- function(){
+    carbonfromdumps(Years, approach = "Production") *  1000
+  }
+
+  Var3 <- function(){
+    calcP_IM(Years, var = TRUE)
+  }
+
+  Var4  <- function(){
+    calcP_EX(Years, var = TRUE)
+  }
+
+  Var5 <- function(){
+    annualDomesticHarvest(Years, onlyvar = TRUE)
+  }
+
+  if (is.null(approach)) {
+
+    df <- data.frame(Var1A = Var1A(), Var1B = Var1B(),
+                     Var2A = Var2A(), Var2B = Var2B(),
+                     Var3 = Var3(), Var4 = Var4(),
+                     Var5 = Var5())
+    return(df)
+  }
+
+  if (approach == "Production") {
+    df <- data.frame(Var2A = Var2A(),
+                     Var2B = Var2B())
+    return(df)
+  }
+
+  if (approach == "Stock Change") {
+    df <- data.frame(Var1A = Var1A(),
+                     Var1B = Var1B())
+    return(df)
+  }
+
+  if (approach == "Atmospheric Flow") {
+    df <- data.frame(Var1A = Var1A(),
+                     Var1B = Var1B(),
+                     Var3  = Var3(),
+                     Var4  = Var4())
+    return(df)
+  }
+
+
+
+
 
 }
 
@@ -134,7 +199,6 @@ finalVariables <- function(Years = 1990:2015,
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
 #'
 #' @return A vector of swp carbon stock changes for `years`
-#'
 #' @examples
 #' \dontrun{
 #' swp_carbon_stockchange(1990:2000)
@@ -146,18 +210,14 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
                                    halflives = halfLives){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
+  ##To allow for any vector of year for input
+  ##Need previous year for each year being calculated
+  yearss <- unique(c(rbind(years-1,years)))
 
-  if(min(years) == minyr){
-    index <- minyr:max(years)
-  }
-  else{
-    index <- (min(years)-1):max(years)
-  }
-
-  totals <- swpcarbontotal(Yrs = index, approach = approach, decaydistribution = decay,
+  totals <- swpcarbontotal(Yrs = yearss, approach = approach, decaydistribution = decay,
                            halflives = halflives)
-  #return(totals)
-  changeinstock <- (totals[2:length(totals)] - totals[1:length(totals)-1])*PRO17
+  return(PRO17  * diff(totals))
+  changeinstock <- PRO17  * (totals[c(FALSE, TRUE)] - totals[c(TRUE, FALSE)])
   return(changeinstock)
 
 }
@@ -171,14 +231,13 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
 #' @param approach The approach used to calculate carbon contribution.
 #'
 #' @return A vector of paper carbon stock changes for `years`
-#'
 #' @examples
 #' \dontrun{
 #' paper_carbon_stockchange(1990:2000)
 #' paper_carbon_stockchange(1950:1975, approach = "Stock Change")
 #' }
 paper_carbon_stockchange <- function(years, approach = c("Production", "Stock Change")){
-  USA <- calcUSApaper()
+  USA <- calcUSApaper(yrs)
   approach = match.arg(approach)
   calcpaper <- function(years, CarbonInputFlowFromPaper){
 
@@ -189,7 +248,7 @@ paper_carbon_stockchange <- function(years, approach = c("Production", "Stock Ch
       }
       else{
         papercarbon[year-(minyr-1)] <- exp(-log(2)/PRP10)*(CarbonInputFlowFromPaper[year-(minyr-1)]+
-                                                             papercarbon[year-1900])
+                                                             papercarbon[year-minyr])
       }
     }
     #return(papercarbon)
@@ -206,10 +265,11 @@ paper_carbon_stockchange <- function(years, approach = c("Production", "Stock Ch
   }
 
   if (approach == "Production"){
-    return(calcpaper(years, USA$`Production Approach-C Input from Paper Products(Calc BU)`))
+    return(calcpaper(years, USA$`Production Approach-C Input from Paper Products(Calc BU)`)[years-(min(years-1))])
   }
 
   if (approach == "Stock Change"){
-    return(calcpaper(years, USA$CarbonInputFlowPaperStockChange))
+    return(calcpaper(years, USA$CarbonInputFlowPaperStockChange)[years-(min(years-1))])
   }
 }
+

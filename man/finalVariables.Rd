@@ -5,7 +5,7 @@
 \title{Calculates the 7 HWP Variables.}
 \usage{
 finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
-  "K=2"), halflives = halfLives)
+  "K=2"), halflives = halfLives, approach = NULL)
 }
 \arguments{
 \item{Years}{years to calculate}
@@ -14,11 +14,16 @@ finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
 
 \item{halflives}{data frame of half lives to use. Must have a column associated with each
 one of 13 end uses and half life values for 1900 until the maximum year of interest.}
+
+\item{approach}{approach to calculate corresponding final variables for.
+If null, all final variables are calculated and returned.}
 }
 \value{
-Data frame with nine columns (Variables 1 and 2 have two parts each).
-If the decay distribution is exponential then the data frame returned will correspond
-to table containing final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
+If an approach is specified then only the variables needed for that
+approach will be returned. If approach is null then a data frame with nine
+columns (Variables 1 and 2 have two parts each) will be returned. If the decay distribution
+is exponential then the data frame returned will correspond to table containing
+final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.
 }
 \description{
 Returns variables needed to calculate overall contribution.

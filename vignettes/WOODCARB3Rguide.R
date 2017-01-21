@@ -6,7 +6,7 @@ library(WOODCARB3R)
 finalCarbonContribution()
 
 ## ------------------------------------------------------------------------
-finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", decaydistribution = "K=2", halflives = halfLives* 1.2)
+finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", halflives = halfLives* 1.2)
 
 ## ---- fig.width=6, fig.height=4------------------------------------------
 finalCarbonContribution(plot = TRUE)

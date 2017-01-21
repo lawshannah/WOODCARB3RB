@@ -4,10 +4,10 @@
 \alias{calculatedumpcarbonproduction}
 \title{Calculate carbon in SWDS for the Production Method}
 \usage{
-calculatedumpcarbonproduction(Years, totalcarbonstockchange = FALSE)
+calculatedumpcarbonproduction(years, totalcarbonstockchange = FALSE)
 }
 \arguments{
-\item{Years}{years to calculate}
+\item{years}{years to calculate}
 
 \item{totalcarbonstockchange}{If true, returns carbon stock change, or returns data
 frame of intermediate calculations}

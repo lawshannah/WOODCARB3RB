@@ -1,4 +1,4 @@
-#Earliest year used in counting of carboin
+#Earliest year used in counting of carbon
 minyr <- 1900
 
 #The latest year calculated
@@ -13,13 +13,13 @@ yrs <- minyr:maxyr
 #switch to include exports
 a5 <- 1
 
-#Vector of end use categories
+#End use categories
 enduses <- c("SingleFam", "MultiFam", "MobileHomes", "TotalHomes", "ResidentialUpkeep",
     "AllRailroads", "Railroadties", "RailcairRepair", "TotalnonResidential",
     "HouseFurniture", "CommercialFurniture", "OtherManufacturing", "Total Manufacturing",
     "Shipping", "OtherUses", "OtherIndustrial", "Exports")
 
-#total end uses to not count in carbon totals
+#End use totals to not count in carbon totals
 totalEUs <- c("HL.House.Tot", "NonRes.construc.Tot", "Manuf.tot")
 
 primaryclasses <- c("Sawnwood", "StructuralPanels", "NonStructuralPanels",

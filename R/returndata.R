@@ -1,4 +1,4 @@
-##This code removes "no visible binding" error from R CMD check
+##This removes "no visible binding" error from R CMD check
 #solution from: http://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when
 names <- c("hair1958","hair1963","hair1963t20",
            "hair1963t21","howard28","howard37",

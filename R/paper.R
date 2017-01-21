@@ -2,15 +2,16 @@
 #'
 #' Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.
 #'
+#' @param years years to calculate data for
 #' @return A data frame with necessary intermediate calculations to calculate carbon from paper.
 #' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet (list them?)
-calcUSApaper <- function(){
+calcUSApaper <- function(years = yrs){
 
-  USA <- data.frame(Years = yrs)
+  USA <- data.frame(Years = years)
 
   ##api includes calculations from estimates/averages
 
-  USA$`apiTotalWP_L` <- sapply(yrs, function(year){
+  USA$`apiTotalWP_L` <- sapply(years, function(year){
     if (year < 1957){
       #F, H, B, F
       return((apiFiber(year,3)+apiFiber(year,5))*(apiTotal(year,1)/apiTotal(year,5)))
@@ -21,7 +22,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Recovered Fibre Pulp Exports Quantity` <- sapply(yrs, function(year){
+  USA$`Recovered Fibre Pulp Exports Quantity` <- sapply(years, function(year){
     if (year > 1997 && year < 2014){
       return(usaFiberPulp[[year-1997,3]])
     }
@@ -30,11 +31,11 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Paper+Paperboard Production` <- IncePaper[yrs-(minyr-2),1]*1000*InceL5
+  USA$`Paper+Paperboard Production` <- IncePaper[years-(minyr-2),1]*1000*InceL5
 
-  USA$`Paper+Paperboard Exports` <- IncePaper[yrs-(minyr-2),3]*1000*InceL5
+  USA$`Paper+Paperboard Exports` <- IncePaper[years-(minyr-2),3]*1000*InceL5
 
-  USA$`Pulp for Paper Production` <- sapply(yrs, function(year){
+  USA$`Pulp for Paper Production` <- sapply(years, function(year){
     if (year < 1965){
       return(apiTotal(year,1)+USA$`apiTotalWP_L`[year-(minyr-1)])
     }
@@ -46,7 +47,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Pulp for Paper Imports` <- sapply(yrs, function(year){
+  USA$`Pulp for Paper Imports` <- sapply(years, function(year){
     if (year < 1965){
       return(apiTotal(year,2)+USA$`apiTotalWP_L`[year-(minyr-1)]*(apiTotal(year,2)/apiTotal(year,1)))
     }
@@ -58,7 +59,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Pulp for Paper Exports` <- sapply(yrs, function(year){
+  USA$`Pulp for Paper Exports` <- sapply(years, function(year){
     if (year < 1965){
       return(apiTotal(year,3)+USA$`apiTotalWP_L`[year-(minyr-1)]*(apiTotal(year,3)/apiTotal(year,1)))
     }
@@ -71,7 +72,7 @@ calcUSApaper <- function(){
   })
 
 
-  USA$`Other Fibre Pulp Production` <- sapply(yrs, function(year){
+  USA$`Other Fibre Pulp Production` <- sapply(years, function(year){
     if (year < 1965){
       return(USA$`apiTotalWP_L`[year-(minyr-1)])
     }
@@ -88,7 +89,7 @@ calcUSApaper <- function(){
 
 
 
-  USA$`Other Fibre Pulp Imports` <- sapply(yrs, function(year){
+  USA$`Other Fibre Pulp Imports` <- sapply(years, function(year){
     if(year < 1965){
       return(USA$`apiTotalWP_L`[year-(minyr-1)]*(apiTotal(year,2)/apiTotal(year,1)))
     }
@@ -103,7 +104,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Other Fibre Pulp Exports` <- sapply(yrs, function(year){
+  USA$`Other Fibre Pulp Exports` <- sapply(years, function(year){
     if(year < 1965){
       return(USA$`apiTotalWP_L`[year-(minyr-1)]*(apiTotal(year,3)/apiTotal(year,1)))
     }
@@ -124,7 +125,7 @@ calcUSApaper <- function(){
 
   USA$`Wood Pulp for Paper Exports` <- USA$`Pulp for Paper Exports`-USA$`Other Fibre Pulp Exports`
 
-  USA$`Recovered Fibre Pulp Exports` <- sapply(yrs, function(year){
+  USA$`Recovered Fibre Pulp Exports` <- sapply(years, function(year){
     if (year <1998){
       return(0)
     }
@@ -136,7 +137,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Recovered Paper Exports` <- sapply(yrs, function(year){
+  USA$`Recovered Paper Exports` <- sapply(years, function(year){
     if (year < 1965){
       return(apiTotal(year,8))##calculation
     }
@@ -145,7 +146,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Total Roundwood Consumed For Paper` <- sapply(yrs, function(year){
+  USA$`Total Roundwood Consumed For Paper` <- sapply(years, function(year){
     if (year < 1950){
       return(h3(year,34)*((u5(1950,16)*InceV5+u6(1950,15)*InceW5)/(u5(1950,15)+u6(1950,15)))) #1950 value
     }
@@ -158,7 +159,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Imported Pulpwood Chips` <- sapply(yrs, function(year){
+  USA$`Imported Pulpwood Chips` <- sapply(years, function(year){
     if (year > 1988 && year < 2021){
       return(h6(year,22)*InceV5+h7(year,22)*InceW5)
     }
@@ -170,7 +171,7 @@ calcUSApaper <- function(){
     }
   })
 
-  USA$`Chip Exports (tons)` <- sapply(yrs, function(year){
+  USA$`Chip Exports (tons)` <- sapply(years, function(year){
     if (year < 1965){
       return(0)
     }
@@ -183,7 +184,7 @@ calcUSApaper <- function(){
   })
 
 
-  USA$`Paper+Paperbaord Imports` <- IncePaper[yrs-(1899-1),2]*1000*InceL5
+  USA$`Paper+Paperbaord Imports` <- IncePaper[years-(1899-1),2]*1000*InceL5
 
   USA$`Paper+Paperboard Consumption` <- USA$`Paper+Paperboard Production` +
     USA$`Paper+Paperbaord Imports`-

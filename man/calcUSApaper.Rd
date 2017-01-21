@@ -4,7 +4,10 @@
 \alias{calcUSApaper}
 \title{Calculates paper statistics}
 \usage{
-calcUSApaper()
+calcUSApaper(years = yrs)
+}
+\arguments{
+\item{years}{years to calculate data for}
 }
 \value{
 A data frame with necessary intermediate calculations to calculate carbon from paper.

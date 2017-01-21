@@ -1,3 +1,10 @@
+#' Calculates carbon in landfills and dumps.
+#'
+#' @param years years to calculate values for
+#' @param approach approach to use
+#'
+#' @return total carbon from solid waste disposal sites
+
 carbonfromdumps <- function(years, approach = c("Production", "Stock Change")) {
     a <- match.arg(approach)
     if (approach == "Production") {
@@ -9,21 +16,22 @@ carbonfromdumps <- function(years, approach = c("Production", "Stock Change")) {
 
 #' Calculate carbon in SWDS for the Stock Change Method
 #'
-#' @param Years years to calculate
+#' @param years years to calculate
 #' @param totalcarbonstockchange Whether to return data frame of intermedate calculations or
 #'  just totals
 #'
 #' @return If totalcarbonstockchange is false: a data frame of intermediate
 #'  calculations.  If totalcarbonstockchange is true: a numeric vector of stock change
 #'  for total carbon from dumps.
-calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE) {
-    usa <- calcUSApaper()
-    c <- calcplacediu(approach = "Stock Change")
-    swp <- swpcarbontotal(Yrs = yrs, approach = "Stock Change")
+calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE) {
+    ys <- minyr:max(years)
+    usa <- calcUSApaper(ys)
+    c <- calcplacediu(ys, approach = "Stock Change")
+    swp <- swpcarbontotal(Yrs = ys, approach = "Stock Change")
 
-    CalcUSA <- data.frame(Years = yrs)
+    CalcUSA <- data.frame(Years = ys)
 
-    CalcUSA$TotalCarbonOutputStockChange <- sapply(yrs, function(year) {
+    CalcUSA$TotalCarbonOutputStockChange <- sapply(ys, function(year) {
         if (year == minyr) {
             return(c[year - (minyr - 1)] - swpcarbontotal(Yrs = year,
                 lumberpre = FALSE, approach = "Stock Change"))
@@ -33,23 +41,23 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
         }
     })
 
-    CalcUSA$ParamResults_Q <- woodToDumps[yrs - (minyr - 1), 1]
+    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), 1]
 
     CalcUSA$Dumps_C <- PRM57 * CalcUSA$TotalCarbonOutputStockChange *
         PRO17 * CalcUSA$ParamResults_Q
 
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == 1900)
             CalcUSA$Dumps_D[1] <- (1/(1 + PRM60)) * CalcUSA$Dumps_C[year -
                 (minyr - 1)] else CalcUSA$Dumps_D[year - 1899] <- (1/(1 + PRM60)) * (CalcUSA$Dumps_D[year -
             1900] + CalcUSA$Dumps_C[year - (minyr - 1)])
     }
 
-    CalcUSA$Q <- woodToLandFills[yrs - (minyr - 1), 1] * PRJ96 * CalcUSA$TotalCarbonOutputStockChange *
+    CalcUSA$Q <- woodToLandFills[ys - (minyr - 1), 1] * PRJ96 * CalcUSA$TotalCarbonOutputStockChange *
         PRO17
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr) {
             CalcUSA$Dumps_F[year - (minyr - 1)] <- CalcUSA$Dumps_D[year -
                 (minyr - 1)]
@@ -61,29 +69,30 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
 
     CalcUSA$X <- PRM45 * CalcUSA$Q
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr) {
-            CalcUSA$Y[year - (minyr - 1)] <- (1/(1 + PRM50)) * CalcUSA$X[year -
-                (minyr - 1)]
+          CalcUSA$Y[year - (minyr - 1)] <- (1/(1 + PRM50)) * CalcUSA$X[year -
+                                                                 (minyr - 1)]
         } else {
-            CalcUSA$Y[year - (minyr - 1)] <- (1/(1 + PRM50)) * (CalcUSA$Y[year -
-                (minyr)] + CalcUSA$X[year - (minyr - 1)])
+          CalcUSA$Y[year - (minyr - 1)] <- (1/(1 + PRM50)) * (CalcUSA$Y[year -
+                                                                  (minyr)] + CalcUSA$X[year - (minyr - 1)])
+
         }
     }
 
-    CalcUSA$AA <- sapply(yrs, function(y) {
-        if (y == minyr) {
-            return(CalcUSA$Y[y - (minyr - 1)])
+
+    CalcUSA$AA <- sapply(ys, function(year) {
+        if (year == minyr) {
+            return(CalcUSA$Y[year - (minyr - 1)])
         }
-        return(CalcUSA$Y[y - (minyr - 1)] - CalcUSA$Y[y - minyr])
+        return(CalcUSA$Y[year - (minyr - 1)] - CalcUSA$Y[year - minyr])
     })
 
     CalcUSA$V <- (1 - PRM45) * CalcUSA$Q
 
-    CalcUSA$D <- PRO18 * usa$`Percent of Wood Pulp For Paper`[yrs -
-        (minyr - 1)] * usa$`Paper+Paperboard Consumption`
+    CalcUSA$D <- PRO18 * usa$`Percent of Wood Pulp For Paper` * usa$`Paper+Paperboard Consumption`
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr) {
             CalcUSA$J[year - (minyr - 1)] <- (exp(-log(2)/PRP10)) *
                 (CalcUSA$D[year - (minyr - 1)])
@@ -93,7 +102,7 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
         }
     }
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr) {
             CalcUSA$K[year - (minyr - 1)] <- CalcUSA$D[year - (minyr -
                 1)] - CalcUSA$J[year - (minyr - 1)]
@@ -105,10 +114,10 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
     }
 
 
-    CalcUSA$Dumps_H <- PRM57 * CalcUSA$K * woodToDumps[yrs - (minyr -
+    CalcUSA$Dumps_H <- PRM57 * CalcUSA$K * woodToDumps[ys - (minyr -
         1), 1]
 
-    for (y in yrs) {
+    for (y in ys) {
         if (y == minyr) {
             CalcUSA$Dumps_I[y - (minyr - 1)] <- (1/(1 + PRM61)) * CalcUSA$Dumps_H[y -
                 (minyr - 1)]
@@ -118,12 +127,12 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
         }
     }
 
-    CalcUSA$R <- CalcUSA$K * paperToLandFills[yrs - (minyr - 1), 1] *
+    CalcUSA$R <- CalcUSA$K * paperToLandFills[ys - (minyr - 1), 1] *
         PRI96
 
     CalcUSA$AG <- (1 - PRM46) * CalcUSA$R
 
-    for (y in yrs) {
+    for (y in ys) {
         if (y == minyr) {
             CalcUSA$Dumps_K[y - (minyr - 1)] <- CalcUSA$Dumps_I[y -
                 (minyr - 1)]
@@ -136,7 +145,7 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
 
     CalcUSA$AI <- PRM46 * CalcUSA$R
 
-    for (y in yrs) {
+    for (y in ys) {
         if (y == minyr) {
             CalcUSA$AJ[y - (minyr - 1)] <- (1/(1 + PRM51)) * CalcUSA$AI[y -
                 (minyr - 1)]
@@ -146,7 +155,7 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
         }
     }
 
-    CalcUSA$AL <- sapply(yrs, function(y) {
+    CalcUSA$AL <- sapply(ys, function(y) {
         if (y < 1901) {
             return(CalcUSA$AJ[y - (minyr - 1)])
         }
@@ -164,9 +173,9 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
         CalcUSA$Total_paper_stock_change_LD)
 
     if (totalcarbonstockchange == TRUE) {
-        return(CalcUSA$Var1b_STOCKCHANGE_TOTAL[Years - (minyr - 1)])
+        return(CalcUSA$Var1b_STOCKCHANGE_TOTAL[years - (minyr - 1)])
     } else {
-        CalcUSA[Years - (minyr - 1), ]
+        CalcUSA[years - (minyr - 1), ]
     }
 }
 
@@ -174,19 +183,20 @@ calculatedumpcarbonstockchange <- function(Years, totalcarbonstockchange = FALSE
 #'
 #' Column names with only letters come from Calc sheet, otherwise sheet is specified (need to change names)
 #'
-#' @param Years years to calculate
+#' @param years years to calculate
 #' @param totalcarbonstockchange If true, returns carbon stock change, or returns data
 #' frame of intermediate calculations
 #'
 #' @return Either a data frame of values from Calculation spreadsheet or total carbon output
-calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE) {
-    usa <- calcUSApaper()
-    c <- calcplacediu(approach = "Production")#.135 seconds
-    swp <- swpcarbontotal(Yrs = yrs)
+calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE) {
+    ys <- minyr:max(years)
+    usa <- calcUSApaper(ys)
+    c <- calcplacediu(ys, approach = "Production")#.135 seconds
+    swp <- swpcarbontotal(Yrs = ys)
 
-    CalcUSA <- data.frame(Years = yrs)
+    CalcUSA <- data.frame(Years = ys)
 
-    for (y in yrs) {
+    for (y in ys) {
         if (y == minyr) {
             CalcUSA$CA[1] <- exp(-log(2)/PRP10) * (usa$`Production Approach-C Input from Paper Products(Calc BU)`[y -
                 (minyr - 1)])
@@ -196,7 +206,7 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
         }
     }
 
-    for (y in yrs) {
+    for (y in ys) {
         if (y == minyr) {
             CalcUSA$CB[y - (minyr - 1)] <- usa$`Production Approach-C Input from Paper Products(Calc BU)`[y -
                 (minyr - 1)] - CalcUSA$CA[y - (minyr - 1)]
@@ -206,7 +216,7 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
         }
     }
 
-    CalcUSA$ParamResults_V <- paperToLandFills[yrs - (minyr - 1), ]
+    CalcUSA$ParamResults_V <- paperToLandFills[ys - (minyr - 1), ]
 
     CalcUSA$ParamResults_P <- CalcUSA$ParamResults_V * PRI96
 
@@ -216,14 +226,14 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
 
     CalcUSA$CU <- PRM46 * CalcUSA$CI
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr)
             CalcUSA$CV[1] <- (1/(1 + PRM51)) * CalcUSA$CU[year - (minyr -
                 1)] else CalcUSA$CV[year - (minyr - 1)] <- (1/(1 + PRM51)) * (CalcUSA$CV[year -
             minyr] + CalcUSA$CU[year - (minyr - 1)])
     }
 
-    CalcUSA$CX <- sapply(yrs, function(y) {
+    CalcUSA$CX <- sapply(ys, function(y) {
         if (y == minyr) {
             return(0)
         } else {
@@ -231,16 +241,16 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
         }
     })
 
-    CalcUSA$ParamResults_Q <- woodToDumps[yrs - (minyr - 1), 1]
+    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), 1]
 
     CalcUSA$Dumps_S <- PRM57 * CalcUSA$CB * CalcUSA$ParamResults_Q
 
     ### P+R 'O200' column, woodTolandfills is data linked to another site,
     ### not sure how it's calculated.
-    CalcUSA$ParamResults_O <- woodToLandFills[yrs - (minyr - 1), ] *
+    CalcUSA$ParamResults_O <- woodToLandFills[ys - (minyr - 1), ] *
         PRJ96
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr)
             CalcUSA$Dumps_T[1] <- (1/(1 + PRM61)) * CalcUSA$Dumps_S[year -
                 (minyr - 1)] else CalcUSA$Dumps_T[year - (minyr - 1)] <- (1/(1 + PRM61)) *
@@ -248,7 +258,7 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
                 (minyr - 1)])
     }
 
-    CalcUSA$Dumps_V <- sapply(yrs, function(year) {
+    CalcUSA$Dumps_V <- sapply(ys, function(year) {
         if (year == minyr) {
             return(CalcUSA$Dumps_T[year - (minyr - 1)])
         } else {
@@ -257,7 +267,7 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
         }
     })
 
-    CalcUSA$TotalCarbonOutput <- sapply(yrs, function(year) {
+    CalcUSA$TotalCarbonOutput <- sapply(ys, function(year) {
         if (year == minyr) {
             return(c[year - (minyr - 1)] - swpcarbontotal(Yrs = year,
                 lumberpre = FALSE))
@@ -270,7 +280,7 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
     CalcUSA$CM <- PRM45 * CalcUSA$ParamResults_O * CalcUSA$TotalCarbonOutput *
         PRO17
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr)
             CalcUSA$CN[1] <- (1/(1 + PRM50)) * CalcUSA$CM[year - (minyr -
                 1)] else CalcUSA$CN[year - (minyr - 1)] <- (1/(1 + PRM50)) * (CalcUSA$CN[year -
@@ -279,7 +289,7 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
 
     CalcUSA$Dumps_N <- PRM57 * CalcUSA$TotalCarbonOutput * PRO17 * CalcUSA$ParamResults_Q
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr)
             CalcUSA$Dumps_O[1] <- (1/(1 + PRM60)) * CalcUSA$Dumps_N[year -
                 (minyr - 1)] else CalcUSA$Dumps_O[year - (minyr - 1)] <- (1/(1 + PRM60)) *
@@ -293,19 +303,19 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
 
     CalcUSA$CK <- (1 - PRM45) * CalcUSA$CH
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr)
             CalcUSA$CL[1] <- CalcUSA$CK[year - (minyr - 1)] else CalcUSA$CL[year - (minyr - 1)] <- CalcUSA$CL[year - minyr] +
             CalcUSA$CK[year - (minyr - 1)]
     }
 
-    for (year in yrs) {
+    for (year in ys) {
         if (year == minyr)
             CalcUSA$CT[1] <- CalcUSA$CS[year - (minyr - 1)] else CalcUSA$CT[year - (minyr - 1)] <- CalcUSA$CT[year - minyr] +
             CalcUSA$CS[year - (minyr - 1)]
     }
 
-    CalcUSA$C_SWP_StockChange_LFDumps <- sapply(yrs, function(y) {
+    CalcUSA$C_SWP_StockChange_LFDumps <- sapply(ys, function(y) {
         if (y == 1900) {
             return((1 - PRM45) * CalcUSA$ParamResults_O[y - (minyr -
                 1)] * CalcUSA$TotalCarbonOutput[y - (minyr - 1)] * PRO17 +
@@ -328,10 +338,10 @@ calculatedumpcarbonproduction <- function(Years, totalcarbonstockchange = FALSE)
 
 
     if (totalcarbonstockchange == TRUE) {
-        return(CalcUSA$TotalC_StockChange_SWDSProduction[Years - (minyr -
+        return(CalcUSA$TotalC_StockChange_SWDSProduction[years - (minyr -
             1)])
     }
-    CalcUSA[Years - (minyr - 1), ]
+    CalcUSA[years - (minyr - 1), ]
 }
 
 

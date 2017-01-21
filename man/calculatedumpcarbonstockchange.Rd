@@ -4,10 +4,10 @@
 \alias{calculatedumpcarbonstockchange}
 \title{Calculate carbon in SWDS for the Stock Change Method}
 \usage{
-calculatedumpcarbonstockchange(Years, totalcarbonstockchange = FALSE)
+calculatedumpcarbonstockchange(years, totalcarbonstockchange = FALSE)
 }
 \arguments{
-\item{Years}{years to calculate}
+\item{years}{years to calculate}
 
 \item{totalcarbonstockchange}{Whether to return data frame of intermedate calculations or
 just totals}

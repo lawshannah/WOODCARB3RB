@@ -34,7 +34,7 @@ finalCarbonContribution()
 The years, approach used, decay distribution, and values for end use half life values can be entered as arguments. `halfLives` is a data frame with the default half life values.  
 
 ```{r}
-finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", decaydistribution = "K=2", halflives = halfLives* 1.2)
+finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", halflives = halfLives* 1.2)
 ```
 
 A plot can be returned. 

@@ -5,7 +5,8 @@
 \title{Total carbon placed in use in od tons of wood fiber}
 \usage{
 calcplacediu(Years = 1900:2020, approach = c("Production", "Stock Change"),
-  total = TRUE)
+  total = TRUE, fsp = fracstrpanels, fnsp = fracnonstrpanels,
+  fsawn = fracsawnwood)
 }
 \arguments{
 \item{Years}{years to calculate carbon placed in use for}
@@ -13,6 +14,18 @@ calcplacediu(Years = 1900:2020, approach = c("Production", "Stock Change"),
 \item{approach}{The approach type to use. Fractions dont change but inflow does}
 
 \item{total}{Whether to return total placed in use or seperate it by end uses.}
+
+\item{fsp}{Fraction of structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.}
+
+\item{fnsp}{Fraction of non-structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.}
+
+\item{fsawn}{Fraction of sawnwood products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.}
 }
 \value{
 a data frame of carbon placed in use for various end uses

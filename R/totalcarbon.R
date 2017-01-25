@@ -68,12 +68,10 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
         decays <- decayarray[2,eu,yearrange,year - minyr + 1]
 
       }
-      Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu]*decays
+      Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu+1]*decays
                                                                                   *(1 - lossIU[yearrange,eu]))
 
-
     }
-
   }
 
   Var2_totalC_SWP[,"LumberPre1900"] <- lumberpre1900[Yrs - minyr + 1,]

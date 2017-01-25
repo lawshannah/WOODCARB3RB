@@ -892,16 +892,13 @@
 #' \item{House.SingFam}{Fraction of sawnwood production in Single Family Homes}
 #' \item{House.Multifam}{Fraction of sawnwood production in Multi Family Homes}
 #' \item{House.MobHom}{Fraction of sawnwood production in Mobile Homes}
-#' \item{House.Tot}{Total fraction of sawnwood production in homes}
 #' \item{Res.Upkeep}{Fraction of sawnwood production in Total Residential Upkeep and Improvement}
 #' \item{New.Nonres.AllRR}{Fraction of sawnwood production in All Railroads}
 #' \item{New.Nonres.Rties}{Fraction of sawnwood production in Railroad Ties}
 #' \item{New.Nonres.Rcar.Repair}{Fraction of sawnwood production in Railcar Repair}
-#' \item{New.Nonres.tot}{Total fraction of sawnwood production in non-residential end uses}
 #' \item{Manu.HouseFurniture}{Fraction of sawnwood production in Household Furniture}
 #' \item{Manu.CommFurniture}{Fraction of sawnwood production in Commercial Furniture}
 #' \item{Manu.OtherProducts}{Fraction of sawnwood production in Manufacturing and Other Products}
-#' \item{Manu.Tot}{Total fraction of sawnwood production in manufacturing}
 #' \item{Shipping.Tot}{Fraction of sawnwood production in Shipping}
 #' \item{Other.Uses.Tot}{Fraction of sawnwood production in Other Uses}
 #' \item{Other.Industrial.Tot}{Fraction of sawnwood production in Uses For Other Industrial Products}
@@ -920,16 +917,13 @@
 #' \item{House.SingFam}{Fraction of structural panel production in Single Family Homes}
 #' \item{House.Multifam}{Fraction of structural panel production in Multi Family Homes}
 #' \item{House.MobHom}{Fraction of structural panel production in Mobile Homes}
-#' \item{House.Tot}{Total fraction of structural panel production in homes}
 #' \item{Res.Upkeep}{Fraction of structural panel production in Total Residential Upkeep and Improvement}
 #' \item{New.Nonres.AllRR}{Fraction of structural panel production in All Railroads}
 #' \item{New.Nonres.Rties}{Fraction of structural panel production in Railroad Ties}
 #' \item{New.Nonres.Rcar.Repair}{Fraction of structural panel production in Railcar Repair}
-#' \item{New.Nonres.tot}{Total fraction of structural panel production in non-residential end uses}
 #' \item{Manu.HouseFurniture}{Fraction of structural panel production in Household Furniture}
 #' \item{Manu.CommFurniture}{Fraction of structural panel production in Commercial Furniture}
 #' \item{Manu.OtherProducts}{Fraction of structural panel production in Manufacturing and Other Products}
-#' \item{Manu.Tot}{Total fraction of structural panel production in manufacturing}
 #' \item{Shipping.Tot}{Fraction of structural panel production in Shipping}
 #' \item{Other.Uses.Tot}{Fraction of structural panel production in Other Uses}
 #' \item{Other.Industrial.Tot}{Fraction of structural panel production in Uses For Other Industrial Products}
@@ -947,16 +941,13 @@
 #' \item{House.SingFam}{Fraction of non-structural panel production in Single Family Homes}
 #' \item{House.Multifam}{Fraction of non-structural panel production in Multi Family Homes}
 #' \item{House.MobHom}{Fraction of non-structural panel production in Mobile Homes}
-#' \item{House.Tot}{Total fraction of non-structural panel production in homes}
 #' \item{Res.Upkeep}{Fraction of non-structural panel production in Total Residential Upkeep and Improvement}
 #' \item{New.Nonres.AllRR}{Fraction of non-structural panel production in All Railroads}
 #' \item{New.Nonres.Rties}{Fraction of non-structural panel production in Railroad Ties}
 #' \item{New.Nonres.Rcar.Repair}{Fraction of non-structural panel production in Railcar Repair}
-#' \item{New.Nonres.tot}{Total fraction of non-structural panel production in non-residential end uses}
 #' \item{Manu.HouseFurniture}{Fraction of non-structural panel production in Household Furniture}
 #' \item{Manu.CommFurniture}{Fraction of non-structural panel production in Commercial Furniture}
 #' \item{Manu.OtherProducts}{Fraction of non-structural panel production in Manufacturing and Other Products}
-#' \item{Manu.Tot}{Total fraction of non-structural panel production in manufacturing}
 #' \item{Shipping.Tot}{Fraction of non-structural panel production in Shipping}
 #' \item{Other.Uses.Tot}{Fraction of non-structural panel production in Other Uses}
 #' \item{Other.Industrial.Tot}{Fraction of non-structural panel production in Uses For Other Industrial Products}

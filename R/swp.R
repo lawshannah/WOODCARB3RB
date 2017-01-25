@@ -292,6 +292,7 @@ calculateswpdata <- function() {
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#'
 #' @return a data frame of carbon placed in use for various end uses
 calcplacediu <- function(Years = 1900:2020, approach = c("Production",
     "Stock Change"), total = TRUE, fsp = fracstrpanels,
@@ -302,25 +303,28 @@ calcplacediu <- function(Years = 1900:2020, approach = c("Production",
     placeIU <- data.frame(Years = Years)
 
     if (approachtype == "Production") {
-        placeIU[, 2:16] <- swpcalcdata[["Sawnwood Prod Special"]][Years -
-            (minyr - 1)] * fsawn[Years - (minyr - 1), -16] +
+        placeIU[, 2:13] <- swpcalcdata[["Sawnwood Prod Special"]][Years -
+            (minyr - 1)] * fsawn[Years - (minyr - 1), -13] +
             swpcalcdata[["SP Prod Special"]][Years - (minyr - 1)] *
-                fsp[Years - (minyr - 1), -16] + swpcalcdata[["NSP Prod Special"]][Years -
-            (minyr - 1)] * fnsp[Years - (minyr - 1), -16]
+                fsp[Years - (minyr - 1), -13] + swpcalcdata[["NSP Prod Special"]][Years -
+            (minyr - 1)] * fnsp[Years - (minyr - 1), -13]
     } else if (approachtype == "Stock Change") {
-        placeIU[, 2:16] <- swpcalcdata[["Sawnwood Consumption"]][Years -
-            (minyr - 1)] * fsawn[Years - (minyr - 1), -16] +
+        placeIU[, 2:13] <- swpcalcdata[["Sawnwood Consumption"]][Years -
+            (minyr - 1)] * fsawn[Years - (minyr - 1), -13] +
             swpcalcdata[["SP.Consumption"]][Years - (minyr - 1)] * fsp[Years -
-                (minyr - 1), -16] + swpcalcdata[["NSP.Consumption"]][Years -
-            (minyr - 1)] * fnsp[Years - (minyr - 1), -16]
+                (minyr - 1), -13] + swpcalcdata[["NSP.Consumption"]][Years -
+            (minyr - 1)] * fnsp[Years - (minyr - 1), -13]
     }
 
-    placeIU$V17 <- swpcalcdata$`Other Products Production Special`[Years -
+    placeIU$`Other Industrial Products Production` <- swpcalcdata$`Other Products Production Special`[Years -
         (minyr - 1)]
     if (total == FALSE) {
-        placeIU[, -c(1, 5, 10, 14)]
+        #placeIU[, -c(1, 5, 10, 14)]
+        placeIU
+
     } else {
-        apply(placeIU[, -c(1, 5, 10, 14)], 1, sum)
+        #apply(placeIU[, -c(1, 5, 10, 14)], 1, sum)
+         apply(placeIU[,-1], 1, sum)
     }
 }
 

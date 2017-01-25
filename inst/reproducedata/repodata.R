@@ -326,6 +326,7 @@ colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom","House
                           "Manu.Tot",
                           "Shipping.Tot","Other.Uses.Tot", "Other.Industrial.Tot")
 fracsawnwood[is.na(fracsawnwood)] <- 0
+fracsawnwood <- fracsawnwood[,-c(4, 9, 13)]
 
 use_data(fracsawnwood, overwrite=TRUE)
 
@@ -339,7 +340,7 @@ colnames(fracnonstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","H
                               "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
                               "Manu.Tot",
                               "Shipping.Tot","Other.Uses.Tot", "Other.Industrial.Tot")
-
+fracnonstrpanels <- fracnonstrpanels[,-c(4, 9, 13)]
 use_data(fracnonstrpanels, overwrite = TRUE)
 
 
@@ -352,7 +353,7 @@ colnames(fracstrpanels)<-c("House.SingFam","House.Multifam","House.MobHom","Hous
                            "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
                            "Manu.Tot",
                            "Shipping.Tot","Other.Uses.Tot", "Other.Industrial.Tot")
-
+fracstrpanels <- fracstrpanels[,-c(4, 9, 13)]
 use_data(fracstrpanels, overwrite = TRUE)
 
 

@@ -18,3 +18,16 @@ finalVariables()
 swpcarbontotal(c(1990,2015), onlytotal = FALSE, lumberpre = FALSE,
                approach = "Stock Change", halflives = halfLives * .9) 
 
+## ------------------------------------------------------------------------
+#Directly in function 
+adj <-  (1 + rnorm(13, 0, .15))
+finalCarbonContribution(fsp = fracstrpanels * adj)
+
+#Make a copy first 
+fsawncopy <- fracsawnwood
+for (i in ncol(fsawncopy)) {
+  fsawncopy[,i] <- fsawncopy * rnorm(13,0,.08)
+}
+finalCarbonContribution(fsawn = fsawncopy)
+
+

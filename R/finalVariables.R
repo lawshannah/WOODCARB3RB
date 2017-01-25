@@ -66,7 +66,8 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
   else {
     #First column is 1A/2A for Stock change and production respectively,
     #and second column is 1B/2B for stock change and production respectively.
-    contrib <- (-1*fvs[,1]-fvs[,2])*44/12
+    contrib <- (-1*fvs[,names(fvs)[grep("A", names(fvs))]]-
+                  fvs[,names(fvs)[grep("B", names(fvs))]])*44/12
   }
   r <- list(contrib)
   if (plot == TRUE) {
@@ -183,7 +184,7 @@ finalVariables <- function(Years = 1990:2015,
 
   if (is.null(approach)) {
 
-    df <- data.frame(Var1A = Var1A(), Var1B = Var1B(),
+    df <- data.frame(Years, Var1A = Var1A(), Var1B = Var1B(),
                      Var2A = Var2A(), Var2B = Var2B(),
                      Var3 = Var3(), Var4 = Var4(),
                      Var5 = Var5())
@@ -191,29 +192,24 @@ finalVariables <- function(Years = 1990:2015,
   }
 
   if (approach == "Production") {
-    df <- data.frame(Var2A = Var2A(),
+    df <- data.frame(Years, Var2A = Var2A(),
                      Var2B = Var2B())
     return(df)
   }
 
   if (approach == "Stock Change") {
-    df <- data.frame(Var1A = Var1A(),
+    df <- data.frame(Years, Var1A = Var1A(),
                      Var1B = Var1B())
     return(df)
   }
 
   if (approach == "Atmospheric Flow") {
-    df <- data.frame(Var1A = Var1A(),
+    df <- data.frame(Years, Var1A = Var1A(),
                      Var1B = Var1B(),
                      Var3  = Var3(),
                      Var4  = Var4())
     return(df)
   }
-
-
-
-
-
 }
 
 #' Calculates changes in carbon stock from solid wood products.
@@ -250,17 +246,18 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
                                    fsawn = fracsawnwood){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
-  ##To allow for any vector of year for input
-  ##Need previous year for each year being calculated
-  yearss <- unique(c(rbind(years-1,years)))
 
-  totals <- swpcarbontotal(Yrs = yearss, approach = approach, decaydistribution = decay,
+  yearss <- (min(years)-1):max(years)
+
+  totals <- data.frame(yearss, carbon = swpcarbontotal(Yrs = yearss, approach = approach, decaydistribution = decay,
                            halflives = halflives, fsp = fsp,
                            fnsp = fnsp,
-                           fsawn = fsawn)
-  return(PRO17  * diff(totals))
-  changeinstock <- PRO17  * (totals[c(FALSE, TRUE)] - totals[c(TRUE, FALSE)])
-  return(changeinstock)
+                           fsawn = fsawn))
+
+  totals[2:length(yearss),"diffs"] <- diff(totals$carbon)
+  stockchange <- PRO17 * totals[totals$yearss %in% years,"diffs"]
+
+  return(stockchange)
 
 }
 

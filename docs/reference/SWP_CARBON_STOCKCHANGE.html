@@ -90,7 +90,8 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
     
 
     <pre><span class='fu'>swp_carbon_stockchange</span>(<span class='no'>years</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>, <span class='st'>"Stock Change"</span>),
-  <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
+  <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>,
+  <span class='kw'>fsp</span> <span class='kw'>=</span> <span class='no'>fracstrpanels</span>, <span class='kw'>fnsp</span> <span class='kw'>=</span> <span class='no'>fracnonstrpanels</span>, <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -103,6 +104,18 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
       <dt>halflives</dt>
       <dd>data frame of half lives to use. Must have a column associated with each
 one of 13 end uses and half life values for 1900 until the maximum year of interest.</dd>
+      <dt>fsp</dt>
+      <dd>Fraction of structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
+      <dt>fnsp</dt>
+      <dd>Fraction of non-structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
+      <dt>fsawn</dt>
+      <dd>Fraction of sawnwood products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>

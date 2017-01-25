@@ -85,7 +85,8 @@
     
 
     <pre><span class='fu'>finalVariables</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1990</span>:<span class='fl'>2015</span>, <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>,
-  <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>)</pre>
+  <span class='st'>"K=2"</span>), <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>fsp</span> <span class='kw'>=</span> <span class='no'>fracstrpanels</span>,
+  <span class='kw'>fnsp</span> <span class='kw'>=</span> <span class='no'>fracnonstrpanels</span>, <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -96,13 +97,30 @@
       <dt>halflives</dt>
       <dd>data frame of half lives to use. Must have a column associated with each
 one of 13 end uses and half life values for 1900 until the maximum year of interest.</dd>
+      <dt>approach</dt>
+      <dd>approach to calculate corresponding final variables for.
+If null, all final variables are calculated and returned.</dd>
+      <dt>fsp</dt>
+      <dd>Fraction of structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
+      <dt>fnsp</dt>
+      <dd>Fraction of non-structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
+      <dt>fsawn</dt>
+      <dd>Fraction of sawnwood products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Data frame with nine columns (Variables 1 and 2 have two parts each).
-If the decay distribution is exponential then the data frame returned will correspond
-to table containing final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.</p>
+    <p>If an approach is specified then only the variables needed for that
+approach will be returned. If approach is null then a data frame with nine
+columns (Variables 1 and 2 have two parts each) will be returned. If the decay distribution
+is exponential then the data frame returned will correspond to table containing
+final variables: `06 IPCC Tables` in the WOODCARB II spreadsheet.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -121,8 +139,84 @@ domestic harvest (from products in use and products in SWDS)</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1950</span>:<span class='fl'>2000</span>)
-<span class='fu'>finalVariables</span>(<span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span> * <span class='fl'>1.25</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1950</span>:<span class='fl'>2000</span>)</div><div class='output co'>#&gt;    Years     Var1A     Var1B     Var2A     Var2B      Var3      Var4      Var5
+#&gt; 1   1950  9995.945  6073.986  8325.377  5524.132        NA        NA  27403.16
+#&gt; 2   1951  8212.001  6923.282  7224.940  6369.621        NA        NA  26690.07
+#&gt; 3   1952  7216.375  7084.739  6456.358  6535.815        NA        NA  24420.43
+#&gt; 4   1953  7571.742  7320.026  6505.250  6742.153        NA        NA  24225.81
+#&gt; 5   1954  7114.300  7500.246  6151.799  6930.567        NA        NA  23937.36
+#&gt; 6   1955  8501.298  7838.078  7424.610  7273.041        NA        NA  24426.36
+#&gt; 7   1956  8656.789  8145.093  7440.233  7560.769        NA        NA  24053.28
+#&gt; 8   1957  5410.116  8175.901  4619.656  7620.178        NA        NA  22334.69
+#&gt; 9   1958  5599.659  8332.094  4669.402  7785.624        NA        NA  21731.01
+#&gt; 10  1959  7898.377  8657.372  6530.785  8081.612        NA        NA  22687.63
+#&gt; 11  1960  5669.688 10469.543  4665.256  9784.615        NA        NA  21886.08
+#&gt; 12  1961  5611.774 10530.369  4592.384  9872.030        NA        NA  21759.52
+#&gt; 13  1962  6783.654 10735.669  5294.830 10046.057        NA        NA  22407.38
+#&gt; 14  1963  8125.893 10986.572  6881.941 10323.849        NA        NA  22549.87
+#&gt; 15  1964  9660.151 11337.620  8455.472 10684.466        NA        NA  22370.50
+#&gt; 16  1965 11471.816 11820.256 10062.247 11124.109  6051.165  2809.271  94648.95
+#&gt; 17  1966 12055.957 12295.465 10688.924 11552.053  6443.170  3282.320  96992.34
+#&gt; 18  1967 10276.461 12533.487  9677.177 11849.818  6201.126  4212.135  95590.20
+#&gt; 19  1968 11746.328 13032.489 11137.073 12417.928  6893.801  5371.828  99324.39
+#&gt; 20  1969 12234.910 13564.390 11339.477 12989.341  7375.913  5686.274 100621.23
+#&gt; 21  1970 10866.400 13860.862 10596.254 13441.040  7115.558  6662.083 109529.37
+#&gt; 22  1971 12863.347 14391.855 11478.406 13952.717  7773.550  5679.069 103970.74
+#&gt; 23  1972 14901.016 15103.312 13168.105 14648.918  8943.554  6908.594 106269.04
+#&gt; 24  1973 15091.262 15811.116 13824.360 15397.897  9222.992  7893.552 107649.81
+#&gt; 25  1974 10210.188 15983.698  9941.003 15705.881  8250.261  7916.759 105143.84
+#&gt; 26  1975  4984.634 15576.003  5485.384 15495.069  6468.645  7152.180  96291.62
+#&gt; 27  1976 10545.801 16232.586 10212.110 16190.109  8136.783  8333.654 102263.65
+#&gt; 28  1977 13357.679 16892.739 11791.598 16802.009  9375.688  8173.078 107011.65
+#&gt; 29  1978 14886.408 17641.237 12303.038 17394.988 10578.096  8373.062 113275.68
+#&gt; 30  1979 14180.854 18331.608 12707.239 18114.098 10478.606  9828.946 118136.49
+#&gt; 31  1980  9142.947 18481.331  9239.598 18508.293  9469.013 10351.657 112410.20
+#&gt; 32  1981  7549.515 18121.049  6721.279 18164.861  9282.627  8872.322 108744.69
+#&gt; 33  1982  6376.251 17647.887  5238.875 17677.024  9141.002  8846.670 113021.70
+#&gt; 34  1983 13308.289 18072.427 10793.581 17930.769 11208.629  9564.347 124168.21
+#&gt; 35  1984 16657.593 18532.109 12948.507 18139.962 12779.331  9535.929 129787.76
+#&gt; 36  1985 16164.061 18642.347 11992.741 18026.413 13497.558  9823.927 128841.85
+#&gt; 37  1986 18637.505 18988.068 15337.012 18328.227 13588.834 10691.868 139143.20
+#&gt; 38  1987 21004.761 19436.830 17958.100 18739.661 14575.982 12102.269 140517.41
+#&gt; 39  1988 19885.065 19615.605 19096.707 19130.557 14099.278 14579.840 142284.64
+#&gt; 40  1989 18591.500 19650.691 18633.365 19363.136 13662.151 15253.874 142955.07
+#&gt; 41  1990 17043.712 18307.634 17659.334 18278.363 12679.503 15077.999 142297.14
+#&gt; 42  1991 13128.825 18601.567 14939.855 18812.331 11551.747 15667.472 144434.61
+#&gt; 43  1992 15717.739 17005.519 16334.429 17426.645 12855.636 16032.210 139388.54
+#&gt; 44  1993 16956.723 17626.583 14971.221 17949.011 14511.739 14788.173 134553.68
+#&gt; 45  1994 18220.973 17220.928 15929.570 17479.060 15684.969 15665.370 134750.37
+#&gt; 46  1995 17306.863 17051.466 15064.955 17228.990 16712.320 17265.886 137026.51
+#&gt; 47  1996 17018.001 16347.532 14092.141 16513.068 16690.669 16732.919 134477.27
+#&gt; 48  1997 18755.629 17090.104 14740.118 17262.744 17983.122 16876.897 135438.73
+#&gt; 49  1998 19653.677 17769.368 13403.948 17738.355 18994.153 15056.852 134206.11
+#&gt; 50  1999 21444.228 18662.301 14145.556 18358.728 20599.100 15245.335 134192.96
+#&gt; 51  2000 19999.515 18508.292 12840.060 17969.614 21857.503 16184.631 133694.05</div><div class='input'><span class='fu'>finalVariables</span>(<span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span> * <span class='fl'>1.25</span>)</div><div class='output co'>#&gt;    Years      Var1A    Var1B      Var2A    Var2B     Var3     Var4      Var5
+#&gt; 1   1990 19060.2074 18307.63 19529.1235 18278.36 12679.50 15078.00 142297.14
+#&gt; 2   1991 15157.3306 18601.57 16824.0342 18812.33 11551.75 15667.47 144434.61
+#&gt; 3   1992 17763.9756 17005.52 18234.9245 17426.64 12855.64 16032.21 139388.54
+#&gt; 4   1993 19022.5839 17626.58 16885.8853 17949.01 14511.74 14788.17 134553.68
+#&gt; 5   1994 20307.8619 17220.93 17857.3494 17479.06 15684.97 15665.37 134750.37
+#&gt; 6   1995 19412.5478 17051.47 17002.0927 17228.99 16712.32 17265.89 137026.51
+#&gt; 7   1996 19144.4584 16347.53 16038.8201 16513.07 16690.67 16732.92 134477.27
+#&gt; 8   1997 20904.3027 17090.10 16696.8640 17262.74 17983.12 16876.90 135438.73
+#&gt; 9   1998 21826.8796 17769.37 15368.9174 17738.36 18994.15 15056.85 134206.11
+#&gt; 10  1999 23645.4605 18662.30 16121.1851 18358.73 20599.10 15245.33 134192.96
+#&gt; 11  2000 22227.5858 18508.29 14825.1377 17969.61 21857.50 16184.63 133694.05
+#&gt; 12  2001 18741.7770 17610.24 10701.4587 16780.98 22051.45 15336.17 127896.01
+#&gt; 13  2002 19689.3107 18235.45 11558.9963 17212.91 23209.92 15743.99 126866.06
+#&gt; 14  2003 19285.4508 17325.96 11448.1486 16174.97 23706.93 16302.59 126477.26
+#&gt; 15  2004 23742.2301 17643.50 14082.5527 16274.85 26427.58 16952.97 131737.71
+#&gt; 16  2005 23357.4039 17765.22 13720.4398 16293.62 26792.51 17312.49 132481.61
+#&gt; 17  2006 21476.3442 18586.79 14108.7872 17268.23 25442.39 18835.68 129528.83
+#&gt; 18  2007 15493.9100 18307.97 12649.6550 17387.19 21649.52 20656.59 123639.75
+#&gt; 19  2008  4800.4058 17510.54  5852.4815 17089.68 16981.71 21158.54 106096.03
+#&gt; 20  2009 -2761.8311 16641.59   134.6535 16646.38 13114.89 20616.42  96032.07
+#&gt; 21  2010  -591.1636 16300.85  1864.6348 16572.71 14161.49 22419.91  97555.35
+#&gt; 22  2011   384.3373 16171.28  3896.0278 16804.35 13922.97 24671.92 100848.20
+#&gt; 23  2012  1944.1583 16112.04  3598.0499 16906.41 14067.44 23323.55 103469.51
+#&gt; 24  2013  4519.4060 16188.34  4173.6159 16994.18 15142.07 22850.52 107005.04
+#&gt; 25  2014 15150.1898 17146.43  8073.6013 17366.38 19008.74 18657.41 100350.97
+#&gt; 26  2015 15672.2899 17965.44  8967.5527 17745.38 19872.28 18716.93 102198.42</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

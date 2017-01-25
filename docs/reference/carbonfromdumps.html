@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate carbon in SWDS for the Production Method — calculatedumpcarbonproduction • WOODCARB3R</title>
+<title>Calculates carbon in landfills and dumps. — carbonfromdumps • WOODCARB3R</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,27 +77,26 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate carbon in SWDS for the Production Method</h1>
+    <h1>Calculates carbon in landfills and dumps.</h1>
     </div>
 
     
-    <p>Column names with only letters come from Calc sheet, otherwise sheet is specified (need to change names)</p>
+    <p>Calculates carbon in landfills and dumps.</p>
     
 
-    <pre><span class='fu'>calculatedumpcarbonproduction</span>(<span class='no'>years</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre><span class='fu'>carbonfromdumps</span>(<span class='no'>years</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>, <span class='st'>"Stock Change"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>years</dt>
-      <dd>years to calculate</dd>
-      <dt>totalcarbonstockchange</dt>
-      <dd>If true, returns carbon stock change, or returns data
-frame of intermediate calculations</dd>
+      <dd>years to calculate values for</dd>
+      <dt>approach</dt>
+      <dd>approach to use</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Either a data frame of values from Calculation spreadsheet or total carbon output</p>
+    <p>total carbon from solid waste disposal sites</p>
     
 
   </div>

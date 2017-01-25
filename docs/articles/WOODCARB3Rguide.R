@@ -6,7 +6,7 @@ library(WOODCARB3R)
 finalCarbonContribution()
 
 ## ------------------------------------------------------------------------
-finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", decaydistribution = "K=2", halflives = halfLives* 1.2)
+finalCarbonContribution(Years = 1945:2017, approach = "Atmospheric Flow", halflives = halfLives* 1.2)
 
 ## ---- fig.width=6, fig.height=4------------------------------------------
 finalCarbonContribution(plot = TRUE)
@@ -17,4 +17,17 @@ finalVariables()
 ## ------------------------------------------------------------------------
 swpcarbontotal(c(1990,2015), onlytotal = FALSE, lumberpre = FALSE,
                approach = "Stock Change", halflives = halfLives * .9) 
+
+## ------------------------------------------------------------------------
+#Directly in function 
+adj <-  (1 + rnorm(13, 0, .15))
+finalCarbonContribution(fsp = fracstrpanels * adj)
+
+#Make a copy first 
+fsawncopy <- fracsawnwood
+for (i in ncol(fsawncopy)) {
+  fsawncopy[,i] <- fsawncopy * rnorm(13,0,.08)
+}
+finalCarbonContribution(fsawn = fsawncopy)
+
 

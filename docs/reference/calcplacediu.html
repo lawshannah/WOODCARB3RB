@@ -86,7 +86,8 @@ approach respectively.</p>
     
 
     <pre><span class='fu'>calcplacediu</span>(<span class='kw'>Years</span> <span class='kw'>=</span> <span class='fl'>1900</span>:<span class='fl'>2020</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>, <span class='st'>"Stock Change"</span>),
-  <span class='kw'>total</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>total</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fsp</span> <span class='kw'>=</span> <span class='no'>fracstrpanels</span>, <span class='kw'>fnsp</span> <span class='kw'>=</span> <span class='no'>fracnonstrpanels</span>,
+  <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -96,6 +97,18 @@ approach respectively.</p>
       <dd>The approach type to use. Fractions dont change but inflow does</dd>
       <dt>total</dt>
       <dd>Whether to return total placed in use or seperate it by end uses.</dd>
+      <dt>fsp</dt>
+      <dd>Fraction of structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
+      <dt>fnsp</dt>
+      <dd>Fraction of non-structural panel products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
+      <dt>fsawn</dt>
+      <dd>Fraction of sawnwood products that go to each end use.
+Default can be substituted with data with a column for each end use and row for years
+from 1900 to latest year of interest.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>

@@ -181,11 +181,10 @@ adj &lt;-<span class="st">  </span>(<span class="dv">1</span> +<span class="st">
 <span class="co">#Make a copy first </span>
 fsawncopy &lt;-<span class="st"> </span>fracsawnwood
 for (i in <span class="kw">ncol</span>(fsawncopy)) {
-  fsawncopy[,i] &lt;-<span class="st"> </span>fsawncopy *<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>,<span class="dv">0</span>,.<span class="dv">08</span>)
+  fsawncopy[,i] &lt;-<span class="st"> </span>fsawncopy[,i] *<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>,<span class="dv">0</span>,.<span class="dv">05</span>+i)
 }
-Warning in <span class="st">`</span><span class="dt">[&lt;-.data.frame</span><span class="st">`</span>(<span class="st">`</span><span class="dt">*tmp*</span><span class="st">`</span>, , i, <span class="dt">value =</span>
-<span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">House.SingFam =</span> <span class="kw">c</span>(-<span class="fl">0.039560131095173</span>, :<span class="st"> </span>provided <span class="dv">13</span>
-variables to replace <span class="dv">1</span> variables
+Warning in fsawncopy[, i] *<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>, <span class="dv">0</span>, <span class="fl">0.05</span> +<span class="st"> </span>i):<span class="st"> </span>longer object length is
+not a multiple of shorter object length
 <span class="kw"><a href="../reference/finalCarbonContribution.html">finalCarbonContribution</a></span>(<span class="dt">fsawn =</span> fsawncopy)
  [<span class="dv">1</span>] -<span class="fl">131771.55</span> -<span class="fl">123758.01</span> -<span class="fl">123790.61</span> -<span class="fl">120707.52</span> -<span class="fl">122498.31</span> -<span class="fl">118411.13</span>
  [<span class="dv">7</span>] -<span class="fl">112219.10</span> -<span class="fl">117343.83</span> -<span class="fl">114188.45</span> -<span class="fl">119182.37</span> -<span class="fl">112968.80</span>  -<span class="fl">93478.73</span>

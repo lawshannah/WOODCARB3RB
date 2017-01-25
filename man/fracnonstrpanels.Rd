@@ -9,16 +9,13 @@
 \item{House.SingFam}{Fraction of non-structural panel production in Single Family Homes}
 \item{House.Multifam}{Fraction of non-structural panel production in Multi Family Homes}
 \item{House.MobHom}{Fraction of non-structural panel production in Mobile Homes}
-\item{House.Tot}{Total fraction of non-structural panel production in homes}
 \item{Res.Upkeep}{Fraction of non-structural panel production in Total Residential Upkeep and Improvement}
 \item{New.Nonres.AllRR}{Fraction of non-structural panel production in All Railroads}
 \item{New.Nonres.Rties}{Fraction of non-structural panel production in Railroad Ties}
 \item{New.Nonres.Rcar.Repair}{Fraction of non-structural panel production in Railcar Repair}
-\item{New.Nonres.tot}{Total fraction of non-structural panel production in non-residential end uses}
 \item{Manu.HouseFurniture}{Fraction of non-structural panel production in Household Furniture}
 \item{Manu.CommFurniture}{Fraction of non-structural panel production in Commercial Furniture}
 \item{Manu.OtherProducts}{Fraction of non-structural panel production in Manufacturing and Other Products}
-\item{Manu.Tot}{Total fraction of non-structural panel production in manufacturing}
 \item{Shipping.Tot}{Fraction of non-structural panel production in Shipping}
 \item{Other.Uses.Tot}{Fraction of non-structural panel production in Other Uses}
 \item{Other.Industrial.Tot}{Fraction of non-structural panel production in Uses For Other Industrial Products}

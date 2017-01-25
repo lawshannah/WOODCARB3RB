@@ -89,11 +89,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 [<span class="dv">25</span>]  -<span class="fl">86538.26</span>  -<span class="fl">91250.87</span></code></pre></div>
 <p>The years, approach used, decay distribution, and values for end use half life values can be entered as arguments. <code>halfLives</code> is a data frame with the default half life values.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">finalCarbonContribution</span>(<span class="dt">Years =</span> <span class="dv">1945</span>:<span class="dv">2017</span>, <span class="dt">approach =</span> <span class="st">&quot;Atmospheric Flow&quot;</span>, <span class="dt">halflives =</span> halfLives*<span class="st"> </span><span class="fl">1.2</span>)
-Warning in var4$usa_AV[var4$Years %in%<span class="st"> </span><span class="dv">1900</span>:<span class="dv">1964</span>] &lt;-
-apiTotalWoodPulp[(years %in%<span class="st"> </span><span class="er">:</span><span class="st"> </span>number of items to replace is not a multiple
-of replacement length
-Warning in var4$usa_AV[var4$Years %in%<span class="st"> </span><span class="dv">1965</span>:<span class="dv">2020</span>] &lt;-<span class="st"> </span><span class="dv">1000</span> *<span class="st"> </span>howard47[(years
-%in%<span class="st"> </span><span class="er">:</span><span class="st"> </span>number of items to replace is not a multiple of replacement length
  [<span class="dv">1</span>]         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>
  [<span class="dv">7</span>]         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>
 [<span class="dv">13</span>]         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>         <span class="ot">NA</span>
@@ -121,35 +116,60 @@ Warning in var4$usa_AV[var4$Years %in%<span class="st"> </span><span class="dv">
 <p><code>finalVariables</code> returns a data frame with all of the HWP variables.<br />
 Alternate years, decay distribution, and half lives can be substituted for defaults.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">finalVariables</span>()
-Warning in var4$usa_AV[var4$Years %in%<span class="st"> </span><span class="dv">1965</span>:<span class="dv">2020</span>] &lt;-<span class="st"> </span><span class="dv">1000</span> *<span class="st"> </span>howard47[(years
-%in%<span class="st"> </span><span class="er">:</span><span class="st"> </span>number of items to replace is not a multiple of replacement length
-        Var1A    Var1B       Var2A    Var2B     Var3     Var4      Var5
-<span class="dv">1</span>  <span class="fl">17043.7116</span> <span class="fl">18307.63</span> <span class="fl">17659.33357</span> <span class="fl">18278.36</span> <span class="fl">12679.50</span> <span class="fl">12654.37</span> <span class="fl">142297.14</span>
-<span class="dv">2</span>  <span class="fl">13128.8249</span> <span class="fl">18601.57</span> <span class="fl">14939.85484</span> <span class="fl">18812.33</span> <span class="fl">11551.75</span> <span class="fl">13189.62</span> <span class="fl">144434.61</span>
-<span class="dv">3</span>  <span class="fl">15717.7392</span> <span class="fl">17005.52</span> <span class="fl">16334.42946</span> <span class="fl">17426.64</span> <span class="fl">12855.64</span> <span class="fl">13488.83</span> <span class="fl">139388.54</span>
-<span class="dv">4</span>  <span class="fl">16956.7233</span> <span class="fl">17626.58</span> <span class="fl">14971.22105</span> <span class="fl">17949.01</span> <span class="fl">14511.74</span> <span class="fl">12401.61</span> <span class="fl">134553.68</span>
-<span class="dv">5</span>  <span class="fl">18220.9725</span> <span class="fl">17220.93</span> <span class="fl">15929.56956</span> <span class="fl">17479.06</span> <span class="fl">15684.97</span> <span class="fl">12667.53</span> <span class="fl">134750.37</span>
-<span class="dv">6</span>  <span class="fl">17306.8633</span> <span class="fl">17051.47</span> <span class="fl">15064.95468</span> <span class="fl">17228.99</span> <span class="fl">16712.32</span> <span class="fl">13560.04</span> <span class="fl">137026.51</span>
-<span class="dv">7</span>  <span class="fl">17018.0011</span> <span class="fl">16347.53</span> <span class="fl">14092.14081</span> <span class="fl">16513.07</span> <span class="fl">16690.67</span> <span class="fl">13742.88</span> <span class="fl">134477.27</span>
-<span class="dv">8</span>  <span class="fl">18755.6290</span> <span class="fl">17090.10</span> <span class="fl">14740.11768</span> <span class="fl">17262.74</span> <span class="fl">17983.12</span> <span class="fl">13964.10</span> <span class="fl">135438.73</span>
-<span class="dv">9</span>  <span class="fl">19653.6773</span> <span class="fl">17769.37</span> <span class="fl">13403.94806</span> <span class="fl">17738.36</span> <span class="fl">18994.15</span> <span class="fl">12156.93</span> <span class="fl">134206.11</span>
-<span class="dv">10</span> <span class="fl">21444.2277</span> <span class="fl">18662.30</span> <span class="fl">14145.55577</span> <span class="fl">18358.73</span> <span class="fl">20599.10</span> <span class="fl">12432.87</span> <span class="fl">134192.96</span>
-<span class="dv">11</span> <span class="fl">19999.5154</span> <span class="fl">18508.29</span> <span class="fl">12840.05979</span> <span class="fl">17969.61</span> <span class="fl">21857.50</span> <span class="fl">12513.50</span> <span class="fl">133694.05</span>
-<span class="dv">12</span> <span class="fl">16491.4294</span> <span class="fl">17610.24</span>  <span class="fl">8713.21957</span> <span class="fl">16780.98</span> <span class="fl">22051.45</span> <span class="fl">11698.98</span> <span class="fl">127896.01</span>
-<span class="dv">13</span> <span class="fl">17413.8298</span> <span class="fl">18235.45</span>  <span class="fl">9565.67340</span> <span class="fl">17212.91</span> <span class="fl">23209.92</span> <span class="fl">11938.66</span> <span class="fl">126866.06</span>
-<span class="dv">14</span> <span class="fl">16986.4185</span> <span class="fl">17325.96</span>  <span class="fl">9452.50336</span> <span class="fl">16174.97</span> <span class="fl">23706.93</span> <span class="fl">11546.58</span> <span class="fl">126477.26</span>
-<span class="dv">15</span> <span class="fl">21409.1983</span> <span class="fl">17643.50</span> <span class="fl">12079.90850</span> <span class="fl">16274.85</span> <span class="fl">26427.58</span> <span class="fl">12356.39</span> <span class="fl">131737.71</span>
-<span class="dv">16</span> <span class="fl">20989.8919</span> <span class="fl">17765.22</span> <span class="fl">11710.88488</span> <span class="fl">16293.62</span> <span class="fl">26792.51</span> <span class="fl">12914.70</span> <span class="fl">132481.61</span>
-<span class="dv">17</span> <span class="fl">19082.7521</span> <span class="fl">18586.79</span> <span class="fl">12095.26266</span> <span class="fl">17268.23</span> <span class="fl">25442.39</span> <span class="fl">12898.91</span> <span class="fl">129528.83</span>
-<span class="dv">18</span> <span class="fl">13091.5426</span> <span class="fl">18307.97</span> <span class="fl">10639.00367</span> <span class="fl">17387.19</span> <span class="fl">21649.52</span> <span class="fl">13770.18</span> <span class="fl">123639.75</span>
-<span class="dv">19</span>  <span class="fl">2420.1492</span> <span class="fl">17510.54</span>  <span class="fl">3864.02978</span> <span class="fl">17089.68</span> <span class="fl">16981.71</span> <span class="fl">14619.04</span> <span class="fl">106096.03</span>
-<span class="dv">20</span> -<span class="fl">5103.8430</span> <span class="fl">16641.59</span> -<span class="fl">1820.66173</span> <span class="fl">16646.38</span> <span class="fl">13114.89</span> <span class="fl">13766.18</span>  <span class="fl">96032.07</span>
-<span class="dv">21</span> -<span class="fl">2895.9387</span> <span class="fl">16300.85</span>   -<span class="fl">59.18892</span> <span class="fl">16572.71</span> <span class="fl">14161.49</span> <span class="fl">15735.34</span>  <span class="fl">97555.35</span>
-<span class="dv">22</span> -<span class="fl">1887.2390</span> <span class="fl">16171.28</span>  <span class="fl">1998.34356</span> <span class="fl">16804.35</span> <span class="fl">13922.97</span> <span class="fl">17219.45</span> <span class="fl">100848.20</span>
-<span class="dv">23</span>  -<span class="fl">298.5597</span> <span class="fl">16112.04</span>  <span class="fl">1724.39575</span> <span class="fl">16906.41</span> <span class="fl">14067.44</span> <span class="fl">16544.26</span> <span class="fl">103469.51</span>
-<span class="dv">24</span>  <span class="fl">2298.3609</span> <span class="fl">16188.34</span>  <span class="fl">2318.94405</span> <span class="fl">16994.18</span> <span class="fl">15142.07</span> <span class="fl">17061.09</span> <span class="fl">107005.04</span>
-<span class="dv">25</span> <span class="fl">12943.6684</span> <span class="fl">17146.43</span>  <span class="fl">6234.96310</span> <span class="fl">17366.38</span> <span class="fl">19008.74</span> <span class="fl">14290.75</span> <span class="fl">100350.97</span>
-<span class="dv">26</span> <span class="fl">13474.0869</span> <span class="fl">17965.44</span>  <span class="fl">7141.21700</span> <span class="fl">17745.38</span> <span class="fl">19872.28</span> <span class="fl">14427.50</span> <span class="fl">102198.42</span></code></pre></div>
+   Years      Var1A    Var1B       Var2A    Var2B     Var3     Var4
+<span class="dv">1</span>   <span class="dv">1990</span> <span class="fl">17043.7116</span> <span class="fl">18307.63</span> <span class="fl">17659.33357</span> <span class="fl">18278.36</span> <span class="fl">12679.50</span> <span class="fl">15078.00</span>
+<span class="dv">2</span>   <span class="dv">1991</span> <span class="fl">13128.8249</span> <span class="fl">18601.57</span> <span class="fl">14939.85484</span> <span class="fl">18812.33</span> <span class="fl">11551.75</span> <span class="fl">15667.47</span>
+<span class="dv">3</span>   <span class="dv">1992</span> <span class="fl">15717.7392</span> <span class="fl">17005.52</span> <span class="fl">16334.42946</span> <span class="fl">17426.64</span> <span class="fl">12855.64</span> <span class="fl">16032.21</span>
+<span class="dv">4</span>   <span class="dv">1993</span> <span class="fl">16956.7233</span> <span class="fl">17626.58</span> <span class="fl">14971.22105</span> <span class="fl">17949.01</span> <span class="fl">14511.74</span> <span class="fl">14788.17</span>
+<span class="dv">5</span>   <span class="dv">1994</span> <span class="fl">18220.9725</span> <span class="fl">17220.93</span> <span class="fl">15929.56956</span> <span class="fl">17479.06</span> <span class="fl">15684.97</span> <span class="fl">15665.37</span>
+<span class="dv">6</span>   <span class="dv">1995</span> <span class="fl">17306.8633</span> <span class="fl">17051.47</span> <span class="fl">15064.95468</span> <span class="fl">17228.99</span> <span class="fl">16712.32</span> <span class="fl">17265.89</span>
+<span class="dv">7</span>   <span class="dv">1996</span> <span class="fl">17018.0011</span> <span class="fl">16347.53</span> <span class="fl">14092.14081</span> <span class="fl">16513.07</span> <span class="fl">16690.67</span> <span class="fl">16732.92</span>
+<span class="dv">8</span>   <span class="dv">1997</span> <span class="fl">18755.6290</span> <span class="fl">17090.10</span> <span class="fl">14740.11768</span> <span class="fl">17262.74</span> <span class="fl">17983.12</span> <span class="fl">16876.90</span>
+<span class="dv">9</span>   <span class="dv">1998</span> <span class="fl">19653.6773</span> <span class="fl">17769.37</span> <span class="fl">13403.94806</span> <span class="fl">17738.36</span> <span class="fl">18994.15</span> <span class="fl">15056.85</span>
+<span class="dv">10</span>  <span class="dv">1999</span> <span class="fl">21444.2277</span> <span class="fl">18662.30</span> <span class="fl">14145.55577</span> <span class="fl">18358.73</span> <span class="fl">20599.10</span> <span class="fl">15245.33</span>
+<span class="dv">11</span>  <span class="dv">2000</span> <span class="fl">19999.5154</span> <span class="fl">18508.29</span> <span class="fl">12840.05979</span> <span class="fl">17969.61</span> <span class="fl">21857.50</span> <span class="fl">16184.63</span>
+<span class="dv">12</span>  <span class="dv">2001</span> <span class="fl">16491.4294</span> <span class="fl">17610.24</span>  <span class="fl">8713.21957</span> <span class="fl">16780.98</span> <span class="fl">22051.45</span> <span class="fl">15336.17</span>
+<span class="dv">13</span>  <span class="dv">2002</span> <span class="fl">17413.8298</span> <span class="fl">18235.45</span>  <span class="fl">9565.67340</span> <span class="fl">17212.91</span> <span class="fl">23209.92</span> <span class="fl">15743.99</span>
+<span class="dv">14</span>  <span class="dv">2003</span> <span class="fl">16986.4185</span> <span class="fl">17325.96</span>  <span class="fl">9452.50336</span> <span class="fl">16174.97</span> <span class="fl">23706.93</span> <span class="fl">16302.59</span>
+<span class="dv">15</span>  <span class="dv">2004</span> <span class="fl">21409.1983</span> <span class="fl">17643.50</span> <span class="fl">12079.90850</span> <span class="fl">16274.85</span> <span class="fl">26427.58</span> <span class="fl">16952.97</span>
+<span class="dv">16</span>  <span class="dv">2005</span> <span class="fl">20989.8919</span> <span class="fl">17765.22</span> <span class="fl">11710.88488</span> <span class="fl">16293.62</span> <span class="fl">26792.51</span> <span class="fl">17312.49</span>
+<span class="dv">17</span>  <span class="dv">2006</span> <span class="fl">19082.7521</span> <span class="fl">18586.79</span> <span class="fl">12095.26266</span> <span class="fl">17268.23</span> <span class="fl">25442.39</span> <span class="fl">18835.68</span>
+<span class="dv">18</span>  <span class="dv">2007</span> <span class="fl">13091.5426</span> <span class="fl">18307.97</span> <span class="fl">10639.00367</span> <span class="fl">17387.19</span> <span class="fl">21649.52</span> <span class="fl">20656.59</span>
+<span class="dv">19</span>  <span class="dv">2008</span>  <span class="fl">2420.1492</span> <span class="fl">17510.54</span>  <span class="fl">3864.02978</span> <span class="fl">17089.68</span> <span class="fl">16981.71</span> <span class="fl">21158.54</span>
+<span class="dv">20</span>  <span class="dv">2009</span> -<span class="fl">5103.8430</span> <span class="fl">16641.59</span> -<span class="fl">1820.66173</span> <span class="fl">16646.38</span> <span class="fl">13114.89</span> <span class="fl">20616.42</span>
+<span class="dv">21</span>  <span class="dv">2010</span> -<span class="fl">2895.9387</span> <span class="fl">16300.85</span>   -<span class="fl">59.18892</span> <span class="fl">16572.71</span> <span class="fl">14161.49</span> <span class="fl">22419.91</span>
+<span class="dv">22</span>  <span class="dv">2011</span> -<span class="fl">1887.2390</span> <span class="fl">16171.28</span>  <span class="fl">1998.34356</span> <span class="fl">16804.35</span> <span class="fl">13922.97</span> <span class="fl">24671.92</span>
+<span class="dv">23</span>  <span class="dv">2012</span>  -<span class="fl">298.5597</span> <span class="fl">16112.04</span>  <span class="fl">1724.39575</span> <span class="fl">16906.41</span> <span class="fl">14067.44</span> <span class="fl">23323.55</span>
+<span class="dv">24</span>  <span class="dv">2013</span>  <span class="fl">2298.3609</span> <span class="fl">16188.34</span>  <span class="fl">2318.94405</span> <span class="fl">16994.18</span> <span class="fl">15142.07</span> <span class="fl">22850.52</span>
+<span class="dv">25</span>  <span class="dv">2014</span> <span class="fl">12943.6684</span> <span class="fl">17146.43</span>  <span class="fl">6234.96310</span> <span class="fl">17366.38</span> <span class="fl">19008.74</span> <span class="fl">18657.41</span>
+<span class="dv">26</span>  <span class="dv">2015</span> <span class="fl">13474.0869</span> <span class="fl">17965.44</span>  <span class="fl">7141.21700</span> <span class="fl">17745.38</span> <span class="fl">19872.28</span> <span class="fl">18716.93</span>
+        Var5
+<span class="dv">1</span>  <span class="fl">142297.14</span>
+<span class="dv">2</span>  <span class="fl">144434.61</span>
+<span class="dv">3</span>  <span class="fl">139388.54</span>
+<span class="dv">4</span>  <span class="fl">134553.68</span>
+<span class="dv">5</span>  <span class="fl">134750.37</span>
+<span class="dv">6</span>  <span class="fl">137026.51</span>
+<span class="dv">7</span>  <span class="fl">134477.27</span>
+<span class="dv">8</span>  <span class="fl">135438.73</span>
+<span class="dv">9</span>  <span class="fl">134206.11</span>
+<span class="dv">10</span> <span class="fl">134192.96</span>
+<span class="dv">11</span> <span class="fl">133694.05</span>
+<span class="dv">12</span> <span class="fl">127896.01</span>
+<span class="dv">13</span> <span class="fl">126866.06</span>
+<span class="dv">14</span> <span class="fl">126477.26</span>
+<span class="dv">15</span> <span class="fl">131737.71</span>
+<span class="dv">16</span> <span class="fl">132481.61</span>
+<span class="dv">17</span> <span class="fl">129528.83</span>
+<span class="dv">18</span> <span class="fl">123639.75</span>
+<span class="dv">19</span> <span class="fl">106096.03</span>
+<span class="dv">20</span>  <span class="fl">96032.07</span>
+<span class="dv">21</span>  <span class="fl">97555.35</span>
+<span class="dv">22</span> <span class="fl">100848.20</span>
+<span class="dv">23</span> <span class="fl">103469.51</span>
+<span class="dv">24</span> <span class="fl">107005.04</span>
+<span class="dv">25</span> <span class="fl">100350.97</span>
+<span class="dv">26</span> <span class="fl">102198.42</span></code></pre></div>
 </div>
 <div id="other-statistics" class="section level2">
 <h2>Other Statistics</h2>
@@ -170,6 +190,35 @@ Warning in var4$usa_AV[var4$Years %in%<span class="st"> </span><span class="dv">
   Total Carbon
 <span class="dv">1</span>   <span class="dv">2507336701</span>
 <span class="dv">2</span>   <span class="dv">3134461226</span></code></pre></div>
+</div>
+</div>
+<div id="other-arguments" class="section level3">
+<h3>Other Arguments</h3>
+<p><code>fsp</code>, <code>fnsp</code>, and <code>fsawn</code> allow for adjusting the product class distributions over the end uses. The default values are provided in the corresponding data frames (<code>fracstrpanels</code>, <code>fracnonstrpanels</code>, <code>fracsawnwood</code>).</p>
+<p>New values can be substitued directly in the function call, or a copy can be made which can then be changed.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Directly in function </span>
+adj &lt;-<span class="st">  </span>(<span class="dv">1</span> +<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>, <span class="dv">0</span>, .<span class="dv">15</span>))
+<span class="kw">finalCarbonContribution</span>(<span class="dt">fsp =</span> fracstrpanels *<span class="st"> </span>adj)
+ [<span class="dv">1</span>] -<span class="fl">134616.66</span> -<span class="fl">124724.62</span> -<span class="fl">123600.65</span> -<span class="fl">119869.71</span> -<span class="fl">122233.72</span> -<span class="fl">117396.73</span>
+ [<span class="dv">7</span>] -<span class="fl">112889.91</span> -<span class="fl">116728.42</span> -<span class="fl">114414.48</span> -<span class="fl">117706.96</span> -<span class="fl">114040.96</span>  -<span class="fl">95377.40</span>
+[<span class="dv">13</span>] -<span class="fl">100470.38</span>  -<span class="fl">96936.11</span> -<span class="fl">104970.88</span> -<span class="fl">102307.23</span> -<span class="fl">106624.71</span> -<span class="fl">102436.37</span>
+[<span class="dv">19</span>]  -<span class="fl">75841.68</span>  -<span class="fl">54686.58</span>  -<span class="fl">59987.23</span>  -<span class="fl">68977.01</span>  -<span class="fl">67125.81</span>  -<span class="fl">71541.36</span>
+[<span class="dv">25</span>]  -<span class="fl">88006.09</span>  -<span class="fl">93006.41</span>
+
+<span class="co">#Make a copy first </span>
+fsawncopy &lt;-<span class="st"> </span>fracsawnwood
+for (i in <span class="kw">ncol</span>(fsawncopy)) {
+  fsawncopy[,i] &lt;-<span class="st"> </span>fsawncopy *<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>,<span class="dv">0</span>,.<span class="dv">08</span>)
+}
+Warning in <span class="st">`</span><span class="dt">[&lt;-.data.frame</span><span class="st">`</span>(<span class="st">`</span><span class="dt">*tmp*</span><span class="st">`</span>, , i, <span class="dt">value =</span>
+<span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">House.SingFam =</span> <span class="kw">c</span>(<span class="fl">0.00638271162149918</span>, :<span class="st"> </span>provided <span class="dv">13</span>
+variables to replace <span class="dv">1</span> variables
+<span class="kw">finalCarbonContribution</span>(<span class="dt">fsawn =</span> fsawncopy)
+ [<span class="dv">1</span>] -<span class="fl">131771.55</span> -<span class="fl">123758.01</span> -<span class="fl">123790.61</span> -<span class="fl">120707.52</span> -<span class="fl">122498.31</span> -<span class="fl">118411.13</span>
+ [<span class="dv">7</span>] -<span class="fl">112219.10</span> -<span class="fl">117343.83</span> -<span class="fl">114188.45</span> -<span class="fl">119182.37</span> -<span class="fl">112968.80</span>  -<span class="fl">93478.73</span>
+[<span class="dv">13</span>]  -<span class="fl">98188.13</span>  -<span class="fl">93967.40</span> -<span class="fl">103967.46</span> -<span class="fl">102683.17</span> -<span class="fl">107666.14</span> -<span class="fl">102762.70</span>
+[<span class="dv">19</span>]  -<span class="fl">76830.26</span>  -<span class="fl">54360.98</span>  -<span class="fl">60549.58</span>  -<span class="fl">68943.22</span>  -<span class="fl">68312.97</span>  -<span class="fl">70814.78</span>
+[<span class="dv">25</span>]  -<span class="fl">86538.26</span>  -<span class="fl">91250.87</span></code></pre></div>
 <!---
 Function for swp, paper and dump carbon totals. 
 Functions:
@@ -180,7 +229,6 @@ returnIntermediateData
 
 question about sapply/forloop vs other code 
 --->
-</div>
 </div>
 </div>
 

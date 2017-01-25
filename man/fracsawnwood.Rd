@@ -9,16 +9,13 @@
 \item{House.SingFam}{Fraction of sawnwood production in Single Family Homes}
 \item{House.Multifam}{Fraction of sawnwood production in Multi Family Homes}
 \item{House.MobHom}{Fraction of sawnwood production in Mobile Homes}
-\item{House.Tot}{Total fraction of sawnwood production in homes}
 \item{Res.Upkeep}{Fraction of sawnwood production in Total Residential Upkeep and Improvement}
 \item{New.Nonres.AllRR}{Fraction of sawnwood production in All Railroads}
 \item{New.Nonres.Rties}{Fraction of sawnwood production in Railroad Ties}
 \item{New.Nonres.Rcar.Repair}{Fraction of sawnwood production in Railcar Repair}
-\item{New.Nonres.tot}{Total fraction of sawnwood production in non-residential end uses}
 \item{Manu.HouseFurniture}{Fraction of sawnwood production in Household Furniture}
 \item{Manu.CommFurniture}{Fraction of sawnwood production in Commercial Furniture}
 \item{Manu.OtherProducts}{Fraction of sawnwood production in Manufacturing and Other Products}
-\item{Manu.Tot}{Total fraction of sawnwood production in manufacturing}
 \item{Shipping.Tot}{Fraction of sawnwood production in Shipping}
 \item{Other.Uses.Tot}{Fraction of sawnwood production in Other Uses}
 \item{Other.Industrial.Tot}{Fraction of sawnwood production in Uses For Other Industrial Products}

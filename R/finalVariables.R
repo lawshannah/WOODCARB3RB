@@ -24,6 +24,15 @@
 #' @param plot if true, returns a simple plot of time vs. carbon contribution.
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
+#' @param fsp Fraction of structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fnsp Fraction of non-structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fsawn Fraction of sawnwood products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
 #' @return A vector of carbon contributions for all Years. Plot returned is optional
 #' All units returned are in Thousand metric tons CO2 Equivalent.
 #' @export
@@ -38,14 +47,18 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
                                                                    "Atmospheric Flow"),
                                     decaydistribution = c("Exponential",
                                                   "K=2"), plot = FALSE,
-                                    halflives = halfLives){
+                                    halflives = halfLives, fsp = fracstrpanels,
+                                    fnsp = fracnonstrpanels,
+                                    fsawn = fracsawnwood){
   if (missing(approach)){
     approach = "Production"
   }
   approachtype <- match.arg(approach)
   decay<- match.arg(decaydistribution)
 
-  fvs <- finalVariables(Years, decay, halflives, approach = approachtype)
+  fvs <- finalVariables(Years, decay, halflives, approach = approachtype, fsp = fsp,
+                        fnsp = fnsp,
+                        fsawn = fsawn)
 
   if (approachtype == "Atmospheric Flow") {
     contrib <- ((-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12)+(fvs[,"Var3"]-fvs[,"Var4"])*44/12
@@ -53,7 +66,8 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
   else {
     #First column is 1A/2A for Stock change and production respectively,
     #and second column is 1B/2B for stock change and production respectively.
-    contrib <- (-1*fvs[,1]-fvs[,2])*44/12
+    contrib <- (-1*fvs[,names(fvs)[grep("A", names(fvs))]]-
+                  fvs[,names(fvs)[grep("B", names(fvs))]])*44/12
   }
   r <- list(contrib)
   if (plot == TRUE) {
@@ -98,6 +112,15 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
 #' @param approach approach to calculate corresponding final variables for.
 #' If null, all final variables are calculated and returned.
+#' @param fsp Fraction of structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fnsp Fraction of non-structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fsawn Fraction of sawnwood products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
 #'
 #' @return If an approach is specified then only the variables needed for that
 #' approach will be returned. If approach is null then a data frame with nine
@@ -111,14 +134,19 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' finalVariables(halflives = halfLives * 1.25)
 finalVariables <- function(Years = 1990:2015,
                            decaydistribution = c("Exponential", "K=2"),
-                           halflives = halfLives, approach = NULL){
+                           halflives = halfLives, approach = NULL,
+                           fsp = fracstrpanels,
+                           fnsp = fracnonstrpanels,
+                           fsawn = fracsawnwood){
 
   decay <- match.arg(decaydistribution)
 
   Var1A <- function(){
     (swp_carbon_stockchange(Years, approach = "Stock Change",
                             decaydistribution = decay,
-                            halflives = halflives) +
+                            halflives = halflives, fsp = fsp,
+                            fnsp = fnsp,
+                            fsawn = fsawn) +
        paper_carbon_stockchange(Years,
                                 approach = "Stock Change")) * 1000
   }
@@ -131,7 +159,9 @@ finalVariables <- function(Years = 1990:2015,
   Var2A <- function(){
     (swp_carbon_stockchange(Years, approach = "Production",
                             decaydistribution = decay,
-                            halflives = halflives) +
+                            halflives = halflives, fsp = fsp,
+                            fnsp = fnsp,
+                            fsawn = fsawn) +
        paper_carbon_stockchange(Years,
                                 approach = "Production")) * 1000
   }
@@ -154,7 +184,7 @@ finalVariables <- function(Years = 1990:2015,
 
   if (is.null(approach)) {
 
-    df <- data.frame(Var1A = Var1A(), Var1B = Var1B(),
+    df <- data.frame(Years, Var1A = Var1A(), Var1B = Var1B(),
                      Var2A = Var2A(), Var2B = Var2B(),
                      Var3 = Var3(), Var4 = Var4(),
                      Var5 = Var5())
@@ -162,29 +192,24 @@ finalVariables <- function(Years = 1990:2015,
   }
 
   if (approach == "Production") {
-    df <- data.frame(Var2A = Var2A(),
+    df <- data.frame(Years, Var2A = Var2A(),
                      Var2B = Var2B())
     return(df)
   }
 
   if (approach == "Stock Change") {
-    df <- data.frame(Var1A = Var1A(),
+    df <- data.frame(Years, Var1A = Var1A(),
                      Var1B = Var1B())
     return(df)
   }
 
   if (approach == "Atmospheric Flow") {
-    df <- data.frame(Var1A = Var1A(),
+    df <- data.frame(Years, Var1A = Var1A(),
                      Var1B = Var1B(),
                      Var3  = Var3(),
                      Var4  = Var4())
     return(df)
   }
-
-
-
-
-
 }
 
 #' Calculates changes in carbon stock from solid wood products.
@@ -197,6 +222,15 @@ finalVariables <- function(Years = 1990:2015,
 #' @param decaydistribution type of decay distribution to use
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
+#' @param fsp Fraction of structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fnsp Fraction of non-structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fsawn Fraction of sawnwood products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
 #'
 #' @return A vector of swp carbon stock changes for `years`
 #' @examples
@@ -207,18 +241,23 @@ finalVariables <- function(Years = 1990:2015,
 swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Change"),
                                    decaydistribution = c("Exponential",
                                                          "K=2"),
-                                   halflives = halfLives){
+                                   halflives = halfLives, fsp = fracstrpanels,
+                                   fnsp = fracnonstrpanels,
+                                   fsawn = fracsawnwood){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
-  ##To allow for any vector of year for input
-  ##Need previous year for each year being calculated
-  yearss <- unique(c(rbind(years-1,years)))
 
-  totals <- swpcarbontotal(Yrs = yearss, approach = approach, decaydistribution = decay,
-                           halflives = halflives)
-  return(PRO17  * diff(totals))
-  changeinstock <- PRO17  * (totals[c(FALSE, TRUE)] - totals[c(TRUE, FALSE)])
-  return(changeinstock)
+  yearss <- (min(years)-1):max(years)
+
+  totals <- data.frame(yearss, carbon = swpcarbontotal(Yrs = yearss, approach = approach, decaydistribution = decay,
+                           halflives = halflives, fsp = fsp,
+                           fnsp = fnsp,
+                           fsawn = fsawn))
+
+  totals[2:length(yearss),"diffs"] <- diff(totals$carbon)
+  stockchange <- PRO17 * totals[totals$yearss %in% years,"diffs"]
+
+  return(stockchange)
 
 }
 

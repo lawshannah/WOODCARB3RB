@@ -18,6 +18,15 @@
 #' For stock change approach, the data returned corresponds to the `SWCalc$H4389` column in WOODCARB II.
 #' @param halflives data frame of half lives for end uses. Default half lives are used but
 #' a data frame with 13 columns with half lives for the appropriate years can be used.
+#' @param fsp Fraction of structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fnsp Fraction of non-structural panel products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
+#' @param fsawn Fraction of sawnwood products that go to each end use.
+#' Default can be substituted with data with a column for each end use and row for years
+#' from 1900 to latest year of interest.
 #'
 #' @return Output is either a data frame with 13 columns or 1 column based on the onlytotal argument
 #' @export
@@ -28,11 +37,15 @@
 swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2"),
                            onlytotal=TRUE, lumberpre = TRUE, approach = c("Production",
                                                                           "Stock Change"),
-                           halflives = halfLives){
+                           halflives = halfLives, fsp = fracstrpanels,
+                           fnsp = fracnonstrpanels,
+                           fsawn = fracsawnwood){
 
   type <- match.arg(decaydistribution)
   approachtype <- match.arg(approach)
-  placeIU <- calcplacediu(total = FALSE, approach = approachtype)
+  placeIU <- calcplacediu(total = FALSE, approach = approachtype, fsp = fsp,
+                          fnsp = fnsp,
+                          fsawn = fsawn)
 
 
   Var2_totalC_SWP <- data.frame(Years = Yrs)
@@ -55,12 +68,10 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
         decays <- decayarray[2,eu,yearrange,year - minyr + 1]
 
       }
-      Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu]*decays
+      Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu+1]*decays
                                                                                   *(1 - lossIU[yearrange,eu]))
 
-
     }
-
   }
 
   Var2_totalC_SWP[,"LumberPre1900"] <- lumberpre1900[Yrs - minyr + 1,]

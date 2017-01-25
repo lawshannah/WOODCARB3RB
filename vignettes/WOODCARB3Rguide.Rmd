@@ -81,7 +81,7 @@ finalCarbonContribution(fsp = fracstrpanels * adj)
 #Make a copy first 
 fsawncopy <- fracsawnwood
 for (i in ncol(fsawncopy)) {
-  fsawncopy[,i] <- fsawncopy * rnorm(13,0,.08)
+  fsawncopy[,i] <- fsawncopy[,i] * rnorm(13,0,.05+i)
 }
 finalCarbonContribution(fsawn = fsawncopy)
 

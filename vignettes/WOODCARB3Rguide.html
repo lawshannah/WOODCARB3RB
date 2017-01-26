@@ -195,30 +195,25 @@ Alternate years, decay distribution, and half lives can be substituted for defau
 <div id="other-arguments" class="section level3">
 <h3>Other Arguments</h3>
 <p><code>fsp</code>, <code>fnsp</code>, and <code>fsawn</code> allow for adjusting the product class distributions over the end uses. The default values are provided in the corresponding data frames (<code>fracstrpanels</code>, <code>fracnonstrpanels</code>, <code>fracsawnwood</code>).</p>
-<p>New values can be substitued directly in the function call, or a copy can be made which can then be changed.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Directly in function </span>
-adj &lt;-<span class="st">  </span>(<span class="dv">1</span> +<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>, <span class="dv">0</span>, .<span class="dv">15</span>))
-<span class="kw">finalCarbonContribution</span>(<span class="dt">fsp =</span> fracstrpanels *<span class="st"> </span>adj)
- [<span class="dv">1</span>] -<span class="fl">134616.66</span> -<span class="fl">124724.62</span> -<span class="fl">123600.65</span> -<span class="fl">119869.71</span> -<span class="fl">122233.72</span> -<span class="fl">117396.73</span>
- [<span class="dv">7</span>] -<span class="fl">112889.91</span> -<span class="fl">116728.42</span> -<span class="fl">114414.48</span> -<span class="fl">117706.96</span> -<span class="fl">114040.96</span>  -<span class="fl">95377.40</span>
-[<span class="dv">13</span>] -<span class="fl">100470.38</span>  -<span class="fl">96936.11</span> -<span class="fl">104970.88</span> -<span class="fl">102307.23</span> -<span class="fl">106624.71</span> -<span class="fl">102436.37</span>
-[<span class="dv">19</span>]  -<span class="fl">75841.68</span>  -<span class="fl">54686.58</span>  -<span class="fl">59987.23</span>  -<span class="fl">68977.01</span>  -<span class="fl">67125.81</span>  -<span class="fl">71541.36</span>
-[<span class="dv">25</span>]  -<span class="fl">88006.09</span>  -<span class="fl">93006.41</span>
+<p>New values can be substitued directly in the function call, or a copy can be made which can then be changed (don’t change the original data - or else the package will need to be reloaded). The first example shows using one error term for each column and the second example shows creating an error term for each cell.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">adj &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>, <span class="dv">1</span>, .<span class="dv">15</span>)
+<span class="kw">finalCarbonContribution</span>(<span class="dt">fsp =</span> <span class="kw">mapply</span>(<span class="st">`</span><span class="dt">*</span><span class="st">`</span>,fracsawnwood,adj))
+ [<span class="dv">1</span>] -<span class="fl">132094.96</span> -<span class="fl">123896.06</span> -<span class="fl">123892.61</span> -<span class="fl">120717.29</span> -<span class="fl">122434.79</span> -<span class="fl">118260.57</span>
+ [<span class="dv">7</span>] -<span class="fl">112008.48</span> -<span class="fl">117036.11</span> -<span class="fl">113793.61</span> -<span class="fl">118760.09</span> -<span class="fl">112515.82</span>  -<span class="fl">92952.18</span>
+[<span class="dv">13</span>]  -<span class="fl">97653.18</span>  -<span class="fl">93391.81</span> -<span class="fl">103377.57</span> -<span class="fl">102067.82</span> -<span class="fl">107000.39</span> -<span class="fl">102042.01</span>
+[<span class="dv">19</span>]  -<span class="fl">75998.99</span>  -<span class="fl">53392.69</span>  -<span class="fl">59618.22</span>  -<span class="fl">67999.89</span>  -<span class="fl">67390.76</span>  -<span class="fl">69927.47</span>
+[<span class="dv">25</span>]  -<span class="fl">85643.59</span>  -<span class="fl">90356.81</span>
 
-<span class="co">#Make a copy first </span>
 fsawncopy &lt;-<span class="st"> </span>fracsawnwood
-for (i in <span class="kw">ncol</span>(fsawncopy)) {
-  fsawncopy[,i] &lt;-<span class="st"> </span>fsawncopy *<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">13</span>,<span class="dv">0</span>,.<span class="dv">08</span>)
+for (i in <span class="kw">seq</span>(fsawncopy)) {
+  fsawncopy[,i] &lt;-<span class="st"> </span>fsawncopy[,i] *<span class="st"> </span><span class="kw">rnorm</span>(<span class="kw">nrow</span>(fsawncopy),<span class="dv">1</span>,.<span class="dv">1</span>)
 }
-Warning in <span class="st">`</span><span class="dt">[&lt;-.data.frame</span><span class="st">`</span>(<span class="st">`</span><span class="dt">*tmp*</span><span class="st">`</span>, , i, <span class="dt">value =</span>
-<span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">House.SingFam =</span> <span class="kw">c</span>(<span class="fl">0.00638271162149918</span>, :<span class="st"> </span>provided <span class="dv">13</span>
-variables to replace <span class="dv">1</span> variables
 <span class="kw">finalCarbonContribution</span>(<span class="dt">fsawn =</span> fsawncopy)
- [<span class="dv">1</span>] -<span class="fl">131771.55</span> -<span class="fl">123758.01</span> -<span class="fl">123790.61</span> -<span class="fl">120707.52</span> -<span class="fl">122498.31</span> -<span class="fl">118411.13</span>
- [<span class="dv">7</span>] -<span class="fl">112219.10</span> -<span class="fl">117343.83</span> -<span class="fl">114188.45</span> -<span class="fl">119182.37</span> -<span class="fl">112968.80</span>  -<span class="fl">93478.73</span>
-[<span class="dv">13</span>]  -<span class="fl">98188.13</span>  -<span class="fl">93967.40</span> -<span class="fl">103967.46</span> -<span class="fl">102683.17</span> -<span class="fl">107666.14</span> -<span class="fl">102762.70</span>
-[<span class="dv">19</span>]  -<span class="fl">76830.26</span>  -<span class="fl">54360.98</span>  -<span class="fl">60549.58</span>  -<span class="fl">68943.22</span>  -<span class="fl">68312.97</span>  -<span class="fl">70814.78</span>
-[<span class="dv">25</span>]  -<span class="fl">86538.26</span>  -<span class="fl">91250.87</span></code></pre></div>
+ [<span class="dv">1</span>] -<span class="fl">131245.11</span> -<span class="fl">120646.68</span> -<span class="fl">125016.67</span> -<span class="fl">118799.18</span> -<span class="fl">116562.16</span> -<span class="fl">121064.80</span>
+ [<span class="dv">7</span>] -<span class="fl">109479.38</span> -<span class="fl">122368.33</span> -<span class="fl">118657.57</span> -<span class="fl">126313.42</span> -<span class="fl">116385.79</span>  -<span class="fl">94022.53</span>
+[<span class="dv">13</span>]  -<span class="fl">98448.68</span>  -<span class="fl">98683.38</span>  -<span class="fl">98766.69</span> -<span class="fl">108397.81</span> -<span class="fl">109561.22</span> -<span class="fl">101218.84</span>
+[<span class="dv">19</span>]  -<span class="fl">76378.41</span>  -<span class="fl">56243.35</span>  -<span class="fl">64132.25</span>  -<span class="fl">71375.28</span>  -<span class="fl">66631.98</span>  -<span class="fl">70509.04</span>
+[<span class="dv">25</span>]  -<span class="fl">84281.54</span>  -<span class="fl">92160.05</span></code></pre></div>
 <!---
 Function for swp, paper and dump carbon totals. 
 Functions:

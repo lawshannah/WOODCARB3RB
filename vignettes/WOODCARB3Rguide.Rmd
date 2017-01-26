@@ -71,20 +71,17 @@ swpcarbontotal(c(1990,2015), onlytotal = FALSE, lumberpre = FALSE,
 
 `fsp`, `fnsp`, and `fsawn` allow for adjusting the product class distributions over the end uses. The default values are provided in the corresponding data frames (`fracstrpanels`, `fracnonstrpanels`, `fracsawnwood`). 
 
-New values can be substitued directly in the function call, or a copy can be made which can then be changed. 
+New values can be substitued directly in the function call, or a copy can be made which can then be changed (don't change the original data - or else the package will need to be reloaded). The first example shows using one error term for each column and the second example shows creating an error term for each cell. 
 
 ```{r}
-#Directly in function 
-adj <-  (1 + rnorm(13, 0, .15))
-finalCarbonContribution(fsp = fracstrpanels * adj)
+adj <- rnorm(13, 1, .15)
+finalCarbonContribution(fsp = mapply(`*`,fracsawnwood,adj))
 
-#Make a copy first 
 fsawncopy <- fracsawnwood
-for (i in ncol(fsawncopy)) {
-  fsawncopy[,i] <- fsawncopy * rnorm(13,0,.08)
+for (i in seq(fsawncopy)) {
+  fsawncopy[,i] <- fsawncopy[,i] * rnorm(nrow(fsawncopy),1,.1)
 }
 finalCarbonContribution(fsawn = fsawncopy)
-
 ```
 
 

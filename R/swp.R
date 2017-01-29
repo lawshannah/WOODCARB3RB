@@ -9,15 +9,15 @@ calculateswpdata <- function() {
     swpcalcdata <- data.frame(Years = yrs)
     yrs <- swpcalcdata$Years
 
-    swpcalcdata$`Other Products Production` <- sapply(yrs, function(y) {
+    swpcalcdata$`Other Products Production` <- 1000 * InceN5 * sapply(yrs, function(y) {
         if (y < 1950) {
-            return(h3(y, 37) * InceN5 * 1000)
+            return(h3(y, 'Other.ApparentConsumption'))
         }
         if (y < 1965) {
-            return(u4(y, 19) * InceN5 * 1000)
+            return(u4(y, 'OtherIndProducts.ProdandConsump'))
         }
         if (y < 2021) {
-            return(h5(y, 19) * InceN5 * 1000)
+            return(h5(y, 'OtherIndProductsandConsump'))
         }
     })
     pOther <- function(y) {
@@ -25,223 +25,231 @@ calculateswpdata <- function() {
         return(0)
     }
     swpcalcdata$`Other Products Exports` <- 0
-    swpcalcdata$`Sawnwood Production` <- sapply(yrs, function(y) {
+
+    swpcalcdata$`Sawnwood Production` <- 1000 * sapply(yrs, function(y) {
         ### CHECK THIS, why are errors x*10^-8? shouldnt error be 10^16
-        cavg <- (h8(1904, 2) - h8(1899, 2))/5
-        davg <- (h8(1904, 3) - h8(1899, 3))/5
+        cavg <- (h8(1904, 'Prod.SW') - h8(1899, 'Prod.SW')) / 5
+        davg <- (h8(1904, 'Prod.HW') - h8(1899, 'Prod.HW')) / 5
         if (y < 1904) {
             return((((h8(1899, 2) + ((y - 1899) * cavg)) * InceF5) +
-                (h8(1899, 3) + (y - 1899) * davg) * InceG5) * 1000)
+                (h8(1899, 3) + (y - 1899) * davg) * InceG5))
         }
         if (y < 1950) {
-            return((h8(y, 2) * InceF5 + h8(y, 3) * InceG5) * 1000)
+            return((h8(y, 2) * InceF5 + h8(y, 3) * InceG5))
         }
         if (y < 1965) {
             return((u29(y, 1) * 1000 * (((u29(y, 2)/u29(y, 1)) * InceF5) +
-                ((u29(y, 3)/u29(y, 1)) * InceG5))) * 1000)
+                ((u29(y, 3)/u29(y, 1)) * InceG5))))
         }
         if (y < 2021) {
             return((h28(y, 1) * 1000 * (((h28(y, 2)/h28(y, 1)) * InceF5) +
-                ((h28(y, 3)/h28(y, 1)) * InceG5))) * 1000)
+                ((h28(y, 3)/h28(y, 1)) * InceG5))))
         }
     })
-    swpcalcdata$`Sawnwood Imports` <- sapply(yrs, function(year) {
+
+    swpcalcdata$`Sawnwood Imports` <- 1000 * sapply(yrs, function(year) {
         if (year < 1918) {
-            return(h8(year, 4) * InceF5 * 1000)
+            return(InceF5 * h8(year, 'Imports.Tot'))
         }
         if (year < 1950) {
-            return((((h8(year, 5) + h8(year, 7)) * InceF5) + (h8(year, 6) * InceG5)) *
-                1000)
+            return(InceF5 * (h8(year, 'Imports.SW') + h8(year, 'Imports.Mixed'))  +
+                      InceG5 * h8(year, 'Imports.HW'))
         }
         if (year < 1965) {
-            return(((u29(year, 5) * 1000 * InceF5) + (u29(year, 6) * InceG5 *
-                1000)) * 1000)
+            return(1000 * (InceF5 * u29(year, 'Imports.SW')
+                           + InceG5 * u29(year, 'Imports.HW')))
         }
         if (year < 2021) {
-            return(((h28(year, 5) * 1000 * InceF5) + (h28(year, 6) * InceG5 *
-                1000)) * 1000)
+            return(1000 * (InceF5 * h28(year, 'Imports.SW')
+                           + InceG5 * h28(year, 'Imports.HW')))
         }
         # if(year< 2051){
         # return(((i1(year,4)*InceF5)+(i1(year,5)*InceG5))*1000) }
     })
 
-    swpcalcdata$`Sawnwood Exports` <- sapply(yrs, function(year) {
+    swpcalcdata$`Sawnwood Exports` <- 1000 * sapply(yrs, function(year) {
         if (year < 1911) {
-            return(h8(year, 13) * InceF5 * 1000)
+            return(InceF5 * h8(year, 'Exports.Tot'))
         }
         if (year < 1950) {
-            return((((h8(year, 14) + h8(year, 16)) * InceF5) + (h8(year, 15) *
-                InceG5)) * 1000)
+            return(InceF5 * (h8(year, 'Exports.SW') + h8(year, 'Exports.Mixed')) +
+                     InceG5 * h8(year, 'Exports.HW'))
         }
         if (year < 1965) {
-            return((((u29(year, 8) * 1000 * InceF5) + (u29(year, 9) * 1000 *
-                InceG5)) * 1000))
+            return(1000 * (InceF5 * u29(year, 'Exports.SW') +
+                             InceG5 * u29(year, 'Exports.HW')))
         }
         if (year < 2021) {
-            return(((h28(year, 8) * 1000 * InceF5) + (h28(year, 9) * 1000 *
-                InceG5)) * 1000)
+            return(1000 * (InceF5 * h28(year, 'Exports.SW') +
+                             InceG5 * h28(year, 'Exports.HW')))
         }
     })
-    swpcalcdata$`Roundwood consumed for lumber and panels` <- sapply(yrs,
-        function(year) {
-            if (year < 1950)
-                {
-                  return((h3(year, 28) + h3(year, 31)) * (InceV5 * 0.8 + InceW5 *
-                    0.2) * 1000)
-                }  #sawlog domestic prod + veneer logs domestic production
 
-            if (year < 1965)
-                {
+    swpcalcdata$`Roundwood consumed for lumber and panels` <- 1000 * sapply(yrs,
+        function(year) {
+            if (year < 1950) {
+                  return((0.8 * InceV5 + 0.2 * InceW5) * (h3(year, 'SawLogs.Dom.Prod') +
+                                                            h3(year, 'VeneerLogs.Dom.Prod')))
+            }
+            if (year < 1965) {
                   # u5$j, u5$o...u6$j, u6$o
-                  return(1000 * ((u5(year, 7) + u5(year, 11)) * InceV5 + (u6(year,
-                    7) + u6(year, 11)) * InceW5))
+                  return((InceV5 * (u5(year, 7) + u5(year, 11))  +
+                            InceW5 * (u6(year,7) +u6(year, 11))))
                 }  #J,O.. Lumber Production + plywood/veneer production, for HW and SW
             if (year < 2021) {
-                return(1000 * ((h6(year, 7) + h6(year, 11)) * InceV5 + (h7(year,
-                  7) + h7(year, 11)) * InceW5))
+                return(InceV5 * (h6(year, 7) + h6(year, 11)) +
+                          InceW5 * (h7(year, 7) + h7(year, 11)))
             }
         })
 
-    swpcalcdata$`Log Exports (tons)` <- sapply(yrs, function(year) {
+    swpcalcdata$`Log Exports (tons)` <- 1000 * sapply(yrs, function(year) {
         if (year < 1965) {
-            return((h3(year, 8) * InceV5 + h3(year, 10) * InceW5) * 1000)
+            return(InceV5 * h3(year, 8) +
+                     InceW5 * h3(year, 10))
         }
         if (year < 2021) {
-            return((h6(year, 21) * InceV5 + h7(year, 21) * InceW5) * 1000)
+            return(InceV5 * h6(year, 21)  +
+                     InceW5 * h7(year, 21))
         }
     })
-    swpcalcdata$`Imported logs for lumber and panels (1000 tons)` <- sapply(yrs,
+    swpcalcdata$`Imported logs for lumber and panels (1000 tons)` <- 1000 * sapply(yrs,
         function(year) {
             if (year < 1950) {
                 return(0)
             }
             if (year < 1965) {
                 # u5$Y, u6$z
-                return(1000 * (u5(year, 20) * InceV5 + u6(year, 20) * InceW5))
+                return(InceV5 * u5(year, 20) +
+                        InceW5 * u6(year, 20))
             }
             if (year < 2021) {
-                return(1000 * (h6(year, 20) * InceV5 + h7(year, 20) * InceW5))
+                return(InceV5 * h6(year, 20) +
+                         InceW5 * h7(year, 20))
             }
         })
-    swpcalcdata$SP.Production <- sapply(yrs, function(year) {
+
+    swpcalcdata$SP.Production <- 1000 * sapply(yrs, function(year) {
         if (year < 1950) {
             # softwood plywood million ft^2
-            return(((inc1(year, 1) * InceB5)) * 1000)
+            return(InceB5 * inc1(year, 1))
         }
         if (year < 1965) {
-
-            return(((u36(year, 2) * InceB5)) * 1000)
+            return(InceB5 * u36(year, 2))
         }
         if (year < 1980) {
-            return(((h37(year, 2) * InceB5)) * 1000)
+            return(InceB5 * h37(year, 2))
         }
         if (year < 2021) {
-            return(((h37(year, 2) * InceB5) + (h38(year, 3) * InceC5)) * 1000)
+            return(InceB5 * h37(year, 2) + InceC5 * h38(year, 3))
         }
     })
-    swpcalcdata$SP.Imports <- sapply(yrs, function(year) {
+
+    swpcalcdata$SP.Imports <- 1000 * sapply(yrs, function(year) {
         if (year < 1950) {
             return(0)
         }
         if (year < 1965) {
-            return((u36(year, 5) * InceB5) * 1000)
+            return(InceB5 * u36(year, 5))
         }
         if (year < 1980) {
-            return((h37(year, 5) * InceB5) * 1000)
+            return(InceB5 * h37(year, 5))
         }
         if (year < 2021) {
-            return(((h37(year, 5) * InceB5) + (h38(year, 6) * InceC5)) * 1000)
+            return(InceB5 * h37(year, 5) + InceC5 * h38(year, 6))
         }
         # if(year<2051){
-        # return(((inc1(year,1)*InceB5)+(inc1(year,2)*InceC5))*1000) }
+        # return(InceB5 * inc1(year, 1) + InceC5 * inc1(year, 2))
+        #}
     })
 
-    swpcalcdata$SP.Exports <- sapply(yrs, function(year) {
+    swpcalcdata$SP.Exports <- 1000 * sapply(yrs, function(year) {
         if (year < 1927) {
             return(0)
         }
         if (year < 1950) {
-            return(((h3t20(year, 7)/1000 * InceB5)) * 1000)
+            return(InceB5 * h3t20(year, 7) / 1000)
         }
         if (year < 1965) {
-            return(((u36(year, 8) * InceB5)) * 1000)
+            return(InceB5 * u36(year, 8))
         }
         if (year < 1991) {
-            return(((h37(year, 8) * InceB5)) * 1000)
+            return(InceB5 * h37(year, 8))
         }
         if (year < 2021) {
-            return(((h37(year, 8) * InceB5) + (h38(year, 9) * InceC5)) * 1000)
+            return(InceB5 * h37(year, 8) + InceC5 * h38(year, 9))
         }
     })
-    swpcalcdata$NSP.Production <- sapply(yrs, function(year) {
+
+    swpcalcdata$NSP.Production <- 1000 * sapply(yrs, function(year) {
         if (year < 1950) {
-            return(((inc1(year, 4) * InceE5) + (inc1(year, 9) * InceJ5) +
-                (inc1(year, 13) * InceO5)) * 1000)
+            return(InceE5 * inc1(year, 4) + InceJ5 * inc1(year, 9) +
+                      InceO5 * inc1(year, 13))
         }
         if (year < 1965) {
-            return(((u36(year, 3) * InceE5) + (u52(year, 2) * InceI5) + (u54(year,
-                1) * InceJ5) + (u53(year, 1) * InceO5)) * 1000)
+            return(InceE5 * u36(year, 3) + InceI5 * u52(year, 2)
+                    + InceJ5 * u54(year,1) + InceO5 * u53(year, 1))
         }
         if (year < 2021) {
-            return(((h37(year, 3) * InceE5) + (h53(year, 2) * InceI5) + (h56(year,
-                1) * InceJ5) + (h53(year, 3) * InceK5) + h55(year, 1) * InceQ5) *
-                1000)
+            return(InceE5 * h37(year, 3) + InceI5 * h53(year, 2) +
+                      InceJ5 * h56(year, 1) + InceK5 * h53(year, 3) + InceQ5 * h55(year, 1))
         }
     })
-    swpcalcdata$NSP.Imports <- sapply(yrs, function(year) {
+
+    swpcalcdata$NSP.Imports <- 1000 * sapply(yrs, function(year) {
         if (year < 1927) {
             return(0)
         }
         if (year < 1935) {
-            return(((h3t21(year, 1)/1000) * InceR5) * 1000)
+            return(InceR5 * h3t21(year, 1) / 1000)
         }
         if (year < 1950) {
-            return((((h3t20(year, 3) * InceE5) + (h3t21(year, 1) * InceR5))/1000) *
-                1000)
+            return((InceE5 * h3t20(year, 3) +
+                       InceR5 * h3t21(year, 1))/1000)
         }
         if (year < 1954) {
-            return(u36(year, 6) * InceE5 * 1000)
+            return(InceE5 * u36(year, 6))
         }
         if (year < 1963) {
-            return(((u36(year, 6) * InceE5) + (u54(year, 2) * InceJ5) + (u53(year,
-                2) * InceO5)) * 1000)
+            return(InceE5 * u36(year, 6) + InceJ5 * u54(year, 2) +
+                      InceO5 * u53(year, 2))
         }
         if (year < 1965) {
-            return(((u36(year, 6) * InceE5) + (u52(year, 4) * InceI5) + (u54(year,
-                2) * InceJ5) + (u53(year, 2) * InceO5)) * 1000)
+            return(InceE5 * u36(year, 6) + InceI5 * u52(year, 4) +
+                       InceJ5 * u54(year, 2) + InceO5 * u53(year, 2))
         }
         if (year < 2021) {
-            return(((h37(year, 6) * InceE5) + (h53(year, 4) * InceI5) + (h56(year,
-                2) * InceJ5) + (h55(year, 2) * InceQ5)) * 1000)
+            return(InceE5 * h37(year, 6) + InceI5 * h53(year, 4) +
+                      h56(year, 2) * InceJ5 + h55(year, 2) * InceQ5)
         }
     })
 
-    swpcalcdata$NSP.Exports <- sapply(yrs, function(year) {
+    swpcalcdata$NSP.Exports <- 1000 * sapply(yrs, function(year) {
         ## lNSP
         if (year < 1916) {
             return(0)
         }
         if (year < 1925) {
-            return((u54(year, 3) * InceJ5) * 1000)
+            return((InceJ5 * u54(year, 3)))
         }
         if (year < 1927) {
-            return(((u54(year, 3) * InceJ5) + (u53(year, 3) * InceO5)) * 1000)
+            return(InceJ5 * u54(year, 3) +
+                      InceO5 * u53(year, 3))
         }
         if (year < 1935) {
-            return((((h3t20(year, 8) * InceE5 + h3t21(year, 4) * InceR5)/1000) +
-                (u54(year, 3) * InceJ5) + (u53(year, 3) * InceO5)) * 1000)
+            return((InceE5 * h3t20(year, 8) + InceR5 * h3t21(year, 4)) / 1000 +
+                 InceJ5 * u54(year, 3)  + InceO5 * u53(year, 3))
         }
         if (year < 1950) {
-            return((((h3t20(year, 8) + h3t21(year, 4))/1000 * InceE5) + (u54(year,
-                3) * InceJ5) + (u53(year, 3) * InceO5)) * 1000)
+            return(InceE5 * (h3t20(year, 8) + h3t21(year, 4)) / 1000 +
+                      InceJ5 * u54(year, 3) + InceO5 * u53(year, 3))
         }
         if (year < 1965) {
-            return(((u36(year, 9) * InceE5) + (u54(year, 3) * InceJ5) + (u53(year,
-                3) * InceO5)) * 1000)
+            return(InceE5 * u36(year, 9) + InceJ5 * u54(year, 3) +
+                      InceO5 * u53(year, 3))
         }
         if (year < 2021) {
-            return(((h37(year, 9) * InceE5) + (h53(year, 5) * InceI5) + (h56(year,
-                3) * InceJ5) + h55(year, 3) * InceQ5) * 1000)
+            return(InceE5 * h37(year, 9) + InceI5 * h53(year, 5) +
+                     InceJ5 * h56(year, 3) + InceQ5 * h55(year, 3))
         }
     })
     ######################

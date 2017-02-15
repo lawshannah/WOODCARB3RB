@@ -8,7 +8,6 @@
 calcUSApaper <- function(years = yrs) {
 
   USA <- data.frame(Years = years)
-
   ##api includes calculations from estimates/averages
   USA$`apiTotalWP_L` <- sapply(years, function(year) {
     if (year < 1957) {
@@ -82,7 +81,6 @@ calcUSApaper <- function(years = yrs) {
       return(USA$`Pulp for Paper Exports`[[USA$Years == 2002]])
     }
   })
-
 
   USA$`Other Fibre Pulp Production` <- sapply(years, function(year) {
     if (year < 1965) {

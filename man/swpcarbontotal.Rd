@@ -41,7 +41,7 @@ Default can be substituted with data with a column for each end use and row for 
 from 1900 to latest year of interest.}
 }
 \value{
-Output is either a data frame with 13 columns or 1 column based on the onlytotal argument
+Output is either a matrix with 13 columns or 1 column based on the onlytotal argument
 }
 \description{
 Calculates total carbon and carbon by end use in solidwood products. Capable of

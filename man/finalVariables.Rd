@@ -5,8 +5,9 @@
 \title{Calculates the 7 HWP Variables.}
 \usage{
 finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
-  "K=2"), halflives = halfLives, approach = NULL, fsp = fracstrpanels,
-  fnsp = fracnonstrpanels, fsawn = fracsawnwood)
+  "K=2"), halflives = halfLives, paperHL = 2.53087281800454,
+  approach = NULL, fsp = fracstrpanels, fnsp = fracnonstrpanels,
+  fsawn = fracsawnwood)
 }
 \arguments{
 \item{Years}{years to calculate}
@@ -15,6 +16,8 @@ finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
 
 \item{halflives}{data frame of half lives to use. Must have a column associated with each
 one of 13 end uses and half life values for 1900 until the maximum year of interest.}
+
+\item{paperHL}{half life value for paper}
 
 \item{approach}{approach to calculate corresponding final variables for.
 If null, all final variables are calculated and returned.}

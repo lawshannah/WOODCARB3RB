@@ -6,8 +6,8 @@
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
   "Stock Change", "Atmospheric Flow"), decaydistribution = c("Exponential",
-  "K=2"), plot = FALSE, halflives = halfLives, fsp = fracstrpanels,
-  fnsp = fracnonstrpanels, fsawn = fracsawnwood)
+  "K=2"), plot = FALSE, halflives = halfLives, paperHL = 2.53087281800454,
+  fsp = fracstrpanels, fnsp = fracnonstrpanels, fsawn = fracsawnwood)
 }
 \arguments{
 \item{Years}{years to return carbon totals for}
@@ -23,6 +23,8 @@ finalCarbonContribution(Years = 1990:2015, approach = c("Production",
 
 \item{halflives}{data frame of half lives to use. Must have a column associated with each
 one of 13 end uses and half life values for 1900 until the maximum year of interest.}
+
+\item{paperHL}{half life value for paper}
 
 \item{fsp}{Fraction of structural panel products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years

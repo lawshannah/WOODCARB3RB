@@ -24,6 +24,7 @@
 #' @param plot if true, returns a simple plot of time vs. carbon contribution.
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
+#' @param paperHL half life value for paper
 #' @param fsp Fraction of structural panel products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
@@ -47,7 +48,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
                                                                    "Atmospheric Flow"),
                                     decaydistribution = c("Exponential",
                                                   "K=2"), plot = FALSE,
-                                    halflives = halfLives, fsp = fracstrpanels,
+                                    halflives = halfLives, paperHL = 2.53087281800454, fsp = fracstrpanels,
                                     fnsp = fracnonstrpanels,
                                     fsawn = fracsawnwood){
   if (missing(approach)){
@@ -56,7 +57,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
   approachtype <- match.arg(approach)
   decay<- match.arg(decaydistribution)
 
-  fvs <- finalVariables(Years, decay, halflives, approach = approachtype, fsp = fsp,
+  fvs <- finalVariables(Years, decay, halflives, paperHL = paperHL, approach = approachtype, fsp = fsp,
                         fnsp = fnsp,
                         fsawn = fsawn)
 
@@ -71,13 +72,13 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
   }
   r <- list(contrib)
   if (plot == TRUE) {
+    #add smoothed line to data w/ ggplot
     p <- plot(Years, contrib, xlab="Years", ylab="Total CO2 Contribution",
-              main = "Total Carbon Removals")
+              main = "Total Carbon Removals", type="l")
     r[2] <- p
   }
 
   return(unlist(r))
-
 }
 
 #' Calculates the 7 HWP Variables.
@@ -110,6 +111,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' @param decaydistribution decay distribution to use. Defaults to exponential distribution.
 #' @param halflives data frame of half lives to use. Must have a column associated with each
 #' one of 13 end uses and half life values for 1900 until the maximum year of interest.
+#' @param paperHL half life value for paper
 #' @param approach approach to calculate corresponding final variables for.
 #' If null, all final variables are calculated and returned.
 #' @param fsp Fraction of structural panel products that go to each end use.
@@ -134,7 +136,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' finalVariables(halflives = halfLives * 1.25)
 finalVariables <- function(Years = 1990:2015,
                            decaydistribution = c("Exponential", "K=2"),
-                           halflives = halfLives, approach = NULL,
+                           halflives = halfLives, paperHL = 2.53087281800454, approach = NULL,
                            fsp = fracstrpanels,
                            fnsp = fracnonstrpanels,
                            fsawn = fracsawnwood){
@@ -148,14 +150,11 @@ finalVariables <- function(Years = 1990:2015,
                             fnsp = fnsp,
                             fsawn = fsawn) +
        paper_carbon_stockchange(Years,
-                                approach = "Stock Change")) * 1000
+                                approach = "Stock Change", paperHL = paperHL)) * 1000
   }
-
   Var1B <- function(){
-
     carbonfromdumps(Years, approach = "Stock Change")  * 1000
   }
-
   Var2A <- function(){
     (swp_carbon_stockchange(Years, approach = "Production",
                             decaydistribution = decay,
@@ -163,13 +162,11 @@ finalVariables <- function(Years = 1990:2015,
                             fnsp = fnsp,
                             fsawn = fsawn) +
        paper_carbon_stockchange(Years,
-                                approach = "Production")) * 1000
+                                approach = "Production", paperHL = paperHL)) * 1000
   }
-
   Var2B <- function(){
     carbonfromdumps(Years, approach = "Production") *  1000
   }
-
   Var3 <- function(){
     calcP_IM(Years, var = TRUE)
   }
@@ -253,10 +250,8 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
                            halflives = halflives, fsp = fsp,
                            fnsp = fnsp,
                            fsawn = fsawn))
-
   totals[2:length(yearss),"diffs"] <- diff(totals$carbon)
   stockchange <- PRO17 * totals[totals$yearss %in% years,"diffs"]
-
   return(stockchange)
 
 }
@@ -267,6 +262,7 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
 #' For stock change approach, values correspond to `Calculation$L` in the spreadsheet.
 #'
 #' @param years years to return carbon totals for
+#' @param paperHL half life value for paper
 #' @param approach The approach used to calculate carbon contribution.
 #'
 #' @return A vector of paper carbon stock changes for `years`
@@ -275,7 +271,7 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
 #' paper_carbon_stockchange(1990:2000)
 #' paper_carbon_stockchange(1950:1975, approach = "Stock Change")
 #' }
-paper_carbon_stockchange <- function(years, approach = c("Production", "Stock Change")){
+paper_carbon_stockchange <- function(years, approach = c("Production", "Stock Change"), paperHL = 2.53087281800454){
   USA <- calcUSApaper(yrs)
   approach = match.arg(approach)
   calcpaper <- function(years, CarbonInputFlowFromPaper){
@@ -283,14 +279,13 @@ paper_carbon_stockchange <- function(years, approach = c("Production", "Stock Ch
     papercarbon <- numeric(length(minyr:max(years)))
     for(year in minyr:max(years)){ #Total carbon in paper for year y in Tg C/yr
       if(year == minyr){
-        papercarbon[year-(minyr-1)] <- exp(-log(2)/PRP10)*CarbonInputFlowFromPaper[year-(minyr-1)]
+        papercarbon[year-(minyr-1)] <- exp(-log(2)/paperHL)*CarbonInputFlowFromPaper[year-(minyr-1)]
       }
       else{
-        papercarbon[year-(minyr-1)] <- exp(-log(2)/PRP10)*(CarbonInputFlowFromPaper[year-(minyr-1)]+
+        papercarbon[year-(minyr-1)] <- exp(-log(2)/paperHL)*(CarbonInputFlowFromPaper[year-(minyr-1)]+
                                                              papercarbon[year-minyr])
       }
     }
-    #return(papercarbon)
     if(min(years) == minyr){
       index <- minyr:max(years)
     }

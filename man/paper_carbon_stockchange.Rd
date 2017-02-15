@@ -7,12 +7,15 @@ Units are in Tg Carbon.
 For production approach, values correspond to `Calculation$CC` in the spreadsheet.
 For stock change approach, values correspond to `Calculation$L` in the spreadsheet.}
 \usage{
-paper_carbon_stockchange(years, approach = c("Production", "Stock Change"))
+paper_carbon_stockchange(years, approach = c("Production", "Stock Change"),
+  paperHL = 2.53087281800454)
 }
 \arguments{
 \item{years}{years to return carbon totals for}
 
 \item{approach}{The approach used to calculate carbon contribution.}
+
+\item{paperHL}{half life value for paper}
 }
 \value{
 A vector of paper carbon stock changes for `years`

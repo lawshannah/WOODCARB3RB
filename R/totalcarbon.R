@@ -34,7 +34,7 @@
 #' @examples
 #' swpcarbontotal(c(1990,2000,2010), onlytotal=FALSE)
 #' swpcarbontotal(1950:1960, approach = "Stock Change")
-swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2"),
+swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2", "K=10"),
                            onlytotal=TRUE, lumberpre = TRUE, approach = c("Production",
                                                                           "Stock Change"),
                            halflives = halfLives, fsp = fracstrpanels,
@@ -50,28 +50,22 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
 
   Var2_totalC_SWP <- data.frame(Years = Yrs)
 
-  if (type == "K=2"){
-    decayarray <- calculatedecay()
-  }
-
   for(year in Yrs){
-
     yearrange <- 1:(year - minyr + 1) #number of years from 1900 to year
-
     for (eu in 1:13) {
       if (type == "Exponential") {
-        decays <- exp(-log(2)/halflives[yearrange,eu]*rev(yearrange))
+        decays <- decay_array[1, eu, yearrange, year - minyr + 1]
       }
-
       if (type == "K=2"){
-
-        decays <- decayarray[2,eu,yearrange,year - minyr + 1]
-
+        decays <- decay_array[2, eu, yearrange, year - minyr + 1]
+      }
+      if (type == "K=10"){
+        decays <- decay_array[3, eu, yearrange, year - minyr + 1]
       }
       Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu+1]*decays
                                                                                   *(1 - lossIU[yearrange,eu]))
-
     }
+
   }
 
   Var2_totalC_SWP[,"LumberPre1900"] <- lumberpre1900[Yrs - minyr + 1,]

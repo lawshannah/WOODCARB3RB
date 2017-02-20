@@ -4,8 +4,8 @@
 \alias{swpcarbontotal}
 \title{Calculate total carbon in solidwood products.}
 \usage{
-swpcarbontotal(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2"),
-  onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
+swpcarbontotal(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2",
+  "K=10"), onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
   "Stock Change"), halflives = halfLives, fsp = fracstrpanels,
   fnsp = fracnonstrpanels, fsawn = fracsawnwood)
 }

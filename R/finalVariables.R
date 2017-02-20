@@ -47,7 +47,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
                                                                    "Stock Change",
                                                                    "Atmospheric Flow"),
                                     decaydistribution = c("Exponential",
-                                                  "K=2"), plot = FALSE,
+                                                  "K=2", "K=10"), plot = FALSE,
                                     halflives = halfLives, paperHL = 2.53087281800454, fsp = fracstrpanels,
                                     fnsp = fracnonstrpanels,
                                     fsawn = fracsawnwood){
@@ -135,7 +135,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' finalVariables(Years = 1950:2000)
 #' finalVariables(halflives = halfLives * 1.25)
 finalVariables <- function(Years = 1990:2015,
-                           decaydistribution = c("Exponential", "K=2"),
+                           decaydistribution = c("Exponential", "K=2", "K=10"),
                            halflives = halfLives, paperHL = 2.53087281800454, approach = NULL,
                            fsp = fracstrpanels,
                            fnsp = fracnonstrpanels,
@@ -237,7 +237,7 @@ finalVariables <- function(Years = 1990:2015,
 #' }
 swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Change"),
                                    decaydistribution = c("Exponential",
-                                                         "K=2"),
+                                                         "K=2", "K=10"),
                                    halflives = halfLives, fsp = fracstrpanels,
                                    fnsp = fracnonstrpanels,
                                    fsawn = fracsawnwood){

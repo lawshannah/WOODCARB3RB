@@ -6,8 +6,9 @@
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
   "Stock Change", "Atmospheric Flow"), decaydistribution = c("Exponential",
-  "K=2"), plot = FALSE, halflives = halfLives, paperHL = 2.53087281800454,
-  fsp = fracstrpanels, fnsp = fracnonstrpanels, fsawn = fracsawnwood)
+  "K=2", "K=10"), plot = FALSE, halflives = halfLives,
+  paperHL = 2.53087281800454, fsp = fracstrpanels,
+  fnsp = fracnonstrpanels, fsawn = fracsawnwood)
 }
 \arguments{
 \item{Years}{years to return carbon totals for}

@@ -5,7 +5,7 @@
 \title{Calculates the 7 HWP Variables.}
 \usage{
 finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
-  "K=2"), halflives = halfLives, paperHL = 2.53087281800454,
+  "K=2", "K=10"), halflives = halfLives, paperHL = 2.53087281800454,
   approach = NULL, fsp = fracstrpanels, fnsp = fracnonstrpanels,
   fsawn = fracsawnwood)
 }

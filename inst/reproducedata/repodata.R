@@ -2,6 +2,9 @@ library(devtools)
 library(repmis)
 library(xlsx)
 
+#convertData <- read.xlsx("./inst/extdata/CopyOfData/conversionData.xlsx", 1, header = TRUE)
+#rownames(convertData) <- c("Assumptions", "Moisture Content", "Non-wood Content")
+#use_data(convertData, overwrite = TRUE)
 
 hair1958 <- read.xlsx("./inst/extdata/CopyOfData/hair1958.xlsx", 1, header = FALSE)
 colnames(hair1958) <- c("Prod.Tot",
@@ -176,7 +179,6 @@ use_data(woodToLandFills, overwrite = TRUE)
 woodToDumps <- read.xlsx("./inst/extdata/CopyOfData/woodToDumps.xlsx", 1, header=F)
 colnames(woodToDumps) <-c("WoodToDumps") #In discription add: Percent of wood in dumps by year
 use_data(woodToDumps, overwrite = TRUE)
-
 
 paperToLandFills <- read.xlsx("./inst/extdata/CopyOfData/paperToLandFIlls.xlsx",1,header=F)
 colnames(paperToLandFills) <-c("PaperToLandfills") #In discription add: Percent of paper in land fill by year

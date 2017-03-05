@@ -11,7 +11,8 @@ calcUSApaper(years = yrs)
 }
 \value{
 A data frame with necessary intermediate calculations to calculate carbon from paper.
-Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet (list them?)
+
+Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet
 }
 \description{
 Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.

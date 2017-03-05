@@ -7,7 +7,11 @@
 finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
   "K=2", "K=10"), halflives = halfLives, paperHL = 2.53087281800454,
   approach = NULL, fsp = fracstrpanels, fnsp = fracnonstrpanels,
-  fsawn = fracsawnwood)
+  fsawn = fracsawnwood, woodToCarbon = 4.535925e-07,
+  paperToCarbon = 3.9008955e-07, swpSwdsNondegradable = 0.77,
+  paperSwdsNondegradable = 0.44, swpLandfillDecay = 0.0300063714528115,
+  paperLandfillDecay = 0.0478032538317204,
+  swpDumpDecay = 0.0420089200339361, paperDumpDecay = 0.0840178400678722)
 }
 \arguments{
 \item{Years}{years to calculate}
@@ -33,6 +37,26 @@ from 1900 to latest year of interest.}
 \item{fsawn}{Fraction of sawnwood products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years
 from 1900 to latest year of interest.}
+
+\item{woodToCarbon}{Conversion factor to convert oven-dry tons of solid wood to
+Tg of Carbon.}
+
+\item{paperToCarbon}{Conversion factor to convert oven-dry tons of paper to
+Tg of Carbon.}
+
+\item{swpSwdsNondegradable}{Percent of solid-wood products in landfills and dumps
+that are not subject to decay.}
+
+\item{paperSwdsNondegradable}{Percent of paper products in landfills and dumps that
+are not subject to decay.}
+
+\item{swpLandfillDecay}{Decay rate of solid-wood products in landfills as a half-life in years.}
+
+\item{paperLandfillDecay}{Decay rate of paper products in landfills as a half-life in years.}
+
+\item{swpDumpDecay}{Decay rate of solid-wood products in dumps as a half-life in years.}
+
+\item{paperDumpDecay}{Decay rate of paper products in dumps as a half-life in years.}
 }
 \value{
 If an approach is specified then only the variables needed for that

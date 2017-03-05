@@ -2,9 +2,7 @@
 % Please edit documentation in R/atmosphericflow_harvest.R
 \name{calcP_IM}
 \alias{calcP_IM}
-\title{Statistics needed for variable 3
-Calculates intermediate calculations for variable 3:
-Annual Imports of Wood, and paper products + wood fuel,
+\title{Annual Imports of Wood, and paper products + wood fuel,
 pulp, recovered paper, roundwood/chips.}
 \usage{
 calcP_IM(years = 1990:2020, var = FALSE)
@@ -19,8 +17,6 @@ if var = FALSE, necessary intermediate calculations for Variable 3
         if var = TRUE, returns values for Variable 3 for selected years
 }
 \description{
-Statistics needed for variable 3
-Calculates intermediate calculations for variable 3:
 Annual Imports of Wood, and paper products + wood fuel,
 pulp, recovered paper, roundwood/chips.
 }

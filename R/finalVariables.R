@@ -34,6 +34,8 @@
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
 #' Tg of Carbon.
 #' @param paperToCarbon Conversion factor to convert oven-dry tons of paper to
@@ -143,6 +145,8 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
 #' Tg of Carbon.
 #' @param paperToCarbon Conversion factor to convert oven-dry tons of paper to
@@ -275,6 +279,8 @@ finalVariables <- function(Years = 1990:2015,
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @return A vector of swp carbon stock changes for `years`
 #' @examples
 #' \dontrun{

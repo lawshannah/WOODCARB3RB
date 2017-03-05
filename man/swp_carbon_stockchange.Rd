@@ -33,6 +33,9 @@ from 1900 to latest year of interest.}
 \item{fsawn}{Fraction of sawnwood products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years
 from 1900 to latest year of interest.}
+
+\item{swpdata}{Optional argument to provide swp production and trade time series
+for purposes of error analysis}
 }
 \value{
 A vector of swp carbon stock changes for `years`

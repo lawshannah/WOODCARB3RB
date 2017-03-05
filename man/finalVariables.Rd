@@ -58,6 +58,9 @@ are not subject to decay.}
 \item{swpDumpDecay}{Decay rate of solid-wood products in dumps as a half-life in years.}
 
 \item{paperDumpDecay}{Decay rate of paper products in dumps as a half-life in years.}
+
+\item{swpdata}{Optional argument to provide swp production and trade time series
+for purposes of error analysis}
 }
 \value{
 If an approach is specified then only the variables needed for that

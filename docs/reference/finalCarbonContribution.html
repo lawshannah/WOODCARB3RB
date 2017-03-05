@@ -89,7 +89,7 @@ with the HWP variables.</p>
   <span class='st'>"Stock Change"</span>, <span class='st'>"Atmospheric Flow"</span>), <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>,
   <span class='st'>"K=2"</span>, <span class='st'>"K=10"</span>), <span class='kw'>plot</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>,
   <span class='kw'>paperHL</span> <span class='kw'>=</span> <span class='fl'>2.53087281800454</span>, <span class='kw'>fsp</span> <span class='kw'>=</span> <span class='no'>fracstrpanels</span>,
-  <span class='kw'>fnsp</span> <span class='kw'>=</span> <span class='no'>fracnonstrpanels</span>, <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>,
+  <span class='kw'>fnsp</span> <span class='kw'>=</span> <span class='no'>fracnonstrpanels</span>, <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>, <span class='no'>swpdata</span>,
   <span class='kw'>woodToCarbon</span> <span class='kw'>=</span> <span class='fl'>4.535925e-07</span>, <span class='kw'>paperToCarbon</span> <span class='kw'>=</span> <span class='fl'>3.9008955e-07</span>,
   <span class='kw'>swpSwdsNondegradable</span> <span class='kw'>=</span> <span class='fl'>0.77</span>, <span class='kw'>paperSwdsNondegradable</span> <span class='kw'>=</span> <span class='fl'>0.44</span>,
   <span class='kw'>swpLandfillDecay</span> <span class='kw'>=</span> <span class='fl'>0.0300063714528115</span>,
@@ -126,6 +126,9 @@ from 1900 to latest year of interest.</dd>
       <dd>Fraction of sawnwood products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years
 from 1900 to latest year of interest.</dd>
+      <dt>swpdata</dt>
+      <dd>Optional argument to provide swp production and trade time series
+for purposes of error analysis</dd>
       <dt>woodToCarbon</dt>
       <dd>Conversion factor to convert oven-dry tons of solid wood to
 Tg of Carbon.</dd>

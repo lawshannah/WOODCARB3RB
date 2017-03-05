@@ -34,6 +34,8 @@
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
 #' Tg of Carbon.
 #' @param paperToCarbon Conversion factor to convert oven-dry tons of paper to
@@ -63,6 +65,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
                                     halflives = halfLives, paperHL = 2.53087281800454, fsp = fracstrpanels,
                                     fnsp = fracnonstrpanels,
                                     fsawn = fracsawnwood,
+                                    swpdata,
                                     woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07,
                                     swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
                                     swpLandfillDecay = 0.0300063714528115 , paperLandfillDecay = 0.0478032538317204,
@@ -78,7 +81,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
                         fsawn = fsawn, woodToCarbon = woodToCarbon, paperToCarbon = paperToCarbon,
                         swpSwdsNondegradable = swpSwdsNondegradable, paperSwdsNondegradable = paperSwdsNondegradable,
                         swpLandfillDecay = swpLandfillDecay, paperLandfillDecay = paperLandfillDecay,
-                        swpDumpDecay = swpDumpDecay, paperDumpDecay = paperDumpDecay)
+                        swpDumpDecay = swpDumpDecay, paperDumpDecay = paperDumpDecay, swpdata = swpdata)
 
   if (approachtype == "Atmospheric Flow") {
     contrib <- ((-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12)+(fvs[,"Var3"]-fvs[,"Var4"])*44/12
@@ -142,6 +145,8 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
 #' Tg of Carbon.
 #' @param paperToCarbon Conversion factor to convert oven-dry tons of paper to
@@ -172,9 +177,15 @@ finalVariables <- function(Years = 1990:2015,
                            fsawn = fracsawnwood, woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07,
                            swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
                            swpLandfillDecay = 0.0300063714528115 , paperLandfillDecay = 0.0478032538317204,
-                           swpDumpDecay = 0.0420089200339361 , paperDumpDecay = 0.0840178400678722){
+                           swpDumpDecay = 0.0420089200339361 , paperDumpDecay = 0.0840178400678722,
+                           swpdata){
 
   decay <- match.arg(decaydistribution)
+
+  if (missing(swpdata))
+  {
+    swpdata <- calculateswpdata()
+  }
 
   environment(swp_carbon_stockchange) <- environment()
   environment(paper_carbon_stockchange) <- environment()
@@ -188,7 +199,7 @@ finalVariables <- function(Years = 1990:2015,
                             decaydistribution = decay,
                             halflives = halflives, fsp = fsp,
                             fnsp = fnsp,
-                            fsawn = fsawn) +
+                            fsawn = fsawn, swpdata = swpdata) +
        paper_carbon_stockchange(Years,
                                 approach = "Stock Change")) * 1000
   }
@@ -200,7 +211,7 @@ finalVariables <- function(Years = 1990:2015,
                             decaydistribution = decay,
                             halflives = halflives, fsp = fsp,
                             fnsp = fnsp,
-                            fsawn = fsawn) +
+                            fsawn = fsawn, swpdata = swpdata) +
        paper_carbon_stockchange(Years,
                                 approach = "Production")) * 1000
   }
@@ -268,6 +279,8 @@ finalVariables <- function(Years = 1990:2015,
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @return A vector of swp carbon stock changes for `years`
 #' @examples
 #' \dontrun{
@@ -279,7 +292,7 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
                                                          "K=2", "K=10"),
                                    halflives = halfLives, fsp = fracstrpanels,
                                    fnsp = fracnonstrpanels,
-                                   fsawn = fracsawnwood){
+                                   fsawn = fracsawnwood, swpdata){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
 
@@ -288,7 +301,7 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
   totals <- data.frame(yearss, carbon = swpcarbontotal(Yrs = yearss, approach = approach, decaydistribution = decay,
                            halflives = halflives, fsp = fsp,
                            fnsp = fnsp,
-                           fsawn = fsawn))
+                           fsawn = fsawn, swpdata = swpdata))
   totals[2:length(yearss),"diffs"] <- diff(totals$carbon)
   stockchange <- woodToCarbon * totals[totals$yearss %in% years,"diffs"]
   return(stockchange)

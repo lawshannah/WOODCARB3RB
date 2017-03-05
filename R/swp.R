@@ -301,13 +301,23 @@ calculateswpdata <- function() {
 #' @param fsawn Fraction of sawnwood products that go to each end use.
 #' Default can be substituted with data with a column for each end use and row for years
 #' from 1900 to latest year of interest.
+#' @param swpdata Optional argument to provide swp production and trade time series
+#' for purposes of error analysis
 #' @return a data frame of carbon placed in use for various end uses
 calcplacediu <- function(Years = 1900:2020, approach = c("Production",
     "Stock Change"), total = TRUE, fsp = fracstrpanels,
                                    fnsp = fracnonstrpanels,
-                                   fsawn = fracsawnwood) {
+                                   fsawn = fracsawnwood, swpdata) {
     approachtype <- match.arg(approach)
-    swpcalcdata <- calculateswpdata()
+    if (!missing(swpdata))
+    {
+      swpcalcdata <- swpdata
+    }
+    else
+    {
+      swpcalcdata <- calculateswpdata()
+    }
+
     placeIU <- data.frame(Years = Years)
 
     if (approachtype == "Production") {

@@ -8,7 +8,7 @@ finalCarbonContribution(Years = 1990:2015, approach = c("Production",
   "Stock Change", "Atmospheric Flow"), decaydistribution = c("Exponential",
   "K=2", "K=10"), plot = FALSE, halflives = halfLives,
   paperHL = 2.53087281800454, fsp = fracstrpanels,
-  fnsp = fracnonstrpanels, fsawn = fracsawnwood,
+  fnsp = fracnonstrpanels, fsawn = fracsawnwood, swpdata,
   woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07,
   swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
   swpLandfillDecay = 0.0300063714528115,
@@ -43,6 +43,9 @@ from 1900 to latest year of interest.}
 \item{fsawn}{Fraction of sawnwood products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years
 from 1900 to latest year of interest.}
+
+\item{swpdata}{Optional argument to provide swp production and trade time series
+for purposes of error analysis}
 
 \item{woodToCarbon}{Conversion factor to convert oven-dry tons of solid wood to
 Tg of Carbon.}

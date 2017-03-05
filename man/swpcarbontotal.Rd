@@ -7,7 +7,7 @@
 swpcarbontotal(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2",
   "K=10"), onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
   "Stock Change"), halflives = halfLives, fsp = fracstrpanels,
-  fnsp = fracnonstrpanels, fsawn = fracsawnwood)
+  fnsp = fracnonstrpanels, fsawn = fracsawnwood, swpdata)
 }
 \arguments{
 \item{Yrs}{years to calculate totals for.}
@@ -39,6 +39,9 @@ from 1900 to latest year of interest.}
 \item{fsawn}{Fraction of sawnwood products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years
 from 1900 to latest year of interest.}
+
+\item{swpdata}{Optional argument to provide swp production and trade time series
+for purposes of error analysis}
 }
 \value{
 Output is either a matrix with 13 columns or 1 column based on the onlytotal argument

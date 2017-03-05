@@ -10,7 +10,7 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
 swp_carbon_stockchange(years, approach = c("Production", "Stock Change"),
   decaydistribution = c("Exponential", "K=2", "K=10"),
   halflives = halfLives, fsp = fracstrpanels, fnsp = fracnonstrpanels,
-  fsawn = fracsawnwood)
+  fsawn = fracsawnwood, swpdata)
 }
 \arguments{
 \item{years}{years to return carbon totals for}
@@ -33,6 +33,9 @@ from 1900 to latest year of interest.}
 \item{fsawn}{Fraction of sawnwood products that go to each end use.
 Default can be substituted with data with a column for each end use and row for years
 from 1900 to latest year of interest.}
+
+\item{swpdata}{Optional argument to provide swp production and trade time series
+for purposes of error analysis}
 }
 \value{
 A vector of swp carbon stock changes for `years`

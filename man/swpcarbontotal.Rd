@@ -7,7 +7,7 @@
 swpcarbontotal(Yrs = 1990:2015, decaydistribution = c("Exponential", "K=2",
   "K=10"), onlytotal = TRUE, lumberpre = TRUE, approach = c("Production",
   "Stock Change"), halflives = halfLives, fsp = fracstrpanels,
-  fnsp = fracnonstrpanels, fsawn = fracsawnwood)
+  fnsp = fracnonstrpanels, fsawn = fracsawnwood, swpdata)
 }
 \arguments{
 \item{Yrs}{years to calculate totals for.}

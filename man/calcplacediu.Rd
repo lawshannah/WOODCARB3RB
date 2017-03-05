@@ -6,7 +6,7 @@
 \usage{
 calcplacediu(Years = 1900:2020, approach = c("Production", "Stock Change"),
   total = TRUE, fsp = fracstrpanels, fnsp = fracnonstrpanels,
-  fsawn = fracsawnwood)
+  fsawn = fracsawnwood, swpdata)
 }
 \arguments{
 \item{Years}{years to calculate carbon placed in use for}

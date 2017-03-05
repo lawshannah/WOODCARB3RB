@@ -305,9 +305,17 @@ calculateswpdata <- function() {
 calcplacediu <- function(Years = 1900:2020, approach = c("Production",
     "Stock Change"), total = TRUE, fsp = fracstrpanels,
                                    fnsp = fracnonstrpanels,
-                                   fsawn = fracsawnwood) {
+                                   fsawn = fracsawnwood, swpdata) {
     approachtype <- match.arg(approach)
-    swpcalcdata <- calculateswpdata()
+    if (!missing(swpdata))
+    {
+      swpcalcdata <- swpdata
+    }
+    else
+    {
+      swpcalcdata <- calculateswpdata()
+    }
+
     placeIU <- data.frame(Years = Years)
 
     if (approachtype == "Production") {

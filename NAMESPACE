@@ -2,4 +2,5 @@
 
 export(finalCarbonContribution)
 export(finalVariables)
+export(returnData)
 export(swpcarbontotal)

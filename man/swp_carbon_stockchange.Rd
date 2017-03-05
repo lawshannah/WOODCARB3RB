@@ -10,7 +10,7 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
 swp_carbon_stockchange(years, approach = c("Production", "Stock Change"),
   decaydistribution = c("Exponential", "K=2", "K=10"),
   halflives = halfLives, fsp = fracstrpanels, fnsp = fracnonstrpanels,
-  fsawn = fracsawnwood)
+  fsawn = fracsawnwood, swpdata)
 }
 \arguments{
 \item{years}{years to return carbon totals for}

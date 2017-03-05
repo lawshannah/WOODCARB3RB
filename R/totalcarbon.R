@@ -39,13 +39,20 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
                                                                           "Stock Change"),
                            halflives = halfLives, fsp = fracstrpanels,
                            fnsp = fracnonstrpanels,
-                           fsawn = fracsawnwood){
+                           fsawn = fracsawnwood,
+                           swpdata){
 
   type <- match.arg(decaydistribution)
   approachtype <- match.arg(approach)
+
+  if (missing(swpdata))
+  {
+    swpdata <- calculateswpdata()
+  }
+
   placeIU <- calcplacediu(total = FALSE, approach = approachtype, fsp = fsp,
                           fnsp = fnsp,
-                          fsawn = fsawn)
+                          fsawn = fsawn, swpdata = swpdata)
 
 
   Var2_totalC_SWP <- data.frame(Years = Yrs)

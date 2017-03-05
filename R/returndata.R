@@ -143,12 +143,28 @@ Ince3 <- function(y,c){
 #"returnData" designed to collect intermediate calculations throughout
 #other functions and return them as a data frame(s) similar to "USA", "Calculation" ,
 #"SW Calc".
+
+#' Returns various intermediate calculations and data sheets.
+#' Includes swp and paper production and trade time series.
+#'
+#' @param DataSheet Several data sheets from Woodcarb II spreadsheet.
+#' @param years years to return data for
+#'
+#' @return data frame of intermediate calculations corresponding to appropriate table
+#' in Excel spreadsheet.
+#' @export
+#'
+#' @examples
+#' returnData(DataSheet="SwCalc")
 returnData<- function(DataSheet = c("USA", "Calculation",
                          "Dumps", "SwCalc",
                          "IPCC"), years = 1950:2015){
 
   ds <- match.arg(DataSheet)
-
+  if (ds == "SwCalc")
+  {
+    return(calculateswpdata())
+  }
   p_imp_exp <- c("Production", "Imports", "Exports")
 
   usa_names <- c(paste("Roundwood.",c(p_imp_exp,

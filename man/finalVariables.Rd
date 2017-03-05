@@ -11,7 +11,8 @@ finalVariables(Years = 1990:2015, decaydistribution = c("Exponential",
   paperToCarbon = 3.9008955e-07, swpSwdsNondegradable = 0.77,
   paperSwdsNondegradable = 0.44, swpLandfillDecay = 0.0300063714528115,
   paperLandfillDecay = 0.0478032538317204,
-  swpDumpDecay = 0.0420089200339361, paperDumpDecay = 0.0840178400678722)
+  swpDumpDecay = 0.0420089200339361, paperDumpDecay = 0.0840178400678722,
+  swpdata)
 }
 \arguments{
 \item{Years}{years to calculate}

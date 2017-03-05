@@ -1,5 +1,3 @@
-#' Statistics needed for variable 3
-#' Calculates intermediate calculations for variable 3:
 #' Annual Imports of Wood, and paper products + wood fuel,
 #' pulp, recovered paper, roundwood/chips.
 #' @param years years to calculate for
@@ -9,6 +7,7 @@
 calcP_IM <- function(years = 1990:2020, var = FALSE){
   var3 <- data.frame(Years = years)
 
+  environment(calcUSApaper) <- environment()
   uspaper <- calcUSApaper(years)
 
   var3$usa_O <- 1000 * sapply(years, function(year){
@@ -32,27 +31,27 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
     }
   })
 
-  var3$Calc_AX <- PRO17 * var3$usa_O
+  var3$Calc_AX <- woodToCarbon * var3$usa_O
 
   var3$usa_I <- 1000 * sapply(years, function(year){
     if (year < 1918){
-      return(h8(year, 'Imports.Tot') * InceF5)
+      return(InceF5 * h8(year, 'Imports.Tot') )
     }
     if (year < 1950){
-      return( (h8(year, 'Imports.SW') + h8(year, 'Imports.Mixed')) * InceF5 +
-                (h8(year, 'Imports.HW') * InceG5) )
+      return(InceF5 * (h8(year, 'Imports.SW') + h8(year, 'Imports.Mixed'))  +
+                (InceG5 * h8(year, 'Imports.HW')))
     }
     if (year < 1965){
-      return( (u29(year, 'Imports.SW') * 1000 * InceF5) +
-                (u29(year, 'Imports.HW') * 1000 * InceG5))
+      return((1000 * InceF5 * u29(year, 'Imports.SW')) +
+                (1000 * InceG5 * u29(year, 'Imports.HW')))
     }
     if (year < 2021){
-      return( (h28(year, 'Imports.SW') * 1000 * InceF5) +
-               (h28(year, 'Imports.HW') * 1000 * InceG5))
+      return((1000 * InceF5 * h28(year, 'Imports.SW')) +
+               (1000 * InceG5 * h28(year, 'Imports.HW')))
     }
   })
 
-  var3$Calc_AY <- PRO17 * var3$usa_I
+  var3$Calc_AY <- woodToCarbon * var3$usa_I
 
   var3$usa_L <- 1000 * sapply(years, function(year){
     if (year < 1927) {
@@ -111,13 +110,13 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
   })
 
 
-  var3$Calc_AZ <- PRO17 * var3$usa_L
+  var3$Calc_AZ <- woodToCarbon * var3$usa_L
 
 
   var3$usa_T <- 1000 * IncePaper[years-(minyr-2), 'Paper.Board.Imports'] * InceL5
 
 
-  var3$Calc_BA <- PRO18 * var3$usa_T * uspaper$`Percent of Wood Pulp For Paper`###SUBSET THIS FOR APPROPRIATE YEARS
+  var3$Calc_BA <- paperToCarbon * var3$usa_T * uspaper$`Percent of Wood Pulp For Paper`###SUBSET THIS FOR APPROPRIATE YEARS
 
 
   var3$usa_AU <- sapply(years, function(year){
@@ -141,7 +140,7 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
   var3$usa_AX <- uspaper$`Wood Pulp for Paper Imports` + var3$usa_AU + var3$usa_AQ
 
 
-  var3$Calc_BB <- PRO18 * var3$usa_AX
+  var3$Calc_BB <- paperToCarbon * var3$usa_AX
 
 
   var3$variable3 <- 1000 * (var3$Calc_AX+var3$Calc_AY
@@ -164,6 +163,7 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 calcP_EX <- function(years = 1990:2020, var = FALSE){
   var4 <- data.frame(Years = years)
 
+  environment(calcUSApaper) <- environment()
   uspaper <- calcUSApaper(years)
 
   ##2008 later refers to empty cells in spreadsheet
@@ -339,9 +339,9 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
 
   var4$usa_Y <- var4$usa_AF + var4$usa_AV + var4$usa_AR
 
-  var4$Variable4 <- 1000 * (PRO17 * var4$usa_E + PRO17 * var4$usa_J +
-                                    PRO17 * var4$usa_M + PRO18 * var4$usa_U * uspaper$`Percent of Wood Pulp For Paper` +
-                                    PRO18 * var4$usa_Y)
+  var4$Variable4 <- 1000 * (woodToCarbon * var4$usa_E + woodToCarbon * var4$usa_J +
+                                    woodToCarbon * var4$usa_M + paperToCarbon * var4$usa_U * uspaper$`Percent of Wood Pulp For Paper` +
+                                    paperToCarbon * var4$usa_Y)
   if(var == TRUE){
     return(var4$Variable4[var4$Years %in% years])
   }
@@ -397,7 +397,7 @@ annualDomesticHarvest <- function(years, onlyvar = FALSE){
     }
   })
 
-  usa$Calc_DI <- PRO17 * usa$usa_C
+  usa$Calc_DI <- woodToCarbon * usa$usa_C
 
   usa$usa_G <-  1000 * sapply(years, function(year){
 
@@ -419,11 +419,11 @@ annualDomesticHarvest <- function(years, onlyvar = FALSE){
     }
   })
 
-  usa$Calc_DO <- PRO17 * usa$usa_G
+  usa$Calc_DO <- woodToCarbon * usa$usa_G
 
   usa$usa_BP <- usa$usa_C - usa$usa_BO
 
-  usa$Calc_DN <- PRO17 * (PRM19 * usa$usa_BO + PRM20 * usa$usa_BP)
+  usa$Calc_DN <- woodToCarbon * (PRM19 * usa$usa_BO + PRM20 * usa$usa_BP)
 
   usa$Var5 <- 1000 * (usa$Calc_DI + usa$Calc_DO + usa$Calc_DN)
 

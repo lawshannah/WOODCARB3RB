@@ -1,14 +1,15 @@
 #' Calculates paper statistics
 #'
 #' Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.
-#'
 #' @param years years to calculate data for
 #' @return A data frame with necessary intermediate calculations to calculate carbon from paper.
-#' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet (list them?)
+#'
+#' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet
 calcUSApaper <- function(years = yrs) {
 
   USA <- data.frame(Years = years)
   ##api includes calculations from estimates/averages
+  #from api_total_1973
   USA$`apiTotalWP_L` <- sapply(years, function(year) {
     if (year < 1957) {
       #F, H, B, F
@@ -22,7 +23,7 @@ calcUSApaper <- function(years = yrs) {
                                              apiTotal(year, 'Consump.Paper.Board')))
     }
   })
-
+ #
   USA$`Recovered Fibre Pulp Exports Quantity` <- sapply(years, function(year) {
     if (year > 1997 && year < 2014) {
       return(usaFiberPulp[[year-1997, "Exports.Quantity"]])
@@ -221,7 +222,7 @@ calcUSApaper <- function(years = yrs) {
                                                                                    USA$`Pulp for Paper Exports`)
 
 
-  USA$CarbonInputFlowPaperStockChange <- PRO18*USA$`Paper+Paperboard Consumption`*USA$`Percent of Wood Pulp For Paper`
+  USA$CarbonInputFlowPaperStockChange <- paperToCarbon*USA$`Paper+Paperboard Consumption`*USA$`Percent of Wood Pulp For Paper`
 
   USA$`Nonwood Fiber Percent of Total Pulp Consumption` <-
     (USA$`Other Fibre Pulp Production`+USA$`Other Fibre Pulp Imports`
@@ -233,7 +234,7 @@ calcUSApaper <- function(years = yrs) {
                                          USA$`Wood Pulp for Paper Imports`-USA$`Wood Pulp for Paper Exports`)
 
 
-  USA$`Production Approach-C Input from Paper Products(Calc BU)` <-  a5 * PRO18 * ( (USA$`Paper+Paperboard Production` +
+  USA$`Production Approach-C Input from Paper Products(Calc BU)` <-  a5 * paperToCarbon * ( (USA$`Paper+Paperboard Production` +
                                                                               USA$`Paper+Paperboard Exports` * (a5 - 1)) *
                                                                              (1 - USA$`Nonwood Fiber Percent of Total Pulp Consumption` * PRP62) *
                                                                              (1 - USA$`Imported Woodpulp as a Percent of Total WoodPulp Consumption` * PRP62) *

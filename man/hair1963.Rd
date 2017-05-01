@@ -6,6 +6,7 @@
 \title{Estimated production, net imports, and apparent consumption of timber products in the US, 1900-1962}
 \format{A data frame with 85 observations on 38 variables:
 \describe{
+\item{Years}{Years}
 \item{Dom.Prod.Tot}{Total Domestic Production}
 \item{ApparentConsumption}{Apparent Consumption}
 \item{Dom.Prod}{Domestic Production, Total Ind RW}

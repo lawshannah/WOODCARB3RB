@@ -6,6 +6,7 @@
 \title{Total production, productivity, recovered paper utilization, and per capita production}
 \format{A data frame with 151 observations of 15 variables:
 \describe{
+\item{Years}{Years}
 \item{Total.Industrial.Wood.Product.Production}{Industrial wood production in thousand tons}
 \item{Roundwood.Equivalents.of.Production.Hardwoods}{Hardwood production in million ft<sup>3</sup>}
 \item{Roundwood.Equivalents.of.Production.Softwoods}{Softwood production in million ft<sup>3</sup>}

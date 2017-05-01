@@ -8,6 +8,7 @@ Corresponds to colum U20 in Param + Results Sheet.
 Gives percentage of all wood that goes to landfills.}
 \format{A data frame with 151 observations of 1 variable:
 \describe{
+\item{Years}{Years}
 \item{WoodToLandFills}{Percentage of wood going to landfills}
 }}
 \source{

@@ -6,6 +6,7 @@
 \title{Wood pulp production, imports, exports, and consumption, 1965-1999}
 \format{A data frame with 56 observations of 15 variables:
 \describe{
+\item{Years}{Years}
 \item{Woodpulp.Production}{Wood pulp Production}
 \item{Woodpulp.Imports}{Wood pulp Imports}
 \item{Woodpulp.Imports.PercConsump}{Imports as Percent of Consumption}

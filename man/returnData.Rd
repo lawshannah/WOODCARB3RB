@@ -28,7 +28,4 @@ to sheets in Woodcarb2. Includes relevant SWP and paper production and
 trade time series for calculating final carbon contributions for
 various approaches.
 }
-\examples{
-returnData(DataSheet="SwCalc")
-}
 

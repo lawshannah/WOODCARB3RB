@@ -6,6 +6,7 @@
 \title{U.S. Annual industrial wood product in conventional units of measure.}
 \format{A data frame with 151 observations of  25 variables:
 \describe{
+\item{Years}{Years}
 \item{SW.Ply}{Softwood Plywood units: million ft^2, 3/8 in.}
 \item{OSB.Wafer.board}{OSB/ Wafer board units: million ft^2, 3/8 in.}
 \item{Lam.Ven.Lumb}{Laminated Veneer lumber units: million ft^3}

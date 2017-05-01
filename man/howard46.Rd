@@ -6,6 +6,7 @@
 \title{Paper and board production and fibrous materials consumed in the manufacture of paper and board, 1965-1999}
 \format{A data frame with 56 observations of 19 variables:
 \describe{
+\item{Years}{Years}
 \item{Prod.PaperBoard}{Prod.PaperBoard. Paper and Paperboard Production, in 1000 Tons}
 \item{Consump.Tot}{Total Consumption of Fibrous Materials, in 1000 Tons}
 \item{Consump.WoodPulp}{Consumption of Woodpulp, in 1000 Tons}

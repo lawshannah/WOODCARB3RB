@@ -6,6 +6,7 @@
 \title{U.S. Paper & Paperboard, Production, Imports, Exports, Apparent Consumption, 1900 - 2050.}
 \format{A data frame with 48 observations of 22 variables:
 \describe{
+\item{Years}{Years}
 \item{Paper.Board.Prod}{Paper and board production}
 \item{Paper.Board.Imports}{Paper and board imports}
 \item{Paper.Board.ApparentConsumption}{Paper and board apparent consumption}

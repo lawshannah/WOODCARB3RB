@@ -7,6 +7,7 @@
 from 1899 to 1972 with necessary statistics from 1869, 1879, 1889.}
 \format{A data frame with 77 observations of 11 variables:
 \describe{
+\item{Years}{Years}
 \item{Woodpulp.Prod}{Production of Wood Pulp}
 \item{Woodpulp.Imports}{Imports of Wood Pulp}
 \item{Woodpulp.Exports}{Exports of Wood Pulp}

@@ -7,6 +7,7 @@
 Also includes historical production and exports data from 1925-1950.}
 \format{A data frame with 72 observations of 5 variables:
 \describe{
+\item{Years}{Years}
 \item{Hardboard.Prod}{Hardboard Production}
 \item{Hardboard.Import}{Hardboard Imports}
 \item{Hardboard.Exports}{Hardboard Exports}

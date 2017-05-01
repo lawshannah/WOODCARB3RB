@@ -6,6 +6,7 @@
 \title{Plywood production, imports, exports, and consumption, by softwoods and hardwoods, 1950-87}
 \format{A data frame with 38 observations of 15 variables:
 \describe{
+\item{Years}{Years}
 \item{Prod.Tot}{Total Plywood Production}
 \item{Prod.SW}{Softwood Plywood Production}
 \item{Prod.HW}{Hardwood Plywood Production}

@@ -6,6 +6,7 @@
 \title{United States imports and exports of plywood, by softwoods and hardwoods, 1935-62 (with estimates of 1927-34)}
 \format{A data frame with 36 observations on 8 variables:
 \describe{
+\item{Years}{Years}
 \item{Imports.Tot}{Total Plywood Imports}
 \item{SW.Imports}{Softwood Imports}
 \item{HW.Imports.Tot}{Total Hardwood Imports}

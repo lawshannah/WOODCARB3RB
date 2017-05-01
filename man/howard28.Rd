@@ -6,6 +6,7 @@
 \title{Lumber production, imports, exports, and consumption, by softwoods and hardwoods, 1965-1999.}
 \format{A data frame with 56 observations of 15 variables:
 \describe{
+\item{Years}{Years}
 \item{Prod.Tot}{Total Lumber Production}
 \item{Prod.SW}{Softwood Lumber Production}
 \item{Prod.HW}{Hardwood Lumber Production}

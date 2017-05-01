@@ -6,6 +6,7 @@
 \title{Fractions of Sawnwood production used in various end uses}
 \format{A data frame with 151 observations of 13 variables:
 \describe{
+\item{Years}{Years}
 \item{House.SingFam}{Fraction of sawnwood production in Single Family Homes}
 \item{House.Multifam}{Fraction of sawnwood production in Multi Family Homes}
 \item{House.MobHom}{Fraction of sawnwood production in Mobile Homes}

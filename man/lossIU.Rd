@@ -6,7 +6,6 @@
 \title{Fraction of wood lost when placed in use from various end uses.}
 \format{A data frame with 151 observations of 16 variables:
 \describe{
-\item{Years}{Years}
 \item{House.SingFam}{Fraction of wood lost in single family homes}
 \item{House.Multifam}{Fraction of wood lost in multi family homes}
 \item{House.MobHom}{Fraction of wood lost in mobile homes}

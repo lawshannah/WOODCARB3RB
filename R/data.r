@@ -95,7 +95,6 @@
 "hair1963"
 
 
-
 #' United States imports and exports of plywood, by softwoods and hardwoods, 1935-62 (with estimates of 1927-34)
 #'
 #' Dataset containing import and export statistics for plywood products.
@@ -726,16 +725,6 @@
 #' \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
 #' \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 #' \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
-#' \item{UnNamed1}{}
-#' \item{UnNamed2}{}
-#' \item{UnNamed3}{}
-#' \item{UnNamed4}{}
-#' \item{UnNamed5}{}
-#' \item{UnNamed6}{}
-#' \item{UnNamed7}{}
-#' \item{UnNamed8}{}
-#' \item{UnNamed9}{}
-#' \item{UnNamed10}{}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard6"
@@ -916,7 +905,6 @@
 #'
 #' @format A data frame with 151 observations of 13 variables:
 #' \describe{
-#' \item{Years}{Years}
 #' \item{House.SingFam}{Fraction of sawnwood production in Single Family Homes}
 #' \item{House.Multifam}{Fraction of sawnwood production in Multi Family Homes}
 #' \item{House.MobHom}{Fraction of sawnwood production in Mobile Homes}
@@ -942,7 +930,6 @@
 #'
 #' @format A data frame with 151 observations of 16 variables:
 #' \describe{
-#' \item{Years}{Years}
 #' \item{House.SingFam}{Fraction of structural panel production in Single Family Homes}
 #' \item{House.Multifam}{Fraction of structural panel production in Multi Family Homes}
 #' \item{House.MobHom}{Fraction of structural panel production in Mobile Homes}
@@ -967,7 +954,6 @@
 #'
 #' @format A data frame with 151 observations of 16 variables:
 #' \describe{
-#' \item{Years}{Years}
 #' \item{House.SingFam}{Fraction of non-structural panel production in Single Family Homes}
 #' \item{House.Multifam}{Fraction of non-structural panel production in Multi Family Homes}
 #' \item{House.MobHom}{Fraction of non-structural panel production in Mobile Homes}
@@ -993,7 +979,6 @@
 #'
 #' @format A data frame with 151 observations of 16 variables:
 #' \describe{
-#' \item{Years}{Years}
 #' \item{House.SingFam}{Fraction of wood lost in single family homes}
 #' \item{House.Multifam}{Fraction of wood lost in multi family homes}
 #' \item{House.MobHom}{Fraction of wood lost in mobile homes}

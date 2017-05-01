@@ -48,7 +48,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
         }
     })
 
-    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), 1]
+    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), "WoodToDumps"]
 
     CalcUSA$Dumps_C <- PRM57 * CalcUSA$TotalCarbonOutputStockChange *
         woodToCarbon * CalcUSA$ParamResults_Q
@@ -61,7 +61,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
                     (CalcUSA$Dumps_D[year - minyr] + CalcUSA$Dumps_C[year - (minyr - 1)])
     }
 
-    CalcUSA$Q <- woodToLandFills[ys - (minyr - 1), 1] * PRJ96 * CalcUSA$TotalCarbonOutputStockChange *
+    CalcUSA$Q <- woodToLandFills[ys - (minyr - 1), "WoodToLandFills"] * PRJ96 * CalcUSA$TotalCarbonOutputStockChange *
         woodToCarbon
 
     for (year in ys) {
@@ -122,7 +122,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
 
 
     CalcUSA$Dumps_H <- PRM57 * CalcUSA$K * woodToDumps[ys - (minyr -
-        1), 1]
+        1), "WoodToDumps"]
 
     for (y in ys) {
         if (y == minyr) {
@@ -133,7 +133,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
         }
     }
 
-    CalcUSA$R <- PRI96 * CalcUSA$K * paperToLandFills[ys - (minyr - 1), 1]
+    CalcUSA$R <- PRI96 * CalcUSA$K * paperToLandFills[ys - (minyr - 1), "PaperToLandfills"]
 
     CalcUSA$AG <- paperSwdsNondegradable * CalcUSA$R
 
@@ -224,7 +224,7 @@ calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE)
         }
     }
 
-    CalcUSA$ParamResults_V <- paperToLandFills[ys - (minyr - 1),1]
+    CalcUSA$ParamResults_V <- paperToLandFills[ys - (minyr - 1), "PaperToLandfills"]
 
     CalcUSA$ParamResults_P <- PRI96 * CalcUSA$ParamResults_V
 
@@ -249,13 +249,13 @@ calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE)
         }
     })
 
-    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), 1]
+    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), "WoodToDumps"]
 
     CalcUSA$Dumps_S <- PRM57 * CalcUSA$CB * CalcUSA$ParamResults_Q
 
     ### P+R 'O200' column, woodTolandfills is data linked to another site,
     ### not sure how it's calculated.
-    CalcUSA$ParamResults_O <- woodToLandFills[ys - (minyr - 1), ] * PRJ96
+    CalcUSA$ParamResults_O <- woodToLandFills[ys - (minyr - 1), "WoodToLandFills"] * PRJ96
 
     for (year in ys) {
         if (year == minyr)

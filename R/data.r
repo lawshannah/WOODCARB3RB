@@ -1,4 +1,4 @@
-#' Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958
+ #' Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958
 #'
 #' Dataset containing statistics for timber products.
 #' All units are in Million Board Ft, unless otherwise specified. All vectors are numeric.
@@ -338,8 +338,6 @@
 #' @source
 #' U.S. Department of Agriculture, Forest Service(16, 69); Data may not add to totals because of rounding; Data have been revised.
 "howard5"
-
-
 
 #' Particleboard and medium-density fiberboard production, imports,
 #'
@@ -834,7 +832,6 @@
 #' \item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
 #' \item{Waste.Paper.Consumption}{Consumption of Waste Paper}
 #' \item{Rags.Consumption}{Consumption of Rags}
-#' \item{?Findout}{This might be other?}
 #' \item{Other.Consumption}{Consumption of Other Fibrous Materials}
 #' \item{Total.Consumption}{Total Consumption of Fibrous Materials}
 #' }
@@ -997,6 +994,7 @@
 
 #' Recovered Fibre Pulp in the United States from 1998 to 2013
 #'
+#'
 #' All units are in metric tons and all vectors are numeric.
 #'
 #' @format A data frame with 16 observations of 3 variables:
@@ -1026,8 +1024,8 @@
 
 
 
-#' Percentage of wood to landfills
-#'
+#' Percentage of wood to landfills.
+#' Corresponds to colum U20 in Param + Results Sheet.
 #' Gives percentage of all wood that goes to landfills.
 #'
 #' @format A data frame with 151 observations of 1 variable:
@@ -1060,13 +1058,8 @@
 #' \item{Per.Capita.Industrial.Wood.Product.Production}{Per capita industrial wood product production, lbs/capita}
 #' \item{HW.Agrifiber}{Hardwood Agrifiber (units?)}
 #' \item{HW.Roundwood}{Hardwood Roundwood (units?)}
-#' \item{Empty}{}
-#' \item{Empty}{}
-#' \item{Empty}{}
-#' \item{Empty}{}
-#' \item{Empty}{}
 #' \item{U.S.Timber.Harvest}{United States Timber Harvest}
-#'
+#' \item{Misc}{This is unnamed column in Ince_Table3}
 #' }
 #' @source Ince tables
 "InceTable3"

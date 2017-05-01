@@ -30,19 +30,21 @@ calculateswpdata <- function() {
         cavg <- (h8(1904, 'Prod.SW') - h8(1899, 'Prod.SW')) / 5
         davg <- (h8(1904, 'Prod.HW') - h8(1899, 'Prod.HW')) / 5
         if (y < 1904) {
-            return((((h8(1899, 2) + ((y - 1899) * cavg)) * InceF5) +
-                (h8(1899, 3) + (y - 1899) * davg) * InceG5))
+            return((((h8(1899, 'Prod.SW') + ((y - 1899) * cavg)) * InceF5) +
+                (h8(1899, 'Prod.HW') + (y - 1899) * davg) * InceG5))
         }
         if (y < 1950) {
-            return((h8(y, 2) * InceF5 + h8(y, 3) * InceG5))
+            return((h8(y, 'Prod.SW') * InceF5 + h8(y, 'Prod.HW') * InceG5))
         }
         if (y < 1965) {
-            return((u29(y, 1) * 1000 * (((u29(y, 2)/u29(y, 1)) * InceF5) +
-                ((u29(y, 3)/u29(y, 1)) * InceG5))))
+            return((u29(y, "Prod.Tot") * 1000 * (((u29(y, "Prod.SW")/u29(y, "Prod.Tot"))
+                                                  * InceF5) +
+                ((u29(y, "Prod.HW")/u29(y, "Prod.Tot")) * InceG5))))
         }
         if (y < 2021) {
-            return((h28(y, 1) * 1000 * (((h28(y, 2)/h28(y, 1)) * InceF5) +
-                ((h28(y, 3)/h28(y, 1)) * InceG5))))
+            return((h28(y, "Prod.Tot") * 1000 * (((h28(y, "Prod.SW")/h28(y, "Prod.Tot"))
+                                                  * InceF5) +
+                ((h28(y, "Prod.HW")/h28(y, "Prod.Tot")) * InceG5))))
         }
     })
 
@@ -253,6 +255,11 @@ calculateswpdata <- function() {
                      InceJ5 * h56(year, 'Hardboard.Exports') + InceQ5 * h55(year, 'Insulboard.Exports'))
         }
     })
+
+
+    # swpcalcdata$`Wood Panel Production`
+    # swpcalcdata$`Wood Panel Imports`
+    # swpcalcdata$`Wood Panel Exports`
 
     swpcalcdata$`Other Products Production Special` <- swpcalcdata$`Other Products Production` -
         (1 - a5) * swpcalcdata$`Other Products Exports`

@@ -10,7 +10,6 @@ from 1900 to 1974.}
 \item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
 \item{Waste.Paper.Consumption}{Consumption of Waste Paper}
 \item{Rags.Consumption}{Consumption of Rags}
-\item{?Findout}{This might be other?}
 \item{Other.Consumption}{Consumption of Other Fibrous Materials}
 \item{Total.Consumption}{Total Consumption of Fibrous Materials}
 }}

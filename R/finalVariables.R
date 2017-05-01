@@ -59,7 +59,10 @@
 #'                          decaydistribution ="Exponential")
 finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production",
                                                                    "Stock Change",
-                                                                   "Atmospheric Flow"),
+                                                                   "Atmospheric Flow",
+                                                                   "Annual Harvest",
+                                                                   "Annual CO2 Release",
+                                                                   "Total Contribution"),
                                     decaydistribution = c("Exponential",
                                                   "K=2", "K=10"), plot = FALSE,
                                     halflives = halfLives, paperHL = 2.53087281800454, fsp = fracstrpanels,
@@ -82,9 +85,17 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
                         swpSwdsNondegradable = swpSwdsNondegradable, paperSwdsNondegradable = paperSwdsNondegradable,
                         swpLandfillDecay = swpLandfillDecay, paperLandfillDecay = paperLandfillDecay,
                         swpDumpDecay = swpDumpDecay, paperDumpDecay = paperDumpDecay, swpdata = swpdata)
-
   if (approachtype == "Atmospheric Flow") {
     contrib <- ((-1*fvs[,"Var1A"]-fvs[,"Var1B"])*44/12)+(fvs[,"Var3"]-fvs[,"Var4"])*44/12
+  }
+  if (approachtype == "Annual Harvest") {
+    contrib <- -1 * fvs[,"Var5"] * 44 / 12
+  }
+  if (approachtype == "Annual CO2 Release") {
+    contrib <- fvs[,"Var7"] * 44/12
+  }
+  if (approachtype == "Total Contribution") {
+    contrib <- (-1 * fvs[,"Var5"] * 44 / 12) + fvs[,"Var7"] * 44/12
   }
   else {
     #First column is 1A/2A for Stock change and production respectively,
@@ -97,7 +108,7 @@ finalCarbonContribution <- function(Years = 1990:2015, approach = c("Production"
     #add smoothed line to data w/ ggplot
     p <- plot(Years, contrib, xlab="Years", ylab="Total CO2 Contribution",
               main = "Total Carbon Removals", type="l")
-    r[2] <- p
+    r <- c(r, p)
   }
 
   return(unlist(r))
@@ -229,7 +240,12 @@ finalVariables <- function(Years = 1990:2015,
   Var5 <- function(){
     annualDomesticHarvest(Years, onlyvar = TRUE)
   }
-
+  Var6 <- function(){
+    Var5() + Var3() - Var4() - Var1A() - Var1B()
+  }
+  Var7 <- function(){
+    Var5() - Var2A() - Var2B()
+  }
   if (is.null(approach)) {
 
     df <- data.frame(Years, Var1A = Var1A(), Var1B = Var1B(),
@@ -258,6 +274,7 @@ finalVariables <- function(Years = 1990:2015,
                      Var4  = Var4())
     return(df)
   }
+  return(df)
 }
 
 #' Calculates changes in carbon stock from solid wood products.

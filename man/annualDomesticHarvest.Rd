@@ -4,7 +4,7 @@
 \alias{annualDomesticHarvest}
 \title{Annual Domestic Harvest}
 \usage{
-annualDomesticHarvest(years, onlyvar = FALSE)
+annualDomesticHarvest(years, onlyvar = FALSE, woodToCarbon = 4.535925e-07)
 }
 \arguments{
 \item{years}{years to calculate statistics for}

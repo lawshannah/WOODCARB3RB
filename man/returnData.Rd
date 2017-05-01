@@ -2,24 +2,31 @@
 % Please edit documentation in R/returndata.R
 \name{returnData}
 \alias{returnData}
-\title{Returns various intermediate calculations and data sheets.
-Includes swp and paper production and trade time series.}
+\title{Get import, export, production data for all product types.}
 \usage{
 returnData(DataSheet = c("USA", "Calculation", "Dumps", "SwCalc", "IPCC"),
   years = 1950:2015)
 }
 \arguments{
-\item{DataSheet}{Several data sheets from Woodcarb II spreadsheet.}
-
 \item{years}{years to return data for}
+
+\item{Sheet}{Sheet that corresponds to data from woodcarb2.
+USA includes production, import, and export data for several
+types of products in the United States.
+Calculation includes intermediate calculations needed to calculate
+carbon removal contributions with the various approaches. This
+data includes carbon stock totals for solid wood and paper in use and
+in landfills under the different approaches.}
 }
 \value{
 data frame of intermediate calculations corresponding to appropriate table
 in Excel spreadsheet.
 }
 \description{
-Returns various intermediate calculations and data sheets.
-Includes swp and paper production and trade time series.
+Returns data and intermediate calculations corresponding
+to sheets in Woodcarb2. Includes relevant SWP and paper production and
+trade time series for calculating final carbon contributions for
+various approaches.
 }
 \examples{
 returnData(DataSheet="SwCalc")

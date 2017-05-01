@@ -19,13 +19,8 @@
 \item{Per.Capita.Industrial.Wood.Product.Production}{Per capita industrial wood product production, lbs/capita}
 \item{HW.Agrifiber}{Hardwood Agrifiber (units?)}
 \item{HW.Roundwood}{Hardwood Roundwood (units?)}
-\item{Empty}{}
-\item{Empty}{}
-\item{Empty}{}
-\item{Empty}{}
-\item{Empty}{}
 \item{U.S.Timber.Harvest}{United States Timber Harvest}
-
+\item{Misc}{This is unnamed column in Ince_Table3}
 }}
 \source{
 Ince tables

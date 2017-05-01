@@ -5,11 +5,11 @@
 \title{Estimates U.S. HWP contribution to annual greenhouse gas removals.}
 \usage{
 finalCarbonContribution(Years = 1990:2015, approach = c("Production",
-  "Stock Change", "Atmospheric Flow"), decaydistribution = c("Exponential",
-  "K=2", "K=10"), plot = FALSE, halflives = halfLives,
-  paperHL = 2.53087281800454, fsp = fracstrpanels,
-  fnsp = fracnonstrpanels, fsawn = fracsawnwood, swpdata,
-  woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07,
+  "Stock Change", "Atmospheric Flow", "Annual Harvest", "Annual CO2 Release",
+  "Total Contribution"), decaydistribution = c("Exponential", "K=2", "K=10"),
+  plot = FALSE, halflives = halfLives, paperHL = 2.53087281800454,
+  fsp = fracstrpanels, fnsp = fracnonstrpanels, fsawn = fracsawnwood,
+  swpdata, woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07,
   swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
   swpLandfillDecay = 0.0300063714528115,
   paperLandfillDecay = 0.0478032538317204,

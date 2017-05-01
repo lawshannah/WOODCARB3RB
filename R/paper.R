@@ -5,7 +5,8 @@
 #' @return A data frame with necessary intermediate calculations to calculate carbon from paper.
 #'
 #' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet
-calcUSApaper <- function(years = yrs) {
+calcUSApaper <- function(years = yrs,
+                         woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07) {
 
   USA <- data.frame(Years = years)
   ##api includes calculations from estimates/averages
@@ -19,7 +20,7 @@ calcUSApaper <- function(years = yrs) {
     }
     if (year > 1956) {
       #G, B, F
-      return(apiFiber(year, '?Findout') * (apiTotal(year, 'Woodpulp.Prod') /
+      return(apiFiber(year, 'Other.Consumption') * (apiTotal(year, 'Woodpulp.Prod') /
                                              apiTotal(year, 'Consump.Paper.Board')))
     }
   })
@@ -150,7 +151,7 @@ calcUSApaper <- function(years = yrs) {
       return(0.90718 * USA[USA$Years == year, 'Recovered Fibre Pulp Exports Quantity'])#recov exports qty
     }
     if (year < 2021) {
-      return(0.90718 * USA[USA$Years == 2007, 'Recovered Fibre Pulp Exports Quantity']) #2007 value
+      return(0.90718 * usaFiberPulp[[2007-1997, "Exports.Quantity"]]) #2007 value
     }
   })
 
@@ -232,7 +233,6 @@ calcUSApaper <- function(years = yrs) {
   USA$`Imported Woodpulp as a Percent of Total WoodPulp Consumption` <-
     USA$`Wood Pulp for Paper Imports`/(USA$`Wood Pulp for Paper Production` +
                                          USA$`Wood Pulp for Paper Imports`-USA$`Wood Pulp for Paper Exports`)
-
 
   USA$`Production Approach-C Input from Paper Products(Calc BU)` <-  a5 * paperToCarbon * ( (USA$`Paper+Paperboard Production` +
                                                                               USA$`Paper+Paperboard Exports` * (a5 - 1)) *

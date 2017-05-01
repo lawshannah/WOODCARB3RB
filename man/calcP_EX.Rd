@@ -4,7 +4,8 @@
 \alias{calcP_EX}
 \title{Statistics for variable 4}
 \usage{
-calcP_EX(years = 1990:2020, var = FALSE)
+calcP_EX(years = 1990:2020, var = FALSE, woodToCarbon = 4.535925e-07,
+  paperToCarbon = 3.9008955e-07)
 }
 \arguments{
 \item{years}{years to calculate}

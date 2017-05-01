@@ -4,7 +4,8 @@
 \alias{calcUSApaper}
 \title{Calculates paper statistics}
 \usage{
-calcUSApaper(years = yrs)
+calcUSApaper(years = yrs, woodToCarbon = 4.535925e-07,
+  paperToCarbon = 3.9008955e-07)
 }
 \arguments{
 \item{years}{years to calculate data for}

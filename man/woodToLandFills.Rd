@@ -3,7 +3,9 @@
 \docType{data}
 \name{woodToLandFills}
 \alias{woodToLandFills}
-\title{Percentage of wood to landfills}
+\title{Percentage of wood to landfills.
+Corresponds to colum U20 in Param + Results Sheet.
+Gives percentage of all wood that goes to landfills.}
 \format{A data frame with 151 observations of 1 variable:
 \describe{
 \item{WoodToLandFills}{Percentage of wood going to landfills}
@@ -15,6 +17,8 @@ Linked spreadsheet (check this)
 woodToLandFills
 }
 \description{
+Percentage of wood to landfills.
+Corresponds to colum U20 in Param + Results Sheet.
 Gives percentage of all wood that goes to landfills.
 }
 \keyword{datasets}

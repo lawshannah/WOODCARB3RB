@@ -38,9 +38,6 @@ for (i in seq(names)){
 #'
 #' @return data frame of intermediate calculations corresponding to appropriate table
 #' in Excel spreadsheet.
-#'
-#' @examples
-#' returnData(DataSheet="SwCalc")
 returnData<- function(DataSheet = c("USA", "Calculation",
                                     "Dumps", "SwCalc",
                                     "IPCC"), years = 1950:2015){

@@ -9,6 +9,10 @@ calcUSApaper(years = yrs, woodToCarbon = 4.535925e-07,
 }
 \arguments{
 \item{years}{years to calculate data for}
+
+\item{woodToCarbon}{Carbon conversion factor}
+
+\item{paperToCarbon}{Carbon conversion factor}
 }
 \value{
 A data frame with necessary intermediate calculations to calculate carbon from paper.

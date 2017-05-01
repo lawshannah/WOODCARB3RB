@@ -2,6 +2,8 @@
 #'
 #' Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.
 #' @param years years to calculate data for
+#' @param woodToCarbon Carbon conversion factor
+#' @param paperToCarbon Carbon conversion factor
 #' @return A data frame with necessary intermediate calculations to calculate carbon from paper.
 #'
 #' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet

@@ -23,7 +23,7 @@ use_data(hair1958, overwrite = TRUE)
 
 hair1963 <- read.xlsx("./inst/extdata/CopyOfData/hair1963tab2.xlsx", 1, header = FALSE,
                       startRow=6)
-colnames(hair1963) <- c("Year","Dom.Prod.Tot", "ApparentConsumption", "IndRW.Dom.Prod",
+colnames(hair1963) <- c("Years","Dom.Prod.Tot", "ApparentConsumption", "IndRW.Dom.Prod",
                         "IndRW.Imports","IndRW.Prod.SW", "IndRW.Prod.HW", "IndRW.LogChipImports.SW",
                         "IndRW.LogChipExports.SW", "IndRW.LogChipImports.HW",
                         "IndRW.LogChipExports.HW", "IndRW.SW.PctOfProd", "IndRW.Exports.SW.PctOfProd",
@@ -333,15 +333,13 @@ use_data(ulrich6, overwrite=TRUE)
 
 fracsawnwood<-read.xlsx("./inst/extdata/CopyOfData/fracsawnwood.xlsx",1,header=FALSE,
                         startRow = 12, colIndex = 1:17)
-#fracsawnwood <- fracsawnwood[,1:16]
-colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom","House.Tot",
+fracsawnwood <- fracsawnwood[-c(1, 5, 10, 14)]
+colnames(fracsawnwood)<-c("House.SingFam","House.Multifam","House.MobHom",
                           "Res.Upkeep","New.Nonres.AllRR","New.Nonres.Rties","New.Nonres.Rcar.Repair",
-                          "New.Nonres.tot",
                           "Manu.HouseFurniture","Manu.CommFurniture","Manu.OtherProducts",
-                          "Manu.Tot",
                           "Shipping.Tot","Other.Uses.Tot", "Other.Industrial.Tot")
 #fracsawnwood[is.na(fracsawnwood)] <- 0
-fracsawnwood <- fracsawnwood[-c(1, 5, 10, 14)]
+
 use_data(fracsawnwood, overwrite=TRUE)
 
 

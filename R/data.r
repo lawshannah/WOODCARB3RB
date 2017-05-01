@@ -762,13 +762,6 @@
 #' \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
 #' \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 #' \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
-#' \item{UnNamed1}{}
-#' \item{UnNamed2}{}
-#' \item{UnNamed3}{}
-#' \item{UnNamed4}{}
-#' \item{UnNamed5}{}
-#' \item{UnNamed6}{}
-#' \item{UnNamed7}{}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard7"
@@ -817,7 +810,6 @@
 #'
 #' @format A data frame with 151 observations of 13 variables:
 #' \describe{
-#' \item{Years}{Years}
 #' \item{House.SingFam}{Half lives for Single Family Homes}
 #' \item{House.Multifam}{Half lives for Multi Family Homes}
 #' \item{House.MobHom}{Half lives for Mobile Homes}

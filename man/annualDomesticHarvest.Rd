@@ -11,6 +11,8 @@ annualDomesticHarvest(years, onlyvar = FALSE, woodToCarbon = 4.535925e-07)
 
 \item{onlyvar}{If true, only the variable 5 will be returned.
 If false, other calculations needed to produce variable 5 will be returned}
+
+\item{woodToCarbon}{Carbon conversion factor.}
 }
 \value{
 Depends on onlyvar, either data frame of intermediate calculations or a vector

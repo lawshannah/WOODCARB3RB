@@ -6,7 +6,6 @@
 \title{Half lives for each end use.}
 \format{A data frame with 151 observations of 13 variables:
 \describe{
-\item{Years}{Years}
 \item{House.SingFam}{Half lives for Single Family Homes}
 \item{House.Multifam}{Half lives for Multi Family Homes}
 \item{House.MobHom}{Half lives for Mobile Homes}

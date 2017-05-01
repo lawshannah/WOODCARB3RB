@@ -31,13 +31,6 @@
 \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
 \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
-\item{UnNamed1}{}
-\item{UnNamed2}{}
-\item{UnNamed3}{}
-\item{UnNamed4}{}
-\item{UnNamed5}{}
-\item{UnNamed6}{}
-\item{UnNamed7}{}
 }}
 \source{
 USFS Estimations and Bureau of Census Data

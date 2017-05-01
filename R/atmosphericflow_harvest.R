@@ -158,6 +158,8 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 #' Statistics for variable 4
 #' @param years years to calculate
 #' @param var If true, return only variable 4. If false, return intermediate statistics needed for variable 4
+#' @param woodToCarbon Carbon conversion factor
+#' @param paperToCarbon Carbon conversion factor
 #' @return if var = FALSE, necessary calculations for Variable 4 for selected years
 #'         if var = TRUE, returns values for Variable 4 for selected years
 calcP_EX <- function(years = 1990:2020, var = FALSE,
@@ -356,6 +358,7 @@ calcP_EX <- function(years = 1990:2020, var = FALSE,
 #' Various statistics and intermediate calculations to solve for
 #' Variable 5, Annual Domestic Harvest (H)
 #' @param years years to calculate statistics for
+#' @param woodToCarbon Carbon conversion factor.
 #' @param onlyvar If true, only the variable 5 will be returned.
 #' If false, other calculations needed to produce variable 5 will be returned
 #' @return Depends on onlyvar, either data frame of intermediate calculations or a vector

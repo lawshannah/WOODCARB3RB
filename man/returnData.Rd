@@ -8,15 +8,15 @@ returnData(DataSheet = c("USA", "Calculation", "Dumps", "SwCalc", "IPCC"),
   years = 1950:2015)
 }
 \arguments{
-\item{years}{years to return data for}
-
-\item{Sheet}{Sheet that corresponds to data from woodcarb2.
+\item{DataSheet}{Sheet that corresponds to data from woodcarb2.
 USA includes production, import, and export data for several
 types of products in the United States.
 Calculation includes intermediate calculations needed to calculate
 carbon removal contributions with the various approaches. This
 data includes carbon stock totals for solid wood and paper in use and
 in landfills under the different approaches.}
+
+\item{years}{years to return data for}
 }
 \value{
 data frame of intermediate calculations corresponding to appropriate table

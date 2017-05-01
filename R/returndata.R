@@ -26,7 +26,7 @@ for (i in seq(names)){
 #' trade time series for calculating final carbon contributions for
 #' various approaches.
 #'
-#' @param Sheet Sheet that corresponds to data from woodcarb2.
+#' @param DataSheet Sheet that corresponds to data from woodcarb2.
 #' USA includes production, import, and export data for several
 #' types of products in the United States.
 #' Calculation includes intermediate calculations needed to calculate

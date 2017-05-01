@@ -11,6 +11,10 @@ calcP_EX(years = 1990:2020, var = FALSE, woodToCarbon = 4.535925e-07,
 \item{years}{years to calculate}
 
 \item{var}{If true, return only variable 4. If false, return intermediate statistics needed for variable 4}
+
+\item{woodToCarbon}{Carbon conversion factor}
+
+\item{paperToCarbon}{Carbon conversion factor}
 }
 \value{
 if var = FALSE, necessary calculations for Variable 4 for selected years

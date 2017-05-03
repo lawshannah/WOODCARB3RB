@@ -32,8 +32,8 @@ for (i in seq(names)){
 #'
 #' @param years years to return data for
 #'
-#' @return data frame of intermediate calculations corresponding to appropriate table
-#' in Excel spreadsheet.
+#' @return data frame of intermediate calculations corresponding to those in
+#' Woodcarb2.
 #' @export
 returnData<- function(years = 1950:2015){
 

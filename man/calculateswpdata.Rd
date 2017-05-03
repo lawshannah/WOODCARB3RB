@@ -2,15 +2,21 @@
 % Please edit documentation in R/swp.R
 \name{calculateswpdata}
 \alias{calculateswpdata}
-\title{Solidwood products statistics}
+\title{Solidwood products statistics
+Various production, imports and export data for different wood product types.
+21 columns in SWPcalcdata that are used to calculate production and stock change approach.}
 \usage{
 calculateswpdata(Years = yrs)
+}
+\arguments{
+\item{Years}{years to calculate}
 }
 \value{
 Data frame of Roundwood and solidwood production, imports and exports
 corresponds to columns in `SWPcalcdata` spreadsheet.
 }
 \description{
+Solidwood products statistics
 Various production, imports and export data for different wood product types.
 21 columns in SWPcalcdata that are used to calculate production and stock change approach.
 }

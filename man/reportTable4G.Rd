@@ -9,9 +9,9 @@ Corresponds to Table 4.G s1 and Table 4.G s2}
 reportTable4G(year = 2013, table = c("s1", "s2"))
 }
 \arguments{
-\item{table}{table to calculate}
+\item{year}{years to calculate values for.}
 
-\item{years}{years to calculate values for.}
+\item{table}{table to calculate}
 }
 \value{
 HWP Activity Data table that includes relevant data for reporting.

@@ -380,14 +380,3 @@ calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE,
     }
     CalcUSA[years - (minyr - 1), ]
 }
-
-
-
-
-
-
-
-
-
-
-

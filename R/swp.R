@@ -1,7 +1,8 @@
 #' Solidwood products statistics
-#'
 #' Various production, imports and export data for different wood product types.
 #' 21 columns in SWPcalcdata that are used to calculate production and stock change approach.
+#' @param Years years to calculate
+#'
 #' @return Data frame of Roundwood and solidwood production, imports and exports
 #' corresponds to columns in `SWPcalcdata` spreadsheet.
 calculateswpdata <- function(Years = yrs) {

@@ -90,5 +90,3 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
   }
 }
 
-
-#papercarbontotal <- function(Yrs = 1990:2015)

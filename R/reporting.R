@@ -2,7 +2,7 @@
 #' Computes IPCC tables for reporting.
 #' Corresponds to Table 4.G s1 and Table 4.G s2
 #'
-#' @param years years to calculate values for.
+#' @param year years to calculate values for.
 #' @param table table to calculate
 #' @return HWP Activity Data table that includes relevant data for reporting.
 #' If table is s1 then returns table corresponding to HWP in use from domestic harvest.

@@ -6,6 +6,7 @@
 \title{Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958}
 \format{A data frame with 58 observations on 23 variables:
 \describe{
+\item{Years}{Years}
 \item{Prod.Tot}{Production Total}
 \item{Prod.SW}{Production of Softwoods}
 \item{Prod.HW}{Production of Hardwoods}

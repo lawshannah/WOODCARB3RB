@@ -6,6 +6,7 @@
 \title{Imports and exports of veneer, by kind, in the US 1935-1962 (estimates of 1927-34).}
 \format{A data frame with 36 observations on 6 variables:
 \describe{
+\item{Years}{Years}
 \item{Imports.Tot}{Total Veneer Imports}
 \item{Imports.BirchMaple}{Birch or Maple Veneer Imports}
 \item{Imports.Other}{Other Products Imports}

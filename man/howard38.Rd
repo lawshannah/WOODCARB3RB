@@ -6,6 +6,7 @@
 \title{Production, imports, exports, and consumption of structural panel products, by type, 1980-1999}
 \format{A data frame with 41 observations and 21 variables:
 \describe{
+\item{Years}{Years}
 \item{Prod.Tot}{Total Production}
 \item{Prod.SWPlywood}{Softwood Plywood Production}
 \item{Prod.OSP}{Other Structural Panels Production}

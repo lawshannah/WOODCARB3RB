@@ -158,9 +158,12 @@ calcP_IM <- function(years = 1990:2020, var = FALSE){
 #' Statistics for variable 4
 #' @param years years to calculate
 #' @param var If true, return only variable 4. If false, return intermediate statistics needed for variable 4
+#' @param woodToCarbon Carbon conversion factor
+#' @param paperToCarbon Carbon conversion factor
 #' @return if var = FALSE, necessary calculations for Variable 4 for selected years
 #'         if var = TRUE, returns values for Variable 4 for selected years
-calcP_EX <- function(years = 1990:2020, var = FALSE){
+calcP_EX <- function(years = 1990:2020, var = FALSE,
+                     woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07){
   var4 <- data.frame(Years = years)
 
   environment(calcUSApaper) <- environment()
@@ -312,11 +315,11 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
 
   var4$usa_AV <- sapply(years, function(year){
     if(year > 1899 && year < 1965){
-      return(apiTotal(year,8))
+      return(apiTotal(year,"WastePaper.Estimated.Exports"))
     }
 
     if(year > 1964 && year < 2021){
-      return(1000*(h47(year,4)))
+      return(1000*(h47(year,"RecPap.Exports")))
     }
   })
 
@@ -355,11 +358,13 @@ calcP_EX <- function(years = 1990:2020, var = FALSE){
 #' Various statistics and intermediate calculations to solve for
 #' Variable 5, Annual Domestic Harvest (H)
 #' @param years years to calculate statistics for
+#' @param woodToCarbon Carbon conversion factor.
 #' @param onlyvar If true, only the variable 5 will be returned.
 #' If false, other calculations needed to produce variable 5 will be returned
 #' @return Depends on onlyvar, either data frame of intermediate calculations or a vector
 #' of values for Annual Domestic Harvest
-annualDomesticHarvest <- function(years, onlyvar = FALSE){
+annualDomesticHarvest <- function(years, onlyvar = FALSE,
+                                  woodToCarbon = 4.535925e-07){
   usa <- data.frame(Years = years)
 
   usa$usa_BO <- 1000 * sapply(years, function(year){
@@ -373,8 +378,7 @@ annualDomesticHarvest <- function(years, onlyvar = FALSE){
       return(h6(year, 'Ind.RW.Tot.Prod') * InceV5)
     }
     if (year > 2013 && year < 2051){
-      #Why are they using US pop for this?
-      return(Ince3(year, 'U.S.Population')* InceV5)
+      return(Ince3(year, 'Misc')* InceV5)
     }
   })
 
@@ -392,7 +396,7 @@ annualDomesticHarvest <- function(years, onlyvar = FALSE){
               h7(year, 'Ind.RW.Tot.Prod') * InceW5)
     }
     if (year < 2051){
-      return( Ince3(year, 'U.S.Population') * InceV5 +
+      return( Ince3(year, 'Misc') * InceV5 +
               Ince3(year, 'Recovered.Paper.Utilization.Rate(AF&PA)') * InceW5)
     }
   })
@@ -426,7 +430,6 @@ annualDomesticHarvest <- function(years, onlyvar = FALSE){
   usa$Calc_DN <- woodToCarbon * (PRM19 * usa$usa_BO + PRM20 * usa$usa_BP)
 
   usa$Var5 <- 1000 * (usa$Calc_DI + usa$Calc_DO + usa$Calc_DN)
-
   if(onlyvar == TRUE){
     return(usa$Var5)
   }

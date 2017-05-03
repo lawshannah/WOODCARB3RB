@@ -1,10 +1,11 @@
-#' Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958
+ #' Timber products: Production, imports, exports, and new supply of lumber in the United States, specified years, 1799-1958
 #'
 #' Dataset containing statistics for timber products.
 #' All units are in Million Board Ft, unless otherwise specified. All vectors are numeric.
 #'
 #' @format A data frame with 58 observations on 23 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Tot}{Production Total}
 #' \item{Prod.SW}{Production of Softwoods}
 #' \item{Prod.HW}{Production of Hardwoods}
@@ -45,6 +46,7 @@
 #'
 #' @format A data frame with 85 observations on 38 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Dom.Prod.Tot}{Total Domestic Production}
 #' \item{ApparentConsumption}{Apparent Consumption}
 #' \item{Dom.Prod}{Domestic Production, Total Ind RW}
@@ -93,7 +95,6 @@
 "hair1963"
 
 
-
 #' United States imports and exports of plywood, by softwoods and hardwoods, 1935-62 (with estimates of 1927-34)
 #'
 #' Dataset containing import and export statistics for plywood products.
@@ -101,6 +102,7 @@
 #'
 #' @format A data frame with 36 observations on 8 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Imports.Tot}{Total Plywood Imports}
 #' \item{SW.Imports}{Softwood Imports}
 #' \item{HW.Imports.Tot}{Total Hardwood Imports}
@@ -122,6 +124,7 @@
 #'
 #' @format A data frame with 36 observations on 6 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Imports.Tot}{Total Veneer Imports}
 #' \item{Imports.BirchMaple}{Birch or Maple Veneer Imports}
 #' \item{Imports.Other}{Other Products Imports}
@@ -142,6 +145,7 @@
 #'
 #' @format A data frame with 56 observations of 15 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Tot}{Total Lumber Production}
 #' \item{Prod.SW}{Softwood Lumber Production}
 #' \item{Prod.HW}{Hardwood Lumber Production}
@@ -171,6 +175,7 @@
 #'
 #' @format A data frame with 56 observations of 15 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Tot}{Total Plywood Production}
 #' \item{Prod.SW}{Softwood Plywood Production}
 #' \item{Prod.HW}{Hardwood Plywood Production}
@@ -202,6 +207,7 @@
 #'
 #' @format A data frame with 41 observations and 21 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Tot}{Total Production}
 #' \item{Prod.SWPlywood}{Softwood Plywood Production}
 #' \item{Prod.OSP}{Other Structural Panels Production}
@@ -230,6 +236,7 @@
 #'
 #' @format A data frame with 56 observations of 19 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.PaperBoard}{Prod.PaperBoard. Paper and Paperboard Production, in 1000 Tons}
 #' \item{Consump.Tot}{Total Consumption of Fibrous Materials, in 1000 Tons}
 #' \item{Consump.WoodPulp}{Consumption of Woodpulp, in 1000 Tons}
@@ -257,6 +264,7 @@
 #'
 #' @format A data frame with 56 observations of 19 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{PaperBoardNewSupply}{New supply of Paper and Board}
 #' \item{RecPap.ConsumedatPaperBoardMills}{Recyclable Paper Consumed at Paper and Board Mills}
 #' \item{RecPap.MoldedPulpInsulationandOther}{Recyclable Paper for Molded pulp, insulation and other uses}
@@ -282,6 +290,7 @@
 #'
 #' @format A data frame with 56 observations of 15 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Woodpulp.Production}{Wood pulp Production}
 #' \item{Woodpulp.Imports}{Wood pulp Imports}
 #' \item{Woodpulp.Imports.PercConsump}{Imports as Percent of Consumption}
@@ -310,6 +319,7 @@
 #'
 #' @format A data frame with 56 observations of 24 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{AllProducts.Prod}{Production for all timber products}
 #' \item{AllProducts.Consump}{Consumption for all timber products}
 #' \item{Prod.Tot}{Total Production for Industrial Roundwood}
@@ -339,8 +349,6 @@
 #' U.S. Department of Agriculture, Forest Service(16, 69); Data may not add to totals because of rounding; Data have been revised.
 "howard5"
 
-
-
 #' Particleboard and medium-density fiberboard production, imports,
 #'
 #' Dataset containing various statistics for particleboard and medium-density fiberboard.
@@ -348,6 +356,7 @@
 #'
 #' @format A data frame with 56 observations of 7 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Particle_MDF.Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
 #' \item{Particle_MDF.Prod.ParticleBoard}{Particleboard Production}
 #' \item{Particle_MDF.Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}
@@ -373,6 +382,7 @@
 #'
 #' @format A data frame with 38 observations of 15 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Tot}{Total Lumber Production}
 #' \item{Prod.SW}{Softwood Lumber Production}
 #' \item{Prod.HW}{Hardwood Lumber Prodcution}
@@ -405,6 +415,7 @@
 #'
 #' @format A data frame with 38 observations of 15 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Tot}{Total Plywood Production}
 #' \item{Prod.SW}{Softwood Plywood Production}
 #' \item{Prod.HW}{Hardwood Plywood Production}
@@ -434,6 +445,7 @@
 #'
 #' @format A data frame with 38 observations of 24 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{AllProducts.Prod}{Production for all timber products}
 #' \item{AllProducts.Consump}{Consumption for all timber products}
 #' \item{Tot.Prod}{Total Production for major timber products}
@@ -474,6 +486,7 @@
 #'
 #' @format A data frame with 38 observations of 24 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{AllProducts.Prod}{Production for all timber products}
 #' \item{AllProducts.Consump}{Consumption for all timber products}
 #' \item{Tot.Prod}{Total Production for major timber products}
@@ -513,6 +526,7 @@
 #'
 #' @format A data frame with 72 observations of 5 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Hardboard.Prod}{Hardboard Production}
 #' \item{Hardboard.Import}{Hardboard Imports}
 #' \item{Hardboard.Exports}{Hardboard Exports}
@@ -534,6 +548,7 @@
 #'
 #' @format A data frame with 48 observations of 22 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{AllProduction.Prod}{Total production of all products}
 #' \item{AllProduct.Consump}{Total consumption of all products}
 #' \item{Ind.RW.Tot.Prod}{Total production of all industrial roundwood products}
@@ -572,6 +587,7 @@
 #'
 #' @format A data frame with 48 observations of 22 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Paper.Board.Prod}{Paper and board production}
 #' \item{Paper.Board.Imports}{Paper and board imports}
 #' \item{Paper.Board.ApparentConsumption}{Paper and board apparent consumption}
@@ -594,6 +610,7 @@
 #'
 #' @format A data frame with 151 observations of  25 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{SW.Ply}{Softwood Plywood units: million ft^2, 3/8 in.}
 #' \item{OSB.Wafer.board}{OSB/ Wafer board units: million ft^2, 3/8 in.}
 #' \item{Lam.Ven.Lumb}{Laminated Veneer lumber units: million ft^3}
@@ -647,6 +664,7 @@
 #'
 #' @format A data frame with 56 observations of  5 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Insulboard.Production}{Insulating board production}
 #' \item{Insulboard.Imports}{Insulating board imports}
 #' \item{Insulboard.Exports}{Insulating board exports}
@@ -664,6 +682,7 @@
 #'
 #' @format A data frame with 56 observations on 5 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Hardboard.Production}{Hardboard production}
 #' \item{Hardboard.Imports}{Hardboard imports}
 #' \item{Hardboard.Exports}{Hardboard exports}
@@ -681,6 +700,7 @@
 #'
 #' @format A data frame with 56 observations on 34 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{AllProduction.Prod}{All products production}
 #' \item{AllProduct.Consump}{All products consumption}
 #' \item{Ind.RW.Tot.Prod}{Industrial roundwood uses total production}
@@ -705,16 +725,6 @@
 #' \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
 #' \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 #' \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
-#' \item{UnNamed1}{}
-#' \item{UnNamed2}{}
-#' \item{UnNamed3}{}
-#' \item{UnNamed4}{}
-#' \item{UnNamed5}{}
-#' \item{UnNamed6}{}
-#' \item{UnNamed7}{}
-#' \item{UnNamed8}{}
-#' \item{UnNamed9}{}
-#' \item{UnNamed10}{}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard6"
@@ -727,6 +737,7 @@
 #'
 #' @format A data frame with 56 observations on 31 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{AllProduction.Prod}{All products production}
 #' \item{AllProduct.Consump}{All products consumption}
 #' \item{Ind.RW.Tot.Prod}{Industrial roundwood uses total production}
@@ -751,13 +762,6 @@
 #' \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
 #' \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 #' \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
-#' \item{UnNamed1}{}
-#' \item{UnNamed2}{}
-#' \item{UnNamed3}{}
-#' \item{UnNamed4}{}
-#' \item{UnNamed5}{}
-#' \item{UnNamed6}{}
-#' \item{UnNamed7}{}
 #' }
 #' @source USFS Estimations and Bureau of Census Data
 "howard7"
@@ -770,6 +774,7 @@
 #'
 #' @format A data frame with 38 observations of  7 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.tot}{Production Total}
 #' \item{Prod.Part.Board}{Production of Partical Board}
 #' \item{Prod.Med.Fiberboard}{Medium Density Fiberboard}
@@ -788,6 +793,7 @@
 #'
 #' @format A data frame with 63 observations of  6 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{InsulatingBoard.Prod}{Insulating Board Production}
 #' \item{InsulatingBoard.Import}{Insulating Board Imports}
 #' \item{InsulatingBoard.Exports}{Inulating Board Exports}
@@ -831,10 +837,10 @@
 #'
 #' @format A data frame with 75 observations of 5 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
 #' \item{Waste.Paper.Consumption}{Consumption of Waste Paper}
 #' \item{Rags.Consumption}{Consumption of Rags}
-#' \item{?Findout}{This might be other?}
 #' \item{Other.Consumption}{Consumption of Other Fibrous Materials}
 #' \item{Total.Consumption}{Total Consumption of Fibrous Materials}
 #' }
@@ -853,6 +859,7 @@
 #'
 #' @format A data frame with 77 observations of 11 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Woodpulp.Prod}{Production of Wood Pulp}
 #' \item{Woodpulp.Imports}{Imports of Wood Pulp}
 #' \item{Woodpulp.Exports}{Exports of Wood Pulp}
@@ -876,6 +883,7 @@
 #'
 #' @format A vector with 151 observations of 1 variable:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Carbon.Lumberwood}{Carbon from lumber wood in single and multifamily houses in od tons wood fiber}
 #' }
 #' @source 'ftp://ftp2.fs.fed.us/incoming/fpl/Skog/[Woodcarb II special lumber July 5 2007 Base Case.xls]SW Calc'!$V3878
@@ -988,6 +996,7 @@
 #'
 #' @format A data frame with 151 observations of 1 variable:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{PaperToLandfills}{Percent of paper that goes to landfills}
 #' }
 #' @source Linked site, check spreadsheet
@@ -997,10 +1006,12 @@
 
 #' Recovered Fibre Pulp in the United States from 1998 to 2013
 #'
+#'
 #' All units are in metric tons and all vectors are numeric.
 #'
 #' @format A data frame with 16 observations of 3 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Prod.Quantity}{Production Quantity of Recovered Fibre Pulp}
 #' \item{Imports.Quantity}{Imports Quantity of Recovered Fibre Pulp}
 #' \item{Exports.Quantity}{Exports Quantity of Recovered Fibre Pulp}
@@ -1018,6 +1029,7 @@
 #' @format A data frome with 151 observations of 1 variable:
 #'
 #' \describe{
+#' \item{Years}{Years}
 #' \item{WoodToDumps}{Percentage of wood that goes to dumps}
 #' }
 #'
@@ -1026,12 +1038,13 @@
 
 
 
-#' Percentage of wood to landfills
-#'
+#' Percentage of wood to landfills.
+#' Corresponds to colum U20 in Param + Results Sheet.
 #' Gives percentage of all wood that goes to landfills.
 #'
 #' @format A data frame with 151 observations of 1 variable:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{WoodToLandFills}{Percentage of wood going to landfills}
 #' }
 #' @source Linked spreadsheet (check this)
@@ -1047,6 +1060,7 @@
 #'
 #' @format A data frame with 151 observations of 15 variables:
 #' \describe{
+#' \item{Years}{Years}
 #' \item{Total.Industrial.Wood.Product.Production}{Industrial wood production in thousand tons}
 #' \item{Roundwood.Equivalents.of.Production.Hardwoods}{Hardwood production in million ft<sup>3</sup>}
 #' \item{Roundwood.Equivalents.of.Production.Softwoods}{Softwood production in million ft<sup>3</sup>}
@@ -1060,13 +1074,8 @@
 #' \item{Per.Capita.Industrial.Wood.Product.Production}{Per capita industrial wood product production, lbs/capita}
 #' \item{HW.Agrifiber}{Hardwood Agrifiber (units?)}
 #' \item{HW.Roundwood}{Hardwood Roundwood (units?)}
-#' \item{Empty}{}
-#' \item{Empty}{}
-#' \item{Empty}{}
-#' \item{Empty}{}
-#' \item{Empty}{}
 #' \item{U.S.Timber.Harvest}{United States Timber Harvest}
-#'
+#' \item{Misc}{This is unnamed column in Ince_Table3}
 #' }
 #' @source Ince tables
 "InceTable3"

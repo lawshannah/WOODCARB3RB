@@ -6,6 +6,7 @@
 \title{Production, imports, exports, and consumption of hardwood timber products, by major product, 1950-87}
 \format{A data frame with 48 observations of 22 variables:
 \describe{
+\item{Years}{Years}
 \item{AllProduction.Prod}{Total production of all products}
 \item{AllProduct.Consump}{Total consumption of all products}
 \item{Ind.RW.Tot.Prod}{Total production of all industrial roundwood products}

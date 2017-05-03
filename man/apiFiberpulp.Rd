@@ -7,10 +7,10 @@
 from 1900 to 1974.}
 \format{A data frame with 75 observations of 5 variables:
 \describe{
+\item{Years}{Years}
 \item{Wood.Pulp.Consumption}{Consumption of Wood Pulp}
 \item{Waste.Paper.Consumption}{Consumption of Waste Paper}
 \item{Rags.Consumption}{Consumption of Rags}
-\item{?Findout}{This might be other?}
 \item{Other.Consumption}{Consumption of Other Fibrous Materials}
 \item{Total.Consumption}{Total Consumption of Fibrous Materials}
 }}

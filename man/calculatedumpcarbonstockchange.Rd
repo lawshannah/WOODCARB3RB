@@ -4,13 +4,38 @@
 \alias{calculatedumpcarbonstockchange}
 \title{Calculate carbon in SWDS for the Stock Change Method}
 \usage{
-calculatedumpcarbonstockchange(years, totalcarbonstockchange = FALSE)
+calculatedumpcarbonstockchange(years, totalcarbonstockchange = FALSE,
+  swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
+  paperLandfillDecay = 0.0478032538317204,
+  swpLandfillDecay = 0.0300063714528115, swpDumpDecay = 0.0420089200339361,
+  paperDumpDecay = 0.0840178400678722, woodToCarbon = 4.535925e-07,
+  paperToCarbon = 3.9008955e-07)
 }
 \arguments{
 \item{years}{years to calculate}
 
 \item{totalcarbonstockchange}{Whether to return data frame of intermedate calculations or
 just totals}
+
+\item{swpSwdsNondegradable}{Percent of solid-wood products in landfills and dumps
+that are not subject to decay.}
+
+\item{paperSwdsNondegradable}{Percent of paper products in landfills and dumps that
+are not subject to decay.}
+
+\item{paperLandfillDecay}{Decay rate of paper products in landfills as a half-life in years.}
+
+\item{swpLandfillDecay}{Decay rate of solid-wood products in landfills as a half-life in years.}
+
+\item{swpDumpDecay}{Decay rate of solid-wood products in dumps as a half-life in years.}
+
+\item{paperDumpDecay}{Decay rate of paper products in dumps as a half-life in years.}
+
+\item{woodToCarbon}{Conversion factor to convert oven-dry tons of solid wood to
+Tg of Carbon.}
+
+\item{paperToCarbon}{Conversion factor to convert oven-dry tons of paper to
+Tg of Carbon.}
 }
 \value{
 If totalcarbonstockchange is false: a data frame of intermediate

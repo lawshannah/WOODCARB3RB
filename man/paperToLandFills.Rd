@@ -6,6 +6,7 @@
 \title{Percent of paper that goes to landfills.}
 \format{A data frame with 151 observations of 1 variable:
 \describe{
+\item{Years}{Years}
 \item{PaperToLandfills}{Percent of paper that goes to landfills}
 }}
 \source{

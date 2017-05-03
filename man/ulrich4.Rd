@@ -6,6 +6,7 @@
 \title{Production, imports, exports. and consumption of timber products, by major product, 1950-87}
 \format{A data frame with 38 observations of 24 variables:
 \describe{
+\item{Years}{Years}
 \item{AllProducts.Prod}{Production for all timber products}
 \item{AllProducts.Consump}{Consumption for all timber products}
 \item{Tot.Prod}{Total Production for major timber products}

@@ -72,12 +72,12 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
         decays <- decay_array[3, eu, yearrange, year - minyr + 1]
       }
       Var2_totalC_SWP[Var2_totalC_SWP$Year == year, paste("EU",eu,sep="")] <- sum(placeIU[yearrange,eu+1]*decays
-                                                                                  *(1 - lossIU[yearrange,eu]))
+                                                                                  * (1 - lossIU[yearrange,eu]))
     }
 
   }
 
-  Var2_totalC_SWP[,"LumberPre1900"] <- lumberpre1900[Yrs - minyr + 1,]
+  Var2_totalC_SWP[,"LumberPre1900"] <- lumberpre1900[Yrs - minyr + 1,"Carbon.Lumberwood"]
   Var2_totalC_SWP[,"Total Carbon"] <- rowSums(Var2_totalC_SWP[,-1])
   if(onlytotal == TRUE && lumberpre == FALSE){
     return(Var2_totalC_SWP$`Total Carbon` - Var2_totalC_SWP$LumberPre1900)
@@ -90,4 +90,3 @@ swpcarbontotal <- function(Yrs = 1990:2015, decaydistribution = c("Exponential",
   }
 }
 
-#papercarbontotal <- function(Yrs = 1990:2015)

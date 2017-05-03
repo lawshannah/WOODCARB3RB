@@ -6,6 +6,7 @@
 \title{Paper and board new supply and recyclable paper consumption, exports, imports and total recovered, 1965-1999}
 \format{A data frame with 56 observations of 19 variables:
 \describe{
+\item{Years}{Years}
 \item{PaperBoardNewSupply}{New supply of Paper and Board}
 \item{RecPap.ConsumedatPaperBoardMills}{Recyclable Paper Consumed at Paper and Board Mills}
 \item{RecPap.MoldedPulpInsulationandOther}{Recyclable Paper for Molded pulp, insulation and other uses}

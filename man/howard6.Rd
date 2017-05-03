@@ -6,6 +6,7 @@
 \title{Production, imports, exports, and consumption of softwood products, by major product, 1965-1999.}
 \format{A data frame with 56 observations on 34 variables:
 \describe{
+\item{Years}{Years}
 \item{AllProduction.Prod}{All products production}
 \item{AllProduct.Consump}{All products consumption}
 \item{Ind.RW.Tot.Prod}{Industrial roundwood uses total production}
@@ -30,16 +31,6 @@
 \item{Ind.RW.Pulpchip.Imports}{Industrial roundwood uses pulpwood chip imports}
 \item{Ind.RW.Pulpchip.Exports}{Industrial roundwood uses pulpwood chip exports}
 \item{FuelWood.ProdAndConsumption}{Fuelwood production and consumption}
-\item{UnNamed1}{}
-\item{UnNamed2}{}
-\item{UnNamed3}{}
-\item{UnNamed4}{}
-\item{UnNamed5}{}
-\item{UnNamed6}{}
-\item{UnNamed7}{}
-\item{UnNamed8}{}
-\item{UnNamed9}{}
-\item{UnNamed10}{}
 }}
 \source{
 USFS Estimations and Bureau of Census Data

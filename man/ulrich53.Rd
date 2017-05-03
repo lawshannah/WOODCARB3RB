@@ -6,6 +6,7 @@
 \title{Insulating board production, imports, exports, and consumption, 1950-87}
 \format{A data frame with 63 observations of  6 variables:
 \describe{
+\item{Years}{Years}
 \item{InsulatingBoard.Prod}{Insulating Board Production}
 \item{InsulatingBoard.Import}{Insulating Board Imports}
 \item{InsulatingBoard.Exports}{Inulating Board Exports}

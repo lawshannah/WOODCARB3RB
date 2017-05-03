@@ -5,7 +5,6 @@
 #' @return total carbon from solid waste disposal sites
 carbonfromdumps <- function(years, approach = c("Production", "Stock Change")) {
 
-
     a <- match.arg(approach)
 
     environment(calculatedumpcarbonproduction) <- environment()
@@ -22,10 +21,26 @@ carbonfromdumps <- function(years, approach = c("Production", "Stock Change")) {
 #' @param years years to calculate
 #' @param totalcarbonstockchange Whether to return data frame of intermedate calculations or
 #'  just totals
+#' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
+#' Tg of Carbon.
+#' @param paperToCarbon Conversion factor to convert oven-dry tons of paper to
+#' Tg of Carbon.
+#' @param swpSwdsNondegradable Percent of solid-wood products in landfills and dumps
+#' that are not subject to decay.
+#' @param paperSwdsNondegradable Percent of paper products in landfills and dumps that
+#' are not subject to decay.
+#' @param swpLandfillDecay Decay rate of solid-wood products in landfills as a half-life in years.
+#' @param paperLandfillDecay Decay rate of paper products in landfills as a half-life in years.
+#' @param swpDumpDecay Decay rate of solid-wood products in dumps as a half-life in years.
+#' @param paperDumpDecay Decay rate of paper products in dumps as a half-life in years.
 #' @return If totalcarbonstockchange is false: a data frame of intermediate
 #'  calculations.  If totalcarbonstockchange is true: a numeric vector of stock change
 #'  for total carbon from dumps.
-calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE) {
+calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE,
+                                           swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
+                                           paperLandfillDecay = 0.0478032538317204, swpLandfillDecay = 0.0300063714528115,
+                                           swpDumpDecay = 0.0420089200339361 , paperDumpDecay = 0.0840178400678722,
+                                           woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07) {
     ys <- minyr:max(years)
 
     environment(calcUSApaper) <- environment()
@@ -48,7 +63,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
         }
     })
 
-    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), 1]
+    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), "WoodToDumps"]
 
     CalcUSA$Dumps_C <- PRM57 * CalcUSA$TotalCarbonOutputStockChange *
         woodToCarbon * CalcUSA$ParamResults_Q
@@ -61,7 +76,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
                     (CalcUSA$Dumps_D[year - minyr] + CalcUSA$Dumps_C[year - (minyr - 1)])
     }
 
-    CalcUSA$Q <- woodToLandFills[ys - (minyr - 1), 1] * PRJ96 * CalcUSA$TotalCarbonOutputStockChange *
+    CalcUSA$Q <- woodToLandFills[ys - (minyr - 1), "WoodToLandFills"] * PRJ96 * CalcUSA$TotalCarbonOutputStockChange *
         woodToCarbon
 
     for (year in ys) {
@@ -122,7 +137,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
 
 
     CalcUSA$Dumps_H <- PRM57 * CalcUSA$K * woodToDumps[ys - (minyr -
-        1), 1]
+        1), "WoodToDumps"]
 
     for (y in ys) {
         if (y == minyr) {
@@ -133,7 +148,7 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
         }
     }
 
-    CalcUSA$R <- PRI96 * CalcUSA$K * paperToLandFills[ys - (minyr - 1), 1]
+    CalcUSA$R <- PRI96 * CalcUSA$K * paperToLandFills[ys - (minyr - 1), "PaperToLandfills"]
 
     CalcUSA$AG <- paperSwdsNondegradable * CalcUSA$R
 
@@ -190,8 +205,24 @@ calculatedumpcarbonstockchange <- function(years, totalcarbonstockchange = FALSE
 #' @param years years to calculate
 #' @param totalcarbonstockchange If true, returns carbon stock change, or returns data
 #' frame of intermediate calculations
+#' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
+#' Tg of Carbon.
+#' @param paperToCarbon Conversion factor to convert oven-dry tons of paper to
+#' Tg of Carbon.
+#' @param swpSwdsNondegradable Percent of solid-wood products in landfills and dumps
+#' that are not subject to decay.
+#' @param paperSwdsNondegradable Percent of paper products in landfills and dumps that
+#' are not subject to decay.
+#' @param swpLandfillDecay Decay rate of solid-wood products in landfills as a half-life in years.
+#' @param paperLandfillDecay Decay rate of paper products in landfills as a half-life in years.
+#' @param swpDumpDecay Decay rate of solid-wood products in dumps as a half-life in years.
+#' @param paperDumpDecay Decay rate of paper products in dumps as a half-life in years.
 #' @return Either a data frame of values from Calculation spreadsheet or total carbon output
-calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE) {
+calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE,
+                                          swpSwdsNondegradable = 0.77, paperSwdsNondegradable = 0.44,
+                                          paperLandfillDecay = 0.0478032538317204, swpLandfillDecay = 0.0300063714528115,
+                                          swpDumpDecay = 0.0420089200339361 , paperDumpDecay = 0.0840178400678722,
+                                          woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07) {
     ys <- minyr:max(years)
 
     environment(calcUSApaper) <- environment()
@@ -224,7 +255,7 @@ calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE)
         }
     }
 
-    CalcUSA$ParamResults_V <- paperToLandFills[ys - (minyr - 1),1]
+    CalcUSA$ParamResults_V <- paperToLandFills[ys - (minyr - 1), "PaperToLandfills"]
 
     CalcUSA$ParamResults_P <- PRI96 * CalcUSA$ParamResults_V
 
@@ -249,13 +280,13 @@ calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE)
         }
     })
 
-    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), 1]
+    CalcUSA$ParamResults_Q <- woodToDumps[ys - (minyr - 1), "WoodToDumps"]
 
     CalcUSA$Dumps_S <- PRM57 * CalcUSA$CB * CalcUSA$ParamResults_Q
 
     ### P+R 'O200' column, woodTolandfills is data linked to another site,
     ### not sure how it's calculated.
-    CalcUSA$ParamResults_O <- woodToLandFills[ys - (minyr - 1), ] * PRJ96
+    CalcUSA$ParamResults_O <- woodToLandFills[ys - (minyr - 1), "WoodToLandFills"] * PRJ96
 
     for (year in ys) {
         if (year == minyr)
@@ -349,14 +380,3 @@ calculatedumpcarbonproduction <- function(years, totalcarbonstockchange = FALSE)
     }
     CalcUSA[years - (minyr - 1), ]
 }
-
-
-
-
-
-
-
-
-
-
-

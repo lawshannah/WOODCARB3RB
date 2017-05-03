@@ -7,6 +7,7 @@
 \format{A data frome with 151 observations of 1 variable:
 
 \describe{
+\item{Years}{Years}
 \item{WoodToDumps}{Percentage of wood that goes to dumps}
 }}
 \source{

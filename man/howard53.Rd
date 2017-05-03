@@ -6,6 +6,7 @@
 \title{Particleboard and medium-density fiberboard production, imports,}
 \format{A data frame with 56 observations of 7 variables:
 \describe{
+\item{Years}{Years}
 \item{Particle_MDF.Prod.Tot}{Total Particleboard and Medium-Density Fiberboard Production}
 \item{Particle_MDF.Prod.ParticleBoard}{Particleboard Production}
 \item{Particle_MDF.Prod.MediumDensityFiberboard}{Medium-Density Fiberboard Production}

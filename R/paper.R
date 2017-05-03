@@ -2,24 +2,26 @@
 #'
 #' Uses anonymous functions to calculate columns from `USA` sheet in WOODCARB spreadsheet.
 #' @param years years to calculate data for
+#' @param woodToCarbon Carbon conversion factor
+#' @param paperToCarbon Carbon conversion factor
 #' @return A data frame with necessary intermediate calculations to calculate carbon from paper.
 #'
 #' Corresponds with necessary columns from the `USA` sheet in the WOODCARB spreadsheet
-calcUSApaper <- function(years = yrs) {
+calcUSApaper <- function(years = yrs,
+                         woodToCarbon = 4.535925e-07, paperToCarbon = 3.9008955e-07) {
 
   USA <- data.frame(Years = years)
   ##api includes calculations from estimates/averages
   #from api_total_1973
   USA$`apiTotalWP_L` <- sapply(years, function(year) {
     if (year < 1957) {
-      #F, H, B, F
       return( (apiFiber(year, 'Rags.Consumption') +
                 apiFiber(year, 'Other.Consumption')) * (apiTotal(year, 'Woodpulp.Prod')/
                                                           apiTotal(year, 'Consump.Paper.Board')))
     }
     if (year > 1956) {
       #G, B, F
-      return(apiFiber(year, '?Findout') * (apiTotal(year, 'Woodpulp.Prod') /
+      return(apiFiber(year, 'Other.Consumption') * (apiTotal(year, 'Woodpulp.Prod') /
                                              apiTotal(year, 'Consump.Paper.Board')))
     }
   })
@@ -142,6 +144,18 @@ calcUSApaper <- function(years = yrs) {
 
   USA$`Wood Pulp for Paper Exports` <- USA$`Pulp for Paper Exports` - USA$`Other Fibre Pulp Exports`
 
+  USA$`Recovered Fibre Pulp Imports` <- sapply(years, function(year) {
+      if (year < 1998) {
+          return(0)
+      }
+      if (year < 2014) {
+          return(0.90718 * usaFiberPulp[[year-1997, "Exports.Quantity"]])#recov exports qty
+      }
+      if (year < 2021) {
+          return(0.90718 * usaFiberPulp[[2007-1997, "Exports.Quantity"]]) #2007 value
+      }
+  })
+
   USA$`Recovered Fibre Pulp Exports` <- sapply(years, function(year) {
     if (year < 1998) {
       return(0)
@@ -150,8 +164,17 @@ calcUSApaper <- function(years = yrs) {
       return(0.90718 * USA[USA$Years == year, 'Recovered Fibre Pulp Exports Quantity'])#recov exports qty
     }
     if (year < 2021) {
-      return(0.90718 * USA[USA$Years == 2007, 'Recovered Fibre Pulp Exports Quantity']) #2007 value
+      return(0.90718 * usaFiberPulp[[2007-1997, "Exports.Quantity"]]) #2007 value
     }
+  })
+
+  USA$`Recovered Paper Imports` <- sapply(years, function(year) {
+      if (year < 1965) {
+          return(apiTotal(year, "WastePaper.Estimated.Imports"))
+      }
+      if (year < 2021) {
+          return(h47(year, "RecPap.Imports")*1000)
+      }
   })
 
   USA$`Recovered Paper Exports` <- sapply(years, function(year) {
@@ -232,7 +255,6 @@ calcUSApaper <- function(years = yrs) {
   USA$`Imported Woodpulp as a Percent of Total WoodPulp Consumption` <-
     USA$`Wood Pulp for Paper Imports`/(USA$`Wood Pulp for Paper Production` +
                                          USA$`Wood Pulp for Paper Imports`-USA$`Wood Pulp for Paper Exports`)
-
 
   USA$`Production Approach-C Input from Paper Products(Calc BU)` <-  a5 * paperToCarbon * ( (USA$`Paper+Paperboard Production` +
                                                                               USA$`Paper+Paperboard Exports` * (a5 - 1)) *

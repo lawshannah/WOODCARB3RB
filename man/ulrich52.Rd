@@ -6,6 +6,7 @@
 \title{Particleboard and medium density fiberboard production, imports, exports, and consumption, 1950-87}
 \format{A data frame with 38 observations of  7 variables:
 \describe{
+\item{Years}{Years}
 \item{Prod.tot}{Production Total}
 \item{Prod.Part.Board}{Production of Partical Board}
 \item{Prod.Med.Fiberboard}{Medium Density Fiberboard}

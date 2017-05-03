@@ -71,7 +71,8 @@ PRO45 <- 1 - PRM45 ##expected value for nondegradable fraction of SWP C in swds,
 PRO46 <- 1 - PRM46 ##expected value for nondegradable fraction of PAPER C in swds (runif(.329,.552))
 
 PRP10 <- 2.53087281800454  ###half life of paper in yrs
-
+PRP50 <- 23.1
+PRP51 <- 14.5
 PRP62 <- 1  ##Error in fraction of domestic products from imported wood/pulp
 PRJ96 <- 1  #Factor to adjust base MSW not burned for paper and wood
 

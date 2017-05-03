@@ -2,4 +2,6 @@
 
 export(finalCarbonContribution)
 export(finalVariables)
+export(reportTable4G)
+export(returnData)
 export(swpcarbontotal)

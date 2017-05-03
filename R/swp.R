@@ -4,9 +4,10 @@
 #' 21 columns in SWPcalcdata that are used to calculate production and stock change approach.
 #' @return Data frame of Roundwood and solidwood production, imports and exports
 #' corresponds to columns in `SWPcalcdata` spreadsheet.
-calculateswpdata <- function() {
+calculateswpdata <- function(Years = yrs) {
     swpcalcdata <- data.frame(Years = yrs)
     yrs <- swpcalcdata$Years
+    pap <- calcUSApaper()
 
     swpcalcdata$`Other Products Production` <- 1000 * InceN5 * sapply(yrs, function(y) {
         if (y < 1950) {
@@ -26,7 +27,6 @@ calculateswpdata <- function() {
     swpcalcdata$`Other Products Exports` <- 0
 
     swpcalcdata$`Sawnwood Production` <- 1000 * sapply(yrs, function(y) {
-        ### CHECK THIS, why are errors x*10^-8? shouldnt error be 10^16
         cavg <- (h8(1904, 'Prod.SW') - h8(1899, 'Prod.SW')) / 5
         davg <- (h8(1904, 'Prod.HW') - h8(1899, 'Prod.HW')) / 5
         if (y < 1904) {
@@ -113,6 +113,40 @@ calculateswpdata <- function() {
                      InceW5 * h7(year, 'Ind.RW.Logs.Exports'))
         }
     })
+
+    #Exports - Other industrial roundwood
+    swpcalcdata$`Log Exports (short tons)` <- 1000 * sapply(yrs, function(year) {
+        if (year < 1965) {
+            return(swpcalcdata[swpcalcdata$Years == year, "Log Exports (tons)"] / 1000)
+        }
+        if (year < 2021) {
+            return((h6(year, "FuelWood.ProdAndConsumption")*InceS5+
+                        h7(year, "Ind.RW.PlyandVen.Exports")*InceT5+
+                        h6(year, "Ind.RW.Pulpchip.Exports")*InceS5+
+                        h7(year, "Ind.RW.Pulpchip.Exports")*InceT5))
+        }
+    })
+
+    #Imports - other industrial roundwood
+    swpcalcdata$Log_Imports <- 1000 * sapply(yrs, function(year) {
+        if (year < 1950) {
+            return((h3(year, "LogChipExports.SW")*InceS5+
+                        h3(year, "LogChipExports.HW")*InceT5))
+        }
+        if (year < 1965) {
+            return(u5(year, "Logs.Imports")*InceS5+
+                        u6(year, "Ind.RW.Logs.Imports")*InceT5)
+        }
+        if (year < 2021) {
+            return(h6(year, "Ind.RW.Logs.Imports")*InceS5+
+                        h7(year, "Ind.RW.Logs.Imports")*InceT5+
+                        h6(year, "Ind.RW.Pulpchip.Imports")*InceS5+
+                        h7(year, "Ind.RW.Pulpchip.Imports")*InceT5)
+        }
+    })
+
+    swpcalcdata$TotalFibreFinish_Imports <- pap$`Wood Pulp for Paper Imports` + pap$`Recovered Paper Imports` + pap$`Recovered Fibre Pulp Imports`
+    swpcalcdata$TotalFibreFinish_Exports <- pap$`Wood Pulp for Paper Exports` + pap$`Recovered Fibre Pulp Exports` + pap$`Recovered Fibre Pulp Exports`
 
     swpcalcdata$`Imported logs for lumber and panels (1000 tons)` <- 1000 * sapply(yrs,
         function(year) {
@@ -257,9 +291,122 @@ calculateswpdata <- function() {
     })
 
 
-    # swpcalcdata$`Wood Panel Production`
-    # swpcalcdata$`Wood Panel Imports`
-    # swpcalcdata$`Wood Panel Exports`
+    swpcalcdata$`Wood Panel Production` <- 1000 * sapply(yrs, function(year) {
+        if (year < 1950) {
+          return((inc1(year, "SW.Ply")*InceB5)
+                 +(inc1(year, "HW.Ply.Ven")*InceE5)
+                 +(inc1(year,  "Hardboard.Prod")*InceJ5)
+                 +(inc1(year, "InsulatingBoard")*InceO5))
+        }
+        if (year < 1965) {
+            return( (u36(year,  "Prod.SW")*InceB5)+
+                        (u36(year, "Prod.HW")*InceE5)+
+                        (u52(year, "Prod.Part.Board")*InceI5)+
+                        (u54(year, "Hardboard.Prod")*InceJ5)+
+                        (u53(year, "InsulatingBoard.Prod")*InceO5))
+        }
+        if (year < 1980) {
+            return(h37(year, "Prod.SW")*InceB5 +
+                       (h37(year, "Prod.HW") *InceE5) +
+                       (h53(year, "Particle_MDF.Prod.ParticleBoard" )*InceI5) +
+                       (h56(year, "Hardboard.Production")*InceJ5) +
+                       (h53(year, "Particle_MDF.Prod.MediumDensityFiberboard")*InceK5) +
+                       h55(year, "Insulboard.Production")*InceQ5)
+        }
+        if (year < 2021) {
+            return((h37(year, "Prod.SW")*InceB5)+
+                       (h38(year, "Prod.OSP")*InceC5)+
+                       (h37(year, "Prod.HW")*InceE5)+
+                       (h53(year, "Particle_MDF.Prod.ParticleBoard")*InceI5)+
+                       (h56(year, "Hardboard.Production")*InceJ5)+
+                       (h53(year, "Particle_MDF.Prod.MediumDensityFiberboard")*InceK5)+
+                       h55(year, "Insulboard.Production")*InceQ5)
+        }
+    })
+
+    swpcalcdata$`Wood Panel Imports` <- 1000 * sapply(yrs, function(year) {
+        if (year < 1927) {
+            return(0)
+        }
+        if (year < 1935) {
+            return((h3t21(year, "Imports.Tot")/1000)*InceR5)
+        }
+        if (year < 1950) {
+            return((h3t20(year, "HW.Imports.Tot")*InceE5 +
+                        h3t21(year, "Imports.Tot")*InceR5)/1000)
+        }
+        if (year < 1954) {
+            return((u36(year, "Imports.SW")*InceB5)+
+                       (u36(year, "Imports.HW")*InceE5))
+        }
+        if (year < 1965) {
+            return((u36(year, "Imports.SW")*InceB5)+
+                       (u36(year, "Imports.HW")*InceE5)+
+                       (u52(year, "Imports")*InceI5)+
+                       (u54(year, "Hardboard.Import")*InceJ5)+
+                       (u53(year, "InsulatingBoard.Import")*InceO5))
+        }
+        if (year < 1980) {
+            return((h37(year, "Imports.SW")*InceB5)+
+                       (h37(year, "Imports.HW")*InceE5)+
+                       (h53(year, "Particle_MDF.Imports")*InceI5)+
+                       (h56(year, "Hardboard.Imports")*InceJ5)+
+                       h55(year, "Insulboard.Imports")*InceQ5)
+        }
+        if (year < 2021) {
+            return((h37(year, "Imports.SW")*InceB5)+
+                       (h38(year, "Imports.OSP")*InceC5)+
+                       (h37(year, "Imports.HW")*InceE5)+
+                       (h53(year, "Particle_MDF.Imports")*InceI5)+
+                       (h56(year, "Hardboard.Imports")*InceJ5)+
+                       h55(year, "Insulboard.Imports")*InceQ5)
+        }
+    })
+    swpcalcdata$`Wood Panel Exports` <- 1000 * sapply(yrs, function(year) {
+        if (year < 1916) {
+            return(0)
+        }
+        if (year < 1925) {
+            return(u54(year, "Hardboard.Exports")*InceJ5)
+        }
+        if (year < 1927) {
+            return((u54(year, "Hardboard.Exports")*InceJ5)+
+                        (u53(year, "InsulatingBoard.Exports")*InceO5))
+        }
+        if (year < 1935) {
+            return((h3t20(year, "SW.Exports")/1000*InceB5)+
+                       (h3t20(year, "HW.Exports")*InceE5+h3t21(year, "Exports.Tot")*InceR5)/1000+
+                       (u54(year, "Hardboard.Exports")*InceJ5)+
+                       (u53(year, "InsulatingBoard.Exports")*InceO5))
+        }
+        if (year < 1950) {
+            return((h3t20(year, "SW.Exports")/1000*InceB5)+
+                       ((h3t20(year, "HW.Exports")+h3t21(year, "Exports.Tot"))/1000*InceE5)+
+                       (u54(year, "Hardboard.Exports")*InceJ5)+
+                       (u53(year, "InsulatingBoard.Exports")*InceO5))
+        }
+        if (year < 1965) {
+            return((u36(year, "Exports.SW")*InceB5)+
+                        (u36(year, "Exports.HW")*InceE5)+
+                        (u54(year, "Hardboard.Exports")*InceJ5)+
+                        (u53(year, "InsulatingBoard.Exports")*InceO5))
+        }
+        if (year < 1991) {
+            return((h37(year, "Exports.SW")*InceB5)+
+                       (h37(year, "Exports.HW")*InceE5)+
+                       (h53(year, "Particle_MDF.Exports")*InceI5)+
+                       (h56(year, "Hardboard.Exports")*InceJ5)+
+                       h55(year, "Insulboard.Exports")*InceQ5)
+        }
+        if (year < 2021) {
+            return((h37(year, "Exports.SW")*InceB5)+
+                        (h38(year, "Exports.OSP")*InceC5)+
+                        (h37(year, "Exports.HW")*InceE5)+
+                        (h53(year, "Particle_MDF.Exports")*InceI5)+
+                        (h56(year, "Hardboard.Exports")*InceJ5)+
+                        h55(year, "Insulboard.Exports")*InceQ5)
+        }
+    })
 
     swpcalcdata$`Other Products Production Special` <- swpcalcdata$`Other Products Production` -
         (1 - a5) * swpcalcdata$`Other Products Exports`
@@ -288,7 +435,7 @@ calculateswpdata <- function() {
     swpcalcdata$NSP.Consumption <- swpcalcdata$NSP.Production + swpcalcdata$NSP.Imports -
         swpcalcdata$NSP.Exports
 
-    swpcalcdata
+    swpcalcdata[swpcalcdata$Years %in% Years, ]
 }
 
 #' Total carbon placed in use in od tons of wood fiber

@@ -298,8 +298,11 @@ finalVariables <- function(Years = 1990:2015,
 #' from 1900 to latest year of interest.
 #' @param swpdata Optional argument to provide swp production and trade time series
 #' for purposes of error analysis
+#' @param woodToCarbon Conversion factor to convert oven-dry tons of solid wood to
+#' Tg of Carbon.
 #' @return A vector of swp carbon stock changes for `years`
 #' @examples
+#'
 #' \dontrun{
 #' swp_carbon_stockchange(1990:2000)
 #' swp_carbon_stockchange(1950:1975, approach = "Stock Change", decaydistribution = "K=2")
@@ -309,7 +312,8 @@ swp_carbon_stockchange <- function(years, approach = c("Production", "Stock Chan
                                                          "K=2", "K=10"),
                                    halflives = halfLives, fsp = fracstrpanels,
                                    fnsp = fracnonstrpanels,
-                                   fsawn = fracsawnwood, swpdata){
+                                   fsawn = fracsawnwood, swpdata,
+                                   woodToCarbon = 4.535925e-07){
   approach <- match.arg(approach)
   decay <- match.arg(decaydistribution)
 

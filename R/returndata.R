@@ -12,7 +12,11 @@ names <- c("hair1958","hair1963","hair1963t20",
            "howard55","howard56","howard6",
            "howard7", "ulrich52","ulrich53",
            "ulrich54", "ulrich6","fracsawnwood",
-           "fracnonstrpanels", "fracstrpanels", "InceTable3")
+           "fracnonstrpanels", "fracstrpanels", "InceTable3",
+           "woodToCarbon", "paperToCarbon", "swpSwdsNondegradable",
+           "paperSwdsNondegradable", "paperLandfillDecay",
+           "paperDumpDecay", "swpLandfillDecay", "swpDumpDecay",
+           "paperHL")
 
 for (i in seq(names)){
   utils::globalVariables(names[i])
@@ -20,71 +24,24 @@ for (i in seq(names)){
 
 
 #' Get import, export, production data for all product types.
-#'
+#' Aggregates all intermediate calculations necessary for final calculations.
 #' Returns data and intermediate calculations corresponding
 #' to sheets in Woodcarb2. Includes relevant SWP and paper production and
 #' trade time series for calculating final carbon contributions for
 #' various approaches.
 #'
-#' @param DataSheet Sheet that corresponds to data from woodcarb2.
-#' USA includes production, import, and export data for several
-#' types of products in the United States.
-#' Calculation includes intermediate calculations needed to calculate
-#' carbon removal contributions with the various approaches. This
-#' data includes carbon stock totals for solid wood and paper in use and
-#' in landfills under the different approaches.
-#'
 #' @param years years to return data for
 #'
 #' @return data frame of intermediate calculations corresponding to appropriate table
 #' in Excel spreadsheet.
-returnData<- function(DataSheet = c("USA", "Calculation",
-                                    "Dumps", "SwCalc",
-                                    "IPCC"), years = 1950:2015){
+#' @export
+returnData<- function(years = 1950:2015){
 
-  ds <- match.arg(DataSheet)
-  if (ds == "SwCalc")
-  {
-    return(calculateswpdata())
-  }
-  p_imp_exp <- c("Production", "Imports", "Exports")
-
-  usa_names <- c(paste("Roundwood.",c(p_imp_exp,
-                                      "Consumption", "Fuelwood"), sep=""),
-                 paste("Sawnwood.", p_imp_exp,sep=""),
-                 paste("Wood-based.Panels.", p_imp_exp,sep=""),
-                 paste("Other.Industrial.Roundwood", c(p_imp_exp,"Consumption"), sep=""),
-                 paste("Paper.Paperboard.", c(p_imp_exp,"Consumption"),sep=""),
-                 paste("Total.Fibre.Furnish.", p_imp_exp[2:3]),
-                 "Percent.woodpulp.forpaper",
-                 paste("Woodpulp.forpaper.", c(p_imp_exp,"Net.Exports"), sep=""),
-                 paste("Other.Fibre.Pulp", p_imp_exp, sep=""),
-                 paste("Pulp.for.Paper", p_imp_exp, sep=""),
-                 paste("Recovered.Fibre.Pulp", c(p_imp_exp[2:3],"Net.Exports"), sep=""),
-                 paste("Recovered.Paper.", c(p_imp_exp, "Net.Exports"), sep=""),
-                 paste("Total.Fibre.Furnish", p_imp_exp[2:3],sep=""),
-                 "Recovered.paper.utilization.rate",
-                 "Waste.paper.recovery.rate",
-                 "Nonwood.fiber.percent.of.total.pulp.consumption",
-                 "Imported.woodulp.as.percent.of.total.woodpulp.consumption",
-                 "Imported.pulpwood.chips",
-                 "Total.roundwood.consumed.for.paper",
-                 "Percent.of.roundwood.for.paper.that.is.imported",
-                 "Imported.logs.for.lumber.and.panels",
-                 "Total.roundwood.consumed.for.lumber.and.panels",
-                 "Percent.of.roundwood.for.lumber.and.panels.that.is.imported",
-                 "Log.Exports",
-                 "Chip.Exports",
-                 "Chip.exports.as.a.fraction.of.roundwood.consumed.for.paper.production",
-                 paste("Tons.Industrial.Roundwood.for.bark.computation", c("Softwood", "Hardwood"), sep = "")
-  )
-
-  # calculation_names <- c()
-  # dumps_names <- c()
-  # swcalc_names <- c()
-  # ipcc_names <- c()
-  #
-  # usadata <- calcUSApaper()
+    usa <- calculateswpdata(years)
+    usapaper <- calcUSApaper(years)
+    usadumps <- calculatedumpcarbonproduction(years)
+    usadumps2 <- calculatedumpcarbonstockchange(years)
+    return(Reduce(function(x, y) merge(x, y, all=TRUE), list(usa, usapaper, usadumps, usadumps2)))
 }
 
 

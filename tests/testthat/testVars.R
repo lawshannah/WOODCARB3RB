@@ -1,4 +1,4 @@
-#library(WOODCARB3R)
+library(WOODCARB3R)
 context("Test final variables.")
 
 #table of final variables to test
@@ -10,6 +10,5 @@ check <- system.file("extdata/CopyOfData",
 check <- read.csv(check)
 
 test_that("check variables", {
-
   expect_equal(finalvars, check[1:26,1:8])
 })

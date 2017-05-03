@@ -4,7 +4,7 @@
 \alias{calculateswpdata}
 \title{Solidwood products statistics}
 \usage{
-calculateswpdata()
+calculateswpdata(Years = yrs)
 }
 \value{
 Data frame of Roundwood and solidwood production, imports and exports

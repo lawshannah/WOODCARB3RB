@@ -15,7 +15,6 @@ calcUSApaper <- function(years = yrs,
   #from api_total_1973
   USA$`apiTotalWP_L` <- sapply(years, function(year) {
     if (year < 1957) {
-      #F, H, B, F
       return( (apiFiber(year, 'Rags.Consumption') +
                 apiFiber(year, 'Other.Consumption')) * (apiTotal(year, 'Woodpulp.Prod')/
                                                           apiTotal(year, 'Consump.Paper.Board')))
@@ -145,6 +144,18 @@ calcUSApaper <- function(years = yrs,
 
   USA$`Wood Pulp for Paper Exports` <- USA$`Pulp for Paper Exports` - USA$`Other Fibre Pulp Exports`
 
+  USA$`Recovered Fibre Pulp Imports` <- sapply(years, function(year) {
+      if (year < 1998) {
+          return(0)
+      }
+      if (year < 2014) {
+          return(0.90718 * usaFiberPulp[[year-1997, "Exports.Quantity"]])#recov exports qty
+      }
+      if (year < 2021) {
+          return(0.90718 * usaFiberPulp[[2007-1997, "Exports.Quantity"]]) #2007 value
+      }
+  })
+
   USA$`Recovered Fibre Pulp Exports` <- sapply(years, function(year) {
     if (year < 1998) {
       return(0)
@@ -155,6 +166,15 @@ calcUSApaper <- function(years = yrs,
     if (year < 2021) {
       return(0.90718 * usaFiberPulp[[2007-1997, "Exports.Quantity"]]) #2007 value
     }
+  })
+
+  USA$`Recovered Paper Imports` <- sapply(years, function(year) {
+      if (year < 1965) {
+          return(apiTotal(year, "WastePaper.Estimated.Imports"))
+      }
+      if (year < 2021) {
+          return(h47(year, "RecPap.Imports")*1000)
+      }
   })
 
   USA$`Recovered Paper Exports` <- sapply(years, function(year) {

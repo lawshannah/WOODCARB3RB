@@ -92,7 +92,7 @@ For stock change approach, values correspond to `Calculation$H` in the spreadshe
     <pre><span class='fu'>swp_carbon_stockchange</span>(<span class='no'>years</span>, <span class='kw'>approach</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Production"</span>, <span class='st'>"Stock Change"</span>),
   <span class='kw'>decaydistribution</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Exponential"</span>, <span class='st'>"K=2"</span>, <span class='st'>"K=10"</span>),
   <span class='kw'>halflives</span> <span class='kw'>=</span> <span class='no'>halfLives</span>, <span class='kw'>fsp</span> <span class='kw'>=</span> <span class='no'>fracstrpanels</span>, <span class='kw'>fnsp</span> <span class='kw'>=</span> <span class='no'>fracnonstrpanels</span>,
-  <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>, <span class='no'>swpdata</span>)</pre>
+  <span class='kw'>fsawn</span> <span class='kw'>=</span> <span class='no'>fracsawnwood</span>, <span class='no'>swpdata</span>, <span class='kw'>woodToCarbon</span> <span class='kw'>=</span> <span class='fl'>4.535925e-07</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -120,6 +120,9 @@ from 1900 to latest year of interest.</dd>
       <dt>swpdata</dt>
       <dd>Optional argument to provide swp production and trade time series
 for purposes of error analysis</dd>
+      <dt>woodToCarbon</dt>
+      <dd>Conversion factor to convert oven-dry tons of solid wood to
+Tg of Carbon.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -128,7 +131,8 @@ for purposes of error analysis</dd>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
+    <pre class="examples"><div class='input'>
+<span class='co'>## Not run: ------------------------------------</span>
 <span class='co'># swp_carbon_stockchange(1990:2000)</span>
 <span class='co'># swp_carbon_stockchange(1950:1975, approach = "Stock Change", decaydistribution = "K=2")</span>
 <span class='co'>## ---------------------------------------------</span></div></pre>

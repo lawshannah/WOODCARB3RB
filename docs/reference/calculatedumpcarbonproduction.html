@@ -84,7 +84,12 @@
     <p>Column names with only letters come from Calc sheet, otherwise sheet is specified (need to change names)</p>
     
 
-    <pre><span class='fu'>calculatedumpcarbonproduction</span>(<span class='no'>years</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre><span class='fu'>calculatedumpcarbonproduction</span>(<span class='no'>years</span>, <span class='kw'>totalcarbonstockchange</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>swpSwdsNondegradable</span> <span class='kw'>=</span> <span class='fl'>0.77</span>, <span class='kw'>paperSwdsNondegradable</span> <span class='kw'>=</span> <span class='fl'>0.44</span>,
+  <span class='kw'>paperLandfillDecay</span> <span class='kw'>=</span> <span class='fl'>0.0478032538317204</span>,
+  <span class='kw'>swpLandfillDecay</span> <span class='kw'>=</span> <span class='fl'>0.0300063714528115</span>, <span class='kw'>swpDumpDecay</span> <span class='kw'>=</span> <span class='fl'>0.0420089200339361</span>,
+  <span class='kw'>paperDumpDecay</span> <span class='kw'>=</span> <span class='fl'>0.0840178400678722</span>, <span class='kw'>woodToCarbon</span> <span class='kw'>=</span> <span class='fl'>4.535925e-07</span>,
+  <span class='kw'>paperToCarbon</span> <span class='kw'>=</span> <span class='fl'>3.9008955e-07</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
@@ -93,6 +98,26 @@
       <dt>totalcarbonstockchange</dt>
       <dd>If true, returns carbon stock change, or returns data
 frame of intermediate calculations</dd>
+      <dt>swpSwdsNondegradable</dt>
+      <dd>Percent of solid-wood products in landfills and dumps
+that are not subject to decay.</dd>
+      <dt>paperSwdsNondegradable</dt>
+      <dd>Percent of paper products in landfills and dumps that
+are not subject to decay.</dd>
+      <dt>paperLandfillDecay</dt>
+      <dd>Decay rate of paper products in landfills as a half-life in years.</dd>
+      <dt>swpLandfillDecay</dt>
+      <dd>Decay rate of solid-wood products in landfills as a half-life in years.</dd>
+      <dt>swpDumpDecay</dt>
+      <dd>Decay rate of solid-wood products in dumps as a half-life in years.</dd>
+      <dt>paperDumpDecay</dt>
+      <dd>Decay rate of paper products in dumps as a half-life in years.</dd>
+      <dt>woodToCarbon</dt>
+      <dd>Conversion factor to convert oven-dry tons of solid wood to
+Tg of Carbon.</dd>
+      <dt>paperToCarbon</dt>
+      <dd>Conversion factor to convert oven-dry tons of paper to
+Tg of Carbon.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>

@@ -1,12 +1,12 @@
 
-# WOODCARB3R
+# WOODCARB3RB
 
 Authors: Ben Jones, Sami Hlebak, Hannah Laws, Kelly Loucks, Andrew Sullivan, Eric Marland, and Alan Arnholt 
  
 
-## WOODCARB3R Version 0.1.4
+## WOODCARB3RB Version 0.1.4
 
-[![Travis-CI Build Status](https://travis-ci.org/benjones2/WOODCARB3R.svg?branch=master)](https://travis-ci.org/benjones2/WOODCARB3R)
+[![Travis-CI Build Status](https://travis-ci.org/benjones2/WOODCARB3RB.svg?branch=master)](https://travis-ci.org/benjones2/WOODCARB3RB)
 
 ## Installation
 
@@ -14,7 +14,7 @@ To install this package use:
 
 
 ```s
-devtools::install_github('benjones2/WOODCARB3R', build_vignettes = TRUE)
+devtools::install_github('benjones2/WOODCARB3RB', build_vignettes = TRUE)
 ```
 
 ##Looking up Data Tables
@@ -27,5 +27,5 @@ Information on datasets can be found with `?` or `help()`.
 
 ## Bug Reports
 
-Please report bugs and suggestions to [https://github.com/benjones2/WOODCARB3R/issues](https://github.com/benjones2/WOODCARB3R/issues)
+Please report bugs and suggestions to [https://github.com/benjones2/WOODCARB3RB/issues](https://github.com/benjones2/WOODCARB3RB/issues)
 

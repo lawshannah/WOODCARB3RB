@@ -6,6 +6,9 @@ library(xlsx)
 #rownames(convertData) <- c("Assumptions", "Moisture Content", "Non-wood Content")
 #use_data(convertData, overwrite = TRUE)
 
+
+##This converts all excel files into into data tables in R.##
+
 piet_all <- read.xlsx("./inst/extdata/CopyOfData/piet_all.xlsx",1,header=FALSE,
                        startRow=15,endRow=72,colIndex=1:24)
 colnames(piet_all) <- c("Years", "Prod.Tot",

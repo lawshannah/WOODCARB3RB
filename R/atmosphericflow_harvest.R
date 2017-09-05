@@ -1,3 +1,4 @@
+#**Functions to make appropriate calculations using 'if' statements**#
 #' Annual Imports of Wood, and paper products + wood fuel,
 #' pulp, recovered paper, roundwood/chips.
 #' @param years years to calculate for

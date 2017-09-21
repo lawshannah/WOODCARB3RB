@@ -986,7 +986,7 @@ write.csv(Histdf14c,file = "Histdf14c.csv", row.names = F)
 
 
 #####Creating histogram image#####
-setwd("~/WOODCARB3RB/R")
+setwd("~/WOODCARB3RB/R/SensitivityAnalysis")
 Histdf6b <- read.csv("Histdf6b.csv")
 Histdf10a <- read.csv("Histdf10a.csv")
 Histdf13a <- read.csv("Histdf13a.csv")

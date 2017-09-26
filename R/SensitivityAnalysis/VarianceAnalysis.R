@@ -1020,4 +1020,18 @@ title(xlab = "Carbon Contribution", line = 2, cex.lab = 0.7)
 title(ylab = "Density", line = 2, cex.lab = 0.7)
 
 dev.off()
+
+
+png(file = "Example histogramCombine.png")
+plot(density(as.numeric(Histdf13a)), col = "orange", main = NA, xlab = "", ylab = "", cex.lab = 0.7, cex.axis = 0.7)
+lines(density(as.numeric(Histdf6b)), col="blue")
+lines(density(as.numeric(Histdf14a)), col="pink")
+lines(density(as.numeric(Histdf10a)), col="red")
+title(xlab = "Carbon Contribution", line = 2, cex.lab = 0.7)
+title(ylab = "Density", line = 2, cex.lab = 0.7)
+
+dev.off()
+
+
+
 #

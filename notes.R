@@ -8,7 +8,9 @@
 #code for snesitivity
 #maybe create function for sasid thing
 #collect additional scripts that should be here.
-
+#just stay here rather than through slides
+#have the code for loops and histogram stuff
+#put in all csv files for analysis
 
 
 
